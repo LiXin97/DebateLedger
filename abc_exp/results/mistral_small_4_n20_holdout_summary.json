@@ -1,0 +1,66 @@
+{
+  "model_label": "Mistral Small 4 (OpenRouter, paired)",
+  "alpha_path": "abc_exp/results/sa_causal_openrouter_mistral_small_4_n20_paired.jsonl",
+  "debate_path": "abc_exp/results/debate_traces_openrouter_mistral_small_4_n20.jsonl",
+  "alpha": {
+    "n_rows": 180,
+    "n_questions": 20,
+    "n_expected_rows_observed_grid": 180,
+    "missing_rows_observed_grid": 0,
+    "duplicate_triples": 0,
+    "conditions": [
+      "anti_argument",
+      "anti_social",
+      "default"
+    ],
+    "agent_indices": [
+      0,
+      1,
+      2
+    ],
+    "condition_counts": {
+      "default": 60,
+      "anti_social": 60,
+      "anti_argument": 60
+    },
+    "alpha_tot": 0.41944444444444445,
+    "alpha_by_condition": {
+      "anti_argument": 0.6979166666666666,
+      "anti_social": 0.0625,
+      "default": 0.4979166666666667
+    },
+    "question_alpha_mean": 0.41944444444444445,
+    "total_cost": 0.328563340875,
+    "provider_distribution": {
+      "Venice": 132,
+      "Mistral": 1489
+    }
+  },
+  "debate": {
+    "n_debates": 20,
+    "n_questions": 20,
+    "duplicate_questions": 0,
+    "init_majority_correct": 13,
+    "final_majority_correct": 11,
+    "initial_accuracy_pct": 65.0,
+    "final_accuracy_pct": 55.0,
+    "majority_collapses": 2,
+    "majority_corrections": 0,
+    "conditional_collapse_pct": 15.384615384615385,
+    "conditional_correction_pct": 0.0,
+    "majority_flip_rate_pct": 30.0,
+    "agent_level_collapse_events": 2,
+    "agent_level_correction_events": 3,
+    "total_cost": 0.291868768125,
+    "provider_distribution": {
+      "Venice": 300
+    }
+  },
+  "pair_qc": {
+    "alpha_questions": 20,
+    "debate_questions": 20,
+    "overlap_questions": 20,
+    "alpha_only_questions": 0,
+    "debate_only_questions": 0
+  }
+}

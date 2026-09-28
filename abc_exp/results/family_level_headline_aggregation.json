@@ -1,0 +1,330 @@
+{
+  "description": "Family-level mean/median aggregation of the D5.2 N=14 headline table.",
+  "source": "results/D5.2_gate_decision.md",
+  "n_models": 14,
+  "n_families": 7,
+  "per_model_rows": [
+    {
+      "model": "sonnet-4.5",
+      "family": "Anthropic",
+      "alpha_tot": 0.4504,
+      "c_cond_pct": 2.1505,
+      "wilson_hw": 0.0346
+    },
+    {
+      "model": "deepseek-v4-flash",
+      "family": "DeepSeek",
+      "alpha_tot": 0.1129,
+      "c_cond_pct": 0.0,
+      "wilson_hw": 0.0
+    },
+    {
+      "model": "gemini-3-flash",
+      "family": "Google",
+      "alpha_tot": 0.2644,
+      "c_cond_pct": 0.5882,
+      "wilson_hw": 0.0158
+    },
+    {
+      "model": "gemma-4-31b-it-awq",
+      "family": "Google",
+      "alpha_tot": 0.3106,
+      "c_cond_pct": 0.0,
+      "wilson_hw": 0.0
+    },
+    {
+      "model": "llama-3.1-8b",
+      "family": "Meta",
+      "alpha_tot": 0.7737,
+      "c_cond_pct": 8.4646,
+      "wilson_hw": 0.0172
+    },
+    {
+      "model": "gpt-4o-mini",
+      "family": "OpenAI",
+      "alpha_tot": 0.3424,
+      "c_cond_pct": 2.346,
+      "wilson_hw": 0.0168
+    },
+    {
+      "model": "gpt-5.4-mini",
+      "family": "OpenAI",
+      "alpha_tot": 0.3499,
+      "c_cond_pct": 0.6993,
+      "wilson_hw": 0.0187
+    },
+    {
+      "model": "phi-4-mini",
+      "family": "Phi",
+      "alpha_tot": 0.4686,
+      "c_cond_pct": 10.2377,
+      "wilson_hw": 0.018
+    },
+    {
+      "model": "qwen3-4b",
+      "family": "Qwen",
+      "alpha_tot": 0.6068,
+      "c_cond_pct": 5.1073,
+      "wilson_hw": 0.0139
+    },
+    {
+      "model": "qwen3-8b",
+      "family": "Qwen",
+      "alpha_tot": 0.6111,
+      "c_cond_pct": 5.3571,
+      "wilson_hw": 0.0638
+    },
+    {
+      "model": "qwen3.5-4b",
+      "family": "Qwen",
+      "alpha_tot": 0.6897,
+      "c_cond_pct": 43.5897,
+      "wilson_hw": 0.11
+    },
+    {
+      "model": "qwen3.5-9b",
+      "family": "Qwen",
+      "alpha_tot": 0.7303,
+      "c_cond_pct": 43.9024,
+      "wilson_hw": 0.1074
+    },
+    {
+      "model": "qwen3.6-27b-fp8",
+      "family": "Qwen",
+      "alpha_tot": 0.795,
+      "c_cond_pct": 8.6614,
+      "wilson_hw": 0.0489
+    },
+    {
+      "model": "qwen3.6-35b-a3b-fp8",
+      "family": "Qwen",
+      "alpha_tot": 0.7595,
+      "c_cond_pct": 11.8812,
+      "wilson_hw": 0.0631
+    }
+  ],
+  "aggregations": {
+    "mean": {
+      "families": [
+        {
+          "family": "Anthropic",
+          "n_models": 1,
+          "models": [
+            "sonnet-4.5"
+          ],
+          "alpha_tot": 0.4504,
+          "c_cond_pct": 2.1505
+        },
+        {
+          "family": "DeepSeek",
+          "n_models": 1,
+          "models": [
+            "deepseek-v4-flash"
+          ],
+          "alpha_tot": 0.1129,
+          "c_cond_pct": 0.0
+        },
+        {
+          "family": "Google",
+          "n_models": 2,
+          "models": [
+            "gemini-3-flash",
+            "gemma-4-31b-it-awq"
+          ],
+          "alpha_tot": 0.2875,
+          "c_cond_pct": 0.2941
+        },
+        {
+          "family": "Meta",
+          "n_models": 1,
+          "models": [
+            "llama-3.1-8b"
+          ],
+          "alpha_tot": 0.7737,
+          "c_cond_pct": 8.4646
+        },
+        {
+          "family": "OpenAI",
+          "n_models": 2,
+          "models": [
+            "gpt-4o-mini",
+            "gpt-5.4-mini"
+          ],
+          "alpha_tot": 0.34614999999999996,
+          "c_cond_pct": 1.52265
+        },
+        {
+          "family": "Phi",
+          "n_models": 1,
+          "models": [
+            "phi-4-mini"
+          ],
+          "alpha_tot": 0.4686,
+          "c_cond_pct": 10.2377
+        },
+        {
+          "family": "Qwen",
+          "n_models": 6,
+          "models": [
+            "qwen3-4b",
+            "qwen3-8b",
+            "qwen3.5-4b",
+            "qwen3.5-9b",
+            "qwen3.6-27b-fp8",
+            "qwen3.6-35b-a3b-fp8"
+          ],
+          "alpha_tot": 0.6987333333333333,
+          "c_cond_pct": 19.74985
+        }
+      ],
+      "spearman": {
+        "n": 7,
+        "rho": 0.8928571428571429,
+        "n_permutations": 5040,
+        "one_sided_ge_count": 31,
+        "p_one_sided_positive_exact": 0.006150793650793651,
+        "two_sided_abs_count": 62,
+        "p_two_sided_exact": 0.012301587301587301,
+        "p_two_sided_scipy": 0.006807187408935392,
+        "p_one_sided_positive_scipy": 0.003403593704467696
+      }
+    },
+    "median": {
+      "families": [
+        {
+          "family": "Anthropic",
+          "n_models": 1,
+          "models": [
+            "sonnet-4.5"
+          ],
+          "alpha_tot": 0.4504,
+          "c_cond_pct": 2.1505
+        },
+        {
+          "family": "DeepSeek",
+          "n_models": 1,
+          "models": [
+            "deepseek-v4-flash"
+          ],
+          "alpha_tot": 0.1129,
+          "c_cond_pct": 0.0
+        },
+        {
+          "family": "Google",
+          "n_models": 2,
+          "models": [
+            "gemini-3-flash",
+            "gemma-4-31b-it-awq"
+          ],
+          "alpha_tot": 0.2875,
+          "c_cond_pct": 0.2941
+        },
+        {
+          "family": "Meta",
+          "n_models": 1,
+          "models": [
+            "llama-3.1-8b"
+          ],
+          "alpha_tot": 0.7737,
+          "c_cond_pct": 8.4646
+        },
+        {
+          "family": "OpenAI",
+          "n_models": 2,
+          "models": [
+            "gpt-4o-mini",
+            "gpt-5.4-mini"
+          ],
+          "alpha_tot": 0.34614999999999996,
+          "c_cond_pct": 1.52265
+        },
+        {
+          "family": "Phi",
+          "n_models": 1,
+          "models": [
+            "phi-4-mini"
+          ],
+          "alpha_tot": 0.4686,
+          "c_cond_pct": 10.2377
+        },
+        {
+          "family": "Qwen",
+          "n_models": 6,
+          "models": [
+            "qwen3-4b",
+            "qwen3-8b",
+            "qwen3.5-4b",
+            "qwen3.5-9b",
+            "qwen3.6-27b-fp8",
+            "qwen3.6-35b-a3b-fp8"
+          ],
+          "alpha_tot": 0.71,
+          "c_cond_pct": 10.2713
+        }
+      ],
+      "spearman": {
+        "n": 7,
+        "rho": 0.8928571428571429,
+        "n_permutations": 5040,
+        "one_sided_ge_count": 31,
+        "p_one_sided_positive_exact": 0.006150793650793651,
+        "two_sided_abs_count": 62,
+        "p_two_sided_exact": 0.012301587301587301,
+        "p_two_sided_scipy": 0.006807187408935392,
+        "p_one_sided_positive_scipy": 0.003403593704467696
+      }
+    }
+  },
+  "leave_one_family_mean": [
+    {
+      "dropped_family": "Anthropic",
+      "n_families_remaining": 6,
+      "rho": 0.8285714285714287,
+      "p_two_sided_exact": 0.058333333333333334,
+      "p_one_sided_positive_exact": 0.029166666666666667
+    },
+    {
+      "dropped_family": "DeepSeek",
+      "n_families_remaining": 6,
+      "rho": 0.8285714285714287,
+      "p_two_sided_exact": 0.058333333333333334,
+      "p_one_sided_positive_exact": 0.029166666666666667
+    },
+    {
+      "dropped_family": "Google",
+      "n_families_remaining": 6,
+      "rho": 0.8285714285714287,
+      "p_two_sided_exact": 0.058333333333333334,
+      "p_one_sided_positive_exact": 0.029166666666666667
+    },
+    {
+      "dropped_family": "Meta",
+      "n_families_remaining": 6,
+      "rho": 1.0,
+      "p_two_sided_exact": 0.002777777777777778,
+      "p_one_sided_positive_exact": 0.001388888888888889
+    },
+    {
+      "dropped_family": "OpenAI",
+      "n_families_remaining": 6,
+      "rho": 0.8285714285714287,
+      "p_two_sided_exact": 0.058333333333333334,
+      "p_one_sided_positive_exact": 0.029166666666666667
+    },
+    {
+      "dropped_family": "Phi",
+      "n_families_remaining": 6,
+      "rho": 0.942857142857143,
+      "p_two_sided_exact": 0.016666666666666666,
+      "p_one_sided_positive_exact": 0.008333333333333333
+    },
+    {
+      "dropped_family": "Qwen",
+      "n_families_remaining": 6,
+      "rho": 0.942857142857143,
+      "p_two_sided_exact": 0.016666666666666666,
+      "p_one_sided_positive_exact": 0.008333333333333333
+    }
+  ],
+  "p_value_note": "Exact permutation p-values over all family-label assignments; scipy.stats.spearmanr p-values are retained in JSON as *_scipy for provenance only."
+}

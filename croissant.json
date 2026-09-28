@@ -1,0 +1,449 @@
+{
+  "@context": {
+    "@language": "en",
+    "@vocab": "https://schema.org/",
+    "citeAs": "cr:citeAs",
+    "column": "cr:column",
+    "conformsTo": "dct:conformsTo",
+    "cr": "http://mlcommons.org/croissant/",
+    "rai": "http://mlcommons.org/croissant/RAI/",
+    "data": {
+      "@id": "cr:data",
+      "@type": "@json"
+    },
+    "dataType": {
+      "@id": "cr:dataType",
+      "@type": "@vocab"
+    },
+    "dct": "http://purl.org/dc/terms/",
+    "equivalentProperty": "cr:equivalentProperty",
+    "examples": {
+      "@id": "cr:examples",
+      "@type": "@json"
+    },
+    "extract": "cr:extract",
+    "field": "cr:field",
+    "fileProperty": "cr:fileProperty",
+    "fileObject": "cr:fileObject",
+    "fileSet": "cr:fileSet",
+    "format": "cr:format",
+    "includes": "cr:includes",
+    "isLiveDataset": "cr:isLiveDataset",
+    "jsonPath": "cr:jsonPath",
+    "key": "cr:key",
+    "md5": "cr:md5",
+    "parentField": "cr:parentField",
+    "path": "cr:path",
+    "recordSet": "cr:recordSet",
+    "references": "cr:references",
+    "regex": "cr:regex",
+    "repeated": "cr:repeated",
+    "replace": "cr:replace",
+    "samplingRate": "cr:samplingRate",
+    "sc": "https://schema.org/",
+    "separator": "cr:separator",
+    "source": "cr:source",
+    "subField": "cr:subField",
+    "transform": "cr:transform"
+  },
+  "@type": "sc:Dataset",
+  "name": "Debate Collapse/Correction Evaluation Artifact",
+  "description": "Validated Croissant/RAI metadata for the collapse/correction evaluation protocol bundle used in a homogeneous-panel LLM debate audit.",
+  "conformsTo": "http://mlcommons.org/croissant/1.0",
+  "citeAs": "Xin Li, Mengbing Liu, and Chau Yuen. Measuring Collapse and Correction in Homogeneous-Panel LLM Debate. NeurIPS 2026 Evaluations and Datasets Track. DebateLedger artifact version 1.0.0.",
+  "dateCreated": "2026-05-02",
+  "datePublished": "2026-09-28",
+  "inLanguage": "en",
+  "keywords": [
+    "multi-agent debate",
+    "evaluation",
+    "collapse",
+    "correction",
+    "MMLU-Pro",
+    "responsible AI"
+  ],
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "rai:dataAnnotationProtocol": "No human labeling. Collapse/correction labels are deterministic functions of parsed MCQ answers and answer keys.",
+  "rai:dataBiases": "Primary evidence is MMLU-Pro; homogeneous same-model three-agent scaffold; realized G=7 family cohort with Qwen-heavy model rows.",
+  "rai:dataCollection": "Public benchmark MCQ questions were processed by LLM agents under fixed probe and debate prompts. No human-subjects or personal data were collected.",
+  "rai:dataCollectionMissingData": "Closed-API snapshot metadata are partial for older sealed lanes; full transcripts and the R1 feature matrix are gated for dual-use reasons.",
+  "rai:dataCollectionRawData": "Upstream public MCQ benchmark questions are not owned by this artifact; derived aggregate tables and trace summaries are released subject to upstream benchmark terms.",
+  "rai:dataCollectionType": "machine-generated traces from public benchmark questions",
+  "rai:dataLimitations": "Not a benchmark-general law; not a calibrated per-question oracle; not a deployable controller; gated tier needed for convince-wrong templates and full transcripts.",
+  "rai:dataPreprocessingProtocol": "Rule-based MCQ answer extraction; majority voting after filtering unparsed answers; alphabetic tie-breaking; deterministic collapse/correction/onset labels.",
+  "rai:dataReleaseMaintenancePlan": "Versioned public release (alpha-tot-v1.0): open data on Hugging Face, code on GitHub, and a gated Hugging Face dataset for full transcripts and convince-wrong templates. Corrections and provider or parser changes are released as new minor versions.",
+  "rai:dataSocialImpact": "Helps audit debate interventions that may reduce collapses while discarding corrections; gated release mitigates misuse as a misleading-answer corpus.",
+  "rai:dataUseCases": "Zero-API recomputation of aggregate tables; applying the transition-table and signed-utility protocol to new model-scaffold pairs; documenting gated release boundaries; public artifact hosting on Hugging Face with code on GitHub.",
+  "rai:hasSyntheticData": true,
+  "rai:machineAnnotationTools": "Rule-based MCQ answer parser included in the artifact; no LLM judge step is used.",
+  "rai:personalSensitiveInformation": "none",
+  "url": "https://huggingface.co/datasets/XINLI1997/DebateLedger",
+  "version": "1.0.0",
+  "distribution": [
+    {
+      "@type": "cr:FileObject",
+      "@id": "file_README_REPRO_md",
+      "name": "README_REPRO.md",
+      "contentUrl": "README_REPRO.md",
+      "encodingFormat": "text/markdown",
+      "sha256": "490012234e940b5942ca086b8e31e2f78801c52953a87d3db2bad2ae7bd8709a"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "file_requirements_artifact_txt",
+      "name": "requirements-artifact.txt",
+      "contentUrl": "requirements-artifact.txt",
+      "encodingFormat": "text/plain",
+      "sha256": "a93bd89c724fa0d4b79f20dfb62bbf356407549157c4e98b0bcf6b970171a14d"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "file_abc_exp_results_DEBATE_EVAL_ARTIFACT_DATASHEET_md",
+      "name": "DEBATE_EVAL_ARTIFACT_DATASHEET.md",
+      "contentUrl": "abc_exp/results/DEBATE_EVAL_ARTIFACT_DATASHEET.md",
+      "encodingFormat": "text/markdown",
+      "sha256": "2a7e2e4f882bcd16a4ee7134888699963c018e57f23ececc08ba705332bce4bb"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "file_abc_exp_results_debate_eval_reuse_card_schema_json",
+      "name": "debate_eval_reuse_card.schema.json",
+      "contentUrl": "abc_exp/results/debate_eval_reuse_card.schema.json",
+      "encodingFormat": "application/json",
+      "sha256": "4d6c028c58cd501c8fac851b5cdb07ca58c73ee81b34b63c0ffe5a7e8ed8015f"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "file_abc_exp_results_cohort_n14_headline_json",
+      "name": "cohort_n14_headline.json",
+      "contentUrl": "abc_exp/results/cohort_n14_headline.json",
+      "encodingFormat": "application/json",
+      "sha256": "83568df98c0bc013e55c8f45a8eed1ea95ac42a67a4588d37b89db005e07cd9d"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "file_abc_exp_results_family_level_headline_aggregation_json",
+      "name": "family_level_headline_aggregation.json",
+      "contentUrl": "abc_exp/results/family_level_headline_aggregation.json",
+      "encodingFormat": "application/json",
+      "sha256": "11fc1b8de06a396b24b39119bb0dac1d79a1ee05cb3037ed9f63d632f467e049"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "file_abc_exp_results_conditional_collapse_table_json",
+      "name": "conditional_collapse_table.json",
+      "contentUrl": "abc_exp/results/conditional_collapse_table.json",
+      "encodingFormat": "application/json",
+      "sha256": "2df5c2ae2f8047c2d5706fe82339229774d4614c0583351042034f07ccaa5eba"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "file_abc_exp_results_reviewer_hardening_analyses_json",
+      "name": "reviewer_hardening_analyses.json",
+      "contentUrl": "abc_exp/results/reviewer_hardening_analyses.json",
+      "encodingFormat": "application/json",
+      "sha256": "5fc36d977086d7e3b2a9b2ccaf408670d8dbd520bf7ff4a7691b479bc2feac03"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "file_abc_exp_results_N14_REVIEWER_HARDENING_ARTIFACTS_md",
+      "name": "N14_REVIEWER_HARDENING_ARTIFACTS.md",
+      "contentUrl": "abc_exp/results/N14_REVIEWER_HARDENING_ARTIFACTS.md",
+      "encodingFormat": "text/markdown",
+      "sha256": "14d5d3a1e220330b46d1572e1a808e3b09a01cd3295437e505e38c3a9b148775"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "file_abc_exp_results_n14_reviewer_hardening_artifacts_json",
+      "name": "n14_reviewer_hardening_artifacts.json",
+      "contentUrl": "abc_exp/results/n14_reviewer_hardening_artifacts.json",
+      "encodingFormat": "application/json",
+      "sha256": "86f7dcd2a28e3a586ac041a3ab09e45514f45392ca10439cd81a96964a877273"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "file_abc_exp_results_ROUND4_CAMERA_READY_HARDENING_md",
+      "name": "ROUND4_CAMERA_READY_HARDENING.md",
+      "contentUrl": "abc_exp/results/ROUND4_CAMERA_READY_HARDENING.md",
+      "encodingFormat": "text/markdown",
+      "sha256": "8f14b8dfbb908c868b8c1894688d1d16c355f40ac395019b2934359c3877c611"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "file_abc_exp_results_ROUND5_API_CROSSBENCH_HARDENING_md",
+      "name": "ROUND5_API_CROSSBENCH_HARDENING.md",
+      "contentUrl": "abc_exp/results/ROUND5_API_CROSSBENCH_HARDENING.md",
+      "encodingFormat": "text/markdown",
+      "sha256": "cda64761dab8e7c2b056187213b784c8891c5d11619e284f9b2ee5630357c7a9"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "file_abc_exp_results_round5_api_crossbench_hardening_json",
+      "name": "round5_api_crossbench_hardening.json",
+      "contentUrl": "abc_exp/results/round5_api_crossbench_hardening.json",
+      "encodingFormat": "application/json",
+      "sha256": "a117f6e0e01e8a5a080f9dfd13f5570da7f4893d93e1376b3cfc69c9cf6e693d"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "file_abc_exp_results_PARSER_CELL_STABILITY_AUDIT_md",
+      "name": "PARSER_CELL_STABILITY_AUDIT.md",
+      "contentUrl": "abc_exp/results/PARSER_CELL_STABILITY_AUDIT.md",
+      "encodingFormat": "text/markdown",
+      "sha256": "5549c6e54e81772a22e74f87a2fa1364a6e9e1241b51d0cd040b7f7a59c2d2aa"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "file_abc_exp_results_parser_cell_stability_audit_json",
+      "name": "parser_cell_stability_audit.json",
+      "contentUrl": "abc_exp/results/parser_cell_stability_audit.json",
+      "encodingFormat": "application/json",
+      "sha256": "4f05af44a6d9f76b33c1a8048f23b49d33ee9408f2d5ff9f39136a9e72e9ab56"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "file_abc_exp_results_correction_preserving_policy_replay_json",
+      "name": "correction_preserving_policy_replay.json",
+      "contentUrl": "abc_exp/results/correction_preserving_policy_replay.json",
+      "encodingFormat": "application/json",
+      "sha256": "d966b0587b5eb8938ef6aff13fe97fd1f67a19215b2de13b4e3da84bf8c6f09f"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "file_abc_exp_results_CORRECTION_PRESERVING_POLICY_REPLAY_md",
+      "name": "CORRECTION_PRESERVING_POLICY_REPLAY.md",
+      "contentUrl": "abc_exp/results/CORRECTION_PRESERVING_POLICY_REPLAY.md",
+      "encodingFormat": "text/markdown",
+      "sha256": "4085b3c32a02c3beefc8cbb87a45757766f1074bac3060a3a03fd83e12f218db"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "file_abc_exp_results_block0_alpha_jsonl",
+      "name": "block0_alpha.jsonl",
+      "contentUrl": "abc_exp/results/block0_alpha.jsonl",
+      "encodingFormat": "application/jsonlines",
+      "sha256": "6d5ad54efe4eeb055d7d220dd31f753edceefcd220dab52f7a886adb602092a9"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "file_abc_exp_results_block0_debates_jsonl",
+      "name": "block0_debates.jsonl",
+      "contentUrl": "abc_exp/results/block0_debates.jsonl",
+      "encodingFormat": "application/jsonlines",
+      "sha256": "c3c05b9b3ca388cdabc802109b6d1a166e56d10daf65a6bc8f0db64a7fa30274"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "file_abc_exp_results_block1_abc_vs_baselines_jsonl",
+      "name": "block1_abc_vs_baselines.jsonl",
+      "contentUrl": "abc_exp/results/block1_abc_vs_baselines.jsonl",
+      "encodingFormat": "application/jsonlines",
+      "sha256": "7cba65bb6ab84ba8c870652ba99c968f4ebe138e9cdb2028214a7a85f708092c"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "file_abc_exp_results_block3_multi_benchmark_jsonl",
+      "name": "block3_multi_benchmark.jsonl",
+      "contentUrl": "abc_exp/results/block3_multi_benchmark.jsonl",
+      "encodingFormat": "application/jsonlines",
+      "sha256": "72a7397af3a6469e64cc2412b58faca14c9dbd3366c8d3114b2d2093d82f9e5e"
+    }
+  ],
+  "recordSet": [
+    {
+      "@type": "cr:RecordSet",
+      "@id": "artifact_file_inventory",
+      "name": "artifact_file_inventory",
+      "description": "Core files in the public DebateLedger release that define the reusable collapse/correction evaluation, zero-API rebuild, and signed-replay ledgers.",
+      "key": {
+        "@id": "artifact_path"
+      },
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "artifact_path",
+          "name": "artifact_path",
+          "description": "Repository-relative path for a core artifact file.",
+          "dataType": "sc:Text"
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "artifact_role",
+          "name": "artifact_role",
+          "description": "Role of the file in reproducing or reusing the evaluation protocol.",
+          "dataType": "sc:Text"
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "encoding_format",
+          "name": "encoding_format",
+          "description": "Media type recorded in the Croissant distribution entry.",
+          "dataType": "sc:Text"
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "sha256",
+          "name": "sha256",
+          "description": "SHA-256 digest of the checked-in file.",
+          "dataType": "sc:Text"
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "release_tier",
+          "name": "release_tier",
+          "description": "Release tier of the file in the public release.",
+          "dataType": "sc:Text"
+        }
+      ],
+      "data": [
+        {
+          "artifact_path": "README_REPRO.md",
+          "artifact_role": "zero-api rebuild card",
+          "encoding_format": "text/markdown",
+          "sha256": "490012234e940b5942ca086b8e31e2f78801c52953a87d3db2bad2ae7bd8709a",
+          "release_tier": "open; full transcripts and convince-wrong templates are in the gated dataset"
+        },
+        {
+          "artifact_path": "requirements-artifact.txt",
+          "artifact_role": "Python dependency manifest",
+          "encoding_format": "text/plain",
+          "sha256": "a93bd89c724fa0d4b79f20dfb62bbf356407549157c4e98b0bcf6b970171a14d",
+          "release_tier": "open; full transcripts and convince-wrong templates are in the gated dataset"
+        },
+        {
+          "artifact_path": "abc_exp/results/DEBATE_EVAL_ARTIFACT_DATASHEET.md",
+          "artifact_role": "artifact datasheet",
+          "encoding_format": "text/markdown",
+          "sha256": "2a7e2e4f882bcd16a4ee7134888699963c018e57f23ececc08ba705332bce4bb",
+          "release_tier": "open; full transcripts and convince-wrong templates are in the gated dataset"
+        },
+        {
+          "artifact_path": "abc_exp/results/debate_eval_reuse_card.schema.json",
+          "artifact_role": "new-row reuse schema",
+          "encoding_format": "application/json",
+          "sha256": "4d6c028c58cd501c8fac851b5cdb07ca58c73ee81b34b63c0ffe5a7e8ed8015f",
+          "release_tier": "open; full transcripts and convince-wrong templates are in the gated dataset"
+        },
+        {
+          "artifact_path": "abc_exp/results/cohort_n14_headline.json",
+          "artifact_role": "N14 headline rows",
+          "encoding_format": "application/json",
+          "sha256": "83568df98c0bc013e55c8f45a8eed1ea95ac42a67a4588d37b89db005e07cd9d",
+          "release_tier": "open; full transcripts and convince-wrong templates are in the gated dataset"
+        },
+        {
+          "artifact_path": "abc_exp/results/family_level_headline_aggregation.json",
+          "artifact_role": "family-level primary aggregation",
+          "encoding_format": "application/json",
+          "sha256": "11fc1b8de06a396b24b39119bb0dac1d79a1ee05cb3037ed9f63d632f467e049",
+          "release_tier": "open; full transcripts and convince-wrong templates are in the gated dataset"
+        },
+        {
+          "artifact_path": "abc_exp/results/conditional_collapse_table.json",
+          "artifact_role": "collapse/correction transition table",
+          "encoding_format": "application/json",
+          "sha256": "2df5c2ae2f8047c2d5706fe82339229774d4614c0583351042034f07ccaa5eba",
+          "release_tier": "open; full transcripts and convince-wrong templates are in the gated dataset"
+        },
+        {
+          "artifact_path": "abc_exp/results/reviewer_hardening_analyses.json",
+          "artifact_role": "review audit diagnostics",
+          "encoding_format": "application/json",
+          "sha256": "5fc36d977086d7e3b2a9b2ccaf408670d8dbd520bf7ff4a7691b479bc2feac03",
+          "release_tier": "open; full transcripts and convince-wrong templates are in the gated dataset"
+        },
+        {
+          "artifact_path": "abc_exp/results/N14_REVIEWER_HARDENING_ARTIFACTS.md",
+          "artifact_role": "N14 diagnostic summary",
+          "encoding_format": "text/markdown",
+          "sha256": "14d5d3a1e220330b46d1572e1a808e3b09a01cd3295437e505e38c3a9b148775",
+          "release_tier": "open; full transcripts and convince-wrong templates are in the gated dataset"
+        },
+        {
+          "artifact_path": "abc_exp/results/n14_reviewer_hardening_artifacts.json",
+          "artifact_role": "N14 diagnostic data",
+          "encoding_format": "application/json",
+          "sha256": "86f7dcd2a28e3a586ac041a3ab09e45514f45392ca10439cd81a96964a877273",
+          "release_tier": "open; full transcripts and convince-wrong templates are in the gated dataset"
+        },
+        {
+          "artifact_path": "abc_exp/results/ROUND4_CAMERA_READY_HARDENING.md",
+          "artifact_role": "revision audit summary",
+          "encoding_format": "text/markdown",
+          "sha256": "8f14b8dfbb908c868b8c1894688d1d16c355f40ac395019b2934359c3877c611",
+          "release_tier": "open; full transcripts and convince-wrong templates are in the gated dataset"
+        },
+        {
+          "artifact_path": "abc_exp/results/ROUND5_API_CROSSBENCH_HARDENING.md",
+          "artifact_role": "cross-benchmark stress summary",
+          "encoding_format": "text/markdown",
+          "sha256": "cda64761dab8e7c2b056187213b784c8891c5d11619e284f9b2ee5630357c7a9",
+          "release_tier": "open; full transcripts and convince-wrong templates are in the gated dataset"
+        },
+        {
+          "artifact_path": "abc_exp/results/round5_api_crossbench_hardening.json",
+          "artifact_role": "cross-benchmark stress data",
+          "encoding_format": "application/json",
+          "sha256": "a117f6e0e01e8a5a080f9dfd13f5570da7f4893d93e1376b3cfc69c9cf6e693d",
+          "release_tier": "open; full transcripts and convince-wrong templates are in the gated dataset"
+        },
+        {
+          "artifact_path": "abc_exp/results/PARSER_CELL_STABILITY_AUDIT.md",
+          "artifact_role": "parser stability summary",
+          "encoding_format": "text/markdown",
+          "sha256": "5549c6e54e81772a22e74f87a2fa1364a6e9e1241b51d0cd040b7f7a59c2d2aa",
+          "release_tier": "open; full transcripts and convince-wrong templates are in the gated dataset"
+        },
+        {
+          "artifact_path": "abc_exp/results/parser_cell_stability_audit.json",
+          "artifact_role": "parser stability data",
+          "encoding_format": "application/json",
+          "sha256": "4f05af44a6d9f76b33c1a8048f23b49d33ee9408f2d5ff9f39136a9e72e9ab56",
+          "release_tier": "open; full transcripts and convince-wrong templates are in the gated dataset"
+        },
+        {
+          "artifact_path": "abc_exp/results/correction_preserving_policy_replay.json",
+          "artifact_role": "signed replay ledger",
+          "encoding_format": "application/json",
+          "sha256": "d966b0587b5eb8938ef6aff13fe97fd1f67a19215b2de13b4e3da84bf8c6f09f",
+          "release_tier": "open; full transcripts and convince-wrong templates are in the gated dataset"
+        },
+        {
+          "artifact_path": "abc_exp/results/CORRECTION_PRESERVING_POLICY_REPLAY.md",
+          "artifact_role": "signed replay summary",
+          "encoding_format": "text/markdown",
+          "sha256": "4085b3c32a02c3beefc8cbb87a45757766f1074bac3060a3a03fd83e12f218db",
+          "release_tier": "open; full transcripts and convince-wrong templates are in the gated dataset"
+        },
+        {
+          "artifact_path": "abc_exp/results/block0_alpha.jsonl",
+          "artifact_role": "probe trace sample",
+          "encoding_format": "application/jsonlines",
+          "sha256": "6d5ad54efe4eeb055d7d220dd31f753edceefcd220dab52f7a886adb602092a9",
+          "release_tier": "open; full transcripts and convince-wrong templates are in the gated dataset"
+        },
+        {
+          "artifact_path": "abc_exp/results/block0_debates.jsonl",
+          "artifact_role": "debate trace sample",
+          "encoding_format": "application/jsonlines",
+          "sha256": "c3c05b9b3ca388cdabc802109b6d1a166e56d10daf65a6bc8f0db64a7fa30274",
+          "release_tier": "open; full transcripts and convince-wrong templates are in the gated dataset"
+        },
+        {
+          "artifact_path": "abc_exp/results/block1_abc_vs_baselines.jsonl",
+          "artifact_role": "baseline comparison trace rows",
+          "encoding_format": "application/jsonlines",
+          "sha256": "7cba65bb6ab84ba8c870652ba99c968f4ebe138e9cdb2028214a7a85f708092c",
+          "release_tier": "open; full transcripts and convince-wrong templates are in the gated dataset"
+        },
+        {
+          "artifact_path": "abc_exp/results/block3_multi_benchmark.jsonl",
+          "artifact_role": "boundary benchmark trace rows",
+          "encoding_format": "application/jsonlines",
+          "sha256": "72a7397af3a6469e64cc2412b58faca14c9dbd3366c8d3114b2d2093d82f9e5e",
+          "release_tier": "open; full transcripts and convince-wrong templates are in the gated dataset"
+        }
+      ]
+    }
+  ]
+}

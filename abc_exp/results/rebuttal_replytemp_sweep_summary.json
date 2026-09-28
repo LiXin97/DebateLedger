@@ -1,0 +1,101 @@
+{
+ "description": "UNVERIFIED WORKING SUMMARY — DO NOT CITE IN REBUTTAL",
+ "provenance": {
+  "harness": "abc_exp/scripts/run_alpha_probe_vllm.py is the collection harness, not a deterministic generator for this summary",
+  "status": "excluded from submission evidence",
+  "release_boundary": "Paired raw outputs are absent from this checkout and no deterministic summary generator is available."
+ },
+ "audit": {
+  "cite_in_rebuttal": false,
+  "blocking_issues": [
+   "per_row contains five models while per_row_7 contains seven",
+   "the two additional rows lack row counts and missingness fields",
+   "the available detailed rows reach post_none_rate=0.0642"
+  ],
+  "max_observed_post_none_rate_in_detailed_rows": 0.0642
+ },
+ "per_row": {
+  "qwen3-4b|replytemp": {
+   "alpha": 0.6947,
+   "rows": 1793,
+   "post_none_rate": 0.0011
+  },
+  "qwen3-4b|greedyctrl": {
+   "alpha": 0.7032,
+   "rows": 1794,
+   "post_none_rate": 0.0007
+  },
+  "qwen3-8b|replytemp": {
+   "alpha": 0.4764,
+   "rows": 1800,
+   "post_none_rate": 0.0629
+  },
+  "qwen3-8b|greedyctrl": {
+   "alpha": 0.4643,
+   "rows": 1800,
+   "post_none_rate": 0.0642
+  },
+  "qwen3.5-4b|replytemp": {
+   "alpha": 0.7225,
+   "rows": 1690,
+   "post_none_rate": 0.0307
+  },
+  "qwen3.5-4b|greedyctrl": {
+   "alpha": 0.7224,
+   "rows": 1690,
+   "post_none_rate": 0.0332
+  },
+  "qwen3.5-9b|replytemp": {
+   "alpha": 0.7304,
+   "rows": 1682,
+   "post_none_rate": 0.0116
+  },
+  "qwen3.5-9b|greedyctrl": {
+   "alpha": 0.756,
+   "rows": 1683,
+   "post_none_rate": 0.0091
+  },
+  "gemma-4-31b-it-awq|replytemp": {
+   "alpha": 0.3377,
+   "rows": 1800,
+   "post_none_rate": 0.0572
+  },
+  "gemma-4-31b-it-awq|greedyctrl": {
+   "alpha": 0.327,
+   "rows": 1800,
+   "post_none_rate": 0.0555
+  }
+ },
+ "rank_stability_spearman": 0.964,
+ "max_abs_alpha_delta": 0.0539,
+ "per_row_7": {
+  "qwen3-4b": {
+   "greedy": 0.7032,
+   "tempmatch": 0.6947
+  },
+  "qwen3-8b": {
+   "greedy": 0.4643,
+   "tempmatch": 0.4764
+  },
+  "qwen3.5-4b": {
+   "greedy": 0.7224,
+   "tempmatch": 0.7225
+  },
+  "qwen3.5-9b": {
+   "greedy": 0.756,
+   "tempmatch": 0.7304
+  },
+  "gemma-4-31b-it-awq": {
+   "greedy": 0.327,
+   "tempmatch": 0.3377
+  },
+  "qwen3.6-27b-fp8": {
+   "greedy": 0.7888,
+   "tempmatch": 0.7349
+  },
+  "qwen3.6-35b-a3b-fp8": {
+   "greedy": 0.7738,
+   "tempmatch": 0.7582
+  }
+ }
+}

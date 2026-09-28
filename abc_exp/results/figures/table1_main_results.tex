@@ -1,0 +1,18 @@
+\begin{table}[t]
+\centering
+\caption{Main results: accuracy (\%) with standard errors across benchmarks.}
+\label{tab:main_results}
+\small
+\begin{tabular}{lccc}
+\toprule
+Method & MMLU-Pro & GPQA & Overall \\
+\midrule
+ABC Debate (ours) & \textbf{67.9}$\pm$3.0 & \textbf{58.1}$\pm$6.3 & \textbf{65.9}$\pm$2.7 \\
+Standard Debate & 66.7$\pm$3.0 & 59.7$\pm$6.3 & 65.2$\pm$2.7 \\
+Confidence Weighted & 55.2$\pm$4.2 & -- & 55.2$\pm$4.2 \\
+Self-Consistency & 53.1$\pm$4.2 & -- & 53.1$\pm$4.2 \\
+Best-of-N & 51.0$\pm$4.2 & -- & 51.0$\pm$4.2 \\
+Majority Vote & 51.0$\pm$4.2 & -- & 51.0$\pm$4.2 \\
+\bottomrule
+\end{tabular}
+\end{table}

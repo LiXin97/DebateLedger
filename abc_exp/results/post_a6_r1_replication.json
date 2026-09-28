@@ -1,0 +1,304 @@
+{
+  "metric_definitions": {
+    "collapse": "initial majority correct and final majority incorrect",
+    "correction": "initial majority incorrect and final majority correct",
+    "collapse_onset_round": "first debate round whose majority is not the correct label; natural numbering starts at R1",
+    "post_a6_200row": "200-row deepseek/gemma/qwen3.5/qwen3.6 trace files"
+  },
+  "sources": [
+    {
+      "file": "debate_traces_openrouter_deepseek-v4-flash.jsonl",
+      "rows": 200,
+      "cohort": "post_a6_200row"
+    },
+    {
+      "file": "debate_traces_openrouter_deepseek-v4-pro.jsonl",
+      "rows": 78,
+      "cohort": "legacy_or_partial"
+    },
+    {
+      "file": "debate_traces_openrouter_kimi-k2.6.jsonl",
+      "rows": 3,
+      "cohort": "legacy_or_partial"
+    },
+    {
+      "file": "debate_traces_smoke_qwen3-8b.jsonl",
+      "rows": 1,
+      "cohort": "legacy_or_partial"
+    },
+    {
+      "file": "debate_traces_vllm_gemma-4-31b-it.jsonl",
+      "rows": 200,
+      "cohort": "post_a6_200row"
+    },
+    {
+      "file": "debate_traces_vllm_qwen3.5-4b.jsonl",
+      "rows": 200,
+      "cohort": "post_a6_200row"
+    },
+    {
+      "file": "debate_traces_vllm_qwen3.5-9b.jsonl",
+      "rows": 200,
+      "cohort": "post_a6_200row"
+    },
+    {
+      "file": "debate_traces_vllm_qwen3.6-27b-fp8.jsonl",
+      "rows": 200,
+      "cohort": "post_a6_200row"
+    },
+    {
+      "file": "debate_traces_vllm_qwen3.6-35b-a3b-fp8.jsonl",
+      "rows": 200,
+      "cohort": "post_a6_200row"
+    }
+  ],
+  "pooled": {
+    "n_debates": 1282,
+    "init_majority_correct_count": 725,
+    "init_majority_accuracy_pct": 56.552262090483616,
+    "collapses": 77,
+    "conditional_collapse_pct": 10.620689655172415,
+    "corrections": 149,
+    "correction_pct_of_initial_wrong": 26.75044883303411,
+    "final_correct_count": 797,
+    "final_accuracy_pct": 62.16848673946958,
+    "collapse_onset_round_counts": {
+      "1": 40,
+      "2": 10,
+      "3": 11,
+      "4": 15
+    },
+    "collapse_onset_round_pct_of_collapses": {
+      "1": 51.94805194805195,
+      "2": 12.987012987012987,
+      "3": 14.285714285714286,
+      "4": 19.48051948051948
+    },
+    "collapse_onset_unlocalized": 1
+  },
+  "by_cohort": {
+    "legacy_or_partial": {
+      "n_debates": 82,
+      "init_majority_correct_count": 63,
+      "init_majority_accuracy_pct": 76.82926829268293,
+      "collapses": 2,
+      "conditional_collapse_pct": 3.1746031746031744,
+      "corrections": 5,
+      "correction_pct_of_initial_wrong": 26.31578947368421,
+      "final_correct_count": 66,
+      "final_accuracy_pct": 80.48780487804878,
+      "collapse_onset_round_counts": {
+        "4": 1
+      },
+      "collapse_onset_round_pct_of_collapses": {
+        "4": 50.0
+      },
+      "collapse_onset_unlocalized": 1
+    },
+    "post_a6_200row": {
+      "n_debates": 1200,
+      "init_majority_correct_count": 662,
+      "init_majority_accuracy_pct": 55.166666666666664,
+      "collapses": 75,
+      "conditional_collapse_pct": 11.329305135951662,
+      "corrections": 144,
+      "correction_pct_of_initial_wrong": 26.765799256505577,
+      "final_correct_count": 731,
+      "final_accuracy_pct": 60.916666666666664,
+      "collapse_onset_round_counts": {
+        "1": 40,
+        "2": 10,
+        "3": 11,
+        "4": 14
+      },
+      "collapse_onset_round_pct_of_collapses": {
+        "1": 53.333333333333336,
+        "2": 13.333333333333334,
+        "3": 14.666666666666666,
+        "4": 18.666666666666668
+      },
+      "collapse_onset_unlocalized": 0
+    }
+  },
+  "by_model": {
+    "Qwen/Qwen3-8B": {
+      "n_debates": 1,
+      "init_majority_correct_count": 1,
+      "init_majority_accuracy_pct": 100.0,
+      "collapses": 0,
+      "conditional_collapse_pct": 0.0,
+      "corrections": 0,
+      "correction_pct_of_initial_wrong": null,
+      "final_correct_count": 1,
+      "final_accuracy_pct": 100.0,
+      "collapse_onset_round_counts": {},
+      "collapse_onset_round_pct_of_collapses": {},
+      "collapse_onset_unlocalized": 0
+    },
+    "Qwen/Qwen3.5-4B": {
+      "n_debates": 200,
+      "init_majority_correct_count": 67,
+      "init_majority_accuracy_pct": 33.5,
+      "collapses": 28,
+      "conditional_collapse_pct": 41.791044776119406,
+      "corrections": 24,
+      "correction_pct_of_initial_wrong": 18.045112781954888,
+      "final_correct_count": 63,
+      "final_accuracy_pct": 31.5,
+      "collapse_onset_round_counts": {
+        "1": 18,
+        "2": 3,
+        "3": 3,
+        "4": 4
+      },
+      "collapse_onset_round_pct_of_collapses": {
+        "1": 64.28571428571429,
+        "2": 10.714285714285714,
+        "3": 10.714285714285714,
+        "4": 14.285714285714286
+      },
+      "collapse_onset_unlocalized": 0
+    },
+    "Qwen/Qwen3.5-9B": {
+      "n_debates": 200,
+      "init_majority_correct_count": 72,
+      "init_majority_accuracy_pct": 36.0,
+      "collapses": 27,
+      "conditional_collapse_pct": 37.5,
+      "corrections": 25,
+      "correction_pct_of_initial_wrong": 19.53125,
+      "final_correct_count": 70,
+      "final_accuracy_pct": 35.0,
+      "collapse_onset_round_counts": {
+        "1": 21,
+        "2": 2,
+        "3": 2,
+        "4": 2
+      },
+      "collapse_onset_round_pct_of_collapses": {
+        "1": 77.77777777777777,
+        "2": 7.407407407407407,
+        "3": 7.407407407407407,
+        "4": 7.407407407407407
+      },
+      "collapse_onset_unlocalized": 0
+    },
+    "Qwen/Qwen3.6-27B-FP8": {
+      "n_debates": 200,
+      "init_majority_correct_count": 122,
+      "init_majority_accuracy_pct": 61.0,
+      "collapses": 10,
+      "conditional_collapse_pct": 8.19672131147541,
+      "corrections": 36,
+      "correction_pct_of_initial_wrong": 46.15384615384615,
+      "final_correct_count": 148,
+      "final_accuracy_pct": 74.0,
+      "collapse_onset_round_counts": {
+        "1": 1,
+        "2": 2,
+        "3": 4,
+        "4": 3
+      },
+      "collapse_onset_round_pct_of_collapses": {
+        "1": 10.0,
+        "2": 20.0,
+        "3": 40.0,
+        "4": 30.0
+      },
+      "collapse_onset_unlocalized": 0
+    },
+    "Qwen/Qwen3.6-35B-A3B-FP8": {
+      "n_debates": 200,
+      "init_majority_correct_count": 93,
+      "init_majority_accuracy_pct": 46.5,
+      "collapses": 10,
+      "conditional_collapse_pct": 10.75268817204301,
+      "corrections": 47,
+      "correction_pct_of_initial_wrong": 43.925233644859816,
+      "final_correct_count": 130,
+      "final_accuracy_pct": 65.0,
+      "collapse_onset_round_counts": {
+        "2": 3,
+        "3": 2,
+        "4": 5
+      },
+      "collapse_onset_round_pct_of_collapses": {
+        "2": 30.0,
+        "3": 20.0,
+        "4": 50.0
+      },
+      "collapse_onset_unlocalized": 0
+    },
+    "deepseek-v4-flash": {
+      "n_debates": 200,
+      "init_majority_correct_count": 149,
+      "init_majority_accuracy_pct": 74.5,
+      "collapses": 0,
+      "conditional_collapse_pct": 0.0,
+      "corrections": 7,
+      "correction_pct_of_initial_wrong": 13.72549019607843,
+      "final_correct_count": 156,
+      "final_accuracy_pct": 78.0,
+      "collapse_onset_round_counts": {},
+      "collapse_onset_round_pct_of_collapses": {},
+      "collapse_onset_unlocalized": 0
+    },
+    "deepseek-v4-pro": {
+      "n_debates": 78,
+      "init_majority_correct_count": 59,
+      "init_majority_accuracy_pct": 75.64102564102564,
+      "collapses": 1,
+      "conditional_collapse_pct": 1.694915254237288,
+      "corrections": 5,
+      "correction_pct_of_initial_wrong": 26.31578947368421,
+      "final_correct_count": 63,
+      "final_accuracy_pct": 80.76923076923077,
+      "collapse_onset_round_counts": {
+        "4": 1
+      },
+      "collapse_onset_round_pct_of_collapses": {
+        "4": 100.0
+      },
+      "collapse_onset_unlocalized": 0
+    },
+    "google/gemma-4-31b-it": {
+      "n_debates": 200,
+      "init_majority_correct_count": 159,
+      "init_majority_accuracy_pct": 79.5,
+      "collapses": 0,
+      "conditional_collapse_pct": 0.0,
+      "corrections": 5,
+      "correction_pct_of_initial_wrong": 12.195121951219512,
+      "final_correct_count": 164,
+      "final_accuracy_pct": 82.0,
+      "collapse_onset_round_counts": {},
+      "collapse_onset_round_pct_of_collapses": {},
+      "collapse_onset_unlocalized": 0
+    },
+    "kimi-k2.6": {
+      "n_debates": 3,
+      "init_majority_correct_count": 3,
+      "init_majority_accuracy_pct": 100.0,
+      "collapses": 1,
+      "conditional_collapse_pct": 33.333333333333336,
+      "corrections": 0,
+      "correction_pct_of_initial_wrong": null,
+      "final_correct_count": 2,
+      "final_accuracy_pct": 66.66666666666667,
+      "collapse_onset_round_counts": {},
+      "collapse_onset_round_pct_of_collapses": {},
+      "collapse_onset_unlocalized": 1
+    }
+  },
+  "model_cohorts": {
+    "deepseek-v4-flash": "post_a6_200row",
+    "deepseek-v4-pro": "legacy_or_partial",
+    "kimi-k2.6": "legacy_or_partial",
+    "Qwen/Qwen3-8B": "legacy_or_partial",
+    "google/gemma-4-31b-it": "post_a6_200row",
+    "Qwen/Qwen3.5-4B": "post_a6_200row",
+    "Qwen/Qwen3.5-9B": "post_a6_200row",
+    "Qwen/Qwen3.6-27B-FP8": "post_a6_200row",
+    "Qwen/Qwen3.6-35B-A3B-FP8": "post_a6_200row"
+  }
+}

@@ -1,0 +1,236 @@
+{
+ "prespec": "abc_exp/results/rebuttal_logs/PRESPEC_redo_20260726.md",
+ "endpoint": "R3 (paper protocol)",
+ "qc": {
+  "q8b_thinkON_peer": {
+   "rows": 200,
+   "r0_unclosed_think_rate": 0.13,
+   "parse_none_rate": 0.0,
+   "qc_pass": false
+  },
+  "q8b_thinkON_self": {
+   "rows": 200,
+   "r0_unclosed_think_rate": 0.13,
+   "parse_none_rate": 0.0,
+   "qc_pass": false
+  },
+  "q8b_thinkOFF_peer": {
+   "rows": 200,
+   "r0_unclosed_think_rate": 0.0,
+   "parse_none_rate": 0.0,
+   "qc_pass": true
+  },
+  "q8b_thinkOFF_self": {
+   "rows": 200,
+   "r0_unclosed_think_rate": 0.0,
+   "parse_none_rate": 0.0008,
+   "qc_pass": true
+  },
+  "q32b_thinkOFF_peer": {
+   "rows": 200,
+   "r0_unclosed_think_rate": 0.0,
+   "parse_none_rate": 0.0017,
+   "qc_pass": true
+  },
+  "q32b_thinkON_peer": {
+   "rows": 200,
+   "r0_unclosed_think_rate": 0.0567,
+   "parse_none_rate": 0.0008,
+   "qc_pass": false
+  }
+ },
+ "descriptive": {
+  "q8b_thinkON_peer": {
+   "n": 200,
+   "init_acc_pct": 63.0,
+   "final_acc_pct": 65.5,
+   "collapses": 9,
+   "n_init_correct": 126,
+   "c_cond_pct": 7.14,
+   "corrections": 14,
+   "n_init_wrong": 74,
+   "correction_pct": 18.92,
+   "net": 5
+  },
+  "q8b_thinkON_self": {
+   "n": 200,
+   "init_acc_pct": 67.5,
+   "final_acc_pct": 70.0,
+   "collapses": 1,
+   "n_init_correct": 135,
+   "c_cond_pct": 0.74,
+   "corrections": 6,
+   "n_init_wrong": 65,
+   "correction_pct": 9.23,
+   "net": 5
+  },
+  "q8b_thinkOFF_peer": {
+   "n": 200,
+   "init_acc_pct": 65.0,
+   "final_acc_pct": 67.0,
+   "collapses": 4,
+   "n_init_correct": 130,
+   "c_cond_pct": 3.08,
+   "corrections": 8,
+   "n_init_wrong": 70,
+   "correction_pct": 11.43,
+   "net": 4
+  },
+  "q8b_thinkOFF_self": {
+   "n": 200,
+   "init_acc_pct": 62.5,
+   "final_acc_pct": 63.0,
+   "collapses": 3,
+   "n_init_correct": 125,
+   "c_cond_pct": 2.4,
+   "corrections": 4,
+   "n_init_wrong": 75,
+   "correction_pct": 5.33,
+   "net": 1
+  },
+  "q32b_thinkOFF_peer": {
+   "n": 200,
+   "init_acc_pct": 62.0,
+   "final_acc_pct": 66.5,
+   "collapses": 1,
+   "n_init_correct": 124,
+   "c_cond_pct": 0.81,
+   "corrections": 10,
+   "n_init_wrong": 76,
+   "correction_pct": 13.16,
+   "net": 9
+  },
+  "q32b_thinkON_peer": {
+   "n": 200,
+   "init_acc_pct": 68.0,
+   "final_acc_pct": 67.0,
+   "collapses": 7,
+   "n_init_correct": 136,
+   "c_cond_pct": 5.15,
+   "corrections": 5,
+   "n_init_wrong": 64,
+   "correction_pct": 7.81,
+   "net": -2
+  }
+ },
+ "thinking_paired": [
+  {
+   "a": "q8b_thinkON_peer",
+   "b": "q8b_thinkOFF_peer",
+   "n_shared": 200,
+   "correction_risk_set": 55,
+   "correction_a_only": 5,
+   "correction_b_only": 0,
+   "correction_mcnemar_exact_p": 0.0625,
+   "collapse_risk_set": 111,
+   "collapse_a_only": 6,
+   "collapse_b_only": 1,
+   "collapse_mcnemar_exact_p": 0.125
+  },
+  {
+   "a": "q32b_thinkON_peer",
+   "b": "q32b_thinkOFF_peer",
+   "n_shared": 200,
+   "correction_risk_set": 56,
+   "correction_a_only": 3,
+   "correction_b_only": 3,
+   "correction_mcnemar_exact_p": 1.0,
+   "collapse_risk_set": 116,
+   "collapse_a_only": 3,
+   "collapse_b_only": 1,
+   "collapse_mcnemar_exact_p": 0.625
+  }
+ ],
+ "peer_vs_self_paired": [
+  {
+   "a": "q8b_thinkON_peer",
+   "b": "q8b_thinkON_self",
+   "n_shared": 200,
+   "r0_match_n": 160,
+   "r0_match_rate": 0.8,
+   "a_only_correct": 4,
+   "b_only_correct": 7,
+   "mcnemar_exact_p": 0.5488,
+   "design_note": "quasi-paired matched subset: independently sampled R0; exact initial-majority labels match"
+  },
+  {
+   "a": "q8b_thinkOFF_peer",
+   "b": "q8b_thinkOFF_self",
+   "n_shared": 200,
+   "r0_match_n": 162,
+   "r0_match_rate": 0.81,
+   "a_only_correct": 3,
+   "b_only_correct": 3,
+   "mcnemar_exact_p": 1.0,
+   "design_note": "quasi-paired matched subset: independently sampled R0; exact initial-majority labels match"
+  }
+ ],
+ "sensitivity_complete_case": {
+  "q8b_thinkON_peer_vs_q8b_thinkOFF_peer": {
+   "a": "q8b_thinkON_peer",
+   "b": "q8b_thinkOFF_peer",
+   "n_shared": 200,
+   "correction_risk_set": 55,
+   "correction_a_only": 5,
+   "correction_b_only": 0,
+   "correction_mcnemar_exact_p": 0.0625,
+   "collapse_risk_set": 111,
+   "collapse_a_only": 6,
+   "collapse_b_only": 1,
+   "collapse_mcnemar_exact_p": 0.125
+  },
+  "q32b_thinkON_peer_vs_q32b_thinkOFF_peer": {
+   "a": "q32b_thinkON_peer",
+   "b": "q32b_thinkOFF_peer",
+   "n_shared": 200,
+   "correction_risk_set": 56,
+   "correction_a_only": 3,
+   "correction_b_only": 3,
+   "correction_mcnemar_exact_p": 1.0,
+   "collapse_risk_set": 115,
+   "collapse_a_only": 3,
+   "collapse_b_only": 1,
+   "collapse_mcnemar_exact_p": 0.625
+  }
+ },
+ "peer_vs_self_design_boundary": "The arms used the same questions and seeds but independently sampled R0. We therefore restrict to exact initial-majority-label matches and call the comparison quasi-paired; it is not a shared-R0 fork or an equivalence test.",
+ "sensitivity_drop_truncated": {
+  "q8b_thinkON_peer_vs_q8b_thinkOFF_peer": {
+   "a": "q8b_thinkON_peer",
+   "b": "q8b_thinkOFF_peer",
+   "n_shared": 124,
+   "correction_risk_set": 29,
+   "correction_a_only": 2,
+   "correction_b_only": 0,
+   "correction_mcnemar_exact_p": 0.5,
+   "collapse_risk_set": 78,
+   "collapse_a_only": 4,
+   "collapse_b_only": 1,
+   "collapse_mcnemar_exact_p": 0.375
+  },
+  "q32b_thinkON_peer_vs_q32b_thinkOFF_peer": {
+   "a": "q32b_thinkON_peer",
+   "b": "q32b_thinkOFF_peer",
+   "n_shared": 99,
+   "correction_risk_set": 25,
+   "correction_a_only": 1,
+   "correction_b_only": 3,
+   "correction_mcnemar_exact_p": 0.625,
+   "collapse_risk_set": 67,
+   "collapse_a_only": 1,
+   "collapse_b_only": 0,
+   "collapse_mcnemar_exact_p": 1.0
+  },
+  "q8b_thinkON_peer_vs_q8b_thinkON_self": {
+   "a": "q8b_thinkON_peer",
+   "b": "q8b_thinkON_self",
+   "n_shared": 110,
+   "r0_match_n": 101,
+   "r0_match_rate": 0.918,
+   "a_only_correct": 2,
+   "b_only_correct": 4,
+   "mcnemar_exact_p": 0.6875,
+   "design_note": "quasi-paired matched subset: independently sampled R0; exact initial-majority labels match"
+  }
+ }
+}

@@ -1,0 +1,87 @@
+{
+  "config": {
+    "backend": "openrouter",
+    "model": "llama-3.3-70b-instruct",
+    "model_id": "meta-llama/llama-3.3-70b-instruct",
+    "benchmarks": [
+      "gpqa"
+    ],
+    "n_questions": 198,
+    "seed": 20260502,
+    "n_agents": 3,
+    "n_rounds": 3,
+    "question_concurrency": 2,
+    "max_concurrent": 10,
+    "pin_provider": null,
+    "question_ids_file": null
+  },
+  "openrouter_usage": {
+    "model_alias": "llama-3.3-70b-instruct",
+    "model_id": "meta-llama/llama-3.3-70b-instruct",
+    "budget_cap": 2.0,
+    "total_cost": 0.024070335300000002,
+    "remaining": 1.9759296647,
+    "n_calls": 78,
+    "input_tokens": 50073,
+    "output_tokens": 37355,
+    "providers": {
+      "Nebius": 16,
+      "AkashML": 12,
+      "DeepInfra": 16,
+      "Parasail": 14,
+      "WandB": 1,
+      "Inceptron": 5,
+      "Novita": 8,
+      "SambaNova": 4,
+      "Cloudflare": 2
+    },
+    "returned_models": {
+      "meta-llama/llama-3.3-70b-instruct": 78
+    },
+    "log_path": "abc_exp/results/logs/openrouter_log_20260502_132010.jsonl"
+  },
+  "summary": {
+    "overall": {
+      "n": 198,
+      "initial_accuracy": 0.5151515151515151,
+      "final_accuracy": 0.5505050505050505,
+      "n_init_majority_correct": 102,
+      "n_collapses": 6,
+      "conditional_collapse_pct": 5.882352941176471,
+      "n_corrections": 13,
+      "mean_alpha": 0.5374348958333334,
+      "spearman_alpha_vs_collapse": {
+        "n": 192,
+        "rho": 0.07141603915972072,
+        "p_two_sided": 0.32493592840087226
+      },
+      "spearman_alpha_vs_final_wrong": {
+        "n": 192,
+        "rho": -0.044107017177979345,
+        "p_two_sided": 0.5435393212737933
+      }
+    },
+    "per_benchmark": {
+      "gpqa": {
+        "n": 198,
+        "initial_accuracy": 0.5151515151515151,
+        "final_accuracy": 0.5505050505050505,
+        "n_init_majority_correct": 102,
+        "n_collapses": 6,
+        "conditional_collapse_pct": 5.882352941176471,
+        "n_corrections": 13,
+        "mean_alpha": 0.5374348958333334,
+        "spearman_alpha_vs_collapse": {
+          "n": 192,
+          "rho": 0.07141603915972072,
+          "p_two_sided": 0.32493592840087226
+        },
+        "spearman_alpha_vs_final_wrong": {
+          "n": 192,
+          "rho": -0.044107017177979345,
+          "p_two_sided": 0.5435393212737933
+        }
+      }
+    }
+  }
+}

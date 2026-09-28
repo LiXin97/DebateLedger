@@ -1,0 +1,130 @@
+{
+  "schema_version": "0.1",
+  "artifact_type": "debate_evaluation_reuse_card",
+  "intended_use": "Operational template for applying the collapse/correction evaluation protocol to a new model-scaffold pair.",
+  "scope": {
+    "validated_primary_benchmark": "MMLU-Pro",
+    "primary_claim": "family/model-level ranking and evaluation discipline, not universal benchmark transfer or a deployable controller",
+    "recommended_first_use": "selection-time triage followed by held-out signed-utility replay",
+    "required_assumption_note": "State whether the question pool is model-specific high-FR, shared high-FR, full-pool, or target-task calibrated; high-FR pool selection must be outcome-blind and reported."
+  },
+  "cost_card_200_question_slice": {
+    "alpha_lite_triage": {
+      "initial_answer_completions": 200,
+      "probe_completions": 1600,
+      "description": "One condition/agent pass for cheap screening; follow with richer trace logging if the signal is high."
+    },
+    "paper_full_fingerprint": {
+      "initial_answer_rows": 1800,
+      "probe_completions": 14400,
+      "description": "Three conditions times three agents, matching the psychometric estimate used for the reported stress rows."
+    },
+    "direct_debate_audit": {
+      "approx_debate_completions": 3000,
+      "description": "Current trace implementation logs roughly 3 initial answers plus 4 rounds times 3 agents per question."
+    },
+    "caveat": "Dollar cost depends on backend, output length, and whether the light or full fingerprint is used; the full fingerprint is not claimed to be universally cheaper than a small debate sweep."
+  },
+  "model_card_fields": {
+    "identity": [
+      "model_name",
+      "model_family",
+      "backend",
+      "model_version_or_snapshot",
+      "serving_parameters"
+    ],
+    "question_pool": [
+      "benchmark",
+      "question_pool_id",
+      "pool_selection_rule",
+      "n_questions",
+      "outcome_blind_selection"
+    ],
+    "selection_time_fingerprint": [
+      "alpha_tot",
+      "alpha_adv",
+      "alpha_cor",
+      "social_argument_ratio",
+      "n_probe_rows",
+      "n_probe_completions",
+      "parser_none_rate"
+    ],
+    "debate_outcome_accounting": [
+      "n_debates",
+      "initial_majority_accuracy",
+      "final_majority_accuracy",
+      "conditional_collapse_rate",
+      "conditional_correction_rate",
+      "collapse_onset_distribution"
+    ],
+    "signed_utility": [
+      "w_coll",
+      "w_corr",
+      "gate_name",
+      "validation_cohort_id",
+      "collapses_prevented",
+      "corrections_lost",
+      "net_utility",
+      "accuracy_delta"
+    ],
+    "release": [
+      "aggregate_fields_open",
+      "probe_templates_open_or_gated",
+      "full_transcripts_open_or_gated",
+      "r1_feature_matrix_open_or_gated",
+      "known_missing_artifacts",
+      "metadata_file"
+    ]
+  },
+  "probe_jsonl_minimum_fields": [
+    "schema_version",
+    "question_id",
+    "benchmark",
+    "condition",
+    "agent_idx",
+    "temperature",
+    "initial_answer",
+    "initial_correct",
+    "probe_results",
+    "alpha_total",
+    "alpha_solo",
+    "alpha_social",
+    "parser_flags",
+    "usage",
+    "backend",
+    "model_name",
+    "release_tier"
+  ],
+  "debate_jsonl_minimum_fields": [
+    "schema_version",
+    "question_id",
+    "benchmark",
+    "correct_label",
+    "temperatures",
+    "initial_answers",
+    "final_answers",
+    "round_traces",
+    "initial_majority_correct",
+    "final_majority_correct",
+    "collapsed",
+    "corrected",
+    "usage",
+    "backend",
+    "model_name",
+    "release_tier"
+  ],
+  "r1_feature_jsonl_minimum_fields": [
+    "schema_version",
+    "question_id",
+    "source",
+    "initial_majority_correct",
+    "final_majority_correct",
+    "collapsed",
+    "corrected",
+    "init_unanimous",
+    "r1_majority_changed",
+    "r1_n_flipped",
+    "r1_flip_frac",
+    "release_tier"
+  ]
+}

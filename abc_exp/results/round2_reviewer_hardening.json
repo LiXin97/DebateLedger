@@ -1,0 +1,1237 @@
+{
+  "alpha_lite_retrospective": {
+    "description": "Zero-API retrospective alpha-lite check. N=14 uses default-condition all-agent alpha because older sealed rows lack per-agent raw rows; strict one-agent alpha-lite is available only on six post-A6 raw lanes.",
+    "interpretation": "The available N=14 default-condition reduction preserves the headline family rank correlation, but a strict N=14 one-agent alpha-lite replay cannot be claimed without recovering per-agent raw rows for the sealed lanes.",
+    "n14_default_condition_all_agents": {
+      "family_mean": {
+        "n": 7,
+        "n_permutations": 5040,
+        "observed_direction": "positive",
+        "p_one_sided_in_observed_direction_exact": 0.006150793650793651,
+        "p_two_sided": 0.012301587301587301,
+        "p_two_sided_exact": 0.012301587301587301,
+        "p_two_sided_scipy": 0.006807187408935392,
+        "p_value_method": "exact_permutation",
+        "rho": 0.8928571428571429
+      },
+      "family_rows": [
+        {
+          "c_cond_pct": 2.1505,
+          "default_condition_all_agents": 0.45040838801450006,
+          "family": "Anthropic",
+          "headline_alpha_tot": 0.4504,
+          "models": [
+            "sonnet-4.5"
+          ],
+          "n_models": 1
+        },
+        {
+          "c_cond_pct": 0.0,
+          "default_condition_all_agents": 0.11723993288590603,
+          "family": "DeepSeek",
+          "headline_alpha_tot": 0.1129,
+          "models": [
+            "deepseek-v4-flash"
+          ],
+          "n_models": 1
+        },
+        {
+          "c_cond_pct": 0.2941,
+          "default_condition_all_agents": 0.28065787415513044,
+          "family": "Google",
+          "headline_alpha_tot": 0.2875,
+          "models": [
+            "gemini-3-flash",
+            "gemma-4-31b-it-awq"
+          ],
+          "n_models": 2
+        },
+        {
+          "c_cond_pct": 8.4646,
+          "default_condition_all_agents": 0.7737292774360385,
+          "family": "Meta",
+          "headline_alpha_tot": 0.7737,
+          "models": [
+            "llama-3.1-8b"
+          ],
+          "n_models": 1
+        },
+        {
+          "c_cond_pct": 1.52265,
+          "default_condition_all_agents": 0.34619434254004233,
+          "family": "OpenAI",
+          "headline_alpha_tot": 0.34614999999999996,
+          "models": [
+            "gpt-4o-mini",
+            "gpt-5.4-mini"
+          ],
+          "n_models": 2
+        },
+        {
+          "c_cond_pct": 10.2377,
+          "default_condition_all_agents": 0.4685593413292949,
+          "family": "Phi",
+          "headline_alpha_tot": 0.4686,
+          "models": [
+            "phi-4-mini"
+          ],
+          "n_models": 1
+        },
+        {
+          "c_cond_pct": 19.74985,
+          "default_condition_all_agents": 0.6893100408492782,
+          "family": "Qwen",
+          "headline_alpha_tot": 0.6987333333333333,
+          "models": [
+            "qwen3-4b",
+            "qwen3-8b",
+            "qwen3.5-4b",
+            "qwen3.5-9b",
+            "qwen3.6-27b-fp8",
+            "qwen3.6-35b-a3b-fp8"
+          ],
+          "n_models": 6
+        }
+      ],
+      "model_row": {
+        "n": 14,
+        "p_two_sided": 0.0001116140529706439,
+        "p_value_method": "scipy_spearman",
+        "rho": 0.8514856637668792
+      }
+    },
+    "post_a6_strict_one_agent_default": {
+      "family_mean": {
+        "n": 3,
+        "n_permutations": 3,
+        "observed_direction": "positive",
+        "p_one_sided_in_observed_direction_exact": 0.3333333333333333,
+        "p_two_sided": 0.6666666666666666,
+        "p_two_sided_exact": 0.6666666666666666,
+        "p_two_sided_scipy": 0.3333333333333332,
+        "p_value_method": "exact_permutation",
+        "rho": 0.8660254037844387
+      },
+      "family_rows": [
+        {
+          "c_cond_pct": 0.0,
+          "family": "DeepSeek",
+          "headline_alpha_tot": 0.1129,
+          "models": [
+            "deepseek-v4-flash"
+          ],
+          "n_models": 1,
+          "strict_alpha_lite_agent0_default": 0.11375
+        },
+        {
+          "c_cond_pct": 0.0,
+          "family": "Google",
+          "headline_alpha_tot": 0.3106,
+          "models": [
+            "gemma-4-31b-it-awq"
+          ],
+          "n_models": 1,
+          "strict_alpha_lite_agent0_default": 0.311875
+        },
+        {
+          "c_cond_pct": 27.008674999999997,
+          "family": "Qwen",
+          "headline_alpha_tot": 0.743625,
+          "models": [
+            "qwen3.5-4b",
+            "qwen3.5-9b",
+            "qwen3.6-27b-fp8",
+            "qwen3.6-35b-a3b-fp8"
+          ],
+          "n_models": 4,
+          "strict_alpha_lite_agent0_default": 0.72609375
+        }
+      ],
+      "model_row": {
+        "n": 6,
+        "p_two_sided": 0.0835232813732598,
+        "p_value_method": "scipy_spearman",
+        "rho": 0.753702346348183
+      },
+      "n_models": 6
+    },
+    "rows": [
+      {
+        "c_cond_pct": 2.1505,
+        "default_condition_all_agents": 0.45040838801450006,
+        "family": "Anthropic",
+        "headline_alpha_tot": 0.4504,
+        "model": "sonnet-4.5",
+        "source": "alpha_split.json/per_model aggregate; per-agent raw rows unavailable in open checkout",
+        "strict_alpha_lite_agent0_default": null
+      },
+      {
+        "c_cond_pct": 0.0,
+        "default_agent_counts": {
+          "0": 200,
+          "1": 198,
+          "2": 198
+        },
+        "default_condition_all_agents": 0.11723993288590603,
+        "family": "DeepSeek",
+        "full_all_conditions_all_agents": 0.11259063022866704,
+        "headline_alpha_tot": 0.1129,
+        "model": "deepseek-v4-flash",
+        "n_rows_default_agent0": 200,
+        "n_rows_default_all_agents": 596,
+        "n_rows_full": 1793,
+        "source": "results/sa_causal_router_deepseek-v4-flash.jsonl",
+        "strict_alpha_lite_agent0_default": 0.11375
+      },
+      {
+        "c_cond_pct": 0.5882,
+        "default_condition_all_agents": 0.2644407483102608,
+        "family": "Google",
+        "headline_alpha_tot": 0.2644,
+        "model": "gemini-3-flash",
+        "source": "alpha_split.json/per_model aggregate; per-agent raw rows unavailable in open checkout",
+        "strict_alpha_lite_agent0_default": null
+      },
+      {
+        "c_cond_pct": 0.0,
+        "default_agent_counts": {
+          "0": 200,
+          "1": 200,
+          "2": 200
+        },
+        "default_condition_all_agents": 0.296875,
+        "family": "Google",
+        "full_all_conditions_all_agents": 0.310625,
+        "headline_alpha_tot": 0.3106,
+        "model": "gemma-4-31b-it-awq",
+        "n_rows_default_agent0": 200,
+        "n_rows_default_all_agents": 600,
+        "n_rows_full": 1800,
+        "source": "results/sa_causal_vllm_gemma-4-31b-it-awq.jsonl",
+        "strict_alpha_lite_agent0_default": 0.311875
+      },
+      {
+        "c_cond_pct": 8.4646,
+        "default_condition_all_agents": 0.7737292774360385,
+        "family": "Meta",
+        "headline_alpha_tot": 0.7737,
+        "model": "llama-3.1-8b",
+        "source": "alpha_split.json/per_model aggregate; per-agent raw rows unavailable in open checkout",
+        "strict_alpha_lite_agent0_default": null
+      },
+      {
+        "c_cond_pct": 2.346,
+        "default_condition_all_agents": 0.3424399376361884,
+        "family": "OpenAI",
+        "headline_alpha_tot": 0.3424,
+        "model": "gpt-4o-mini",
+        "source": "alpha_split.json/per_model aggregate; per-agent raw rows unavailable in open checkout",
+        "strict_alpha_lite_agent0_default": null
+      },
+      {
+        "c_cond_pct": 0.6993,
+        "default_condition_all_agents": 0.3499487474438962,
+        "family": "OpenAI",
+        "headline_alpha_tot": 0.3499,
+        "model": "gpt-5.4-mini",
+        "source": "alpha_split.json/per_model aggregate; per-agent raw rows unavailable in open checkout",
+        "strict_alpha_lite_agent0_default": null
+      },
+      {
+        "c_cond_pct": 10.2377,
+        "default_condition_all_agents": 0.4685593413292949,
+        "family": "Phi",
+        "headline_alpha_tot": 0.4686,
+        "model": "phi-4-mini",
+        "source": "alpha_split.json/per_model aggregate; per-agent raw rows unavailable in open checkout",
+        "strict_alpha_lite_agent0_default": null
+      },
+      {
+        "c_cond_pct": 5.1073,
+        "default_condition_all_agents": 0.6067957553618638,
+        "family": "Qwen",
+        "headline_alpha_tot": 0.6068,
+        "model": "qwen3-4b",
+        "source": "alpha_split.json/per_model aggregate; per-agent raw rows unavailable in open checkout",
+        "strict_alpha_lite_agent0_default": null
+      },
+      {
+        "c_cond_pct": 5.3571,
+        "default_condition_all_agents": 0.6111478230671383,
+        "family": "Qwen",
+        "headline_alpha_tot": 0.6111,
+        "model": "qwen3-8b",
+        "source": "alpha_split.json/per_model aggregate; per-agent raw rows unavailable in open checkout",
+        "strict_alpha_lite_agent0_default": null
+      },
+      {
+        "c_cond_pct": 43.5897,
+        "default_agent_counts": {
+          "0": 200,
+          "1": 200,
+          "2": 200
+        },
+        "default_condition_all_agents": 0.6602083333333333,
+        "family": "Qwen",
+        "full_all_conditions_all_agents": 0.6891666666666667,
+        "headline_alpha_tot": 0.6897,
+        "model": "qwen3.5-4b",
+        "n_rows_default_agent0": 200,
+        "n_rows_default_all_agents": 600,
+        "n_rows_full": 1800,
+        "source": "results/sa_causal_vllm_qwen3.5-4b.jsonl",
+        "strict_alpha_lite_agent0_default": 0.655
+      },
+      {
+        "c_cond_pct": 43.9024,
+        "default_agent_counts": {
+          "0": 200,
+          "1": 200,
+          "2": 200
+        },
+        "default_condition_all_agents": 0.7708333333333334,
+        "family": "Qwen",
+        "full_all_conditions_all_agents": 0.7308333333333333,
+        "headline_alpha_tot": 0.7303,
+        "model": "qwen3.5-9b",
+        "n_rows_default_agent0": 200,
+        "n_rows_default_all_agents": 600,
+        "n_rows_full": 1800,
+        "source": "results/sa_causal_vllm_qwen3.5-9b.jsonl",
+        "strict_alpha_lite_agent0_default": 0.77625
+      },
+      {
+        "c_cond_pct": 8.6614,
+        "default_agent_counts": {
+          "0": 200,
+          "1": 200,
+          "2": 200
+        },
+        "default_condition_all_agents": 0.751875,
+        "family": "Qwen",
+        "full_all_conditions_all_agents": 0.7954861111111111,
+        "headline_alpha_tot": 0.795,
+        "model": "qwen3.6-27b-fp8",
+        "n_rows_default_agent0": 200,
+        "n_rows_default_all_agents": 600,
+        "n_rows_full": 1800,
+        "source": "results/sa_causal_vllm_qwen3.6-27b-fp8.jsonl",
+        "strict_alpha_lite_agent0_default": 0.75
+      },
+      {
+        "c_cond_pct": 11.8812,
+        "default_agent_counts": {
+          "0": 200,
+          "1": 200,
+          "2": 200
+        },
+        "default_condition_all_agents": 0.735,
+        "family": "Qwen",
+        "full_all_conditions_all_agents": 0.7595833333333334,
+        "headline_alpha_tot": 0.7595,
+        "model": "qwen3.6-35b-a3b-fp8",
+        "n_rows_default_agent0": 200,
+        "n_rows_default_all_agents": 600,
+        "n_rows_full": 1800,
+        "source": "results/sa_causal_vllm_qwen3.6-35b-a3b-fp8.jsonl",
+        "strict_alpha_lite_agent0_default": 0.723125
+      }
+    ]
+  },
+  "comparator_bakeoff": {
+    "description": "Numerical comparator/proxy bakeoff from local artifacts. Pandey-circuit and exact Engels-gap scores are not present, so proxies are labeled explicitly.",
+    "entries": [
+      {
+        "family_mean": {
+          "n": 7,
+          "n_permutations": 5040,
+          "observed_direction": "positive",
+          "p_one_sided_in_observed_direction_exact": 0.006150793650793651,
+          "p_two_sided": 0.012301587301587301,
+          "p_two_sided_exact": 0.012301587301587301,
+          "p_two_sided_scipy": 0.006807187408935392,
+          "p_value_method": "exact_permutation",
+          "rho": 0.8928571428571429
+        },
+        "model_row": {
+          "n": 14,
+          "p_two_sided": 0.00024315115661964303,
+          "p_value_method": "scipy_spearman",
+          "rho": 0.8294834502328513
+        },
+        "name": "alpha_tot",
+        "note": "headline selection-time measurement; measured before downstream debate sweep",
+        "role": "selection-time fingerprint"
+      },
+      {
+        "family_mean": {
+          "n": 7,
+          "n_permutations": 5040,
+          "observed_direction": "positive",
+          "p_one_sided_in_observed_direction_exact": 0.017063492063492062,
+          "p_two_sided": 0.034126984126984124,
+          "p_two_sided_exact": 0.034126984126984124,
+          "p_two_sided_scipy": 0.023448808345691505,
+          "p_value_method": "exact_permutation",
+          "rho": 0.8214285714285715
+        },
+        "model_row": {
+          "n": 14,
+          "p_two_sided": 0.0005426816683701478,
+          "p_value_method": "scipy_spearman",
+          "rho": 0.8030807939920179
+        },
+        "name": "engels_capability_pressure_proxy",
+        "note": "defined as 1 - initial-majority accuracy; exact heterogeneous capability-gap/overseer score is not in local artifacts",
+        "role": "Engels-style capability proxy (not exact Engels gap)"
+      },
+      {
+        "family_mean": {
+          "n": 7,
+          "n_permutations": 5040,
+          "observed_direction": "positive",
+          "p_one_sided_in_observed_direction_exact": 0.04404761904761905,
+          "p_two_sided": 0.0880952380952381,
+          "p_two_sided_exact": 0.0880952380952381,
+          "p_two_sided_scipy": 0.07134356146753759,
+          "p_value_method": "exact_permutation",
+          "rho": 0.7142857142857144
+        },
+        "model_row": {
+          "n": 14,
+          "p_two_sided": 0.10130516387820034,
+          "p_value_method": "scipy_spearman",
+          "rho": 0.45594713656387664
+        },
+        "name": "debate_revision_proxy",
+        "note": "debate flip-rate / majority-flip proxy; measured from debate traces or older conditional-collapse table",
+        "role": "raw revision-quantity baseline"
+      },
+      {
+        "family_mean": {
+          "n": 7,
+          "n_permutations": 5040,
+          "observed_direction": "positive",
+          "p_one_sided_in_observed_direction_exact": 0.006150793650793651,
+          "p_two_sided": 0.012301587301587301,
+          "p_two_sided_exact": 0.012301587301587301,
+          "p_two_sided_scipy": 0.006807187408935392,
+          "p_value_method": "exact_permutation",
+          "rho": 0.8928571428571429
+        },
+        "model_row": {
+          "n": 14,
+          "p_two_sided": 4.4826737063297834e-05,
+          "p_value_method": "scipy_spearman",
+          "rho": 0.8734878773009072
+        },
+        "name": "social_proxy_alpha_social",
+        "note": "mean flip rate on social-attributed counterarguments, using sa_causal default rows where available and alpha_split fallback otherwise",
+        "role": "Sharma/Perez-style social-pressure proxy"
+      },
+      {
+        "family_mean": {
+          "n": 7,
+          "n_permutations": 5040,
+          "observed_direction": "negative",
+          "p_one_sided_in_observed_direction_exact": 0.4531746031746032,
+          "p_two_sided": 0.9063492063492063,
+          "p_two_sided_exact": 0.9063492063492063,
+          "p_two_sided_scipy": 0.8790481931481541,
+          "p_value_method": "exact_permutation",
+          "rho": -0.07142857142857144
+        },
+        "model_row": {
+          "n": 14,
+          "p_two_sided": 0.9286101545734514,
+          "p_value_method": "scipy_spearman",
+          "rho": 0.026402656240833464
+        },
+        "name": "social_proxy_lift",
+        "note": "difference between social and solo probe flip rates; narrower sycophancy/conformity proxy than alpha_tot",
+        "role": "social-over-solo lift proxy"
+      },
+      {
+        "family_mean": {
+          "n": 3,
+          "n_permutations": 3,
+          "observed_direction": "positive",
+          "p_one_sided_in_observed_direction_exact": 0.3333333333333333,
+          "p_two_sided": 0.6666666666666666,
+          "p_two_sided_exact": 0.6666666666666666,
+          "p_two_sided_scipy": 0.3333333333333332,
+          "p_value_method": "exact_permutation",
+          "rho": 0.8660254037844387
+        },
+        "model_row": {
+          "n": 6,
+          "p_two_sided": 0.007665844187473165,
+          "p_value_method": "scipy_spearman",
+          "rho": 0.9276336570439175
+        },
+        "name": "initial_disagreement_rate",
+        "note": "available only for six saved post-A6 raw-trace rows; measured after sampling three initial answers",
+        "role": "Tang-style runtime disagreement proxy"
+      },
+      {
+        "family_mean": {
+          "n": 3,
+          "n_permutations": 3,
+          "observed_direction": "positive",
+          "p_one_sided_in_observed_direction_exact": 0.3333333333333333,
+          "p_two_sided": 0.6666666666666666,
+          "p_two_sided_exact": 0.6666666666666666,
+          "p_two_sided_scipy": 0.3333333333333332,
+          "p_value_method": "exact_permutation",
+          "rho": 0.8660254037844387
+        },
+        "model_row": {
+          "n": 6,
+          "p_two_sided": 0.0003090856678496699,
+          "p_value_method": "scipy_spearman",
+          "rho": 0.9856107606091623
+        },
+        "name": "r1_majority_changed_rate",
+        "note": "available only for six saved post-A6 raw-trace rows; runtime diagnostic, not selection-time measurement",
+        "role": "Tang-style R1 trajectory proxy"
+      }
+    ],
+    "partial_alpha_after_capability_and_revision": {
+      "controls": [
+        "engels_capability_pressure_proxy",
+        "debate_revision_proxy"
+      ],
+      "df": 10,
+      "n": 14,
+      "p_two_sided": 0.01779537693808586,
+      "rho": 0.6671144435110008
+    },
+    "partial_alpha_after_capability_proxy": {
+      "controls": [
+        "engels_capability_pressure_proxy"
+      ],
+      "df": 11,
+      "n": 14,
+      "p_two_sided": 0.01440079773364553,
+      "rho": 0.6584623461422374
+    },
+    "runtime_proxy_rows": [
+      {
+        "alpha_tot": 0.1129,
+        "any_r1_flip_rate": 0.03888888888888889,
+        "c_cond_pct": 0.0,
+        "family": "DeepSeek",
+        "initial_disagreement_rate": 0.044444444444444446,
+        "model": "deepseek-v4-flash",
+        "n_debates": 180,
+        "r1_flip_frac": 0.014814814814814814,
+        "r1_majority_changed_rate": 0.011111111111111112
+      },
+      {
+        "alpha_tot": 0.3106,
+        "any_r1_flip_rate": 0.11,
+        "c_cond_pct": 0.0,
+        "family": "Google",
+        "initial_disagreement_rate": 0.12,
+        "model": "gemma-4-31b-it-awq",
+        "n_debates": 200,
+        "r1_flip_frac": 0.05333333333333333,
+        "r1_majority_changed_rate": 0.04
+      },
+      {
+        "alpha_tot": 0.6897,
+        "any_r1_flip_rate": 0.805,
+        "c_cond_pct": 43.5897,
+        "family": "Qwen",
+        "initial_disagreement_rate": 0.71,
+        "model": "qwen3.5-4b",
+        "n_debates": 200,
+        "r1_flip_frac": 0.46166666666666667,
+        "r1_majority_changed_rate": 0.405
+      },
+      {
+        "alpha_tot": 0.7303,
+        "any_r1_flip_rate": 0.7638190954773869,
+        "c_cond_pct": 43.9024,
+        "family": "Qwen",
+        "initial_disagreement_rate": 0.6834170854271356,
+        "model": "qwen3.5-9b",
+        "n_debates": 199,
+        "r1_flip_frac": 0.43551088777219427,
+        "r1_majority_changed_rate": 0.41708542713567837
+      },
+      {
+        "alpha_tot": 0.795,
+        "any_r1_flip_rate": 0.605,
+        "c_cond_pct": 8.6614,
+        "family": "Qwen",
+        "initial_disagreement_rate": 0.525,
+        "model": "qwen3.6-27b-fp8",
+        "n_debates": 200,
+        "r1_flip_frac": 0.3233333333333333,
+        "r1_majority_changed_rate": 0.25
+      },
+      {
+        "alpha_tot": 0.7595,
+        "any_r1_flip_rate": 0.665,
+        "c_cond_pct": 11.8812,
+        "family": "Qwen",
+        "initial_disagreement_rate": 0.59,
+        "model": "qwen3.6-35b-a3b-fp8",
+        "n_debates": 200,
+        "r1_flip_frac": 0.4066666666666666,
+        "r1_majority_changed_rate": 0.315
+      }
+    ],
+    "social_proxy_missing_models": [],
+    "social_proxy_rows": [
+      {
+        "alpha_tot": 0.4504,
+        "c_cond_pct": 2.1505,
+        "family": "Anthropic",
+        "model": "sonnet-4.5",
+        "social_proxy_alpha_social": 0.47297297297297297,
+        "social_proxy_lift": 0.04512916991694582,
+        "social_proxy_mean_social_sensitivity": 0.04512916991694582,
+        "social_proxy_source": "alpha_split.json/per_model",
+        "wilson_hw": 0.0346
+      },
+      {
+        "alpha_tot": 0.1129,
+        "c_cond_pct": 0.0,
+        "family": "DeepSeek",
+        "model": "deepseek-v4-flash",
+        "social_proxy_alpha_social": 0.13716442953020133,
+        "social_proxy_lift": 0.0398489932885906,
+        "social_proxy_mean_social_sensitivity": 0.0398489932885906,
+        "social_proxy_source": "results/sa_causal_router_deepseek-v4-flash.jsonl",
+        "wilson_hw": 0.0
+      },
+      {
+        "alpha_tot": 0.2644,
+        "c_cond_pct": 0.5882,
+        "family": "Google",
+        "model": "gemini-3-flash",
+        "social_proxy_alpha_social": 0.1925,
+        "social_proxy_lift": 0.10458333333333333,
+        "social_proxy_mean_social_sensitivity": 0.10458333333333333,
+        "social_proxy_source": "results/sa_causal_gemini_3_flash_n200.jsonl",
+        "wilson_hw": 0.0158
+      },
+      {
+        "alpha_tot": 0.3106,
+        "c_cond_pct": 0.0,
+        "family": "Google",
+        "model": "gemma-4-31b-it-awq",
+        "social_proxy_alpha_social": 0.3016666666666667,
+        "social_proxy_lift": 0.009583333333333333,
+        "social_proxy_mean_social_sensitivity": 0.009583333333333333,
+        "social_proxy_source": "results/sa_causal_vllm_gemma-4-31b-it-awq.jsonl",
+        "wilson_hw": 0.0
+      },
+      {
+        "alpha_tot": 0.7737,
+        "c_cond_pct": 8.4646,
+        "family": "Meta",
+        "model": "llama-3.1-8b",
+        "social_proxy_alpha_social": 0.7751633986928105,
+        "social_proxy_lift": 0.002868242513543895,
+        "social_proxy_mean_social_sensitivity": 0.002868242513543895,
+        "social_proxy_source": "alpha_split.json/per_model",
+        "wilson_hw": 0.0172
+      },
+      {
+        "alpha_tot": 0.3424,
+        "c_cond_pct": 2.346,
+        "family": "OpenAI",
+        "model": "gpt-4o-mini",
+        "social_proxy_alpha_social": 0.34832451499118167,
+        "social_proxy_lift": 0.011769154709986573,
+        "social_proxy_mean_social_sensitivity": 0.011769154709986573,
+        "social_proxy_source": "alpha_split.json/per_model",
+        "wilson_hw": 0.0168
+      },
+      {
+        "alpha_tot": 0.3499,
+        "c_cond_pct": 0.6993,
+        "family": "OpenAI",
+        "model": "gpt-5.4-mini",
+        "social_proxy_alpha_social": 0.3541927409261577,
+        "social_proxy_lift": 0.00848798696452302,
+        "social_proxy_mean_social_sensitivity": 0.00848798696452302,
+        "social_proxy_source": "alpha_split.json/per_model",
+        "wilson_hw": 0.0187
+      },
+      {
+        "alpha_tot": 0.4686,
+        "c_cond_pct": 10.2377,
+        "family": "Phi",
+        "model": "phi-4-mini",
+        "social_proxy_alpha_social": 0.5004317789291882,
+        "social_proxy_lift": 0.06374487519978667,
+        "social_proxy_mean_social_sensitivity": 0.06374487519978667,
+        "social_proxy_source": "alpha_split.json/per_model",
+        "wilson_hw": 0.018
+      },
+      {
+        "alpha_tot": 0.6068,
+        "c_cond_pct": 5.1073,
+        "family": "Qwen",
+        "model": "qwen3-4b",
+        "social_proxy_alpha_social": 0.6205583756345178,
+        "social_proxy_lift": 0.027525240545307916,
+        "social_proxy_mean_social_sensitivity": 0.027525240545307916,
+        "social_proxy_source": "alpha_split.json/per_model",
+        "wilson_hw": 0.0139
+      },
+      {
+        "alpha_tot": 0.6111,
+        "c_cond_pct": 5.3571,
+        "family": "Qwen",
+        "model": "qwen3-8b",
+        "social_proxy_alpha_social": 0.616403246475865,
+        "social_proxy_lift": 0.010510846817453401,
+        "social_proxy_mean_social_sensitivity": 0.010510846817453401,
+        "social_proxy_source": "alpha_split.json/per_model",
+        "wilson_hw": 0.0638
+      },
+      {
+        "alpha_tot": 0.6897,
+        "c_cond_pct": 43.5897,
+        "family": "Qwen",
+        "model": "qwen3.5-4b",
+        "social_proxy_alpha_social": 0.6791666666666667,
+        "social_proxy_lift": 0.03791666666666667,
+        "social_proxy_mean_social_sensitivity": 0.03791666666666667,
+        "social_proxy_source": "results/sa_causal_vllm_qwen3.5-4b.jsonl",
+        "wilson_hw": 0.11
+      },
+      {
+        "alpha_tot": 0.7303,
+        "c_cond_pct": 43.9024,
+        "family": "Qwen",
+        "model": "qwen3.5-9b",
+        "social_proxy_alpha_social": 0.7908333333333334,
+        "social_proxy_lift": 0.04,
+        "social_proxy_mean_social_sensitivity": 0.04,
+        "social_proxy_source": "results/sa_causal_vllm_qwen3.5-9b.jsonl",
+        "wilson_hw": 0.1074
+      },
+      {
+        "alpha_tot": 0.795,
+        "c_cond_pct": 8.6614,
+        "family": "Qwen",
+        "model": "qwen3.6-27b-fp8",
+        "social_proxy_alpha_social": 0.7775,
+        "social_proxy_lift": 0.05125,
+        "social_proxy_mean_social_sensitivity": 0.05125,
+        "social_proxy_source": "results/sa_causal_vllm_qwen3.6-27b-fp8.jsonl",
+        "wilson_hw": 0.0489
+      },
+      {
+        "alpha_tot": 0.7595,
+        "c_cond_pct": 11.8812,
+        "family": "Qwen",
+        "model": "qwen3.6-35b-a3b-fp8",
+        "social_proxy_alpha_social": 0.7366666666666667,
+        "social_proxy_lift": 0.0033333333333333335,
+        "social_proxy_mean_social_sensitivity": 0.0033333333333333335,
+        "social_proxy_source": "results/sa_causal_vllm_qwen3.6-35b-a3b-fp8.jsonl",
+        "wilson_hw": 0.0631
+      }
+    ],
+    "unavailable_exact_scores": [
+      "Pandey-2026 mechanistic sycophancy/circuit activations: no local *pandey* artifact or activation-cache score found.",
+      "Exact Engels-2025 capability-gap forecast: local traces are homogeneous three-agent debates, not overseer/worker capability-gap panels."
+    ]
+  },
+  "description": "Round-2 zero-cost reviewer hardening analyses.",
+  "inputs": {
+    "alpha_split": "results/alpha_split.json",
+    "correction_replay": "results/correction_preserving_policy_replay.json",
+    "family_level": "results/family_level_headline_aggregation.json",
+    "qwen32": "results/qwen3_32b_a7_n200_holdout_summary.json",
+    "raw_post_a6_alpha_files": [
+      "results/sa_causal_router_deepseek-v4-flash.jsonl",
+      "results/sa_causal_vllm_gemma-4-31b-it-awq.jsonl",
+      "results/sa_causal_vllm_qwen3.5-4b.jsonl",
+      "results/sa_causal_vllm_qwen3.5-9b.jsonl",
+      "results/sa_causal_vllm_qwen3.6-27b-fp8.jsonl",
+      "results/sa_causal_vllm_qwen3.6-35b-a3b-fp8.jsonl"
+    ],
+    "reviewer_hardening": "results/reviewer_hardening_analyses.json"
+  },
+  "lofo_family_prediction": {
+    "coverage_80": {
+      "covered": 5,
+      "total": 7
+    },
+    "coverage_95": {
+      "covered": 6,
+      "total": 7
+    },
+    "description": "Post-hoc leave-one-family-out linear predictive check on family means; intervals are unbounded Gaussian prediction intervals fit on the other six families.",
+    "largest_absolute_errors": [
+      {
+        "absolute_rank_error": 1,
+        "alpha_tot": 0.6987333333333333,
+        "covered_80": false,
+        "covered_95": false,
+        "heldout_family": "Qwen",
+        "observed_c_cond_pct": 19.74985,
+        "observed_rank": 7,
+        "pi80": [
+          2.1263417109860416,
+          14.294304683544881
+        ],
+        "pi95": [
+          -2.807007545176523,
+          19.227653939707444
+        ],
+        "predicted_c_cond_pct": 8.210323197265462,
+        "predicted_rank": 6,
+        "prediction_se": 3.968142831931514,
+        "train_df": 4
+      },
+      {
+        "absolute_rank_error": 2,
+        "alpha_tot": 0.7737,
+        "covered_80": false,
+        "covered_95": true,
+        "heldout_family": "Meta",
+        "observed_c_cond_pct": 8.4646,
+        "observed_rank": 5,
+        "pi80": [
+          9.965759282736938,
+          27.922958603204883
+        ],
+        "pi95": [
+          2.685236149145929,
+          35.203481736795894
+        ],
+        "predicted_c_cond_pct": 18.94435894297091,
+        "predicted_rank": 7,
+        "prediction_se": 5.856093737775036,
+        "train_df": 4
+      }
+    ],
+    "mean_absolute_rank_error": 0.8571428571428571,
+    "n_families": 7,
+    "predicted_vs_observed_spearman": {
+      "n": 7,
+      "p_two_sided": 0.023448808345691505,
+      "rho": 0.8214285714285715
+    },
+    "rows": [
+      {
+        "absolute_rank_error": 1,
+        "alpha_tot": 0.4504,
+        "covered_80": true,
+        "covered_95": true,
+        "heldout_family": "Anthropic",
+        "observed_c_cond_pct": 2.1505,
+        "observed_rank": 4,
+        "pi80": [
+          -1.9566550493065797,
+          15.499602366632871
+        ],
+        "pi95": [
+          -9.034077517843,
+          22.57702483516929
+        ],
+        "predicted_c_cond_pct": 6.771473658663146,
+        "predicted_rank": 5,
+        "prediction_se": 5.692729579603963,
+        "train_df": 4
+      },
+      {
+        "absolute_rank_error": 0,
+        "alpha_tot": 0.1129,
+        "covered_80": true,
+        "covered_95": true,
+        "heldout_family": "DeepSeek",
+        "observed_c_cond_pct": 0.0,
+        "observed_rank": 1,
+        "pi80": [
+          -16.007456494338278,
+          7.7514200373799
+        ],
+        "pi95": [
+          -25.64019749867431,
+          17.384161041715934
+        ],
+        "predicted_c_cond_pct": -4.12801822847919,
+        "predicted_rank": 1,
+        "prediction_se": 7.748101783075793,
+        "train_df": 4
+      },
+      {
+        "absolute_rank_error": 0,
+        "alpha_tot": 0.2875,
+        "covered_80": true,
+        "covered_95": true,
+        "heldout_family": "Google",
+        "observed_c_cond_pct": 0.2941,
+        "observed_rank": 2,
+        "pi80": [
+          -7.030192930195176,
+          12.425941503461711
+        ],
+        "pi95": [
+          -14.918440663405963,
+          20.3141892366725
+        ],
+        "predicted_c_cond_pct": 2.697874286633268,
+        "predicted_rank": 2,
+        "prediction_se": 6.344917433108844,
+        "train_df": 4
+      },
+      {
+        "absolute_rank_error": 2,
+        "alpha_tot": 0.7737,
+        "covered_80": false,
+        "covered_95": true,
+        "heldout_family": "Meta",
+        "observed_c_cond_pct": 8.4646,
+        "observed_rank": 5,
+        "pi80": [
+          9.965759282736938,
+          27.922958603204883
+        ],
+        "pi95": [
+          2.685236149145929,
+          35.203481736795894
+        ],
+        "predicted_c_cond_pct": 18.94435894297091,
+        "predicted_rank": 7,
+        "prediction_se": 5.856093737775036,
+        "train_df": 4
+      },
+      {
+        "absolute_rank_error": 0,
+        "alpha_tot": 0.34614999999999996,
+        "covered_80": true,
+        "covered_95": true,
+        "heldout_family": "OpenAI",
+        "observed_c_cond_pct": 1.52265,
+        "observed_rank": 3,
+        "pi80": [
+          -5.391589176991776,
+          13.433196721493694
+        ],
+        "pi95": [
+          -13.023864498600764,
+          21.06547204310268
+        ],
+        "predicted_c_cond_pct": 4.020803772250959,
+        "predicted_rank": 3,
+        "prediction_se": 6.139025849616945,
+        "train_df": 4
+      },
+      {
+        "absolute_rank_error": 2,
+        "alpha_tot": 0.4686,
+        "covered_80": true,
+        "covered_95": true,
+        "heldout_family": "Phi",
+        "observed_c_cond_pct": 10.2377,
+        "observed_rank": 6,
+        "pi80": [
+          -2.8977873389217796,
+          14.762138789087686
+        ],
+        "pi95": [
+          -10.057784753770918,
+          21.922136203936823
+        ],
+        "predicted_c_cond_pct": 5.932175725082954,
+        "predicted_rank": 4,
+        "prediction_se": 5.759148793872774,
+        "train_df": 4
+      },
+      {
+        "absolute_rank_error": 1,
+        "alpha_tot": 0.6987333333333333,
+        "covered_80": false,
+        "covered_95": false,
+        "heldout_family": "Qwen",
+        "observed_c_cond_pct": 19.74985,
+        "observed_rank": 7,
+        "pi80": [
+          2.1263417109860416,
+          14.294304683544881
+        ],
+        "pi95": [
+          -2.807007545176523,
+          19.227653939707444
+        ],
+        "predicted_c_cond_pct": 8.210323197265462,
+        "predicted_rank": 6,
+        "prediction_se": 3.968142831931514,
+        "train_df": 4
+      }
+    ]
+  },
+  "lomo_artifact_audit": {
+    "available_saved_trace_primary": {
+      "n_records": 2438,
+      "n_sources": 13,
+      "sources": [
+        "gemini_3_1_flash_lite_n200",
+        "gemini_3_1_pro_n200",
+        "gemini_3_flash_n200",
+        "openrouter_deepseek-v4-flash",
+        "openrouter_deepseek-v4-pro",
+        "openrouter_grok_4_1_fast_n200",
+        "openrouter_mistral_small_4_n200",
+        "vllm_gemma-4-31b-it",
+        "vllm_qwen3.5-4b",
+        "vllm_qwen3.5-9b",
+        "vllm_qwen3.6-27b-fp8",
+        "vllm_qwen3.6-35b-a3b-fp8",
+        "vllm_qwen3_32b_a7_n200"
+      ]
+    },
+    "candidate_lomo_json_files": [],
+    "conclusion": "The exact 6,525-row pilot-gated LOMO records are not present in this checkout; only the aggregate Table 17 numbers and a separate 1,255-record saved-trace replay cohort are available. Therefore a strict matched-tau LOMO DG/DRS comparison cannot be honestly claimed from local files without recovering the missing row-level pool.",
+    "disagreement_gate_available_trace_replay": {
+      "acc_delta": -0.03281378178835111,
+      "collapses_prevented": 80,
+      "corrections_lost": 160,
+      "gate_count": 823,
+      "gate_rate": 0.33757178014766204,
+      "n": 2438,
+      "net": -80,
+      "policy_acc": 0.6628383921246924,
+      "question_bootstrap_ci95": {
+        "B": 2000,
+        "B_used": 2000,
+        "acc_delta": {
+          "ci_2.5": -0.04541702747791099,
+          "ci_97.5": -0.020712883706880274,
+          "median": -0.0330867148348173
+        },
+        "gate_rate": {
+          "ci_2.5": 0.31654553408809594,
+          "ci_97.5": 0.36015012330643625,
+          "median": 0.337600675484622
+        },
+        "lost_rate": {
+          "ci_2.5": 0.05541815069808434,
+          "ci_97.5": 0.07635241831566672,
+          "median": 0.06582174979558462
+        },
+        "n_question_clusters": 397,
+        "net_rate": {
+          "ci_2.5": -0.04541702747791099,
+          "ci_97.5": -0.020712883706880274,
+          "median": -0.0330867148348173
+        },
+        "prevented_rate": {
+          "ci_2.5": 0.02558785000456298,
+          "ci_97.5": 0.04026294165981923,
+          "median": 0.032617671345995046
+        }
+      },
+      "standard_acc": 0.6956521739130435,
+      "standard_collapses": 111,
+      "standard_corrections": 194,
+      "validation": "fixed_rule_on_available_saved_traces_not_6525_lomo"
+    },
+    "pilot_gated_lomo_json_present": false,
+    "requested_pool": "6,525-debate OSS LOMO pool from Appendix P / Table 17"
+  },
+  "qwen32_sensitivity": {
+    "family_same_qwen_g7": {
+      "n": 7,
+      "n_permutations": 5040,
+      "observed_direction": "positive",
+      "p_one_sided_in_observed_direction_exact": 0.006150793650793651,
+      "p_two_sided": 0.012301587301587301,
+      "p_two_sided_exact": 0.012301587301587301,
+      "p_two_sided_scipy": 0.006807187408935392,
+      "p_value_method": "exact_permutation",
+      "rho": 0.8928571428571429
+    },
+    "family_treat_as_stress_g8": {
+      "n": 8,
+      "n_permutations": 40320,
+      "observed_direction": "positive",
+      "p_one_sided_in_observed_direction_exact": 0.005357142857142857,
+      "p_two_sided": 0.010714285714285714,
+      "p_two_sided_exact": 0.010714285714285714,
+      "p_two_sided_scipy": 0.006530017254715292,
+      "p_value_method": "exact_permutation",
+      "rho": 0.8571428571428572
+    },
+    "model_row_n15": {
+      "n": 15,
+      "p_two_sided": 0.00016888874171170175,
+      "p_value_method": "scipy_spearman",
+      "rho": 0.8221629735166394
+    },
+    "note": "Post-hoc corrected-pool holdout; not folded into the primary pre-registered N=14 test.",
+    "qwen32_row": {
+      "alpha_tot": 0.6767361111111111,
+      "c_cond_pct": 10.95890410958904,
+      "correction_pct": 30.708661417322833,
+      "family": "Qwen",
+      "model": "qwen3-32b",
+      "n_debates": 200
+    },
+    "same_qwen_family_rows": [
+      {
+        "alpha_tot": 0.4504,
+        "c_cond_pct": 2.1505,
+        "family": "Anthropic",
+        "models": [
+          "sonnet-4.5"
+        ],
+        "n_models": 1
+      },
+      {
+        "alpha_tot": 0.1129,
+        "c_cond_pct": 0.0,
+        "family": "DeepSeek",
+        "models": [
+          "deepseek-v4-flash"
+        ],
+        "n_models": 1
+      },
+      {
+        "alpha_tot": 0.2875,
+        "c_cond_pct": 0.2941,
+        "family": "Google",
+        "models": [
+          "gemini-3-flash",
+          "gemma-4-31b-it-awq"
+        ],
+        "n_models": 2
+      },
+      {
+        "alpha_tot": 0.7737,
+        "c_cond_pct": 8.4646,
+        "family": "Meta",
+        "models": [
+          "llama-3.1-8b"
+        ],
+        "n_models": 1
+      },
+      {
+        "alpha_tot": 0.34614999999999996,
+        "c_cond_pct": 1.52265,
+        "family": "OpenAI",
+        "models": [
+          "gpt-4o-mini",
+          "gpt-5.4-mini"
+        ],
+        "n_models": 2
+      },
+      {
+        "alpha_tot": 0.4686,
+        "c_cond_pct": 10.2377,
+        "family": "Phi",
+        "models": [
+          "phi-4-mini"
+        ],
+        "n_models": 1
+      },
+      {
+        "alpha_tot": 0.6955908730158731,
+        "c_cond_pct": 18.494000587084148,
+        "family": "Qwen",
+        "models": [
+          "qwen3-4b",
+          "qwen3-8b",
+          "qwen3.5-4b",
+          "qwen3.5-9b",
+          "qwen3.6-27b-fp8",
+          "qwen3.6-35b-a3b-fp8",
+          "qwen3-32b"
+        ],
+        "n_models": 7
+      }
+    ],
+    "stress_family_rows": [
+      {
+        "alpha_tot": 0.4504,
+        "c_cond_pct": 2.1505,
+        "family": "Anthropic",
+        "models": [
+          "sonnet-4.5"
+        ],
+        "n_models": 1
+      },
+      {
+        "alpha_tot": 0.1129,
+        "c_cond_pct": 0.0,
+        "family": "DeepSeek",
+        "models": [
+          "deepseek-v4-flash"
+        ],
+        "n_models": 1
+      },
+      {
+        "alpha_tot": 0.2875,
+        "c_cond_pct": 0.2941,
+        "family": "Google",
+        "models": [
+          "gemini-3-flash",
+          "gemma-4-31b-it-awq"
+        ],
+        "n_models": 2
+      },
+      {
+        "alpha_tot": 0.7737,
+        "c_cond_pct": 8.4646,
+        "family": "Meta",
+        "models": [
+          "llama-3.1-8b"
+        ],
+        "n_models": 1
+      },
+      {
+        "alpha_tot": 0.34614999999999996,
+        "c_cond_pct": 1.52265,
+        "family": "OpenAI",
+        "models": [
+          "gpt-4o-mini",
+          "gpt-5.4-mini"
+        ],
+        "n_models": 2
+      },
+      {
+        "alpha_tot": 0.4686,
+        "c_cond_pct": 10.2377,
+        "family": "Phi",
+        "models": [
+          "phi-4-mini"
+        ],
+        "n_models": 1
+      },
+      {
+        "alpha_tot": 0.6987333333333333,
+        "c_cond_pct": 19.74985,
+        "family": "Qwen",
+        "models": [
+          "qwen3-4b",
+          "qwen3-8b",
+          "qwen3.5-4b",
+          "qwen3.5-9b",
+          "qwen3.6-27b-fp8",
+          "qwen3.6-35b-a3b-fp8"
+        ],
+        "n_models": 6
+      },
+      {
+        "alpha_tot": 0.6767361111111111,
+        "c_cond_pct": 10.95890410958904,
+        "family": "Qwen3-32B-stress",
+        "models": [
+          "qwen3-32b"
+        ],
+        "n_models": 1
+      }
+    ]
+  }
+}

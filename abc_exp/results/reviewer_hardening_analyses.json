@@ -1,0 +1,766 @@
+{
+  "description": "Zero-cost reviewer-hardening analyses on the realized N=14 headline cohort.",
+  "family_mean_spearman": {
+    "n": 7,
+    "n_permutations": 5040,
+    "observed_direction": "positive",
+    "one_sided_in_observed_direction_count": 31,
+    "p_one_sided_in_observed_direction_exact": 0.006150793650793651,
+    "p_two_sided_exact": 0.012301587301587301,
+    "rho": 0.8928571428571429,
+    "two_sided_abs_count": 62
+  },
+  "family_median_spearman": {
+    "n": 7,
+    "n_permutations": 5040,
+    "observed_direction": "positive",
+    "one_sided_in_observed_direction_count": 31,
+    "p_one_sided_in_observed_direction_exact": 0.006150793650793651,
+    "p_two_sided_exact": 0.012301587301587301,
+    "rho": 0.8928571428571429,
+    "two_sided_abs_count": 62
+  },
+  "n_models": 14,
+  "notes": [
+    "debate_revision_proxy is debate FR for sealed conditional-collapse rows and majority-flip rate for post-A6 trace rows; use only as a coarse anti-raw-revision diagnostic.",
+    "initial disagreement/diversity metrics are available only for six post-A6 raw-trace rows and are reported as runtime diagnostics, not as the primary selection-time fingerprint.",
+    "final_acc, correction_pct, and raw_collapse_pct are post-debate or outcome-derived controls; they are not deployable pre-debate predictors.",
+    "selection utility is descriptive and zero-cost; it is not a learned deployment policy."
+  ],
+  "partial_spearman": {
+    "alpha_controlling_init_acc": {
+      "controls": [
+        "init_acc"
+      ],
+      "df": 11,
+      "n": 14,
+      "p_two_sided": 0.014400797733645544,
+      "rho": 0.6584623461422373
+    },
+    "alpha_controlling_init_acc_and_revision_proxy": {
+      "controls": [
+        "init_acc",
+        "debate_revision_proxy"
+      ],
+      "df": 10,
+      "n": 14,
+      "p_two_sided": 0.01779537693808586,
+      "rho": 0.6671144435110008
+    },
+    "alpha_controlling_init_and_final_acc": {
+      "controls": [
+        "init_acc",
+        "final_acc"
+      ],
+      "df": 10,
+      "n": 14,
+      "p_two_sided": 0.023145101293237103,
+      "rho": 0.6463508854202445
+    },
+    "alpha_controlling_init_final_and_revision_proxy": {
+      "controls": [
+        "init_acc",
+        "final_acc",
+        "debate_revision_proxy"
+      ],
+      "df": 9,
+      "n": 14,
+      "p_two_sided": 0.020229989754067597,
+      "rho": 0.6841914917292908
+    },
+    "alpha_controlling_revision_proxy": {
+      "controls": [
+        "debate_revision_proxy"
+      ],
+      "df": 11,
+      "n": 14,
+      "p_two_sided": 0.00166103119458481,
+      "rho": 0.7799952670067175
+    }
+  },
+  "per_model": [
+    {
+      "alpha_tot": 0.4504,
+      "c_cond_pct": 2.1505,
+      "correction_pct": 11.11111111111111,
+      "debate_revision_proxy": 0.705,
+      "diagnostic_source": "conditional_collapse_table",
+      "family": "Anthropic",
+      "final_acc": 0.7833333333333333,
+      "init_acc": 0.775,
+      "model": "sonnet-4.5",
+      "n_collapses": 2,
+      "n_corrections": 3,
+      "n_debates": 120,
+      "n_init_correct": 93,
+      "n_init_wrong": 27,
+      "raw_collapse_pct": 1.6666666666666667,
+      "wilson_hw": 0.0346
+    },
+    {
+      "alpha_tot": 0.1129,
+      "at_risk_initial_disagreement_rate": 0.006711409395973154,
+      "c_cond_pct": 0.0,
+      "correction_pct": 13.72549019607843,
+      "debate_revision_proxy": 0.015,
+      "diagnostic_source": "debate_trace_summary",
+      "family": "DeepSeek",
+      "final_acc": 0.78,
+      "init_acc": 0.745,
+      "initial_disagreement_rate": 0.04,
+      "initial_entropy_norm": 0.02343295451785661,
+      "initial_unanimity_rate": 0.76,
+      "majority_flip_rate": 0.015,
+      "mean_initial_majority_margin": 0.8858333333333333,
+      "model": "deepseek-v4-flash",
+      "n_collapses": 0,
+      "n_corrections": 7,
+      "n_debates": 200,
+      "n_init_correct": 149,
+      "n_init_wrong": 51,
+      "raw_collapse_pct": 0.0,
+      "trace_path": "abc_exp/results/debate_traces_openrouter_deepseek-v4-flash.jsonl",
+      "wilson_hw": 0.0
+    },
+    {
+      "alpha_tot": 0.2644,
+      "c_cond_pct": 0.5882,
+      "correction_pct": 6.666666666666667,
+      "debate_revision_proxy": 0.249,
+      "diagnostic_source": "conditional_collapse_table",
+      "family": "Google",
+      "final_acc": 0.855,
+      "init_acc": 0.85,
+      "model": "gemini-3-flash",
+      "n_collapses": 1,
+      "n_corrections": 2,
+      "n_debates": 200,
+      "n_init_correct": 170,
+      "n_init_wrong": 30,
+      "raw_collapse_pct": 0.5,
+      "wilson_hw": 0.0158
+    },
+    {
+      "alpha_tot": 0.3106,
+      "at_risk_initial_disagreement_rate": 0.05625,
+      "c_cond_pct": 0.0,
+      "correction_pct": 10.0,
+      "debate_revision_proxy": 0.04,
+      "diagnostic_source": "debate_trace_summary",
+      "family": "Google",
+      "final_acc": 0.82,
+      "init_acc": 0.8,
+      "initial_disagreement_rate": 0.12,
+      "initial_entropy_norm": 0.07793801642856948,
+      "initial_unanimity_rate": 0.87,
+      "majority_flip_rate": 0.04,
+      "mean_initial_majority_margin": 0.9533333333333328,
+      "model": "gemma-4-31b-it-awq",
+      "n_collapses": 0,
+      "n_corrections": 4,
+      "n_debates": 200,
+      "n_init_correct": 160,
+      "n_init_wrong": 40,
+      "raw_collapse_pct": 0.0,
+      "trace_path": "abc_exp/results/debate_traces_vllm_gemma-4-31b-it.jsonl",
+      "wilson_hw": 0.0
+    },
+    {
+      "alpha_tot": 0.7737,
+      "c_cond_pct": 8.4646,
+      "correction_pct": 9.929078014184398,
+      "debate_revision_proxy": 0.726,
+      "diagnostic_source": "conditional_collapse_table",
+      "family": "Meta",
+      "final_acc": 0.5132301547678483,
+      "init_acc": 0.5072391412880679,
+      "model": "llama-3.1-8b",
+      "n_collapses": 86,
+      "n_corrections": 98,
+      "n_debates": 2003,
+      "n_init_correct": 1016,
+      "n_init_wrong": 987,
+      "raw_collapse_pct": 4.293559660509237,
+      "wilson_hw": 0.0172
+    },
+    {
+      "alpha_tot": 0.3424,
+      "c_cond_pct": 2.346,
+      "correction_pct": 10.191082802547772,
+      "debate_revision_proxy": 0.458,
+      "diagnostic_source": "conditional_collapse_table",
+      "family": "OpenAI",
+      "final_acc": 0.7008032128514057,
+      "init_acc": 0.6847389558232931,
+      "model": "gpt-4o-mini",
+      "n_collapses": 8,
+      "n_corrections": 16,
+      "n_debates": 498,
+      "n_init_correct": 341,
+      "n_init_wrong": 157,
+      "raw_collapse_pct": 1.6064257028112447,
+      "wilson_hw": 0.0168
+    },
+    {
+      "alpha_tot": 0.3499,
+      "c_cond_pct": 0.6993,
+      "correction_pct": 17.543859649122805,
+      "debate_revision_proxy": 0.35,
+      "diagnostic_source": "conditional_collapse_table",
+      "family": "OpenAI",
+      "final_acc": 0.76,
+      "init_acc": 0.715,
+      "model": "gpt-5.4-mini",
+      "n_collapses": 1,
+      "n_corrections": 10,
+      "n_debates": 200,
+      "n_init_correct": 143,
+      "n_init_wrong": 57,
+      "raw_collapse_pct": 0.5,
+      "wilson_hw": 0.0187
+    },
+    {
+      "alpha_tot": 0.4686,
+      "c_cond_pct": 10.2377,
+      "correction_pct": 16.307403936269914,
+      "debate_revision_proxy": 0.451,
+      "diagnostic_source": "conditional_collapse_table",
+      "family": "Phi",
+      "final_acc": 0.5349375289217955,
+      "init_acc": 0.5062471078204535,
+      "model": "phi-4-mini",
+      "n_collapses": 112,
+      "n_corrections": 174,
+      "n_debates": 2161,
+      "n_init_correct": 1094,
+      "n_init_wrong": 1067,
+      "raw_collapse_pct": 5.182785747339195,
+      "wilson_hw": 0.018
+    },
+    {
+      "alpha_tot": 0.6068,
+      "c_cond_pct": 5.1073,
+      "correction_pct": 39.001692047377325,
+      "debate_revision_proxy": 0.596,
+      "diagnostic_source": "conditional_collapse_table",
+      "family": "Qwen",
+      "final_acc": 0.6432207311429894,
+      "init_acc": 0.45303100416473857,
+      "model": "qwen3-4b",
+      "n_collapses": 50,
+      "n_corrections": 461,
+      "n_debates": 2161,
+      "n_init_correct": 979,
+      "n_init_wrong": 1182,
+      "raw_collapse_pct": 2.3137436372049978,
+      "wilson_hw": 0.0139
+    },
+    {
+      "alpha_tot": 0.6111,
+      "c_cond_pct": 5.3571,
+      "correction_pct": 49.30555555555556,
+      "debate_revision_proxy": 0.596,
+      "diagnostic_source": "conditional_collapse_table",
+      "family": "Qwen",
+      "final_acc": 0.62,
+      "init_acc": 0.28,
+      "model": "qwen3-8b",
+      "n_collapses": 3,
+      "n_corrections": 71,
+      "n_debates": 200,
+      "n_init_correct": 56,
+      "n_init_wrong": 144,
+      "raw_collapse_pct": 1.5,
+      "wilson_hw": 0.0638
+    },
+    {
+      "alpha_tot": 0.6897,
+      "at_risk_initial_disagreement_rate": 0.5897435897435898,
+      "c_cond_pct": 43.58974358974359,
+      "correction_pct": 15.573770491803279,
+      "debate_revision_proxy": 0.495,
+      "diagnostic_source": "debate_trace_summary",
+      "family": "Qwen",
+      "final_acc": 0.315,
+      "init_acc": 0.39,
+      "initial_disagreement_rate": 0.71,
+      "initial_entropy_norm": 0.523040805446422,
+      "initial_unanimity_rate": 0.255,
+      "majority_flip_rate": 0.495,
+      "mean_initial_majority_margin": 0.6691666666666669,
+      "model": "qwen3.5-4b",
+      "n_collapses": 34,
+      "n_corrections": 19,
+      "n_debates": 200,
+      "n_init_correct": 78,
+      "n_init_wrong": 122,
+      "raw_collapse_pct": 17.0,
+      "trace_path": "abc_exp/results/debate_traces_vllm_qwen3.5-4b.jsonl",
+      "wilson_hw": 0.11
+    },
+    {
+      "alpha_tot": 0.7303,
+      "at_risk_initial_disagreement_rate": 0.524390243902439,
+      "c_cond_pct": 43.90243902439025,
+      "correction_pct": 20.338983050847457,
+      "debate_revision_proxy": 0.5,
+      "diagnostic_source": "debate_trace_summary",
+      "family": "Qwen",
+      "final_acc": 0.35,
+      "init_acc": 0.41,
+      "initial_disagreement_rate": 0.68,
+      "initial_entropy_norm": 0.5004222103749928,
+      "initial_unanimity_rate": 0.29,
+      "majority_flip_rate": 0.5,
+      "mean_initial_majority_margin": 0.6808333333333336,
+      "model": "qwen3.5-9b",
+      "n_collapses": 36,
+      "n_corrections": 24,
+      "n_debates": 200,
+      "n_init_correct": 82,
+      "n_init_wrong": 118,
+      "raw_collapse_pct": 18.0,
+      "trace_path": "abc_exp/results/debate_traces_vllm_qwen3.5-9b.jsonl",
+      "wilson_hw": 0.1074
+    },
+    {
+      "alpha_tot": 0.795,
+      "at_risk_initial_disagreement_rate": 0.3700787401574803,
+      "c_cond_pct": 8.661417322834646,
+      "correction_pct": 43.83561643835616,
+      "debate_revision_proxy": 0.285,
+      "diagnostic_source": "debate_trace_summary",
+      "family": "Qwen",
+      "final_acc": 0.74,
+      "init_acc": 0.635,
+      "initial_disagreement_rate": 0.525,
+      "initial_entropy_norm": 0.35280361530356374,
+      "initial_unanimity_rate": 0.46,
+      "majority_flip_rate": 0.285,
+      "mean_initial_majority_margin": 0.7858333333333328,
+      "model": "qwen3.6-27b-fp8",
+      "n_collapses": 11,
+      "n_corrections": 32,
+      "n_debates": 200,
+      "n_init_correct": 127,
+      "n_init_wrong": 73,
+      "raw_collapse_pct": 5.5,
+      "trace_path": "abc_exp/results/debate_traces_vllm_qwen3.6-27b-fp8.jsonl",
+      "wilson_hw": 0.0489
+    },
+    {
+      "alpha_tot": 0.7595,
+      "at_risk_initial_disagreement_rate": 0.39603960396039606,
+      "c_cond_pct": 11.881188118811881,
+      "correction_pct": 41.41414141414141,
+      "debate_revision_proxy": 0.385,
+      "diagnostic_source": "debate_trace_summary",
+      "family": "Qwen",
+      "final_acc": 0.65,
+      "init_acc": 0.505,
+      "initial_disagreement_rate": 0.59,
+      "initial_entropy_norm": 0.4232985533928508,
+      "initial_unanimity_rate": 0.39,
+      "majority_flip_rate": 0.385,
+      "mean_initial_majority_margin": 0.7350000000000004,
+      "model": "qwen3.6-35b-a3b-fp8",
+      "n_collapses": 12,
+      "n_corrections": 41,
+      "n_debates": 200,
+      "n_init_correct": 101,
+      "n_init_wrong": 99,
+      "raw_collapse_pct": 6.0,
+      "trace_path": "abc_exp/results/debate_traces_vllm_qwen3.6-35b-a3b-fp8.jsonl",
+      "wilson_hw": 0.0631
+    }
+  ],
+  "predictor_bakeoff": {
+    "alpha_tot": {
+      "family_mean_exact_spearman": {
+        "n": 7,
+        "n_permutations": 5040,
+        "observed_direction": "positive",
+        "one_sided_in_observed_direction_count": 31,
+        "p_one_sided_in_observed_direction_exact": 0.006150793650793651,
+        "p_two_sided_exact": 0.012301587301587301,
+        "rho": 0.8928571428571429,
+        "two_sided_abs_count": 62
+      },
+      "label": "8-probe $\\alpha_{\\mathrm{tot}}$",
+      "model_row_spearman": {
+        "n": 14,
+        "p_two_sided": 0.00024315115661964303,
+        "rho": 0.8294834502328513
+      },
+      "note": "predictor of record; measured before debate compute",
+      "role": "pre-debate fingerprint"
+    },
+    "correction_pct": {
+      "family_mean_exact_spearman": {
+        "n": 7,
+        "n_permutations": 5040,
+        "observed_direction": "positive",
+        "one_sided_in_observed_direction_count": 504,
+        "p_one_sided_in_observed_direction_exact": 0.1,
+        "p_two_sided_exact": 0.2,
+        "rho": 0.5714285714285715,
+        "two_sided_abs_count": 1008
+      },
+      "label": "conditional correction rate",
+      "model_row_spearman": {
+        "n": 14,
+        "p_two_sided": 0.06760058984191057,
+        "rho": 0.5016504685758358
+      },
+      "note": "not deployable pre-debate; captures the opposing productive-revision transition",
+      "role": "post-debate transition control"
+    },
+    "debate_revision_proxy": {
+      "family_mean_exact_spearman": {
+        "n": 7,
+        "n_permutations": 5040,
+        "observed_direction": "positive",
+        "one_sided_in_observed_direction_count": 222,
+        "p_one_sided_in_observed_direction_exact": 0.04404761904761905,
+        "p_two_sided_exact": 0.0880952380952381,
+        "rho": 0.7142857142857144,
+        "two_sided_abs_count": 444
+      },
+      "label": "raw debate revision proxy",
+      "model_row_spearman": {
+        "n": 14,
+        "p_two_sided": 0.10130516387820034,
+        "rho": 0.45594713656387664
+      },
+      "note": "debate FR for sealed rows and majority-flip rate for post-A6 trace rows",
+      "role": "revision-quantity baseline"
+    },
+    "final_acc": {
+      "family_mean_exact_spearman": {
+        "n": 7,
+        "n_permutations": 5040,
+        "observed_direction": "negative",
+        "one_sided_in_observed_direction_count": 276,
+        "p_one_sided_in_observed_direction_exact": 0.05476190476190476,
+        "p_two_sided_exact": 0.10952380952380952,
+        "rho": -0.6785714285714287,
+        "two_sided_abs_count": 552
+      },
+      "label": "final debate accuracy",
+      "model_row_spearman": {
+        "n": 14,
+        "p_two_sided": 0.0001116140529706439,
+        "rho": -0.8514856637668792
+      },
+      "note": "not deployable as a predictor; included to measure capability confounding pressure",
+      "role": "post-debate descriptive control"
+    },
+    "init_acc": {
+      "family_mean_exact_spearman": {
+        "n": 7,
+        "n_permutations": 5040,
+        "observed_direction": "negative",
+        "one_sided_in_observed_direction_count": 86,
+        "p_one_sided_in_observed_direction_exact": 0.017063492063492062,
+        "p_two_sided_exact": 0.034126984126984124,
+        "rho": -0.8214285714285715,
+        "two_sided_abs_count": 172
+      },
+      "label": "initial-majority accuracy",
+      "model_row_spearman": {
+        "n": 14,
+        "p_two_sided": 0.0005426816683701478,
+        "rho": -0.8030807939920179
+      },
+      "note": "pre-debate capability/difficulty proxy; negative rho means weaker initial panels collapse more",
+      "role": "capability proxy"
+    },
+    "raw_collapse_pct": {
+      "family_mean_exact_spearman": {
+        "n": 7,
+        "n_permutations": 5040,
+        "observed_direction": "positive",
+        "one_sided_in_observed_direction_count": 1,
+        "p_one_sided_in_observed_direction_exact": 0.0001984126984126984,
+        "p_two_sided_exact": 0.0003968253968253968,
+        "rho": 1.0,
+        "two_sided_abs_count": 2
+      },
+      "label": "raw collapse rate",
+      "model_row_spearman": {
+        "n": 14,
+        "p_two_sided": 3.0958986867736347e-08,
+        "rho": 0.9636169032097505
+      },
+      "note": "shares the collapse numerator with C_cond; sanity check only, not a usable predictor",
+      "role": "outcome-derived upper bound"
+    }
+  },
+  "predictor_bakeoff_spearman_vs_ccond": {
+    "alpha_tot": {
+      "n": 14,
+      "p_two_sided": 0.00024315115661964303,
+      "rho": 0.8294834502328513
+    },
+    "correction_pct": {
+      "n": 14,
+      "p_two_sided": 0.06760058984191057,
+      "rho": 0.5016504685758358
+    },
+    "debate_revision_proxy": {
+      "n": 14,
+      "p_two_sided": 0.10130516387820034,
+      "rho": 0.45594713656387664
+    },
+    "final_acc": {
+      "n": 14,
+      "p_two_sided": 0.0001116140529706439,
+      "rho": -0.8514856637668792
+    },
+    "init_acc": {
+      "n": 14,
+      "p_two_sided": 0.0005426816683701478,
+      "rho": -0.8030807939920179
+    },
+    "raw_collapse_pct": {
+      "n": 14,
+      "p_two_sided": 3.0958986867736347e-08,
+      "rho": 0.9636169032097505
+    }
+  },
+  "selection_utility": {
+    "accuracy_matched_pair_window_init_acc": 0.05,
+    "high_alpha_group": {
+      "conditional_collapse_pct": 9.51209512095121,
+      "correction_pct": 27.376146788990827,
+      "final_acc": 0.5718435321456236,
+      "mean_alpha": 0.7094428571428572,
+      "models": [
+        "llama-3.1-8b",
+        "qwen3-4b",
+        "qwen3-8b",
+        "qwen3.5-4b",
+        "qwen3.5-9b",
+        "qwen3.6-27b-fp8",
+        "qwen3.6-35b-a3b-fp8"
+      ],
+      "n_debates": 5164,
+      "n_models": 7
+    },
+    "low_alpha_group": {
+      "conditional_collapse_pct": 5.767441860465116,
+      "correction_pct": 15.115465360391882,
+      "final_acc": 0.62643196423582,
+      "mean_alpha": 0.32845714285714284,
+      "models": [
+        "sonnet-4.5",
+        "deepseek-v4-flash",
+        "gemini-3-flash",
+        "gemma-4-31b-it-awq",
+        "gpt-4o-mini",
+        "gpt-5.4-mini",
+        "phi-4-mini"
+      ],
+      "n_debates": 3579,
+      "n_models": 7
+    },
+    "low_alpha_lower_collapse_pairs": 7,
+    "mean_delta_ccond_low_minus_high": -4.058404707442868,
+    "median_alpha_split": 0.5377000000000001,
+    "n_accuracy_matched_pairs": 11,
+    "pairs": [
+      {
+        "delta_ccond_low_minus_high": -2.1505,
+        "delta_final_acc_low_minus_high": -0.0033333333333332993,
+        "high_alpha_model": "sonnet-4.5",
+        "init_acc_gap": 0.030000000000000027,
+        "low_alpha_model": "deepseek-v4-flash"
+      },
+      {
+        "delta_ccond_low_minus_high": -2.1505,
+        "delta_final_acc_low_minus_high": 0.036666666666666625,
+        "high_alpha_model": "sonnet-4.5",
+        "init_acc_gap": 0.025000000000000022,
+        "low_alpha_model": "gemma-4-31b-it-awq"
+      },
+      {
+        "delta_ccond_low_minus_high": -0.6993,
+        "delta_final_acc_low_minus_high": 0.020000000000000018,
+        "high_alpha_model": "gpt-5.4-mini",
+        "init_acc_gap": 0.030000000000000027,
+        "low_alpha_model": "deepseek-v4-flash"
+      },
+      {
+        "delta_ccond_low_minus_high": 0.5882,
+        "delta_final_acc_low_minus_high": 0.03500000000000003,
+        "high_alpha_model": "gemma-4-31b-it-awq",
+        "init_acc_gap": 0.04999999999999993,
+        "low_alpha_model": "gemini-3-flash"
+      },
+      {
+        "delta_ccond_low_minus_high": 1.7730999999999995,
+        "delta_final_acc_low_minus_high": 0.02170737415394719,
+        "high_alpha_model": "llama-3.1-8b",
+        "init_acc_gap": 0.0009920334676144504,
+        "low_alpha_model": "phi-4-mini"
+      },
+      {
+        "delta_ccond_low_minus_high": 3.4165881188118803,
+        "delta_final_acc_low_minus_high": 0.13676984523215174,
+        "high_alpha_model": "llama-3.1-8b",
+        "init_acc_gap": 0.002239141288067903,
+        "low_alpha_model": "qwen3.6-35b-a3b-fp8"
+      },
+      {
+        "delta_ccond_low_minus_high": 1.6467,
+        "delta_final_acc_low_minus_high": -0.05919678714859433,
+        "high_alpha_model": "gpt-5.4-mini",
+        "init_acc_gap": 0.03026104417670683,
+        "low_alpha_model": "gpt-4o-mini"
+      },
+      {
+        "delta_ccond_low_minus_high": -6.315417322834646,
+        "delta_final_acc_low_minus_high": -0.039196787148594314,
+        "high_alpha_model": "qwen3.6-27b-fp8",
+        "init_acc_gap": 0.04973895582329313,
+        "low_alpha_model": "gpt-4o-mini"
+      },
+      {
+        "delta_ccond_low_minus_high": -1.6434881188118808,
+        "delta_final_acc_low_minus_high": -0.11506247107820455,
+        "high_alpha_model": "qwen3.6-35b-a3b-fp8",
+        "init_acc_gap": 0.0012471078204534525,
+        "low_alpha_model": "phi-4-mini"
+      },
+      {
+        "delta_ccond_low_minus_high": -38.795139024390245,
+        "delta_final_acc_low_minus_high": 0.2932207311429894,
+        "high_alpha_model": "qwen3.5-9b",
+        "init_acc_gap": 0.043031004164738595,
+        "low_alpha_model": "qwen3-4b"
+      },
+      {
+        "delta_ccond_low_minus_high": -0.31269543464665617,
+        "delta_final_acc_low_minus_high": -0.034999999999999976,
+        "high_alpha_model": "qwen3.5-9b",
+        "init_acc_gap": 0.019999999999999962,
+        "low_alpha_model": "qwen3.5-4b"
+      }
+    ]
+  },
+  "trace_diversity_diagnostics": {
+    "description": "Trace-available diagnostic only: six post-A6 rows with raw initial answers (DeepSeek, Gemma, and four Qwen variants). These metrics are measured after the three initial answers are sampled, so they are not substitutes for the single-model pre-debate alpha fingerprint.",
+    "models": [
+      "deepseek-v4-flash",
+      "gemma-4-31b-it-awq",
+      "qwen3.5-4b",
+      "qwen3.5-9b",
+      "qwen3.6-27b-fp8",
+      "qwen3.6-35b-a3b-fp8"
+    ],
+    "n_models": 6,
+    "partial_spearman": {
+      "alpha_controlling_initial_disagreement_rate": {
+        "controls": [
+          "initial_disagreement_rate"
+        ],
+        "df": 3,
+        "n": 6,
+        "p_two_sided": 0.7516123843948379,
+        "rho": 0.19635227746952638
+      }
+    },
+    "per_model": [
+      {
+        "alpha_tot": 0.1129,
+        "at_risk_initial_disagreement_rate": 0.006711409395973154,
+        "c_cond_pct": 0.0,
+        "initial_disagreement_rate": 0.04,
+        "initial_entropy_norm": 0.02343295451785661,
+        "initial_unanimity_rate": 0.76,
+        "model": "deepseek-v4-flash",
+        "n_debates": 200
+      },
+      {
+        "alpha_tot": 0.3106,
+        "at_risk_initial_disagreement_rate": 0.05625,
+        "c_cond_pct": 0.0,
+        "initial_disagreement_rate": 0.12,
+        "initial_entropy_norm": 0.07793801642856948,
+        "initial_unanimity_rate": 0.87,
+        "model": "gemma-4-31b-it-awq",
+        "n_debates": 200
+      },
+      {
+        "alpha_tot": 0.6897,
+        "at_risk_initial_disagreement_rate": 0.5897435897435898,
+        "c_cond_pct": 43.58974358974359,
+        "initial_disagreement_rate": 0.71,
+        "initial_entropy_norm": 0.523040805446422,
+        "initial_unanimity_rate": 0.255,
+        "model": "qwen3.5-4b",
+        "n_debates": 200
+      },
+      {
+        "alpha_tot": 0.7303,
+        "at_risk_initial_disagreement_rate": 0.524390243902439,
+        "c_cond_pct": 43.90243902439025,
+        "initial_disagreement_rate": 0.68,
+        "initial_entropy_norm": 0.5004222103749928,
+        "initial_unanimity_rate": 0.29,
+        "model": "qwen3.5-9b",
+        "n_debates": 200
+      },
+      {
+        "alpha_tot": 0.795,
+        "at_risk_initial_disagreement_rate": 0.3700787401574803,
+        "c_cond_pct": 8.661417322834646,
+        "initial_disagreement_rate": 0.525,
+        "initial_entropy_norm": 0.35280361530356374,
+        "initial_unanimity_rate": 0.46,
+        "model": "qwen3.6-27b-fp8",
+        "n_debates": 200
+      },
+      {
+        "alpha_tot": 0.7595,
+        "at_risk_initial_disagreement_rate": 0.39603960396039606,
+        "c_cond_pct": 11.881188118811881,
+        "initial_disagreement_rate": 0.59,
+        "initial_entropy_norm": 0.4232985533928508,
+        "initial_unanimity_rate": 0.39,
+        "model": "qwen3.6-35b-a3b-fp8",
+        "n_debates": 200
+      }
+    ],
+    "spearman_vs_ccond": {
+      "at_risk_initial_disagreement_rate": {
+        "label": "at-risk initial disagreement rate",
+        "n": 6,
+        "note": "initial disagreement restricted to debates whose initial majority is correct",
+        "p_two_sided": 0.007665844187473165,
+        "rho": 0.9276336570439175
+      },
+      "initial_disagreement_rate": {
+        "label": "initial disagreement rate",
+        "n": 6,
+        "note": "fraction of debates where the three initial answers are not unanimous",
+        "p_two_sided": 0.007665844187473165,
+        "rho": 0.9276336570439175
+      },
+      "initial_entropy_norm": {
+        "label": "normalized initial-answer entropy",
+        "n": 6,
+        "note": "mean Shannon entropy of initial answers, normalized by log2(3)",
+        "p_two_sided": 0.007665844187473165,
+        "rho": 0.9276336570439175
+      },
+      "initial_unanimity_rate": {
+        "label": "initial unanimity rate",
+        "n": 6,
+        "note": "fraction of debates where all parsed initial answers agree",
+        "p_two_sided": 0.007665844187473165,
+        "rho": -0.9276336570439175
+      }
+    }
+  }
+}

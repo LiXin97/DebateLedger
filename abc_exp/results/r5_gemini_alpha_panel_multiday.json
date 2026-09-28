@@ -1,0 +1,1224 @@
+{
+  "pairwise": [
+    {
+      "alpha_mean_spearman": 0.9999999999999999,
+      "alpha_mean_spearman_p_two_sided": 2.4335320021951557e-142,
+      "alpha_pair_count": 20,
+      "initial_answer_majority_changes": 0,
+      "max_abs_alpha_mean_delta": 0.0,
+      "mean_abs_alpha_mean_delta": 0.0,
+      "panel_a": "r5_gemini_alpha_panel_20260427_day1",
+      "panel_b": "r5_gemini_alpha_panel_20260428_day2",
+      "shared_questions": 20
+    },
+    {
+      "alpha_mean_spearman": 0.9999999999999999,
+      "alpha_mean_spearman_p_two_sided": 2.4335320021951557e-142,
+      "alpha_pair_count": 20,
+      "initial_answer_majority_changes": 0,
+      "max_abs_alpha_mean_delta": 0.0,
+      "mean_abs_alpha_mean_delta": 0.0,
+      "panel_a": "r5_gemini_alpha_panel_20260427_day1",
+      "panel_b": "r5_gemini_alpha_panel_20260430_day3",
+      "shared_questions": 20
+    },
+    {
+      "alpha_mean_spearman": 0.9999999999999999,
+      "alpha_mean_spearman_p_two_sided": 2.4335320021951557e-142,
+      "alpha_pair_count": 20,
+      "initial_answer_majority_changes": 0,
+      "max_abs_alpha_mean_delta": 0.0,
+      "mean_abs_alpha_mean_delta": 0.0,
+      "panel_a": "r5_gemini_alpha_panel_20260428_day2",
+      "panel_b": "r5_gemini_alpha_panel_20260430_day3",
+      "shared_questions": 20
+    }
+  ],
+  "panels": [
+    {
+      "max_alpha_range_within_question": 0.0,
+      "mean_alpha_range_within_question": 0.0,
+      "model": "models/gemini-3.1-flash-lite-preview",
+      "n_questions": 20,
+      "n_records": 60,
+      "panel": "r5_gemini_alpha_panel_20260427_day1",
+      "per_question": [
+        {
+          "alpha_mean": 0.75,
+          "alpha_range": 0.0,
+          "alpha_values": [
+            0.75,
+            0.75,
+            0.75
+          ],
+          "initial_answers": [
+            "E",
+            "E",
+            "E"
+          ],
+          "majority_initial_answer": "E",
+          "n_repeats": 3,
+          "n_unique_initial_answers": 1,
+          "post_answer_none": 0,
+          "question_id": "mmlu_pro_100"
+        },
+        {
+          "alpha_mean": 0.75,
+          "alpha_range": 0.0,
+          "alpha_values": [
+            0.75,
+            0.75,
+            0.75
+          ],
+          "initial_answers": [
+            "B",
+            "B",
+            "B"
+          ],
+          "majority_initial_answer": "B",
+          "n_repeats": 3,
+          "n_unique_initial_answers": 1,
+          "post_answer_none": 0,
+          "question_id": "mmlu_pro_1240"
+        },
+        {
+          "alpha_mean": 1.0,
+          "alpha_range": 0.0,
+          "alpha_values": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "initial_answers": [
+            "E",
+            "E",
+            "E"
+          ],
+          "majority_initial_answer": "E",
+          "n_repeats": 3,
+          "n_unique_initial_answers": 1,
+          "post_answer_none": 0,
+          "question_id": "mmlu_pro_125"
+        },
+        {
+          "alpha_mean": 0.75,
+          "alpha_range": 0.0,
+          "alpha_values": [
+            0.75,
+            0.75,
+            0.75
+          ],
+          "initial_answers": [
+            "A",
+            "A",
+            "A"
+          ],
+          "majority_initial_answer": "A",
+          "n_repeats": 3,
+          "n_unique_initial_answers": 1,
+          "post_answer_none": 6,
+          "question_id": "mmlu_pro_342"
+        },
+        {
+          "alpha_mean": 0.0,
+          "alpha_range": 0.0,
+          "alpha_values": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "initial_answers": [
+            "J",
+            "J",
+            "J"
+          ],
+          "majority_initial_answer": "J",
+          "n_repeats": 3,
+          "n_unique_initial_answers": 1,
+          "post_answer_none": 0,
+          "question_id": "mmlu_pro_3875"
+        },
+        {
+          "alpha_mean": 1.0,
+          "alpha_range": 0.0,
+          "alpha_values": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "initial_answers": [
+            "G",
+            "G",
+            "G"
+          ],
+          "majority_initial_answer": "G",
+          "n_repeats": 3,
+          "n_unique_initial_answers": 1,
+          "post_answer_none": 0,
+          "question_id": "mmlu_pro_4151"
+        },
+        {
+          "alpha_mean": 0.625,
+          "alpha_range": 0.0,
+          "alpha_values": [
+            0.625,
+            0.625,
+            0.625
+          ],
+          "initial_answers": [
+            "A",
+            "A",
+            "A"
+          ],
+          "majority_initial_answer": "A",
+          "n_repeats": 3,
+          "n_unique_initial_answers": 1,
+          "post_answer_none": 0,
+          "question_id": "mmlu_pro_4238"
+        },
+        {
+          "alpha_mean": 0.75,
+          "alpha_range": 0.0,
+          "alpha_values": [
+            0.75,
+            0.75,
+            0.75
+          ],
+          "initial_answers": [
+            "J",
+            "J",
+            "J"
+          ],
+          "majority_initial_answer": "J",
+          "n_repeats": 3,
+          "n_unique_initial_answers": 1,
+          "post_answer_none": 0,
+          "question_id": "mmlu_pro_4356"
+        },
+        {
+          "alpha_mean": 0.75,
+          "alpha_range": 0.0,
+          "alpha_values": [
+            0.75,
+            0.75,
+            0.75
+          ],
+          "initial_answers": [
+            "E",
+            "E",
+            "E"
+          ],
+          "majority_initial_answer": "E",
+          "n_repeats": 3,
+          "n_unique_initial_answers": 1,
+          "post_answer_none": 0,
+          "question_id": "mmlu_pro_4882"
+        },
+        {
+          "alpha_mean": 0.25,
+          "alpha_range": 0.0,
+          "alpha_values": [
+            0.25,
+            0.25,
+            0.25
+          ],
+          "initial_answers": [
+            "E",
+            "E",
+            "E"
+          ],
+          "majority_initial_answer": "E",
+          "n_repeats": 3,
+          "n_unique_initial_answers": 1,
+          "post_answer_none": 0,
+          "question_id": "mmlu_pro_5303"
+        },
+        {
+          "alpha_mean": 0.875,
+          "alpha_range": 0.0,
+          "alpha_values": [
+            0.875,
+            0.875,
+            0.875
+          ],
+          "initial_answers": [
+            "D",
+            "D",
+            "D"
+          ],
+          "majority_initial_answer": "D",
+          "n_repeats": 3,
+          "n_unique_initial_answers": 1,
+          "post_answer_none": 0,
+          "question_id": "mmlu_pro_5365"
+        },
+        {
+          "alpha_mean": 0.625,
+          "alpha_range": 0.0,
+          "alpha_values": [
+            0.625,
+            0.625,
+            0.625
+          ],
+          "initial_answers": [
+            "J",
+            "J",
+            "J"
+          ],
+          "majority_initial_answer": "J",
+          "n_repeats": 3,
+          "n_unique_initial_answers": 1,
+          "post_answer_none": 0,
+          "question_id": "mmlu_pro_5386"
+        },
+        {
+          "alpha_mean": 0.875,
+          "alpha_range": 0.0,
+          "alpha_values": [
+            0.875,
+            0.875,
+            0.875
+          ],
+          "initial_answers": [
+            "E",
+            "E",
+            "E"
+          ],
+          "majority_initial_answer": "E",
+          "n_repeats": 3,
+          "n_unique_initial_answers": 1,
+          "post_answer_none": 0,
+          "question_id": "mmlu_pro_5538"
+        },
+        {
+          "alpha_mean": 0.75,
+          "alpha_range": 0.0,
+          "alpha_values": [
+            0.75,
+            0.75,
+            0.75
+          ],
+          "initial_answers": [
+            "E",
+            "E",
+            "E"
+          ],
+          "majority_initial_answer": "E",
+          "n_repeats": 3,
+          "n_unique_initial_answers": 1,
+          "post_answer_none": 0,
+          "question_id": "mmlu_pro_6085"
+        },
+        {
+          "alpha_mean": 1.0,
+          "alpha_range": 0.0,
+          "alpha_values": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "initial_answers": [
+            "D",
+            "D",
+            "D"
+          ],
+          "majority_initial_answer": "D",
+          "n_repeats": 3,
+          "n_unique_initial_answers": 1,
+          "post_answer_none": 0,
+          "question_id": "mmlu_pro_6402"
+        },
+        {
+          "alpha_mean": 1.0,
+          "alpha_range": 0.0,
+          "alpha_values": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "initial_answers": [
+            "E",
+            "E",
+            "E"
+          ],
+          "majority_initial_answer": "E",
+          "n_repeats": 3,
+          "n_unique_initial_answers": 1,
+          "post_answer_none": 0,
+          "question_id": "mmlu_pro_6446"
+        },
+        {
+          "alpha_mean": 0.125,
+          "alpha_range": 0.0,
+          "alpha_values": [
+            0.125,
+            0.125,
+            0.125
+          ],
+          "initial_answers": [
+            "A",
+            "A",
+            "A"
+          ],
+          "majority_initial_answer": "A",
+          "n_repeats": 3,
+          "n_unique_initial_answers": 1,
+          "post_answer_none": 3,
+          "question_id": "mmlu_pro_7585"
+        },
+        {
+          "alpha_mean": 0.5,
+          "alpha_range": 0.0,
+          "alpha_values": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "initial_answers": [
+            "E",
+            "E",
+            "E"
+          ],
+          "majority_initial_answer": "E",
+          "n_repeats": 3,
+          "n_unique_initial_answers": 1,
+          "post_answer_none": 12,
+          "question_id": "mmlu_pro_8885"
+        },
+        {
+          "alpha_mean": 0.75,
+          "alpha_range": 0.0,
+          "alpha_values": [
+            0.75,
+            0.75,
+            0.75
+          ],
+          "initial_answers": [
+            "B",
+            "B",
+            "B"
+          ],
+          "majority_initial_answer": "B",
+          "n_repeats": 3,
+          "n_unique_initial_answers": 1,
+          "post_answer_none": 0,
+          "question_id": "mmlu_pro_915"
+        },
+        {
+          "alpha_mean": 0.75,
+          "alpha_range": 0.0,
+          "alpha_values": [
+            0.75,
+            0.75,
+            0.75
+          ],
+          "initial_answers": [
+            "H",
+            "H",
+            "H"
+          ],
+          "majority_initial_answer": "H",
+          "n_repeats": 3,
+          "n_unique_initial_answers": 1,
+          "post_answer_none": 0,
+          "question_id": "mmlu_pro_957"
+        }
+      ],
+      "probe_post_answer_none_rate": 0.04375,
+      "questions_with_initial_answer_instability": 0,
+      "repeats_per_question_max": 3,
+      "repeats_per_question_min": 3,
+      "total_cost": 0.35196225
+    },
+    {
+      "max_alpha_range_within_question": 0.0,
+      "mean_alpha_range_within_question": 0.0,
+      "model": "models/gemini-3.1-flash-lite-preview",
+      "n_questions": 20,
+      "n_records": 60,
+      "panel": "r5_gemini_alpha_panel_20260428_day2",
+      "per_question": [
+        {
+          "alpha_mean": 0.75,
+          "alpha_range": 0.0,
+          "alpha_values": [
+            0.75,
+            0.75,
+            0.75
+          ],
+          "initial_answers": [
+            "E",
+            "E",
+            "E"
+          ],
+          "majority_initial_answer": "E",
+          "n_repeats": 3,
+          "n_unique_initial_answers": 1,
+          "post_answer_none": 0,
+          "question_id": "mmlu_pro_100"
+        },
+        {
+          "alpha_mean": 0.75,
+          "alpha_range": 0.0,
+          "alpha_values": [
+            0.75,
+            0.75,
+            0.75
+          ],
+          "initial_answers": [
+            "B",
+            "B",
+            "B"
+          ],
+          "majority_initial_answer": "B",
+          "n_repeats": 3,
+          "n_unique_initial_answers": 1,
+          "post_answer_none": 0,
+          "question_id": "mmlu_pro_1240"
+        },
+        {
+          "alpha_mean": 1.0,
+          "alpha_range": 0.0,
+          "alpha_values": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "initial_answers": [
+            "E",
+            "E",
+            "E"
+          ],
+          "majority_initial_answer": "E",
+          "n_repeats": 3,
+          "n_unique_initial_answers": 1,
+          "post_answer_none": 0,
+          "question_id": "mmlu_pro_125"
+        },
+        {
+          "alpha_mean": 0.75,
+          "alpha_range": 0.0,
+          "alpha_values": [
+            0.75,
+            0.75,
+            0.75
+          ],
+          "initial_answers": [
+            "A",
+            "A",
+            "A"
+          ],
+          "majority_initial_answer": "A",
+          "n_repeats": 3,
+          "n_unique_initial_answers": 1,
+          "post_answer_none": 6,
+          "question_id": "mmlu_pro_342"
+        },
+        {
+          "alpha_mean": 0.0,
+          "alpha_range": 0.0,
+          "alpha_values": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "initial_answers": [
+            "J",
+            "J",
+            "J"
+          ],
+          "majority_initial_answer": "J",
+          "n_repeats": 3,
+          "n_unique_initial_answers": 1,
+          "post_answer_none": 0,
+          "question_id": "mmlu_pro_3875"
+        },
+        {
+          "alpha_mean": 1.0,
+          "alpha_range": 0.0,
+          "alpha_values": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "initial_answers": [
+            "G",
+            "G",
+            "G"
+          ],
+          "majority_initial_answer": "G",
+          "n_repeats": 3,
+          "n_unique_initial_answers": 1,
+          "post_answer_none": 0,
+          "question_id": "mmlu_pro_4151"
+        },
+        {
+          "alpha_mean": 0.625,
+          "alpha_range": 0.0,
+          "alpha_values": [
+            0.625,
+            0.625,
+            0.625
+          ],
+          "initial_answers": [
+            "A",
+            "A",
+            "A"
+          ],
+          "majority_initial_answer": "A",
+          "n_repeats": 3,
+          "n_unique_initial_answers": 1,
+          "post_answer_none": 0,
+          "question_id": "mmlu_pro_4238"
+        },
+        {
+          "alpha_mean": 0.75,
+          "alpha_range": 0.0,
+          "alpha_values": [
+            0.75,
+            0.75,
+            0.75
+          ],
+          "initial_answers": [
+            "J",
+            "J",
+            "J"
+          ],
+          "majority_initial_answer": "J",
+          "n_repeats": 3,
+          "n_unique_initial_answers": 1,
+          "post_answer_none": 0,
+          "question_id": "mmlu_pro_4356"
+        },
+        {
+          "alpha_mean": 0.75,
+          "alpha_range": 0.0,
+          "alpha_values": [
+            0.75,
+            0.75,
+            0.75
+          ],
+          "initial_answers": [
+            "E",
+            "E",
+            "E"
+          ],
+          "majority_initial_answer": "E",
+          "n_repeats": 3,
+          "n_unique_initial_answers": 1,
+          "post_answer_none": 0,
+          "question_id": "mmlu_pro_4882"
+        },
+        {
+          "alpha_mean": 0.25,
+          "alpha_range": 0.0,
+          "alpha_values": [
+            0.25,
+            0.25,
+            0.25
+          ],
+          "initial_answers": [
+            "E",
+            "E",
+            "E"
+          ],
+          "majority_initial_answer": "E",
+          "n_repeats": 3,
+          "n_unique_initial_answers": 1,
+          "post_answer_none": 0,
+          "question_id": "mmlu_pro_5303"
+        },
+        {
+          "alpha_mean": 0.875,
+          "alpha_range": 0.0,
+          "alpha_values": [
+            0.875,
+            0.875,
+            0.875
+          ],
+          "initial_answers": [
+            "D",
+            "D",
+            "D"
+          ],
+          "majority_initial_answer": "D",
+          "n_repeats": 3,
+          "n_unique_initial_answers": 1,
+          "post_answer_none": 0,
+          "question_id": "mmlu_pro_5365"
+        },
+        {
+          "alpha_mean": 0.625,
+          "alpha_range": 0.0,
+          "alpha_values": [
+            0.625,
+            0.625,
+            0.625
+          ],
+          "initial_answers": [
+            "J",
+            "J",
+            "J"
+          ],
+          "majority_initial_answer": "J",
+          "n_repeats": 3,
+          "n_unique_initial_answers": 1,
+          "post_answer_none": 0,
+          "question_id": "mmlu_pro_5386"
+        },
+        {
+          "alpha_mean": 0.875,
+          "alpha_range": 0.0,
+          "alpha_values": [
+            0.875,
+            0.875,
+            0.875
+          ],
+          "initial_answers": [
+            "E",
+            "E",
+            "E"
+          ],
+          "majority_initial_answer": "E",
+          "n_repeats": 3,
+          "n_unique_initial_answers": 1,
+          "post_answer_none": 0,
+          "question_id": "mmlu_pro_5538"
+        },
+        {
+          "alpha_mean": 0.75,
+          "alpha_range": 0.0,
+          "alpha_values": [
+            0.75,
+            0.75,
+            0.75
+          ],
+          "initial_answers": [
+            "E",
+            "E",
+            "E"
+          ],
+          "majority_initial_answer": "E",
+          "n_repeats": 3,
+          "n_unique_initial_answers": 1,
+          "post_answer_none": 0,
+          "question_id": "mmlu_pro_6085"
+        },
+        {
+          "alpha_mean": 1.0,
+          "alpha_range": 0.0,
+          "alpha_values": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "initial_answers": [
+            "D",
+            "D",
+            "D"
+          ],
+          "majority_initial_answer": "D",
+          "n_repeats": 3,
+          "n_unique_initial_answers": 1,
+          "post_answer_none": 0,
+          "question_id": "mmlu_pro_6402"
+        },
+        {
+          "alpha_mean": 1.0,
+          "alpha_range": 0.0,
+          "alpha_values": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "initial_answers": [
+            "E",
+            "E",
+            "E"
+          ],
+          "majority_initial_answer": "E",
+          "n_repeats": 3,
+          "n_unique_initial_answers": 1,
+          "post_answer_none": 0,
+          "question_id": "mmlu_pro_6446"
+        },
+        {
+          "alpha_mean": 0.125,
+          "alpha_range": 0.0,
+          "alpha_values": [
+            0.125,
+            0.125,
+            0.125
+          ],
+          "initial_answers": [
+            "A",
+            "A",
+            "A"
+          ],
+          "majority_initial_answer": "A",
+          "n_repeats": 3,
+          "n_unique_initial_answers": 1,
+          "post_answer_none": 3,
+          "question_id": "mmlu_pro_7585"
+        },
+        {
+          "alpha_mean": 0.5,
+          "alpha_range": 0.0,
+          "alpha_values": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "initial_answers": [
+            "E",
+            "E",
+            "E"
+          ],
+          "majority_initial_answer": "E",
+          "n_repeats": 3,
+          "n_unique_initial_answers": 1,
+          "post_answer_none": 12,
+          "question_id": "mmlu_pro_8885"
+        },
+        {
+          "alpha_mean": 0.75,
+          "alpha_range": 0.0,
+          "alpha_values": [
+            0.75,
+            0.75,
+            0.75
+          ],
+          "initial_answers": [
+            "B",
+            "B",
+            "B"
+          ],
+          "majority_initial_answer": "B",
+          "n_repeats": 3,
+          "n_unique_initial_answers": 1,
+          "post_answer_none": 0,
+          "question_id": "mmlu_pro_915"
+        },
+        {
+          "alpha_mean": 0.75,
+          "alpha_range": 0.0,
+          "alpha_values": [
+            0.75,
+            0.75,
+            0.75
+          ],
+          "initial_answers": [
+            "H",
+            "H",
+            "H"
+          ],
+          "majority_initial_answer": "H",
+          "n_repeats": 3,
+          "n_unique_initial_answers": 1,
+          "post_answer_none": 0,
+          "question_id": "mmlu_pro_957"
+        }
+      ],
+      "probe_post_answer_none_rate": 0.04375,
+      "questions_with_initial_answer_instability": 0,
+      "repeats_per_question_max": 3,
+      "repeats_per_question_min": 3,
+      "total_cost": 0.35196225
+    },
+    {
+      "max_alpha_range_within_question": 0.0,
+      "mean_alpha_range_within_question": 0.0,
+      "model": "models/gemini-3.1-flash-lite-preview",
+      "n_questions": 20,
+      "n_records": 60,
+      "panel": "r5_gemini_alpha_panel_20260430_day3",
+      "per_question": [
+        {
+          "alpha_mean": 0.75,
+          "alpha_range": 0.0,
+          "alpha_values": [
+            0.75,
+            0.75,
+            0.75
+          ],
+          "initial_answers": [
+            "E",
+            "E",
+            "E"
+          ],
+          "majority_initial_answer": "E",
+          "n_repeats": 3,
+          "n_unique_initial_answers": 1,
+          "post_answer_none": 0,
+          "question_id": "mmlu_pro_100"
+        },
+        {
+          "alpha_mean": 0.75,
+          "alpha_range": 0.0,
+          "alpha_values": [
+            0.75,
+            0.75,
+            0.75
+          ],
+          "initial_answers": [
+            "B",
+            "B",
+            "B"
+          ],
+          "majority_initial_answer": "B",
+          "n_repeats": 3,
+          "n_unique_initial_answers": 1,
+          "post_answer_none": 0,
+          "question_id": "mmlu_pro_1240"
+        },
+        {
+          "alpha_mean": 1.0,
+          "alpha_range": 0.0,
+          "alpha_values": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "initial_answers": [
+            "E",
+            "E",
+            "E"
+          ],
+          "majority_initial_answer": "E",
+          "n_repeats": 3,
+          "n_unique_initial_answers": 1,
+          "post_answer_none": 0,
+          "question_id": "mmlu_pro_125"
+        },
+        {
+          "alpha_mean": 0.75,
+          "alpha_range": 0.0,
+          "alpha_values": [
+            0.75,
+            0.75,
+            0.75
+          ],
+          "initial_answers": [
+            "A",
+            "A",
+            "A"
+          ],
+          "majority_initial_answer": "A",
+          "n_repeats": 3,
+          "n_unique_initial_answers": 1,
+          "post_answer_none": 6,
+          "question_id": "mmlu_pro_342"
+        },
+        {
+          "alpha_mean": 0.0,
+          "alpha_range": 0.0,
+          "alpha_values": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "initial_answers": [
+            "J",
+            "J",
+            "J"
+          ],
+          "majority_initial_answer": "J",
+          "n_repeats": 3,
+          "n_unique_initial_answers": 1,
+          "post_answer_none": 0,
+          "question_id": "mmlu_pro_3875"
+        },
+        {
+          "alpha_mean": 1.0,
+          "alpha_range": 0.0,
+          "alpha_values": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "initial_answers": [
+            "G",
+            "G",
+            "G"
+          ],
+          "majority_initial_answer": "G",
+          "n_repeats": 3,
+          "n_unique_initial_answers": 1,
+          "post_answer_none": 0,
+          "question_id": "mmlu_pro_4151"
+        },
+        {
+          "alpha_mean": 0.625,
+          "alpha_range": 0.0,
+          "alpha_values": [
+            0.625,
+            0.625,
+            0.625
+          ],
+          "initial_answers": [
+            "A",
+            "A",
+            "A"
+          ],
+          "majority_initial_answer": "A",
+          "n_repeats": 3,
+          "n_unique_initial_answers": 1,
+          "post_answer_none": 0,
+          "question_id": "mmlu_pro_4238"
+        },
+        {
+          "alpha_mean": 0.75,
+          "alpha_range": 0.0,
+          "alpha_values": [
+            0.75,
+            0.75,
+            0.75
+          ],
+          "initial_answers": [
+            "J",
+            "J",
+            "J"
+          ],
+          "majority_initial_answer": "J",
+          "n_repeats": 3,
+          "n_unique_initial_answers": 1,
+          "post_answer_none": 0,
+          "question_id": "mmlu_pro_4356"
+        },
+        {
+          "alpha_mean": 0.75,
+          "alpha_range": 0.0,
+          "alpha_values": [
+            0.75,
+            0.75,
+            0.75
+          ],
+          "initial_answers": [
+            "E",
+            "E",
+            "E"
+          ],
+          "majority_initial_answer": "E",
+          "n_repeats": 3,
+          "n_unique_initial_answers": 1,
+          "post_answer_none": 0,
+          "question_id": "mmlu_pro_4882"
+        },
+        {
+          "alpha_mean": 0.25,
+          "alpha_range": 0.0,
+          "alpha_values": [
+            0.25,
+            0.25,
+            0.25
+          ],
+          "initial_answers": [
+            "E",
+            "E",
+            "E"
+          ],
+          "majority_initial_answer": "E",
+          "n_repeats": 3,
+          "n_unique_initial_answers": 1,
+          "post_answer_none": 0,
+          "question_id": "mmlu_pro_5303"
+        },
+        {
+          "alpha_mean": 0.875,
+          "alpha_range": 0.0,
+          "alpha_values": [
+            0.875,
+            0.875,
+            0.875
+          ],
+          "initial_answers": [
+            "D",
+            "D",
+            "D"
+          ],
+          "majority_initial_answer": "D",
+          "n_repeats": 3,
+          "n_unique_initial_answers": 1,
+          "post_answer_none": 0,
+          "question_id": "mmlu_pro_5365"
+        },
+        {
+          "alpha_mean": 0.625,
+          "alpha_range": 0.0,
+          "alpha_values": [
+            0.625,
+            0.625,
+            0.625
+          ],
+          "initial_answers": [
+            "J",
+            "J",
+            "J"
+          ],
+          "majority_initial_answer": "J",
+          "n_repeats": 3,
+          "n_unique_initial_answers": 1,
+          "post_answer_none": 0,
+          "question_id": "mmlu_pro_5386"
+        },
+        {
+          "alpha_mean": 0.875,
+          "alpha_range": 0.0,
+          "alpha_values": [
+            0.875,
+            0.875,
+            0.875
+          ],
+          "initial_answers": [
+            "E",
+            "E",
+            "E"
+          ],
+          "majority_initial_answer": "E",
+          "n_repeats": 3,
+          "n_unique_initial_answers": 1,
+          "post_answer_none": 0,
+          "question_id": "mmlu_pro_5538"
+        },
+        {
+          "alpha_mean": 0.75,
+          "alpha_range": 0.0,
+          "alpha_values": [
+            0.75,
+            0.75,
+            0.75
+          ],
+          "initial_answers": [
+            "E",
+            "E",
+            "E"
+          ],
+          "majority_initial_answer": "E",
+          "n_repeats": 3,
+          "n_unique_initial_answers": 1,
+          "post_answer_none": 0,
+          "question_id": "mmlu_pro_6085"
+        },
+        {
+          "alpha_mean": 1.0,
+          "alpha_range": 0.0,
+          "alpha_values": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "initial_answers": [
+            "D",
+            "D",
+            "D"
+          ],
+          "majority_initial_answer": "D",
+          "n_repeats": 3,
+          "n_unique_initial_answers": 1,
+          "post_answer_none": 0,
+          "question_id": "mmlu_pro_6402"
+        },
+        {
+          "alpha_mean": 1.0,
+          "alpha_range": 0.0,
+          "alpha_values": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "initial_answers": [
+            "E",
+            "E",
+            "E"
+          ],
+          "majority_initial_answer": "E",
+          "n_repeats": 3,
+          "n_unique_initial_answers": 1,
+          "post_answer_none": 0,
+          "question_id": "mmlu_pro_6446"
+        },
+        {
+          "alpha_mean": 0.125,
+          "alpha_range": 0.0,
+          "alpha_values": [
+            0.125,
+            0.125,
+            0.125
+          ],
+          "initial_answers": [
+            "A",
+            "A",
+            "A"
+          ],
+          "majority_initial_answer": "A",
+          "n_repeats": 3,
+          "n_unique_initial_answers": 1,
+          "post_answer_none": 3,
+          "question_id": "mmlu_pro_7585"
+        },
+        {
+          "alpha_mean": 0.5,
+          "alpha_range": 0.0,
+          "alpha_values": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "initial_answers": [
+            "E",
+            "E",
+            "E"
+          ],
+          "majority_initial_answer": "E",
+          "n_repeats": 3,
+          "n_unique_initial_answers": 1,
+          "post_answer_none": 12,
+          "question_id": "mmlu_pro_8885"
+        },
+        {
+          "alpha_mean": 0.75,
+          "alpha_range": 0.0,
+          "alpha_values": [
+            0.75,
+            0.75,
+            0.75
+          ],
+          "initial_answers": [
+            "B",
+            "B",
+            "B"
+          ],
+          "majority_initial_answer": "B",
+          "n_repeats": 3,
+          "n_unique_initial_answers": 1,
+          "post_answer_none": 0,
+          "question_id": "mmlu_pro_915"
+        },
+        {
+          "alpha_mean": 0.75,
+          "alpha_range": 0.0,
+          "alpha_values": [
+            0.75,
+            0.75,
+            0.75
+          ],
+          "initial_answers": [
+            "H",
+            "H",
+            "H"
+          ],
+          "majority_initial_answer": "H",
+          "n_repeats": 3,
+          "n_unique_initial_answers": 1,
+          "post_answer_none": 0,
+          "question_id": "mmlu_pro_957"
+        }
+      ],
+      "probe_post_answer_none_rate": 0.04375,
+      "questions_with_initial_answer_instability": 0,
+      "repeats_per_question_max": 3,
+      "repeats_per_question_min": 3,
+      "total_cost": 0.35196225
+    }
+  ]
+}

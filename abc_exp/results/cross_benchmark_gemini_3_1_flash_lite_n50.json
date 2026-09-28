@@ -1,0 +1,78 @@
+{
+  "config": {
+    "model": "models/gemini-3.1-flash-lite-preview",
+    "benchmarks": [
+      "gpqa",
+      "truthfulqa"
+    ],
+    "n_questions": 50,
+    "seed": 45,
+    "n_rounds": 3,
+    "question_concurrency": 10
+  },
+  "summary": {
+    "overall": {
+      "n": 100,
+      "initial_accuracy": 0.73,
+      "final_accuracy": 0.75,
+      "n_init_majority_correct": 73,
+      "n_collapses": 1,
+      "conditional_collapse_pct": 1.36986301369863,
+      "n_corrections": 3,
+      "mean_alpha": 0.4725,
+      "spearman_alpha_vs_collapse": {
+        "n": 100,
+        "rho": 0.029712319275601688,
+        "p_two_sided": 0.7691763682574289
+      },
+      "spearman_alpha_vs_final_wrong": {
+        "n": 100,
+        "rho": 0.026104654504520385,
+        "p_two_sided": 0.7965547257989941
+      }
+    },
+    "per_benchmark": {
+      "gpqa": {
+        "n": 50,
+        "initial_accuracy": 0.62,
+        "final_accuracy": 0.66,
+        "n_init_majority_correct": 31,
+        "n_collapses": 1,
+        "conditional_collapse_pct": 3.225806451612903,
+        "n_corrections": 3,
+        "mean_alpha": 0.5741666666666666,
+        "spearman_alpha_vs_collapse": {
+          "n": 50,
+          "rho": -0.019882542875406316,
+          "p_two_sided": 0.890992589966221
+        },
+        "spearman_alpha_vs_final_wrong": {
+          "n": 50,
+          "rho": -0.2732382467092093,
+          "p_two_sided": 0.05486685678427678
+        }
+      },
+      "truthfulqa": {
+        "n": 50,
+        "initial_accuracy": 0.84,
+        "final_accuracy": 0.84,
+        "n_init_majority_correct": 42,
+        "n_collapses": 0,
+        "conditional_collapse_pct": 0.0,
+        "n_corrections": 0,
+        "mean_alpha": 0.37083333333333335,
+        "spearman_alpha_vs_collapse": {
+          "n": 50,
+          "rho": null,
+          "p_two_sided": null,
+          "note": "insufficient variation"
+        },
+        "spearman_alpha_vs_final_wrong": {
+          "n": 50,
+          "rho": 0.22724255813139282,
+          "p_two_sided": 0.11250202202651474
+        }
+      }
+    }
+  }
+}

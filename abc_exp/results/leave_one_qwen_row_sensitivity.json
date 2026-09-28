@@ -1,0 +1,646 @@
+{
+  "description": "Leave-one-Qwen-row N=14 sensitivity for alpha_tot versus conditional collapse Ccond.",
+  "source": "abc_exp/results/reviewer_hardening_analyses.json:per_model",
+  "n_source_rows": 14,
+  "n_qwen_rows": 6,
+  "baseline": {
+    "model_row_spearman": {
+      "n": 14,
+      "rho": 0.8294834502328513,
+      "p_two_sided_asymptotic": 0.00024315115661964303,
+      "p_one_sided_positive_asymptotic": 0.00012157557830982151
+    },
+    "family_mean_exact_spearman": {
+      "n": 7,
+      "rho": 0.8928571428571429,
+      "n_permutations": 5040,
+      "one_sided_ge_count": 31,
+      "p_one_sided_positive_exact": 0.006150793650793651,
+      "two_sided_abs_count": 62,
+      "p_two_sided_exact": 0.012301587301587301
+    },
+    "family_median_exact_spearman": {
+      "n": 7,
+      "rho": 0.8928571428571429,
+      "n_permutations": 5040,
+      "one_sided_ge_count": 31,
+      "p_one_sided_positive_exact": 0.006150793650793651,
+      "two_sided_abs_count": 62,
+      "p_two_sided_exact": 0.012301587301587301
+    }
+  },
+  "leave_one_qwen_row": [
+    {
+      "dropped_model": "qwen3-4b",
+      "dropped_alpha_tot": 0.6068,
+      "dropped_c_cond_pct": 5.1073,
+      "model_row_spearman": {
+        "n": 13,
+        "rho": 0.8088040663846723,
+        "p_two_sided_asymptotic": 0.0008146814435583912,
+        "p_one_sided_positive_asymptotic": 0.0004073407217791956
+      },
+      "family_mean_exact_spearman": {
+        "n": 7,
+        "rho": 0.8928571428571429,
+        "n_permutations": 5040,
+        "one_sided_ge_count": 31,
+        "p_one_sided_positive_exact": 0.006150793650793651,
+        "two_sided_abs_count": 62,
+        "p_two_sided_exact": 0.012301587301587301
+      },
+      "family_median_exact_spearman": {
+        "n": 7,
+        "rho": 0.8928571428571429,
+        "n_permutations": 5040,
+        "one_sided_ge_count": 31,
+        "p_one_sided_positive_exact": 0.006150793650793651,
+        "two_sided_abs_count": 62,
+        "p_two_sided_exact": 0.012301587301587301
+      },
+      "family_mean_rows": [
+        {
+          "family": "Anthropic",
+          "n_models": 1,
+          "models": [
+            "sonnet-4.5"
+          ],
+          "alpha_tot": 0.4504,
+          "c_cond_pct": 2.1505
+        },
+        {
+          "family": "DeepSeek",
+          "n_models": 1,
+          "models": [
+            "deepseek-v4-flash"
+          ],
+          "alpha_tot": 0.1129,
+          "c_cond_pct": 0.0
+        },
+        {
+          "family": "Google",
+          "n_models": 2,
+          "models": [
+            "gemini-3-flash",
+            "gemma-4-31b-it-awq"
+          ],
+          "alpha_tot": 0.2875,
+          "c_cond_pct": 0.2941
+        },
+        {
+          "family": "Meta",
+          "n_models": 1,
+          "models": [
+            "llama-3.1-8b"
+          ],
+          "alpha_tot": 0.7737,
+          "c_cond_pct": 8.4646
+        },
+        {
+          "family": "OpenAI",
+          "n_models": 2,
+          "models": [
+            "gpt-4o-mini",
+            "gpt-5.4-mini"
+          ],
+          "alpha_tot": 0.34614999999999996,
+          "c_cond_pct": 1.52265
+        },
+        {
+          "family": "Phi",
+          "n_models": 1,
+          "models": [
+            "phi-4-mini"
+          ],
+          "alpha_tot": 0.4686,
+          "c_cond_pct": 10.2377
+        },
+        {
+          "family": "Qwen",
+          "n_models": 5,
+          "models": [
+            "qwen3-8b",
+            "qwen3.5-4b",
+            "qwen3.5-9b",
+            "qwen3.6-27b-fp8",
+            "qwen3.6-35b-a3b-fp8"
+          ],
+          "alpha_tot": 0.71712,
+          "c_cond_pct": 22.678377611156073
+        }
+      ]
+    },
+    {
+      "dropped_model": "qwen3-8b",
+      "dropped_alpha_tot": 0.6111,
+      "dropped_c_cond_pct": 5.3571,
+      "model_row_spearman": {
+        "n": 13,
+        "rho": 0.8088040663846723,
+        "p_two_sided_asymptotic": 0.0008146814435583912,
+        "p_one_sided_positive_asymptotic": 0.0004073407217791956
+      },
+      "family_mean_exact_spearman": {
+        "n": 7,
+        "rho": 0.8928571428571429,
+        "n_permutations": 5040,
+        "one_sided_ge_count": 31,
+        "p_one_sided_positive_exact": 0.006150793650793651,
+        "two_sided_abs_count": 62,
+        "p_two_sided_exact": 0.012301587301587301
+      },
+      "family_median_exact_spearman": {
+        "n": 7,
+        "rho": 0.8928571428571429,
+        "n_permutations": 5040,
+        "one_sided_ge_count": 31,
+        "p_one_sided_positive_exact": 0.006150793650793651,
+        "two_sided_abs_count": 62,
+        "p_two_sided_exact": 0.012301587301587301
+      },
+      "family_mean_rows": [
+        {
+          "family": "Anthropic",
+          "n_models": 1,
+          "models": [
+            "sonnet-4.5"
+          ],
+          "alpha_tot": 0.4504,
+          "c_cond_pct": 2.1505
+        },
+        {
+          "family": "DeepSeek",
+          "n_models": 1,
+          "models": [
+            "deepseek-v4-flash"
+          ],
+          "alpha_tot": 0.1129,
+          "c_cond_pct": 0.0
+        },
+        {
+          "family": "Google",
+          "n_models": 2,
+          "models": [
+            "gemini-3-flash",
+            "gemma-4-31b-it-awq"
+          ],
+          "alpha_tot": 0.2875,
+          "c_cond_pct": 0.2941
+        },
+        {
+          "family": "Meta",
+          "n_models": 1,
+          "models": [
+            "llama-3.1-8b"
+          ],
+          "alpha_tot": 0.7737,
+          "c_cond_pct": 8.4646
+        },
+        {
+          "family": "OpenAI",
+          "n_models": 2,
+          "models": [
+            "gpt-4o-mini",
+            "gpt-5.4-mini"
+          ],
+          "alpha_tot": 0.34614999999999996,
+          "c_cond_pct": 1.52265
+        },
+        {
+          "family": "Phi",
+          "n_models": 1,
+          "models": [
+            "phi-4-mini"
+          ],
+          "alpha_tot": 0.4686,
+          "c_cond_pct": 10.2377
+        },
+        {
+          "family": "Qwen",
+          "n_models": 5,
+          "models": [
+            "qwen3-4b",
+            "qwen3.5-4b",
+            "qwen3.5-9b",
+            "qwen3.6-27b-fp8",
+            "qwen3.6-35b-a3b-fp8"
+          ],
+          "alpha_tot": 0.71626,
+          "c_cond_pct": 22.628417611156074
+        }
+      ]
+    },
+    {
+      "dropped_model": "qwen3.5-4b",
+      "dropped_alpha_tot": 0.6897,
+      "dropped_c_cond_pct": 43.58974358974359,
+      "model_row_spearman": {
+        "n": 13,
+        "rho": 0.8473185457363234,
+        "p_two_sided_asymptotic": 0.0002557246327488619,
+        "p_one_sided_positive_asymptotic": 0.00012786231637443096
+      },
+      "family_mean_exact_spearman": {
+        "n": 7,
+        "rho": 0.8928571428571429,
+        "n_permutations": 5040,
+        "one_sided_ge_count": 31,
+        "p_one_sided_positive_exact": 0.006150793650793651,
+        "two_sided_abs_count": 62,
+        "p_two_sided_exact": 0.012301587301587301
+      },
+      "family_median_exact_spearman": {
+        "n": 7,
+        "rho": 0.8571428571428573,
+        "n_permutations": 5040,
+        "one_sided_ge_count": 60,
+        "p_one_sided_positive_exact": 0.011904761904761904,
+        "two_sided_abs_count": 120,
+        "p_two_sided_exact": 0.023809523809523808
+      },
+      "family_mean_rows": [
+        {
+          "family": "Anthropic",
+          "n_models": 1,
+          "models": [
+            "sonnet-4.5"
+          ],
+          "alpha_tot": 0.4504,
+          "c_cond_pct": 2.1505
+        },
+        {
+          "family": "DeepSeek",
+          "n_models": 1,
+          "models": [
+            "deepseek-v4-flash"
+          ],
+          "alpha_tot": 0.1129,
+          "c_cond_pct": 0.0
+        },
+        {
+          "family": "Google",
+          "n_models": 2,
+          "models": [
+            "gemini-3-flash",
+            "gemma-4-31b-it-awq"
+          ],
+          "alpha_tot": 0.2875,
+          "c_cond_pct": 0.2941
+        },
+        {
+          "family": "Meta",
+          "n_models": 1,
+          "models": [
+            "llama-3.1-8b"
+          ],
+          "alpha_tot": 0.7737,
+          "c_cond_pct": 8.4646
+        },
+        {
+          "family": "OpenAI",
+          "n_models": 2,
+          "models": [
+            "gpt-4o-mini",
+            "gpt-5.4-mini"
+          ],
+          "alpha_tot": 0.34614999999999996,
+          "c_cond_pct": 1.52265
+        },
+        {
+          "family": "Phi",
+          "n_models": 1,
+          "models": [
+            "phi-4-mini"
+          ],
+          "alpha_tot": 0.4686,
+          "c_cond_pct": 10.2377
+        },
+        {
+          "family": "Qwen",
+          "n_models": 5,
+          "models": [
+            "qwen3-4b",
+            "qwen3-8b",
+            "qwen3.5-9b",
+            "qwen3.6-27b-fp8",
+            "qwen3.6-35b-a3b-fp8"
+          ],
+          "alpha_tot": 0.7005399999999999,
+          "c_cond_pct": 14.981888893207355
+        }
+      ]
+    },
+    {
+      "dropped_model": "qwen3.5-9b",
+      "dropped_alpha_tot": 0.7303,
+      "dropped_c_cond_pct": 43.90243902439025,
+      "model_row_spearman": {
+        "n": 13,
+        "rho": 0.8473185457363234,
+        "p_two_sided_asymptotic": 0.0002557246327488619,
+        "p_one_sided_positive_asymptotic": 0.00012786231637443096
+      },
+      "family_mean_exact_spearman": {
+        "n": 7,
+        "rho": 0.8928571428571429,
+        "n_permutations": 5040,
+        "one_sided_ge_count": 31,
+        "p_one_sided_positive_exact": 0.006150793650793651,
+        "two_sided_abs_count": 62,
+        "p_two_sided_exact": 0.012301587301587301
+      },
+      "family_median_exact_spearman": {
+        "n": 7,
+        "rho": 0.8571428571428573,
+        "n_permutations": 5040,
+        "one_sided_ge_count": 60,
+        "p_one_sided_positive_exact": 0.011904761904761904,
+        "two_sided_abs_count": 120,
+        "p_two_sided_exact": 0.023809523809523808
+      },
+      "family_mean_rows": [
+        {
+          "family": "Anthropic",
+          "n_models": 1,
+          "models": [
+            "sonnet-4.5"
+          ],
+          "alpha_tot": 0.4504,
+          "c_cond_pct": 2.1505
+        },
+        {
+          "family": "DeepSeek",
+          "n_models": 1,
+          "models": [
+            "deepseek-v4-flash"
+          ],
+          "alpha_tot": 0.1129,
+          "c_cond_pct": 0.0
+        },
+        {
+          "family": "Google",
+          "n_models": 2,
+          "models": [
+            "gemini-3-flash",
+            "gemma-4-31b-it-awq"
+          ],
+          "alpha_tot": 0.2875,
+          "c_cond_pct": 0.2941
+        },
+        {
+          "family": "Meta",
+          "n_models": 1,
+          "models": [
+            "llama-3.1-8b"
+          ],
+          "alpha_tot": 0.7737,
+          "c_cond_pct": 8.4646
+        },
+        {
+          "family": "OpenAI",
+          "n_models": 2,
+          "models": [
+            "gpt-4o-mini",
+            "gpt-5.4-mini"
+          ],
+          "alpha_tot": 0.34614999999999996,
+          "c_cond_pct": 1.52265
+        },
+        {
+          "family": "Phi",
+          "n_models": 1,
+          "models": [
+            "phi-4-mini"
+          ],
+          "alpha_tot": 0.4686,
+          "c_cond_pct": 10.2377
+        },
+        {
+          "family": "Qwen",
+          "n_models": 5,
+          "models": [
+            "qwen3-4b",
+            "qwen3-8b",
+            "qwen3.5-4b",
+            "qwen3.6-27b-fp8",
+            "qwen3.6-35b-a3b-fp8"
+          ],
+          "alpha_tot": 0.69242,
+          "c_cond_pct": 14.919349806278024
+        }
+      ]
+    },
+    {
+      "dropped_model": "qwen3.6-27b-fp8",
+      "dropped_alpha_tot": 0.795,
+      "dropped_c_cond_pct": 8.661417322834646,
+      "model_row_spearman": {
+        "n": 13,
+        "rho": 0.8748288881303599,
+        "p_two_sided_asymptotic": 9.062532626618085e-05,
+        "p_one_sided_positive_asymptotic": 4.531266313309043e-05
+      },
+      "family_mean_exact_spearman": {
+        "n": 7,
+        "rho": 0.8928571428571429,
+        "n_permutations": 5040,
+        "one_sided_ge_count": 31,
+        "p_one_sided_positive_exact": 0.006150793650793651,
+        "two_sided_abs_count": 62,
+        "p_two_sided_exact": 0.012301587301587301
+      },
+      "family_median_exact_spearman": {
+        "n": 7,
+        "rho": 0.8928571428571429,
+        "n_permutations": 5040,
+        "one_sided_ge_count": 31,
+        "p_one_sided_positive_exact": 0.006150793650793651,
+        "two_sided_abs_count": 62,
+        "p_two_sided_exact": 0.012301587301587301
+      },
+      "family_mean_rows": [
+        {
+          "family": "Anthropic",
+          "n_models": 1,
+          "models": [
+            "sonnet-4.5"
+          ],
+          "alpha_tot": 0.4504,
+          "c_cond_pct": 2.1505
+        },
+        {
+          "family": "DeepSeek",
+          "n_models": 1,
+          "models": [
+            "deepseek-v4-flash"
+          ],
+          "alpha_tot": 0.1129,
+          "c_cond_pct": 0.0
+        },
+        {
+          "family": "Google",
+          "n_models": 2,
+          "models": [
+            "gemini-3-flash",
+            "gemma-4-31b-it-awq"
+          ],
+          "alpha_tot": 0.2875,
+          "c_cond_pct": 0.2941
+        },
+        {
+          "family": "Meta",
+          "n_models": 1,
+          "models": [
+            "llama-3.1-8b"
+          ],
+          "alpha_tot": 0.7737,
+          "c_cond_pct": 8.4646
+        },
+        {
+          "family": "OpenAI",
+          "n_models": 2,
+          "models": [
+            "gpt-4o-mini",
+            "gpt-5.4-mini"
+          ],
+          "alpha_tot": 0.34614999999999996,
+          "c_cond_pct": 1.52265
+        },
+        {
+          "family": "Phi",
+          "n_models": 1,
+          "models": [
+            "phi-4-mini"
+          ],
+          "alpha_tot": 0.4686,
+          "c_cond_pct": 10.2377
+        },
+        {
+          "family": "Qwen",
+          "n_models": 5,
+          "models": [
+            "qwen3-4b",
+            "qwen3-8b",
+            "qwen3.5-4b",
+            "qwen3.5-9b",
+            "qwen3.6-35b-a3b-fp8"
+          ],
+          "alpha_tot": 0.67948,
+          "c_cond_pct": 21.967554146589144
+        }
+      ]
+    },
+    {
+      "dropped_model": "qwen3.6-35b-a3b-fp8",
+      "dropped_alpha_tot": 0.7595,
+      "dropped_c_cond_pct": 11.881188118811881,
+      "model_row_spearman": {
+        "n": 13,
+        "rho": 0.8528206142151307,
+        "p_two_sided_asymptotic": 0.0002113165552897985,
+        "p_one_sided_positive_asymptotic": 0.00010565827764489926
+      },
+      "family_mean_exact_spearman": {
+        "n": 7,
+        "rho": 0.8928571428571429,
+        "n_permutations": 5040,
+        "one_sided_ge_count": 31,
+        "p_one_sided_positive_exact": 0.006150793650793651,
+        "two_sided_abs_count": 62,
+        "p_two_sided_exact": 0.012301587301587301
+      },
+      "family_median_exact_spearman": {
+        "n": 7,
+        "rho": 0.8571428571428573,
+        "n_permutations": 5040,
+        "one_sided_ge_count": 60,
+        "p_one_sided_positive_exact": 0.011904761904761904,
+        "two_sided_abs_count": 120,
+        "p_two_sided_exact": 0.023809523809523808
+      },
+      "family_mean_rows": [
+        {
+          "family": "Anthropic",
+          "n_models": 1,
+          "models": [
+            "sonnet-4.5"
+          ],
+          "alpha_tot": 0.4504,
+          "c_cond_pct": 2.1505
+        },
+        {
+          "family": "DeepSeek",
+          "n_models": 1,
+          "models": [
+            "deepseek-v4-flash"
+          ],
+          "alpha_tot": 0.1129,
+          "c_cond_pct": 0.0
+        },
+        {
+          "family": "Google",
+          "n_models": 2,
+          "models": [
+            "gemini-3-flash",
+            "gemma-4-31b-it-awq"
+          ],
+          "alpha_tot": 0.2875,
+          "c_cond_pct": 0.2941
+        },
+        {
+          "family": "Meta",
+          "n_models": 1,
+          "models": [
+            "llama-3.1-8b"
+          ],
+          "alpha_tot": 0.7737,
+          "c_cond_pct": 8.4646
+        },
+        {
+          "family": "OpenAI",
+          "n_models": 2,
+          "models": [
+            "gpt-4o-mini",
+            "gpt-5.4-mini"
+          ],
+          "alpha_tot": 0.34614999999999996,
+          "c_cond_pct": 1.52265
+        },
+        {
+          "family": "Phi",
+          "n_models": 1,
+          "models": [
+            "phi-4-mini"
+          ],
+          "alpha_tot": 0.4686,
+          "c_cond_pct": 10.2377
+        },
+        {
+          "family": "Qwen",
+          "n_models": 5,
+          "models": [
+            "qwen3-4b",
+            "qwen3-8b",
+            "qwen3.5-4b",
+            "qwen3.5-9b",
+            "qwen3.6-27b-fp8"
+          ],
+          "alpha_tot": 0.68658,
+          "c_cond_pct": 21.323599987393695
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "model_row_rho_min": 0.8088040663846723,
+    "model_row_rho_max": 0.8748288881303599,
+    "model_row_all_positive": true,
+    "family_mean_rho_min": 0.8928571428571429,
+    "family_mean_rho_max": 0.8928571428571429,
+    "family_median_rho_min": 0.8571428571428573,
+    "family_median_rho_max": 0.8928571428571429,
+    "worst_model_row_drop": "qwen3-4b",
+    "worst_family_mean_drop": "qwen3-4b"
+  },
+  "p_value_note": "Model-row p-values use scipy.stats.spearmanr asymptotic p-values, matching the existing N=14 reviewer-hardening artifact. Family-level p-values enumerate all 7! permutations after each row removal."
+}

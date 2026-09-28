@@ -1,0 +1,4572 @@
+{
+  "analysis": "correction_preserving_policy_replay",
+  "seed": 20260426,
+  "bootstrap_B": 2000,
+  "min_lomo_models": 4,
+  "min_primary_rows_per_source": 50,
+  "gate_penalty": 0.02,
+  "method_note": "Replay is post-hoc and zero-cost: a fired gate substitutes the initial majority for the saved standard final majority. Metrics are majority-level, not per-agent.",
+  "sources": {
+    "gemini_3_1_flash_lite_n200": {
+      "path": "abc_exp/results/debate_traces_gemini_3_1_flash_lite_n200.jsonl",
+      "loaded_rows": 200,
+      "usable_rows": 200,
+      "probe_source": "gemini_3_1_flash_lite_n200",
+      "probe_questions": 200,
+      "probe_matched_rows": 200,
+      "probe_matched_row_rate": 1.0,
+      "excluded_from_primary": false
+    },
+    "gemini_3_1_flash_lite_smoke": {
+      "path": "abc_exp/results/debate_traces_gemini_3_1_flash_lite_smoke.jsonl",
+      "loaded_rows": 2,
+      "usable_rows": 2,
+      "probe_source": "gemini_3_1_flash_lite_smoke",
+      "probe_questions": 1,
+      "probe_matched_rows": 0,
+      "probe_matched_row_rate": 0.0,
+      "excluded_from_primary": true
+    },
+    "gemini_3_1_pro_n200": {
+      "path": "abc_exp/results/debate_traces_gemini_3_1_pro_n200.jsonl",
+      "loaded_rows": 200,
+      "usable_rows": 180,
+      "probe_source": "gemini_3_1_pro_n200",
+      "probe_questions": 199,
+      "probe_matched_rows": 180,
+      "probe_matched_row_rate": 1.0,
+      "excluded_from_primary": false
+    },
+    "gemini_3_1_pro_smoke": {
+      "path": "abc_exp/results/debate_traces_gemini_3_1_pro_smoke.jsonl",
+      "loaded_rows": 2,
+      "usable_rows": 2,
+      "probe_source": "gemini_3_1_pro_n200",
+      "probe_questions": 199,
+      "probe_matched_rows": 2,
+      "probe_matched_row_rate": 1.0,
+      "excluded_from_primary": true
+    },
+    "gemini_3_flash_n200": {
+      "path": "abc_exp/results/debate_traces_gemini_3_flash_n200.jsonl",
+      "loaded_rows": 200,
+      "usable_rows": 200,
+      "probe_source": "gemini_3_flash_n200",
+      "probe_questions": 200,
+      "probe_matched_rows": 200,
+      "probe_matched_row_rate": 1.0,
+      "excluded_from_primary": false
+    },
+    "openrouter_deepseek-v4-flash": {
+      "path": "abc_exp/results/debate_traces_openrouter_deepseek-v4-flash.jsonl",
+      "loaded_rows": 200,
+      "usable_rows": 180,
+      "probe_source": "router_deepseek-v4-flash",
+      "probe_questions": 200,
+      "probe_matched_rows": 1,
+      "probe_matched_row_rate": 0.005555555555555556,
+      "excluded_from_primary": false
+    },
+    "openrouter_deepseek-v4-pro": {
+      "path": "abc_exp/results/debate_traces_openrouter_deepseek-v4-pro.jsonl",
+      "loaded_rows": 81,
+      "usable_rows": 79,
+      "probe_source": "router_deepseek-v4-pro",
+      "probe_questions": 187,
+      "probe_matched_rows": 4,
+      "probe_matched_row_rate": 0.05063291139240506,
+      "excluded_from_primary": false
+    },
+    "openrouter_glm_4_6_n20_partial": {
+      "path": "abc_exp/results/debate_traces_openrouter_glm_4_6_n20_partial.jsonl",
+      "loaded_rows": 7,
+      "usable_rows": 7,
+      "probe_source": null,
+      "probe_questions": 0,
+      "probe_matched_rows": 0,
+      "probe_matched_row_rate": 0.0,
+      "excluded_from_primary": true
+    },
+    "openrouter_grok_4_1_fast_n200": {
+      "path": "abc_exp/results/debate_traces_openrouter_grok_4_1_fast_n200.jsonl",
+      "loaded_rows": 200,
+      "usable_rows": 200,
+      "probe_source": "openrouter_grok_4_1_fast_n200",
+      "probe_questions": 200,
+      "probe_matched_rows": 200,
+      "probe_matched_row_rate": 1.0,
+      "excluded_from_primary": false
+    },
+    "openrouter_grok_4_1_fast_smoke": {
+      "path": "abc_exp/results/debate_traces_openrouter_grok_4_1_fast_smoke.jsonl",
+      "loaded_rows": 1,
+      "usable_rows": 1,
+      "probe_source": "openrouter_grok_4_1_fast_smoke",
+      "probe_questions": 1,
+      "probe_matched_rows": 1,
+      "probe_matched_row_rate": 1.0,
+      "excluded_from_primary": true
+    },
+    "openrouter_hy3_preview_free_smoke": {
+      "path": "abc_exp/results/debate_traces_openrouter_hy3_preview_free_smoke.jsonl",
+      "loaded_rows": 1,
+      "usable_rows": 0,
+      "probe_source": "openrouter_hy3_preview_free_smoke",
+      "probe_questions": 1,
+      "probe_matched_rows": 0,
+      "probe_matched_row_rate": 0.0,
+      "excluded_from_primary": true
+    },
+    "openrouter_kimi-k2.6": {
+      "path": "abc_exp/results/debate_traces_openrouter_kimi-k2.6.jsonl",
+      "loaded_rows": 3,
+      "usable_rows": 2,
+      "probe_source": null,
+      "probe_questions": 0,
+      "probe_matched_rows": 0,
+      "probe_matched_row_rate": 0.0,
+      "excluded_from_primary": true
+    },
+    "openrouter_llama_4_maverick_n20_partial": {
+      "path": "abc_exp/results/debate_traces_openrouter_llama_4_maverick_n20_partial.jsonl",
+      "loaded_rows": 4,
+      "usable_rows": 4,
+      "probe_source": null,
+      "probe_questions": 0,
+      "probe_matched_rows": 0,
+      "probe_matched_row_rate": 0.0,
+      "excluded_from_primary": true
+    },
+    "openrouter_mistral_small_4_n20": {
+      "path": "abc_exp/results/debate_traces_openrouter_mistral_small_4_n20.jsonl",
+      "loaded_rows": 20,
+      "usable_rows": 20,
+      "probe_source": "openrouter_mistral_small_4_n20",
+      "probe_questions": 20,
+      "probe_matched_rows": 3,
+      "probe_matched_row_rate": 0.15,
+      "excluded_from_primary": true
+    },
+    "openrouter_mistral_small_4_n200": {
+      "path": "abc_exp/results/debate_traces_openrouter_mistral_small_4_n200.jsonl",
+      "loaded_rows": 200,
+      "usable_rows": 200,
+      "probe_source": "openrouter_mistral_small_4_n200",
+      "probe_questions": 200,
+      "probe_matched_rows": 200,
+      "probe_matched_row_rate": 1.0,
+      "excluded_from_primary": false
+    },
+    "smoke_qwen3-8b": {
+      "path": "abc_exp/results/debate_traces_smoke_qwen3-8b.jsonl",
+      "loaded_rows": 1,
+      "usable_rows": 1,
+      "probe_source": null,
+      "probe_questions": 0,
+      "probe_matched_rows": 0,
+      "probe_matched_row_rate": 0.0,
+      "excluded_from_primary": true
+    },
+    "vllm_gemma-4-31b-it": {
+      "path": "abc_exp/results/debate_traces_vllm_gemma-4-31b-it.jsonl",
+      "loaded_rows": 200,
+      "usable_rows": 200,
+      "probe_source": "vllm_gemma-4-31b-it-awq",
+      "probe_questions": 200,
+      "probe_matched_rows": 3,
+      "probe_matched_row_rate": 0.015,
+      "excluded_from_primary": false
+    },
+    "vllm_qwen3.5-4b": {
+      "path": "abc_exp/results/debate_traces_vllm_qwen3.5-4b.jsonl",
+      "loaded_rows": 200,
+      "usable_rows": 200,
+      "probe_source": "vllm_qwen3.5-4b",
+      "probe_questions": 200,
+      "probe_matched_rows": 3,
+      "probe_matched_row_rate": 0.015,
+      "excluded_from_primary": false
+    },
+    "vllm_qwen3.5-9b": {
+      "path": "abc_exp/results/debate_traces_vllm_qwen3.5-9b.jsonl",
+      "loaded_rows": 200,
+      "usable_rows": 199,
+      "probe_source": "vllm_qwen3.5-9b",
+      "probe_questions": 200,
+      "probe_matched_rows": 3,
+      "probe_matched_row_rate": 0.01507537688442211,
+      "excluded_from_primary": false
+    },
+    "vllm_qwen3.6-27b-fp8": {
+      "path": "abc_exp/results/debate_traces_vllm_qwen3.6-27b-fp8.jsonl",
+      "loaded_rows": 200,
+      "usable_rows": 200,
+      "probe_source": "vllm_qwen3.6-27b-fp8",
+      "probe_questions": 200,
+      "probe_matched_rows": 3,
+      "probe_matched_row_rate": 0.015,
+      "excluded_from_primary": false
+    },
+    "vllm_qwen3.6-35b-a3b-fp8": {
+      "path": "abc_exp/results/debate_traces_vllm_qwen3.6-35b-a3b-fp8.jsonl",
+      "loaded_rows": 200,
+      "usable_rows": 200,
+      "probe_source": "vllm_qwen3.6-35b-a3b-fp8",
+      "probe_questions": 200,
+      "probe_matched_rows": 3,
+      "probe_matched_row_rate": 0.015,
+      "excluded_from_primary": false
+    },
+    "vllm_qwen3_32b_a7_batch4_bench": {
+      "path": "abc_exp/results/debate_traces_vllm_qwen3_32b_a7_batch4_bench.jsonl",
+      "loaded_rows": 4,
+      "usable_rows": 3,
+      "probe_source": null,
+      "probe_questions": 0,
+      "probe_matched_rows": 0,
+      "probe_matched_row_rate": 0.0,
+      "excluded_from_primary": true
+    },
+    "vllm_qwen3_32b_a7_batch8_bench": {
+      "path": "abc_exp/results/debate_traces_vllm_qwen3_32b_a7_batch8_bench.jsonl",
+      "loaded_rows": 8,
+      "usable_rows": 8,
+      "probe_source": null,
+      "probe_questions": 0,
+      "probe_matched_rows": 0,
+      "probe_matched_row_rate": 0.0,
+      "excluded_from_primary": true
+    },
+    "vllm_qwen3_32b_a7_n200": {
+      "path": "abc_exp/results/debate_traces_vllm_qwen3_32b_a7_n200.jsonl",
+      "loaded_rows": 200,
+      "usable_rows": 200,
+      "probe_source": "vllm_qwen3_32b_a7_n200",
+      "probe_questions": 200,
+      "probe_matched_rows": 200,
+      "probe_matched_row_rate": 1.0,
+      "excluded_from_primary": false
+    }
+  },
+  "cohorts": {
+    "eligible_all_primary": {
+      "cohort": "eligible_all_primary",
+      "n_records": 2438,
+      "n_models": 13,
+      "models": [
+        "gemini_3_1_flash_lite_n200",
+        "gemini_3_1_pro_n200",
+        "gemini_3_flash_n200",
+        "openrouter_deepseek-v4-flash",
+        "openrouter_deepseek-v4-pro",
+        "openrouter_grok_4_1_fast_n200",
+        "openrouter_mistral_small_4_n200",
+        "vllm_gemma-4-31b-it",
+        "vllm_qwen3.5-4b",
+        "vllm_qwen3.5-9b",
+        "vllm_qwen3.6-27b-fp8",
+        "vllm_qwen3.6-35b-a3b-fp8",
+        "vllm_qwen3_32b_a7_n200"
+      ],
+      "standard_collapses": 111,
+      "standard_corrections": 194,
+      "probe_feature_coverage": 0.4922067268252666,
+      "policies": [
+        {
+          "policy": "standard",
+          "n": 2438,
+          "standard_acc": 0.6956521739130435,
+          "policy_acc": 0.6956521739130435,
+          "acc_delta": 0.0,
+          "gate_count": 0,
+          "gate_rate": 0.0,
+          "collapses_prevented": 0,
+          "corrections_lost": 0,
+          "net": 0,
+          "standard_collapses": 111,
+          "standard_corrections": 194
+        },
+        {
+          "policy": "naive_always_freeze",
+          "n": 2438,
+          "standard_acc": 0.6956521739130435,
+          "policy_acc": 0.6616078753076292,
+          "acc_delta": -0.034044298605414275,
+          "gate_count": 2438,
+          "gate_rate": 1.0,
+          "collapses_prevented": 111,
+          "corrections_lost": 194,
+          "net": -83,
+          "standard_collapses": 111,
+          "standard_corrections": 194,
+          "validation": "fixed_rule_no_training",
+          "question_bootstrap_ci95": {
+            "B": 2000,
+            "B_used": 2000,
+            "n_question_clusters": 397,
+            "acc_delta": {
+              "median": -0.03451793472783015,
+              "ci_2.5": -0.048860432408764934,
+              "ci_97.5": -0.019788655301419943
+            },
+            "gate_rate": {
+              "median": 1.0,
+              "ci_2.5": 1.0,
+              "ci_97.5": 1.0
+            },
+            "net_rate": {
+              "median": -0.03451793472783015,
+              "ci_2.5": -0.048860432408764934,
+              "ci_97.5": -0.019788655301419943
+            },
+            "prevented_rate": {
+              "median": 0.045163989256333886,
+              "ci_2.5": 0.036839950880065496,
+              "ci_97.5": 0.05462462424351645
+            },
+            "lost_rate": {
+              "median": 0.07964242177976433,
+              "ci_2.5": 0.06845219799591366,
+              "ci_97.5": 0.09154351395730706
+            }
+          }
+        },
+        {
+          "policy": "naive_r1_majority_changed",
+          "n": 2438,
+          "standard_acc": 0.6956521739130435,
+          "policy_acc": 0.6739130434782609,
+          "acc_delta": -0.021739130434782608,
+          "gate_count": 396,
+          "gate_rate": 0.162428219852338,
+          "collapses_prevented": 67,
+          "corrections_lost": 120,
+          "net": -53,
+          "standard_collapses": 111,
+          "standard_corrections": 194,
+          "validation": "fixed_rule_no_training",
+          "question_bootstrap_ci95": {
+            "B": 2000,
+            "B_used": 2000,
+            "n_question_clusters": 397,
+            "acc_delta": {
+              "median": -0.021894795237535312,
+              "ci_2.5": -0.032644838927306456,
+              "ci_97.5": -0.011551036031438195
+            },
+            "gate_rate": {
+              "median": 0.16241250894910403,
+              "ci_2.5": 0.14609964265636755,
+              "ci_97.5": 0.17714808000064577
+            },
+            "net_rate": {
+              "median": -0.021894795237535312,
+              "ci_2.5": -0.032644838927306456,
+              "ci_97.5": -0.011551036031438195
+            },
+            "prevented_rate": {
+              "median": 0.027252390795705385,
+              "ci_2.5": 0.020814590566517063,
+              "ci_97.5": 0.03425505571605448
+            },
+            "lost_rate": {
+              "median": 0.049237729127339536,
+              "ci_2.5": 0.04123994395049454,
+              "ci_97.5": 0.058083070134930616
+            }
+          }
+        },
+        {
+          "policy": "naive_any_r1_flip",
+          "n": 2438,
+          "standard_acc": 0.6956521739130435,
+          "policy_acc": 0.6632485643970467,
+          "acc_delta": -0.03240360951599672,
+          "gate_count": 855,
+          "gate_rate": 0.35069729286300244,
+          "collapses_prevented": 90,
+          "corrections_lost": 169,
+          "net": -79,
+          "standard_collapses": 111,
+          "standard_corrections": 194,
+          "validation": "fixed_rule_no_training",
+          "question_bootstrap_ci95": {
+            "B": 2000,
+            "B_used": 2000,
+            "n_question_clusters": 397,
+            "acc_delta": {
+              "median": -0.032648844661831676,
+              "ci_2.5": -0.045473797769027983,
+              "ci_97.5": -0.01995553894996439
+            },
+            "gate_rate": {
+              "median": 0.35077998030332347,
+              "ci_2.5": 0.330131245834965,
+              "ci_97.5": 0.3730913662822332
+            },
+            "net_rate": {
+              "median": -0.032648844661831676,
+              "ci_2.5": -0.045473797769027983,
+              "ci_97.5": -0.01995553894996439
+            },
+            "prevented_rate": {
+              "median": 0.03671045122456781,
+              "ci_2.5": 0.029350394744929186,
+              "ci_97.5": 0.04460192873205329
+            },
+            "lost_rate": {
+              "median": 0.06940451745379876,
+              "ci_2.5": 0.059255698387047695,
+              "ci_97.5": 0.08041473042943391
+            }
+          }
+        },
+        {
+          "policy": "learned_r1_percentile_stump",
+          "n": 2438,
+          "standard_acc": 0.6956521739130435,
+          "policy_acc": 0.6956521739130435,
+          "acc_delta": 0.0,
+          "gate_count": 0,
+          "gate_rate": 0.0,
+          "collapses_prevented": 0,
+          "corrections_lost": 0,
+          "net": 0,
+          "standard_collapses": 111,
+          "standard_corrections": 194,
+          "validation": "strict_leave_one_model_out",
+          "mode": "r1_only",
+          "n_models": 13,
+          "question_bootstrap_ci95": {
+            "B": 2000,
+            "B_used": 2000,
+            "n_question_clusters": 397,
+            "acc_delta": {
+              "median": 0.0,
+              "ci_2.5": 0.0,
+              "ci_97.5": 0.0
+            },
+            "gate_rate": {
+              "median": 0.0,
+              "ci_2.5": 0.0,
+              "ci_97.5": 0.0
+            },
+            "net_rate": {
+              "median": 0.0,
+              "ci_2.5": 0.0,
+              "ci_97.5": 0.0
+            },
+            "prevented_rate": {
+              "median": 0.0,
+              "ci_2.5": 0.0,
+              "ci_97.5": 0.0
+            },
+            "lost_rate": {
+              "median": 0.0,
+              "ci_2.5": 0.0,
+              "ci_97.5": 0.0
+            }
+          }
+        },
+        {
+          "policy": "learned_r1_probe_percentile_stump",
+          "n": 2438,
+          "standard_acc": 0.6956521739130435,
+          "policy_acc": 0.6944216570959804,
+          "acc_delta": -0.0012305168170631665,
+          "gate_count": 12,
+          "gate_rate": 0.004922067268252666,
+          "collapses_prevented": 1,
+          "corrections_lost": 4,
+          "net": -3,
+          "standard_collapses": 111,
+          "standard_corrections": 194,
+          "validation": "strict_leave_one_model_out",
+          "mode": "r1_plus_optional_probe_mean_fr",
+          "n_models": 13,
+          "question_bootstrap_ci95": {
+            "B": 2000,
+            "B_used": 2000,
+            "n_question_clusters": 397,
+            "acc_delta": {
+              "median": -0.0012315270935960591,
+              "ci_2.5": -0.0032800664347906808,
+              "ci_97.5": 0.0004111926711067793
+            },
+            "gate_rate": {
+              "median": 0.004911993450675399,
+              "ci_2.5": 0.0024549667145281296,
+              "ci_97.5": 0.007870998774259239
+            },
+            "net_rate": {
+              "median": -0.0012315270935960591,
+              "ci_2.5": -0.0032800664347906808,
+              "ci_97.5": 0.0004111926711067793
+            },
+            "prevented_rate": {
+              "median": 0.00040899795501022495,
+              "ci_2.5": 0.0,
+              "ci_97.5": 0.0012386457473162675
+            },
+            "lost_rate": {
+              "median": 0.001639344262295082,
+              "ci_2.5": 0.0004063388866314506,
+              "ci_97.5": 0.0033030553261767133
+            }
+          }
+        }
+      ],
+      "learned_folds": {
+        "learned_r1_percentile_stump": [
+          {
+            "heldout_model": "gemini_3_1_flash_lite_n200",
+            "train_models": [
+              "gemini_3_1_pro_n200",
+              "gemini_3_flash_n200",
+              "openrouter_deepseek-v4-flash",
+              "openrouter_deepseek-v4-pro",
+              "openrouter_grok_4_1_fast_n200",
+              "openrouter_mistral_small_4_n200",
+              "vllm_gemma-4-31b-it",
+              "vllm_qwen3.5-4b",
+              "vllm_qwen3.5-9b",
+              "vllm_qwen3.6-27b-fp8",
+              "vllm_qwen3.6-35b-a3b-fp8",
+              "vllm_qwen3_32b_a7_n200"
+            ],
+            "rule": {
+              "kind": "no_gate",
+              "objective": 0.0,
+              "net_rate": 0.0,
+              "gate_rate": 0.0,
+              "prevented": 0,
+              "lost": 0,
+              "net": 0,
+              "gated": 0,
+              "feature": null,
+              "direction": null,
+              "threshold": null,
+              "threshold_label": null,
+              "fill_value": null,
+              "gate_penalty": 0.02,
+              "n_train": 2238
+            },
+            "test_summary": {
+              "n": 200,
+              "standard_acc": 0.845,
+              "policy_acc": 0.845,
+              "acc_delta": 0.0,
+              "gate_count": 0,
+              "gate_rate": 0.0,
+              "collapses_prevented": 0,
+              "corrections_lost": 0,
+              "net": 0,
+              "standard_collapses": 0,
+              "standard_corrections": 5
+            }
+          },
+          {
+            "heldout_model": "gemini_3_1_pro_n200",
+            "train_models": [
+              "gemini_3_1_flash_lite_n200",
+              "gemini_3_flash_n200",
+              "openrouter_deepseek-v4-flash",
+              "openrouter_deepseek-v4-pro",
+              "openrouter_grok_4_1_fast_n200",
+              "openrouter_mistral_small_4_n200",
+              "vllm_gemma-4-31b-it",
+              "vllm_qwen3.5-4b",
+              "vllm_qwen3.5-9b",
+              "vllm_qwen3.6-27b-fp8",
+              "vllm_qwen3.6-35b-a3b-fp8",
+              "vllm_qwen3_32b_a7_n200"
+            ],
+            "rule": {
+              "kind": "no_gate",
+              "objective": 0.0,
+              "net_rate": 0.0,
+              "gate_rate": 0.0,
+              "prevented": 0,
+              "lost": 0,
+              "net": 0,
+              "gated": 0,
+              "feature": null,
+              "direction": null,
+              "threshold": null,
+              "threshold_label": null,
+              "fill_value": null,
+              "gate_penalty": 0.02,
+              "n_train": 2258
+            },
+            "test_summary": {
+              "n": 180,
+              "standard_acc": 0.8388888888888889,
+              "policy_acc": 0.8388888888888889,
+              "acc_delta": 0.0,
+              "gate_count": 0,
+              "gate_rate": 0.0,
+              "collapses_prevented": 0,
+              "corrections_lost": 0,
+              "net": 0,
+              "standard_collapses": 0,
+              "standard_corrections": 7
+            }
+          },
+          {
+            "heldout_model": "gemini_3_flash_n200",
+            "train_models": [
+              "gemini_3_1_flash_lite_n200",
+              "gemini_3_1_pro_n200",
+              "openrouter_deepseek-v4-flash",
+              "openrouter_deepseek-v4-pro",
+              "openrouter_grok_4_1_fast_n200",
+              "openrouter_mistral_small_4_n200",
+              "vllm_gemma-4-31b-it",
+              "vllm_qwen3.5-4b",
+              "vllm_qwen3.5-9b",
+              "vllm_qwen3.6-27b-fp8",
+              "vllm_qwen3.6-35b-a3b-fp8",
+              "vllm_qwen3_32b_a7_n200"
+            ],
+            "rule": {
+              "kind": "no_gate",
+              "objective": 0.0,
+              "net_rate": 0.0,
+              "gate_rate": 0.0,
+              "prevented": 0,
+              "lost": 0,
+              "net": 0,
+              "gated": 0,
+              "feature": null,
+              "direction": null,
+              "threshold": null,
+              "threshold_label": null,
+              "fill_value": null,
+              "gate_penalty": 0.02,
+              "n_train": 2238
+            },
+            "test_summary": {
+              "n": 200,
+              "standard_acc": 0.84,
+              "policy_acc": 0.84,
+              "acc_delta": 0.0,
+              "gate_count": 0,
+              "gate_rate": 0.0,
+              "collapses_prevented": 0,
+              "corrections_lost": 0,
+              "net": 0,
+              "standard_collapses": 1,
+              "standard_corrections": 3
+            }
+          },
+          {
+            "heldout_model": "openrouter_deepseek-v4-flash",
+            "train_models": [
+              "gemini_3_1_flash_lite_n200",
+              "gemini_3_1_pro_n200",
+              "gemini_3_flash_n200",
+              "openrouter_deepseek-v4-pro",
+              "openrouter_grok_4_1_fast_n200",
+              "openrouter_mistral_small_4_n200",
+              "vllm_gemma-4-31b-it",
+              "vllm_qwen3.5-4b",
+              "vllm_qwen3.5-9b",
+              "vllm_qwen3.6-27b-fp8",
+              "vllm_qwen3.6-35b-a3b-fp8",
+              "vllm_qwen3_32b_a7_n200"
+            ],
+            "rule": {
+              "kind": "no_gate",
+              "objective": 0.0,
+              "net_rate": 0.0,
+              "gate_rate": 0.0,
+              "prevented": 0,
+              "lost": 0,
+              "net": 0,
+              "gated": 0,
+              "feature": null,
+              "direction": null,
+              "threshold": null,
+              "threshold_label": null,
+              "fill_value": null,
+              "gate_penalty": 0.02,
+              "n_train": 2258
+            },
+            "test_summary": {
+              "n": 180,
+              "standard_acc": 0.8333333333333334,
+              "policy_acc": 0.8333333333333334,
+              "acc_delta": 0.0,
+              "gate_count": 0,
+              "gate_rate": 0.0,
+              "collapses_prevented": 0,
+              "corrections_lost": 0,
+              "net": 0,
+              "standard_collapses": 0,
+              "standard_corrections": 1
+            }
+          },
+          {
+            "heldout_model": "openrouter_deepseek-v4-pro",
+            "train_models": [
+              "gemini_3_1_flash_lite_n200",
+              "gemini_3_1_pro_n200",
+              "gemini_3_flash_n200",
+              "openrouter_deepseek-v4-flash",
+              "openrouter_grok_4_1_fast_n200",
+              "openrouter_mistral_small_4_n200",
+              "vllm_gemma-4-31b-it",
+              "vllm_qwen3.5-4b",
+              "vllm_qwen3.5-9b",
+              "vllm_qwen3.6-27b-fp8",
+              "vllm_qwen3.6-35b-a3b-fp8",
+              "vllm_qwen3_32b_a7_n200"
+            ],
+            "rule": {
+              "kind": "no_gate",
+              "objective": 0.0,
+              "net_rate": 0.0,
+              "gate_rate": 0.0,
+              "prevented": 0,
+              "lost": 0,
+              "net": 0,
+              "gated": 0,
+              "feature": null,
+              "direction": null,
+              "threshold": null,
+              "threshold_label": null,
+              "fill_value": null,
+              "gate_penalty": 0.02,
+              "n_train": 2359
+            },
+            "test_summary": {
+              "n": 79,
+              "standard_acc": 0.810126582278481,
+              "policy_acc": 0.810126582278481,
+              "acc_delta": 0.0,
+              "gate_count": 0,
+              "gate_rate": 0.0,
+              "collapses_prevented": 0,
+              "corrections_lost": 0,
+              "net": 0,
+              "standard_collapses": 1,
+              "standard_corrections": 3
+            }
+          },
+          {
+            "heldout_model": "openrouter_grok_4_1_fast_n200",
+            "train_models": [
+              "gemini_3_1_flash_lite_n200",
+              "gemini_3_1_pro_n200",
+              "gemini_3_flash_n200",
+              "openrouter_deepseek-v4-flash",
+              "openrouter_deepseek-v4-pro",
+              "openrouter_mistral_small_4_n200",
+              "vllm_gemma-4-31b-it",
+              "vllm_qwen3.5-4b",
+              "vllm_qwen3.5-9b",
+              "vllm_qwen3.6-27b-fp8",
+              "vllm_qwen3.6-35b-a3b-fp8",
+              "vllm_qwen3_32b_a7_n200"
+            ],
+            "rule": {
+              "kind": "no_gate",
+              "objective": 0.0,
+              "net_rate": 0.0,
+              "gate_rate": 0.0,
+              "prevented": 0,
+              "lost": 0,
+              "net": 0,
+              "gated": 0,
+              "feature": null,
+              "direction": null,
+              "threshold": null,
+              "threshold_label": null,
+              "fill_value": null,
+              "gate_penalty": 0.02,
+              "n_train": 2238
+            },
+            "test_summary": {
+              "n": 200,
+              "standard_acc": 0.845,
+              "policy_acc": 0.845,
+              "acc_delta": 0.0,
+              "gate_count": 0,
+              "gate_rate": 0.0,
+              "collapses_prevented": 0,
+              "corrections_lost": 0,
+              "net": 0,
+              "standard_collapses": 1,
+              "standard_corrections": 3
+            }
+          },
+          {
+            "heldout_model": "openrouter_mistral_small_4_n200",
+            "train_models": [
+              "gemini_3_1_flash_lite_n200",
+              "gemini_3_1_pro_n200",
+              "gemini_3_flash_n200",
+              "openrouter_deepseek-v4-flash",
+              "openrouter_deepseek-v4-pro",
+              "openrouter_grok_4_1_fast_n200",
+              "vllm_gemma-4-31b-it",
+              "vllm_qwen3.5-4b",
+              "vllm_qwen3.5-9b",
+              "vllm_qwen3.6-27b-fp8",
+              "vllm_qwen3.6-35b-a3b-fp8",
+              "vllm_qwen3_32b_a7_n200"
+            ],
+            "rule": {
+              "kind": "no_gate",
+              "objective": 0.0,
+              "net_rate": 0.0,
+              "gate_rate": 0.0,
+              "prevented": 0,
+              "lost": 0,
+              "net": 0,
+              "gated": 0,
+              "feature": null,
+              "direction": null,
+              "threshold": null,
+              "threshold_label": null,
+              "fill_value": null,
+              "gate_penalty": 0.02,
+              "n_train": 2238
+            },
+            "test_summary": {
+              "n": 200,
+              "standard_acc": 0.73,
+              "policy_acc": 0.73,
+              "acc_delta": 0.0,
+              "gate_count": 0,
+              "gate_rate": 0.0,
+              "collapses_prevented": 0,
+              "corrections_lost": 0,
+              "net": 0,
+              "standard_collapses": 7,
+              "standard_corrections": 13
+            }
+          },
+          {
+            "heldout_model": "vllm_gemma-4-31b-it",
+            "train_models": [
+              "gemini_3_1_flash_lite_n200",
+              "gemini_3_1_pro_n200",
+              "gemini_3_flash_n200",
+              "openrouter_deepseek-v4-flash",
+              "openrouter_deepseek-v4-pro",
+              "openrouter_grok_4_1_fast_n200",
+              "openrouter_mistral_small_4_n200",
+              "vllm_qwen3.5-4b",
+              "vllm_qwen3.5-9b",
+              "vllm_qwen3.6-27b-fp8",
+              "vllm_qwen3.6-35b-a3b-fp8",
+              "vllm_qwen3_32b_a7_n200"
+            ],
+            "rule": {
+              "kind": "no_gate",
+              "objective": 0.0,
+              "net_rate": 0.0,
+              "gate_rate": 0.0,
+              "prevented": 0,
+              "lost": 0,
+              "net": 0,
+              "gated": 0,
+              "feature": null,
+              "direction": null,
+              "threshold": null,
+              "threshold_label": null,
+              "fill_value": null,
+              "gate_penalty": 0.02,
+              "n_train": 2238
+            },
+            "test_summary": {
+              "n": 200,
+              "standard_acc": 0.82,
+              "policy_acc": 0.82,
+              "acc_delta": 0.0,
+              "gate_count": 0,
+              "gate_rate": 0.0,
+              "collapses_prevented": 0,
+              "corrections_lost": 0,
+              "net": 0,
+              "standard_collapses": 0,
+              "standard_corrections": 4
+            }
+          },
+          {
+            "heldout_model": "vllm_qwen3.5-4b",
+            "train_models": [
+              "gemini_3_1_flash_lite_n200",
+              "gemini_3_1_pro_n200",
+              "gemini_3_flash_n200",
+              "openrouter_deepseek-v4-flash",
+              "openrouter_deepseek-v4-pro",
+              "openrouter_grok_4_1_fast_n200",
+              "openrouter_mistral_small_4_n200",
+              "vllm_gemma-4-31b-it",
+              "vllm_qwen3.5-9b",
+              "vllm_qwen3.6-27b-fp8",
+              "vllm_qwen3.6-35b-a3b-fp8",
+              "vllm_qwen3_32b_a7_n200"
+            ],
+            "rule": {
+              "kind": "no_gate",
+              "objective": 0.0,
+              "net_rate": 0.0,
+              "gate_rate": 0.0,
+              "prevented": 0,
+              "lost": 0,
+              "net": 0,
+              "gated": 0,
+              "feature": null,
+              "direction": null,
+              "threshold": null,
+              "threshold_label": null,
+              "fill_value": null,
+              "gate_penalty": 0.02,
+              "n_train": 2238
+            },
+            "test_summary": {
+              "n": 200,
+              "standard_acc": 0.315,
+              "policy_acc": 0.315,
+              "acc_delta": 0.0,
+              "gate_count": 0,
+              "gate_rate": 0.0,
+              "collapses_prevented": 0,
+              "corrections_lost": 0,
+              "net": 0,
+              "standard_collapses": 34,
+              "standard_corrections": 19
+            }
+          },
+          {
+            "heldout_model": "vllm_qwen3.5-9b",
+            "train_models": [
+              "gemini_3_1_flash_lite_n200",
+              "gemini_3_1_pro_n200",
+              "gemini_3_flash_n200",
+              "openrouter_deepseek-v4-flash",
+              "openrouter_deepseek-v4-pro",
+              "openrouter_grok_4_1_fast_n200",
+              "openrouter_mistral_small_4_n200",
+              "vllm_gemma-4-31b-it",
+              "vllm_qwen3.5-4b",
+              "vllm_qwen3.6-27b-fp8",
+              "vllm_qwen3.6-35b-a3b-fp8",
+              "vllm_qwen3_32b_a7_n200"
+            ],
+            "rule": {
+              "kind": "no_gate",
+              "objective": 0.0,
+              "net_rate": 0.0,
+              "gate_rate": 0.0,
+              "prevented": 0,
+              "lost": 0,
+              "net": 0,
+              "gated": 0,
+              "feature": null,
+              "direction": null,
+              "threshold": null,
+              "threshold_label": null,
+              "fill_value": null,
+              "gate_penalty": 0.02,
+              "n_train": 2239
+            },
+            "test_summary": {
+              "n": 199,
+              "standard_acc": 0.35175879396984927,
+              "policy_acc": 0.35175879396984927,
+              "acc_delta": 0.0,
+              "gate_count": 0,
+              "gate_rate": 0.0,
+              "collapses_prevented": 0,
+              "corrections_lost": 0,
+              "net": 0,
+              "standard_collapses": 36,
+              "standard_corrections": 24
+            }
+          },
+          {
+            "heldout_model": "vllm_qwen3.6-27b-fp8",
+            "train_models": [
+              "gemini_3_1_flash_lite_n200",
+              "gemini_3_1_pro_n200",
+              "gemini_3_flash_n200",
+              "openrouter_deepseek-v4-flash",
+              "openrouter_deepseek-v4-pro",
+              "openrouter_grok_4_1_fast_n200",
+              "openrouter_mistral_small_4_n200",
+              "vllm_gemma-4-31b-it",
+              "vllm_qwen3.5-4b",
+              "vllm_qwen3.5-9b",
+              "vllm_qwen3.6-35b-a3b-fp8",
+              "vllm_qwen3_32b_a7_n200"
+            ],
+            "rule": {
+              "kind": "no_gate",
+              "objective": 0.0,
+              "net_rate": 0.0,
+              "gate_rate": 0.0,
+              "prevented": 0,
+              "lost": 0,
+              "net": 0,
+              "gated": 0,
+              "feature": null,
+              "direction": null,
+              "threshold": null,
+              "threshold_label": null,
+              "fill_value": null,
+              "gate_penalty": 0.02,
+              "n_train": 2238
+            },
+            "test_summary": {
+              "n": 200,
+              "standard_acc": 0.74,
+              "policy_acc": 0.74,
+              "acc_delta": 0.0,
+              "gate_count": 0,
+              "gate_rate": 0.0,
+              "collapses_prevented": 0,
+              "corrections_lost": 0,
+              "net": 0,
+              "standard_collapses": 11,
+              "standard_corrections": 32
+            }
+          },
+          {
+            "heldout_model": "vllm_qwen3.6-35b-a3b-fp8",
+            "train_models": [
+              "gemini_3_1_flash_lite_n200",
+              "gemini_3_1_pro_n200",
+              "gemini_3_flash_n200",
+              "openrouter_deepseek-v4-flash",
+              "openrouter_deepseek-v4-pro",
+              "openrouter_grok_4_1_fast_n200",
+              "openrouter_mistral_small_4_n200",
+              "vllm_gemma-4-31b-it",
+              "vllm_qwen3.5-4b",
+              "vllm_qwen3.5-9b",
+              "vllm_qwen3.6-27b-fp8",
+              "vllm_qwen3_32b_a7_n200"
+            ],
+            "rule": {
+              "kind": "no_gate",
+              "objective": 0.0,
+              "net_rate": 0.0,
+              "gate_rate": 0.0,
+              "prevented": 0,
+              "lost": 0,
+              "net": 0,
+              "gated": 0,
+              "feature": null,
+              "direction": null,
+              "threshold": null,
+              "threshold_label": null,
+              "fill_value": null,
+              "gate_penalty": 0.02,
+              "n_train": 2238
+            },
+            "test_summary": {
+              "n": 200,
+              "standard_acc": 0.65,
+              "policy_acc": 0.65,
+              "acc_delta": 0.0,
+              "gate_count": 0,
+              "gate_rate": 0.0,
+              "collapses_prevented": 0,
+              "corrections_lost": 0,
+              "net": 0,
+              "standard_collapses": 12,
+              "standard_corrections": 41
+            }
+          },
+          {
+            "heldout_model": "vllm_qwen3_32b_a7_n200",
+            "train_models": [
+              "gemini_3_1_flash_lite_n200",
+              "gemini_3_1_pro_n200",
+              "gemini_3_flash_n200",
+              "openrouter_deepseek-v4-flash",
+              "openrouter_deepseek-v4-pro",
+              "openrouter_grok_4_1_fast_n200",
+              "openrouter_mistral_small_4_n200",
+              "vllm_gemma-4-31b-it",
+              "vllm_qwen3.5-4b",
+              "vllm_qwen3.5-9b",
+              "vllm_qwen3.6-27b-fp8",
+              "vllm_qwen3.6-35b-a3b-fp8"
+            ],
+            "rule": {
+              "kind": "no_gate",
+              "objective": 0.0,
+              "net_rate": 0.0,
+              "gate_rate": 0.0,
+              "prevented": 0,
+              "lost": 0,
+              "net": 0,
+              "gated": 0,
+              "feature": null,
+              "direction": null,
+              "threshold": null,
+              "threshold_label": null,
+              "fill_value": null,
+              "gate_penalty": 0.02,
+              "n_train": 2238
+            },
+            "test_summary": {
+              "n": 200,
+              "standard_acc": 0.52,
+              "policy_acc": 0.52,
+              "acc_delta": 0.0,
+              "gate_count": 0,
+              "gate_rate": 0.0,
+              "collapses_prevented": 0,
+              "corrections_lost": 0,
+              "net": 0,
+              "standard_collapses": 8,
+              "standard_corrections": 39
+            }
+          }
+        ],
+        "learned_r1_probe_percentile_stump": [
+          {
+            "heldout_model": "gemini_3_1_flash_lite_n200",
+            "train_models": [
+              "gemini_3_1_pro_n200",
+              "gemini_3_flash_n200",
+              "openrouter_deepseek-v4-flash",
+              "openrouter_deepseek-v4-pro",
+              "openrouter_grok_4_1_fast_n200",
+              "openrouter_mistral_small_4_n200",
+              "vllm_gemma-4-31b-it",
+              "vllm_qwen3.5-4b",
+              "vllm_qwen3.5-9b",
+              "vllm_qwen3.6-27b-fp8",
+              "vllm_qwen3.6-35b-a3b-fp8",
+              "vllm_qwen3_32b_a7_n200"
+            ],
+            "rule": {
+              "kind": "no_gate",
+              "objective": 0.0,
+              "net_rate": 0.0,
+              "gate_rate": 0.0,
+              "prevented": 0,
+              "lost": 0,
+              "net": 0,
+              "gated": 0,
+              "feature": null,
+              "direction": null,
+              "threshold": null,
+              "threshold_label": null,
+              "fill_value": null,
+              "gate_penalty": 0.02,
+              "n_train": 2238
+            },
+            "test_summary": {
+              "n": 200,
+              "standard_acc": 0.845,
+              "policy_acc": 0.845,
+              "acc_delta": 0.0,
+              "gate_count": 0,
+              "gate_rate": 0.0,
+              "collapses_prevented": 0,
+              "corrections_lost": 0,
+              "net": 0,
+              "standard_collapses": 0,
+              "standard_corrections": 5
+            }
+          },
+          {
+            "heldout_model": "gemini_3_1_pro_n200",
+            "train_models": [
+              "gemini_3_1_flash_lite_n200",
+              "gemini_3_flash_n200",
+              "openrouter_deepseek-v4-flash",
+              "openrouter_deepseek-v4-pro",
+              "openrouter_grok_4_1_fast_n200",
+              "openrouter_mistral_small_4_n200",
+              "vllm_gemma-4-31b-it",
+              "vllm_qwen3.5-4b",
+              "vllm_qwen3.5-9b",
+              "vllm_qwen3.6-27b-fp8",
+              "vllm_qwen3.6-35b-a3b-fp8",
+              "vllm_qwen3_32b_a7_n200"
+            ],
+            "rule": {
+              "kind": "no_gate",
+              "objective": 0.0,
+              "net_rate": 0.0,
+              "gate_rate": 0.0,
+              "prevented": 0,
+              "lost": 0,
+              "net": 0,
+              "gated": 0,
+              "feature": null,
+              "direction": null,
+              "threshold": null,
+              "threshold_label": null,
+              "fill_value": null,
+              "gate_penalty": 0.02,
+              "n_train": 2258
+            },
+            "test_summary": {
+              "n": 180,
+              "standard_acc": 0.8388888888888889,
+              "policy_acc": 0.8388888888888889,
+              "acc_delta": 0.0,
+              "gate_count": 0,
+              "gate_rate": 0.0,
+              "collapses_prevented": 0,
+              "corrections_lost": 0,
+              "net": 0,
+              "standard_collapses": 0,
+              "standard_corrections": 7
+            }
+          },
+          {
+            "heldout_model": "gemini_3_flash_n200",
+            "train_models": [
+              "gemini_3_1_flash_lite_n200",
+              "gemini_3_1_pro_n200",
+              "openrouter_deepseek-v4-flash",
+              "openrouter_deepseek-v4-pro",
+              "openrouter_grok_4_1_fast_n200",
+              "openrouter_mistral_small_4_n200",
+              "vllm_gemma-4-31b-it",
+              "vllm_qwen3.5-4b",
+              "vllm_qwen3.5-9b",
+              "vllm_qwen3.6-27b-fp8",
+              "vllm_qwen3.6-35b-a3b-fp8",
+              "vllm_qwen3_32b_a7_n200"
+            ],
+            "rule": {
+              "kind": "no_gate",
+              "objective": 0.0,
+              "net_rate": 0.0,
+              "gate_rate": 0.0,
+              "prevented": 0,
+              "lost": 0,
+              "net": 0,
+              "gated": 0,
+              "feature": null,
+              "direction": null,
+              "threshold": null,
+              "threshold_label": null,
+              "fill_value": null,
+              "gate_penalty": 0.02,
+              "n_train": 2238
+            },
+            "test_summary": {
+              "n": 200,
+              "standard_acc": 0.84,
+              "policy_acc": 0.84,
+              "acc_delta": 0.0,
+              "gate_count": 0,
+              "gate_rate": 0.0,
+              "collapses_prevented": 0,
+              "corrections_lost": 0,
+              "net": 0,
+              "standard_collapses": 1,
+              "standard_corrections": 3
+            }
+          },
+          {
+            "heldout_model": "openrouter_deepseek-v4-flash",
+            "train_models": [
+              "gemini_3_1_flash_lite_n200",
+              "gemini_3_1_pro_n200",
+              "gemini_3_flash_n200",
+              "openrouter_deepseek-v4-pro",
+              "openrouter_grok_4_1_fast_n200",
+              "openrouter_mistral_small_4_n200",
+              "vllm_gemma-4-31b-it",
+              "vllm_qwen3.5-4b",
+              "vllm_qwen3.5-9b",
+              "vllm_qwen3.6-27b-fp8",
+              "vllm_qwen3.6-35b-a3b-fp8",
+              "vllm_qwen3_32b_a7_n200"
+            ],
+            "rule": {
+              "kind": "no_gate",
+              "objective": 0.0,
+              "net_rate": 0.0,
+              "gate_rate": 0.0,
+              "prevented": 0,
+              "lost": 0,
+              "net": 0,
+              "gated": 0,
+              "feature": null,
+              "direction": null,
+              "threshold": null,
+              "threshold_label": null,
+              "fill_value": null,
+              "gate_penalty": 0.02,
+              "n_train": 2258
+            },
+            "test_summary": {
+              "n": 180,
+              "standard_acc": 0.8333333333333334,
+              "policy_acc": 0.8333333333333334,
+              "acc_delta": 0.0,
+              "gate_count": 0,
+              "gate_rate": 0.0,
+              "collapses_prevented": 0,
+              "corrections_lost": 0,
+              "net": 0,
+              "standard_collapses": 0,
+              "standard_corrections": 1
+            }
+          },
+          {
+            "heldout_model": "openrouter_deepseek-v4-pro",
+            "train_models": [
+              "gemini_3_1_flash_lite_n200",
+              "gemini_3_1_pro_n200",
+              "gemini_3_flash_n200",
+              "openrouter_deepseek-v4-flash",
+              "openrouter_grok_4_1_fast_n200",
+              "openrouter_mistral_small_4_n200",
+              "vllm_gemma-4-31b-it",
+              "vllm_qwen3.5-4b",
+              "vllm_qwen3.5-9b",
+              "vllm_qwen3.6-27b-fp8",
+              "vllm_qwen3.6-35b-a3b-fp8",
+              "vllm_qwen3_32b_a7_n200"
+            ],
+            "rule": {
+              "kind": "no_gate",
+              "objective": 0.0,
+              "net_rate": 0.0,
+              "gate_rate": 0.0,
+              "prevented": 0,
+              "lost": 0,
+              "net": 0,
+              "gated": 0,
+              "feature": null,
+              "direction": null,
+              "threshold": null,
+              "threshold_label": null,
+              "fill_value": null,
+              "gate_penalty": 0.02,
+              "n_train": 2359
+            },
+            "test_summary": {
+              "n": 79,
+              "standard_acc": 0.810126582278481,
+              "policy_acc": 0.810126582278481,
+              "acc_delta": 0.0,
+              "gate_count": 0,
+              "gate_rate": 0.0,
+              "collapses_prevented": 0,
+              "corrections_lost": 0,
+              "net": 0,
+              "standard_collapses": 1,
+              "standard_corrections": 3
+            }
+          },
+          {
+            "heldout_model": "openrouter_grok_4_1_fast_n200",
+            "train_models": [
+              "gemini_3_1_flash_lite_n200",
+              "gemini_3_1_pro_n200",
+              "gemini_3_flash_n200",
+              "openrouter_deepseek-v4-flash",
+              "openrouter_deepseek-v4-pro",
+              "openrouter_mistral_small_4_n200",
+              "vllm_gemma-4-31b-it",
+              "vllm_qwen3.5-4b",
+              "vllm_qwen3.5-9b",
+              "vllm_qwen3.6-27b-fp8",
+              "vllm_qwen3.6-35b-a3b-fp8",
+              "vllm_qwen3_32b_a7_n200"
+            ],
+            "rule": {
+              "kind": "no_gate",
+              "objective": 0.0,
+              "net_rate": 0.0,
+              "gate_rate": 0.0,
+              "prevented": 0,
+              "lost": 0,
+              "net": 0,
+              "gated": 0,
+              "feature": null,
+              "direction": null,
+              "threshold": null,
+              "threshold_label": null,
+              "fill_value": null,
+              "gate_penalty": 0.02,
+              "n_train": 2238
+            },
+            "test_summary": {
+              "n": 200,
+              "standard_acc": 0.845,
+              "policy_acc": 0.845,
+              "acc_delta": 0.0,
+              "gate_count": 0,
+              "gate_rate": 0.0,
+              "collapses_prevented": 0,
+              "corrections_lost": 0,
+              "net": 0,
+              "standard_collapses": 1,
+              "standard_corrections": 3
+            }
+          },
+          {
+            "heldout_model": "openrouter_mistral_small_4_n200",
+            "train_models": [
+              "gemini_3_1_flash_lite_n200",
+              "gemini_3_1_pro_n200",
+              "gemini_3_flash_n200",
+              "openrouter_deepseek-v4-flash",
+              "openrouter_deepseek-v4-pro",
+              "openrouter_grok_4_1_fast_n200",
+              "vllm_gemma-4-31b-it",
+              "vllm_qwen3.5-4b",
+              "vllm_qwen3.5-9b",
+              "vllm_qwen3.6-27b-fp8",
+              "vllm_qwen3.6-35b-a3b-fp8",
+              "vllm_qwen3_32b_a7_n200"
+            ],
+            "rule": {
+              "kind": "no_gate",
+              "objective": 0.0,
+              "net_rate": 0.0,
+              "gate_rate": 0.0,
+              "prevented": 0,
+              "lost": 0,
+              "net": 0,
+              "gated": 0,
+              "feature": null,
+              "direction": null,
+              "threshold": null,
+              "threshold_label": null,
+              "fill_value": null,
+              "gate_penalty": 0.02,
+              "n_train": 2238
+            },
+            "test_summary": {
+              "n": 200,
+              "standard_acc": 0.73,
+              "policy_acc": 0.73,
+              "acc_delta": 0.0,
+              "gate_count": 0,
+              "gate_rate": 0.0,
+              "collapses_prevented": 0,
+              "corrections_lost": 0,
+              "net": 0,
+              "standard_collapses": 7,
+              "standard_corrections": 13
+            }
+          },
+          {
+            "heldout_model": "vllm_gemma-4-31b-it",
+            "train_models": [
+              "gemini_3_1_flash_lite_n200",
+              "gemini_3_1_pro_n200",
+              "gemini_3_flash_n200",
+              "openrouter_deepseek-v4-flash",
+              "openrouter_deepseek-v4-pro",
+              "openrouter_grok_4_1_fast_n200",
+              "openrouter_mistral_small_4_n200",
+              "vllm_qwen3.5-4b",
+              "vllm_qwen3.5-9b",
+              "vllm_qwen3.6-27b-fp8",
+              "vllm_qwen3.6-35b-a3b-fp8",
+              "vllm_qwen3_32b_a7_n200"
+            ],
+            "rule": {
+              "kind": "no_gate",
+              "objective": 0.0,
+              "net_rate": 0.0,
+              "gate_rate": 0.0,
+              "prevented": 0,
+              "lost": 0,
+              "net": 0,
+              "gated": 0,
+              "feature": null,
+              "direction": null,
+              "threshold": null,
+              "threshold_label": null,
+              "fill_value": null,
+              "gate_penalty": 0.02,
+              "n_train": 2238
+            },
+            "test_summary": {
+              "n": 200,
+              "standard_acc": 0.82,
+              "policy_acc": 0.82,
+              "acc_delta": 0.0,
+              "gate_count": 0,
+              "gate_rate": 0.0,
+              "collapses_prevented": 0,
+              "corrections_lost": 0,
+              "net": 0,
+              "standard_collapses": 0,
+              "standard_corrections": 4
+            }
+          },
+          {
+            "heldout_model": "vllm_qwen3.5-4b",
+            "train_models": [
+              "gemini_3_1_flash_lite_n200",
+              "gemini_3_1_pro_n200",
+              "gemini_3_flash_n200",
+              "openrouter_deepseek-v4-flash",
+              "openrouter_deepseek-v4-pro",
+              "openrouter_grok_4_1_fast_n200",
+              "openrouter_mistral_small_4_n200",
+              "vllm_gemma-4-31b-it",
+              "vllm_qwen3.5-9b",
+              "vllm_qwen3.6-27b-fp8",
+              "vllm_qwen3.6-35b-a3b-fp8",
+              "vllm_qwen3_32b_a7_n200"
+            ],
+            "rule": {
+              "kind": "no_gate",
+              "objective": 0.0,
+              "net_rate": 0.0,
+              "gate_rate": 0.0,
+              "prevented": 0,
+              "lost": 0,
+              "net": 0,
+              "gated": 0,
+              "feature": null,
+              "direction": null,
+              "threshold": null,
+              "threshold_label": null,
+              "fill_value": null,
+              "gate_penalty": 0.02,
+              "n_train": 2238
+            },
+            "test_summary": {
+              "n": 200,
+              "standard_acc": 0.315,
+              "policy_acc": 0.315,
+              "acc_delta": 0.0,
+              "gate_count": 0,
+              "gate_rate": 0.0,
+              "collapses_prevented": 0,
+              "corrections_lost": 0,
+              "net": 0,
+              "standard_collapses": 34,
+              "standard_corrections": 19
+            }
+          },
+          {
+            "heldout_model": "vllm_qwen3.5-9b",
+            "train_models": [
+              "gemini_3_1_flash_lite_n200",
+              "gemini_3_1_pro_n200",
+              "gemini_3_flash_n200",
+              "openrouter_deepseek-v4-flash",
+              "openrouter_deepseek-v4-pro",
+              "openrouter_grok_4_1_fast_n200",
+              "openrouter_mistral_small_4_n200",
+              "vllm_gemma-4-31b-it",
+              "vllm_qwen3.5-4b",
+              "vllm_qwen3.6-27b-fp8",
+              "vllm_qwen3.6-35b-a3b-fp8",
+              "vllm_qwen3_32b_a7_n200"
+            ],
+            "rule": {
+              "kind": "no_gate",
+              "objective": 0.0,
+              "net_rate": 0.0,
+              "gate_rate": 0.0,
+              "prevented": 0,
+              "lost": 0,
+              "net": 0,
+              "gated": 0,
+              "feature": null,
+              "direction": null,
+              "threshold": null,
+              "threshold_label": null,
+              "fill_value": null,
+              "gate_penalty": 0.02,
+              "n_train": 2239
+            },
+            "test_summary": {
+              "n": 199,
+              "standard_acc": 0.35175879396984927,
+              "policy_acc": 0.35175879396984927,
+              "acc_delta": 0.0,
+              "gate_count": 0,
+              "gate_rate": 0.0,
+              "collapses_prevented": 0,
+              "corrections_lost": 0,
+              "net": 0,
+              "standard_collapses": 36,
+              "standard_corrections": 24
+            }
+          },
+          {
+            "heldout_model": "vllm_qwen3.6-27b-fp8",
+            "train_models": [
+              "gemini_3_1_flash_lite_n200",
+              "gemini_3_1_pro_n200",
+              "gemini_3_flash_n200",
+              "openrouter_deepseek-v4-flash",
+              "openrouter_deepseek-v4-pro",
+              "openrouter_grok_4_1_fast_n200",
+              "openrouter_mistral_small_4_n200",
+              "vllm_gemma-4-31b-it",
+              "vllm_qwen3.5-4b",
+              "vllm_qwen3.5-9b",
+              "vllm_qwen3.6-35b-a3b-fp8",
+              "vllm_qwen3_32b_a7_n200"
+            ],
+            "rule": {
+              "kind": "no_gate",
+              "objective": 0.0,
+              "net_rate": 0.0,
+              "gate_rate": 0.0,
+              "prevented": 0,
+              "lost": 0,
+              "net": 0,
+              "gated": 0,
+              "feature": null,
+              "direction": null,
+              "threshold": null,
+              "threshold_label": null,
+              "fill_value": null,
+              "gate_penalty": 0.02,
+              "n_train": 2238
+            },
+            "test_summary": {
+              "n": 200,
+              "standard_acc": 0.74,
+              "policy_acc": 0.74,
+              "acc_delta": 0.0,
+              "gate_count": 0,
+              "gate_rate": 0.0,
+              "collapses_prevented": 0,
+              "corrections_lost": 0,
+              "net": 0,
+              "standard_collapses": 11,
+              "standard_corrections": 32
+            }
+          },
+          {
+            "heldout_model": "vllm_qwen3.6-35b-a3b-fp8",
+            "train_models": [
+              "gemini_3_1_flash_lite_n200",
+              "gemini_3_1_pro_n200",
+              "gemini_3_flash_n200",
+              "openrouter_deepseek-v4-flash",
+              "openrouter_deepseek-v4-pro",
+              "openrouter_grok_4_1_fast_n200",
+              "openrouter_mistral_small_4_n200",
+              "vllm_gemma-4-31b-it",
+              "vllm_qwen3.5-4b",
+              "vllm_qwen3.5-9b",
+              "vllm_qwen3.6-27b-fp8",
+              "vllm_qwen3_32b_a7_n200"
+            ],
+            "rule": {
+              "kind": "no_gate",
+              "objective": 0.0,
+              "net_rate": 0.0,
+              "gate_rate": 0.0,
+              "prevented": 0,
+              "lost": 0,
+              "net": 0,
+              "gated": 0,
+              "feature": null,
+              "direction": null,
+              "threshold": null,
+              "threshold_label": null,
+              "fill_value": null,
+              "gate_penalty": 0.02,
+              "n_train": 2238
+            },
+            "test_summary": {
+              "n": 200,
+              "standard_acc": 0.65,
+              "policy_acc": 0.65,
+              "acc_delta": 0.0,
+              "gate_count": 0,
+              "gate_rate": 0.0,
+              "collapses_prevented": 0,
+              "corrections_lost": 0,
+              "net": 0,
+              "standard_collapses": 12,
+              "standard_corrections": 41
+            }
+          },
+          {
+            "heldout_model": "vllm_qwen3_32b_a7_n200",
+            "train_models": [
+              "gemini_3_1_flash_lite_n200",
+              "gemini_3_1_pro_n200",
+              "gemini_3_flash_n200",
+              "openrouter_deepseek-v4-flash",
+              "openrouter_deepseek-v4-pro",
+              "openrouter_grok_4_1_fast_n200",
+              "openrouter_mistral_small_4_n200",
+              "vllm_gemma-4-31b-it",
+              "vllm_qwen3.5-4b",
+              "vllm_qwen3.5-9b",
+              "vllm_qwen3.6-27b-fp8",
+              "vllm_qwen3.6-35b-a3b-fp8"
+            ],
+            "rule": {
+              "objective": 0.0006970509383378016,
+              "net_rate": 0.0008936550491510277,
+              "gate_rate": 0.009830205540661306,
+              "prevented": 2,
+              "lost": 0,
+              "net": 2,
+              "gated": 22,
+              "kind": "stump",
+              "feature": "probe_mean_fr",
+              "direction": "high",
+              "threshold": 1.0,
+              "threshold_label": "p100",
+              "fill_value": 0.24525,
+              "gate_penalty": 0.02,
+              "n_train": 2238
+            },
+            "test_summary": {
+              "n": 200,
+              "standard_acc": 0.52,
+              "policy_acc": 0.505,
+              "acc_delta": -0.015,
+              "gate_count": 12,
+              "gate_rate": 0.06,
+              "collapses_prevented": 1,
+              "corrections_lost": 4,
+              "net": -3,
+              "standard_collapses": 8,
+              "standard_corrections": 39
+            }
+          }
+        ]
+      },
+      "paper_worthy": false,
+      "paper_worthy_reason": "No strict LOMO policy has a positive question-bootstrap lower CI on accuracy delta."
+    },
+    "backend_gemini_api_exploratory": {
+      "cohort": "backend_gemini_api_exploratory",
+      "n_records": 580,
+      "n_models": 3,
+      "models": [
+        "gemini_3_1_flash_lite_n200",
+        "gemini_3_1_pro_n200",
+        "gemini_3_flash_n200"
+      ],
+      "standard_collapses": 1,
+      "standard_corrections": 15,
+      "probe_feature_coverage": 1.0,
+      "policies": [
+        {
+          "policy": "standard",
+          "n": 580,
+          "standard_acc": 0.8413793103448276,
+          "policy_acc": 0.8413793103448276,
+          "acc_delta": 0.0,
+          "gate_count": 0,
+          "gate_rate": 0.0,
+          "collapses_prevented": 0,
+          "corrections_lost": 0,
+          "net": 0,
+          "standard_collapses": 1,
+          "standard_corrections": 15
+        },
+        {
+          "policy": "naive_always_freeze",
+          "n": 580,
+          "standard_acc": 0.8413793103448276,
+          "policy_acc": 0.8172413793103448,
+          "acc_delta": -0.02413793103448276,
+          "gate_count": 580,
+          "gate_rate": 1.0,
+          "collapses_prevented": 1,
+          "corrections_lost": 15,
+          "net": -14,
+          "standard_collapses": 1,
+          "standard_corrections": 15,
+          "validation": "fixed_rule_no_training",
+          "question_bootstrap_ci95": {
+            "B": 2000,
+            "B_used": 2000,
+            "n_question_clusters": 200,
+            "acc_delta": {
+              "median": -0.023972602739726026,
+              "ci_2.5": -0.038329198363038226,
+              "ci_97.5": -0.010362694300518135
+            },
+            "gate_rate": {
+              "median": 1.0,
+              "ci_2.5": 1.0,
+              "ci_97.5": 1.0
+            },
+            "net_rate": {
+              "median": -0.023972602739726026,
+              "ci_2.5": -0.038329198363038226,
+              "ci_97.5": -0.010362694300518135
+            },
+            "prevented_rate": {
+              "median": 0.0017211703958691911,
+              "ci_2.5": 0.0,
+              "ci_97.5": 0.005208333333333333
+            },
+            "lost_rate": {
+              "median": 0.02577319587628866,
+              "ci_2.5": 0.013627463173513274,
+              "ci_97.5": 0.03986481802426344
+            }
+          }
+        },
+        {
+          "policy": "naive_r1_majority_changed",
+          "n": 580,
+          "standard_acc": 0.8413793103448276,
+          "policy_acc": 0.8224137931034483,
+          "acc_delta": -0.01896551724137931,
+          "gate_count": 23,
+          "gate_rate": 0.039655172413793106,
+          "collapses_prevented": 1,
+          "corrections_lost": 12,
+          "net": -11,
+          "standard_collapses": 1,
+          "standard_corrections": 15,
+          "validation": "fixed_rule_no_training",
+          "question_bootstrap_ci95": {
+            "B": 2000,
+            "B_used": 2000,
+            "n_question_clusters": 200,
+            "acc_delta": {
+              "median": -0.018900343642611683,
+              "ci_2.5": -0.0325356416974083,
+              "ci_97.5": -0.00686106346483705
+            },
+            "gate_rate": {
+              "median": 0.03934990048003746,
+              "ci_2.5": 0.022451536537430768,
+              "ci_97.5": 0.05872958045480717
+            },
+            "net_rate": {
+              "median": -0.018900343642611683,
+              "ci_2.5": -0.0325356416974083,
+              "ci_97.5": -0.00686106346483705
+            },
+            "prevented_rate": {
+              "median": 0.0017211703958691911,
+              "ci_2.5": 0.0,
+              "ci_97.5": 0.005208333333333333
+            },
+            "lost_rate": {
+              "median": 0.020618556701030927,
+              "ci_2.5": 0.00865051903114187,
+              "ci_97.5": 0.03318454378663813
+            }
+          }
+        },
+        {
+          "policy": "naive_any_r1_flip",
+          "n": 580,
+          "standard_acc": 0.8413793103448276,
+          "policy_acc": 0.8206896551724138,
+          "acc_delta": -0.020689655172413793,
+          "gate_count": 54,
+          "gate_rate": 0.09310344827586207,
+          "collapses_prevented": 1,
+          "corrections_lost": 13,
+          "net": -12,
+          "standard_collapses": 1,
+          "standard_corrections": 15,
+          "validation": "fixed_rule_no_training",
+          "question_bootstrap_ci95": {
+            "B": 2000,
+            "B_used": 2000,
+            "n_question_clusters": 200,
+            "acc_delta": {
+              "median": -0.02058319039451115,
+              "ci_2.5": -0.034482758620689655,
+              "ci_97.5": -0.008561277953401239
+            },
+            "gate_rate": {
+              "median": 0.09262435677530018,
+              "ci_2.5": 0.06747404844290658,
+              "ci_97.5": 0.12027491408934708
+            },
+            "net_rate": {
+              "median": -0.02058319039451115,
+              "ci_2.5": -0.034482758620689655,
+              "ci_97.5": -0.008561277953401239
+            },
+            "prevented_rate": {
+              "median": 0.0017211703958691911,
+              "ci_2.5": 0.0,
+              "ci_97.5": 0.005208333333333333
+            },
+            "lost_rate": {
+              "median": 0.022336769759450172,
+              "ci_2.5": 0.010344827586206896,
+              "ci_97.5": 0.03602368306846599
+            }
+          }
+        },
+        {
+          "policy": "learned_r1_percentile_stump",
+          "n": 580,
+          "standard_acc": 0.8413793103448276,
+          "policy_acc": 0.8413793103448276,
+          "acc_delta": 0.0,
+          "gate_count": 0,
+          "gate_rate": 0.0,
+          "collapses_prevented": 0,
+          "corrections_lost": 0,
+          "net": 0,
+          "standard_collapses": 1,
+          "standard_corrections": 15,
+          "validation": "exploratory_in_sample_not_lomo",
+          "mode": "r1_only",
+          "n_models": 3,
+          "question_bootstrap_ci95": {
+            "B": 2000,
+            "B_used": 2000,
+            "n_question_clusters": 200,
+            "acc_delta": {
+              "median": 0.0,
+              "ci_2.5": 0.0,
+              "ci_97.5": 0.0
+            },
+            "gate_rate": {
+              "median": 0.0,
+              "ci_2.5": 0.0,
+              "ci_97.5": 0.0
+            },
+            "net_rate": {
+              "median": 0.0,
+              "ci_2.5": 0.0,
+              "ci_97.5": 0.0
+            },
+            "prevented_rate": {
+              "median": 0.0,
+              "ci_2.5": 0.0,
+              "ci_97.5": 0.0
+            },
+            "lost_rate": {
+              "median": 0.0,
+              "ci_2.5": 0.0,
+              "ci_97.5": 0.0
+            }
+          }
+        },
+        {
+          "policy": "learned_r1_probe_percentile_stump",
+          "n": 580,
+          "standard_acc": 0.8413793103448276,
+          "policy_acc": 0.8413793103448276,
+          "acc_delta": 0.0,
+          "gate_count": 0,
+          "gate_rate": 0.0,
+          "collapses_prevented": 0,
+          "corrections_lost": 0,
+          "net": 0,
+          "standard_collapses": 1,
+          "standard_corrections": 15,
+          "validation": "exploratory_in_sample_not_lomo",
+          "mode": "r1_plus_optional_probe_mean_fr",
+          "n_models": 3,
+          "question_bootstrap_ci95": {
+            "B": 2000,
+            "B_used": 2000,
+            "n_question_clusters": 200,
+            "acc_delta": {
+              "median": 0.0,
+              "ci_2.5": 0.0,
+              "ci_97.5": 0.0
+            },
+            "gate_rate": {
+              "median": 0.0,
+              "ci_2.5": 0.0,
+              "ci_97.5": 0.0
+            },
+            "net_rate": {
+              "median": 0.0,
+              "ci_2.5": 0.0,
+              "ci_97.5": 0.0
+            },
+            "prevented_rate": {
+              "median": 0.0,
+              "ci_2.5": 0.0,
+              "ci_97.5": 0.0
+            },
+            "lost_rate": {
+              "median": 0.0,
+              "ci_2.5": 0.0,
+              "ci_97.5": 0.0
+            }
+          }
+        }
+      ],
+      "learned_folds": {
+        "learned_r1_percentile_stump": [
+          {
+            "heldout_model": null,
+            "train_models": [
+              "gemini_3_1_flash_lite_n200",
+              "gemini_3_1_pro_n200",
+              "gemini_3_flash_n200"
+            ],
+            "rule": {
+              "kind": "no_gate",
+              "objective": 0.0,
+              "net_rate": 0.0,
+              "gate_rate": 0.0,
+              "prevented": 0,
+              "lost": 0,
+              "net": 0,
+              "gated": 0,
+              "feature": null,
+              "direction": null,
+              "threshold": null,
+              "threshold_label": null,
+              "fill_value": null,
+              "gate_penalty": 0.02,
+              "n_train": 580
+            },
+            "test_summary": {
+              "n": 580,
+              "standard_acc": 0.8413793103448276,
+              "policy_acc": 0.8413793103448276,
+              "acc_delta": 0.0,
+              "gate_count": 0,
+              "gate_rate": 0.0,
+              "collapses_prevented": 0,
+              "corrections_lost": 0,
+              "net": 0,
+              "standard_collapses": 1,
+              "standard_corrections": 15,
+              "validation": "exploratory_in_sample_not_lomo",
+              "mode": "r1_only",
+              "n_models": 3
+            }
+          }
+        ],
+        "learned_r1_probe_percentile_stump": [
+          {
+            "heldout_model": null,
+            "train_models": [
+              "gemini_3_1_flash_lite_n200",
+              "gemini_3_1_pro_n200",
+              "gemini_3_flash_n200"
+            ],
+            "rule": {
+              "kind": "no_gate",
+              "objective": 0.0,
+              "net_rate": 0.0,
+              "gate_rate": 0.0,
+              "prevented": 0,
+              "lost": 0,
+              "net": 0,
+              "gated": 0,
+              "feature": null,
+              "direction": null,
+              "threshold": null,
+              "threshold_label": null,
+              "fill_value": null,
+              "gate_penalty": 0.02,
+              "n_train": 580
+            },
+            "test_summary": {
+              "n": 580,
+              "standard_acc": 0.8413793103448276,
+              "policy_acc": 0.8413793103448276,
+              "acc_delta": 0.0,
+              "gate_count": 0,
+              "gate_rate": 0.0,
+              "collapses_prevented": 0,
+              "corrections_lost": 0,
+              "net": 0,
+              "standard_collapses": 1,
+              "standard_corrections": 15,
+              "validation": "exploratory_in_sample_not_lomo",
+              "mode": "r1_plus_optional_probe_mean_fr",
+              "n_models": 3
+            }
+          }
+        ]
+      },
+      "paper_worthy": false,
+      "paper_worthy_reason": "No strict LOMO policy has a positive question-bootstrap lower CI on accuracy delta."
+    },
+    "backend_local_vllm_lomo": {
+      "cohort": "backend_local_vllm_lomo",
+      "n_records": 1199,
+      "n_models": 6,
+      "models": [
+        "vllm_gemma-4-31b-it",
+        "vllm_qwen3.5-4b",
+        "vllm_qwen3.5-9b",
+        "vllm_qwen3.6-27b-fp8",
+        "vllm_qwen3.6-35b-a3b-fp8",
+        "vllm_qwen3_32b_a7_n200"
+      ],
+      "standard_collapses": 101,
+      "standard_corrections": 159,
+      "probe_feature_coverage": 0.1793160967472894,
+      "policies": [
+        {
+          "policy": "standard",
+          "n": 1199,
+          "standard_acc": 0.5663052543786489,
+          "policy_acc": 0.5663052543786489,
+          "acc_delta": 0.0,
+          "gate_count": 0,
+          "gate_rate": 0.0,
+          "collapses_prevented": 0,
+          "corrections_lost": 0,
+          "net": 0,
+          "standard_collapses": 101,
+          "standard_corrections": 159
+        },
+        {
+          "policy": "naive_always_freeze",
+          "n": 1199,
+          "standard_acc": 0.5663052543786489,
+          "policy_acc": 0.517931609674729,
+          "acc_delta": -0.04837364470391994,
+          "gate_count": 1199,
+          "gate_rate": 1.0,
+          "collapses_prevented": 101,
+          "corrections_lost": 159,
+          "net": -58,
+          "standard_collapses": 101,
+          "standard_corrections": 159,
+          "validation": "fixed_rule_no_training",
+          "question_bootstrap_ci95": {
+            "B": 2000,
+            "B_used": 2000,
+            "n_question_clusters": 397,
+            "acc_delta": {
+              "median": -0.04922067268252666,
+              "ci_2.5": -0.07661745345119429,
+              "ci_97.5": -0.020741773696969265
+            },
+            "gate_rate": {
+              "median": 1.0,
+              "ci_2.5": 1.0,
+              "ci_97.5": 1.0
+            },
+            "net_rate": {
+              "median": -0.04922067268252666,
+              "ci_2.5": -0.07661745345119429,
+              "ci_97.5": -0.020741773696969265
+            },
+            "prevented_rate": {
+              "median": 0.08343718532845479,
+              "ci_2.5": 0.06825421969370146,
+              "ci_97.5": 0.10077597524381095
+            },
+            "lost_rate": {
+              "median": 0.13285868720651328,
+              "ci_2.5": 0.11196486928104575,
+              "ci_97.5": 0.15440014551333872
+            }
+          }
+        },
+        {
+          "policy": "naive_r1_majority_changed",
+          "n": 1199,
+          "standard_acc": 0.5663052543786489,
+          "policy_acc": 0.5412844036697247,
+          "acc_delta": -0.025020850708924104,
+          "gate_count": 337,
+          "gate_rate": 0.2810675562969141,
+          "collapses_prevented": 62,
+          "corrections_lost": 92,
+          "net": -30,
+          "standard_collapses": 101,
+          "standard_corrections": 159,
+          "validation": "fixed_rule_no_training",
+          "question_bootstrap_ci95": {
+            "B": 2000,
+            "B_used": 2000,
+            "n_question_clusters": 397,
+            "acc_delta": {
+              "median": -0.02538486802446193,
+              "ci_2.5": -0.0459018446043953,
+              "ci_97.5": -0.005594304271321449
+            },
+            "gate_rate": {
+              "median": 0.2810157785798238,
+              "ci_2.5": 0.2543538337497614,
+              "ci_97.5": 0.3050148927637169
+            },
+            "net_rate": {
+              "median": -0.02538486802446193,
+              "ci_2.5": -0.0459018446043953,
+              "ci_97.5": -0.005594304271321449
+            },
+            "prevented_rate": {
+              "median": 0.051250086811584133,
+              "ci_2.5": 0.03923276297461768,
+              "ci_97.5": 0.06396774765195817
+            },
+            "lost_rate": {
+              "median": 0.07692307692307693,
+              "ci_2.5": 0.061768328086427064,
+              "ci_97.5": 0.0930068627847633
+            }
+          }
+        },
+        {
+          "policy": "naive_any_r1_flip",
+          "n": 1199,
+          "standard_acc": 0.5663052543786489,
+          "policy_acc": 0.5187656380316931,
+          "acc_delta": -0.0475396163469558,
+          "gate_count": 701,
+          "gate_rate": 0.5846538782318599,
+          "collapses_prevented": 83,
+          "corrections_lost": 140,
+          "net": -57,
+          "standard_collapses": 101,
+          "standard_corrections": 159,
+          "validation": "fixed_rule_no_training",
+          "question_bootstrap_ci95": {
+            "B": 2000,
+            "B_used": 2000,
+            "n_question_clusters": 397,
+            "acc_delta": {
+              "median": -0.048163425286498196,
+              "ci_2.5": -0.07216299160885088,
+              "ci_97.5": -0.023369375315448217
+            },
+            "gate_rate": {
+              "median": 0.5846605532692577,
+              "ci_2.5": 0.5552612791157071,
+              "ci_97.5": 0.6124424594800348
+            },
+            "net_rate": {
+              "median": -0.048163425286498196,
+              "ci_2.5": -0.07216299160885088,
+              "ci_97.5": -0.023369375315448217
+            },
+            "prevented_rate": {
+              "median": 0.06882255389718077,
+              "ci_2.5": 0.055459637281977815,
+              "ci_97.5": 0.08352868330132898
+            },
+            "lost_rate": {
+              "median": 0.11697338256490417,
+              "ci_2.5": 0.09795775652918509,
+              "ci_97.5": 0.13754270829809548
+            }
+          }
+        },
+        {
+          "policy": "learned_r1_percentile_stump",
+          "n": 1199,
+          "standard_acc": 0.5663052543786489,
+          "policy_acc": 0.5496246872393661,
+          "acc_delta": -0.016680567139282735,
+          "gate_count": 106,
+          "gate_rate": 0.0884070058381985,
+          "collapses_prevented": 0,
+          "corrections_lost": 20,
+          "net": -20,
+          "standard_collapses": 101,
+          "standard_corrections": 159,
+          "validation": "strict_leave_one_model_out",
+          "mode": "r1_only",
+          "n_models": 6,
+          "question_bootstrap_ci95": {
+            "B": 2000,
+            "B_used": 2000,
+            "n_question_clusters": 397,
+            "acc_delta": {
+              "median": -0.016518507880659172,
+              "ci_2.5": -0.02445238632330974,
+              "ci_97.5": -0.010057417224608097
+            },
+            "gate_rate": {
+              "median": 0.08835341365461848,
+              "ci_2.5": 0.07240519862702895,
+              "ci_97.5": 0.10486592768193129
+            },
+            "net_rate": {
+              "median": -0.016518507880659172,
+              "ci_2.5": -0.02445238632330974,
+              "ci_97.5": -0.010057417224608097
+            },
+            "prevented_rate": {
+              "median": 0.0,
+              "ci_2.5": 0.0,
+              "ci_97.5": 0.0
+            },
+            "lost_rate": {
+              "median": 0.016518507880659172,
+              "ci_2.5": 0.010057417224608102,
+              "ci_97.5": 0.024452386323309743
+            }
+          }
+        },
+        {
+          "policy": "learned_r1_probe_percentile_stump",
+          "n": 1199,
+          "standard_acc": 0.5663052543786489,
+          "policy_acc": 0.5496246872393661,
+          "acc_delta": -0.016680567139282735,
+          "gate_count": 106,
+          "gate_rate": 0.0884070058381985,
+          "collapses_prevented": 0,
+          "corrections_lost": 20,
+          "net": -20,
+          "standard_collapses": 101,
+          "standard_corrections": 159,
+          "validation": "strict_leave_one_model_out",
+          "mode": "r1_plus_optional_probe_mean_fr",
+          "n_models": 6,
+          "question_bootstrap_ci95": {
+            "B": 2000,
+            "B_used": 2000,
+            "n_question_clusters": 397,
+            "acc_delta": {
+              "median": -0.016518507880659172,
+              "ci_2.5": -0.02445238632330974,
+              "ci_97.5": -0.010057417224608097
+            },
+            "gate_rate": {
+              "median": 0.08835341365461848,
+              "ci_2.5": 0.07240519862702895,
+              "ci_97.5": 0.10486592768193129
+            },
+            "net_rate": {
+              "median": -0.016518507880659172,
+              "ci_2.5": -0.02445238632330974,
+              "ci_97.5": -0.010057417224608097
+            },
+            "prevented_rate": {
+              "median": 0.0,
+              "ci_2.5": 0.0,
+              "ci_97.5": 0.0
+            },
+            "lost_rate": {
+              "median": 0.016518507880659172,
+              "ci_2.5": 0.010057417224608102,
+              "ci_97.5": 0.024452386323309743
+            }
+          }
+        }
+      ],
+      "learned_folds": {
+        "learned_r1_percentile_stump": [
+          {
+            "heldout_model": "vllm_gemma-4-31b-it",
+            "train_models": [
+              "vllm_qwen3.5-4b",
+              "vllm_qwen3.5-9b",
+              "vllm_qwen3.6-27b-fp8",
+              "vllm_qwen3.6-35b-a3b-fp8",
+              "vllm_qwen3_32b_a7_n200"
+            ],
+            "rule": {
+              "kind": "no_gate",
+              "objective": 0.0,
+              "net_rate": 0.0,
+              "gate_rate": 0.0,
+              "prevented": 0,
+              "lost": 0,
+              "net": 0,
+              "gated": 0,
+              "feature": null,
+              "direction": null,
+              "threshold": null,
+              "threshold_label": null,
+              "fill_value": null,
+              "gate_penalty": 0.02,
+              "n_train": 999
+            },
+            "test_summary": {
+              "n": 200,
+              "standard_acc": 0.82,
+              "policy_acc": 0.82,
+              "acc_delta": 0.0,
+              "gate_count": 0,
+              "gate_rate": 0.0,
+              "collapses_prevented": 0,
+              "corrections_lost": 0,
+              "net": 0,
+              "standard_collapses": 0,
+              "standard_corrections": 4
+            }
+          },
+          {
+            "heldout_model": "vllm_qwen3.5-4b",
+            "train_models": [
+              "vllm_gemma-4-31b-it",
+              "vllm_qwen3.5-9b",
+              "vllm_qwen3.6-27b-fp8",
+              "vllm_qwen3.6-35b-a3b-fp8",
+              "vllm_qwen3_32b_a7_n200"
+            ],
+            "rule": {
+              "kind": "no_gate",
+              "objective": 0.0,
+              "net_rate": 0.0,
+              "gate_rate": 0.0,
+              "prevented": 0,
+              "lost": 0,
+              "net": 0,
+              "gated": 0,
+              "feature": null,
+              "direction": null,
+              "threshold": null,
+              "threshold_label": null,
+              "fill_value": null,
+              "gate_penalty": 0.02,
+              "n_train": 999
+            },
+            "test_summary": {
+              "n": 200,
+              "standard_acc": 0.315,
+              "policy_acc": 0.315,
+              "acc_delta": 0.0,
+              "gate_count": 0,
+              "gate_rate": 0.0,
+              "collapses_prevented": 0,
+              "corrections_lost": 0,
+              "net": 0,
+              "standard_collapses": 34,
+              "standard_corrections": 19
+            }
+          },
+          {
+            "heldout_model": "vllm_qwen3.5-9b",
+            "train_models": [
+              "vllm_gemma-4-31b-it",
+              "vllm_qwen3.5-4b",
+              "vllm_qwen3.6-27b-fp8",
+              "vllm_qwen3.6-35b-a3b-fp8",
+              "vllm_qwen3_32b_a7_n200"
+            ],
+            "rule": {
+              "kind": "no_gate",
+              "objective": 0.0,
+              "net_rate": 0.0,
+              "gate_rate": 0.0,
+              "prevented": 0,
+              "lost": 0,
+              "net": 0,
+              "gated": 0,
+              "feature": null,
+              "direction": null,
+              "threshold": null,
+              "threshold_label": null,
+              "fill_value": null,
+              "gate_penalty": 0.02,
+              "n_train": 1000
+            },
+            "test_summary": {
+              "n": 199,
+              "standard_acc": 0.35175879396984927,
+              "policy_acc": 0.35175879396984927,
+              "acc_delta": 0.0,
+              "gate_count": 0,
+              "gate_rate": 0.0,
+              "collapses_prevented": 0,
+              "corrections_lost": 0,
+              "net": 0,
+              "standard_collapses": 36,
+              "standard_corrections": 24
+            }
+          },
+          {
+            "heldout_model": "vllm_qwen3.6-27b-fp8",
+            "train_models": [
+              "vllm_gemma-4-31b-it",
+              "vllm_qwen3.5-4b",
+              "vllm_qwen3.5-9b",
+              "vllm_qwen3.6-35b-a3b-fp8",
+              "vllm_qwen3_32b_a7_n200"
+            ],
+            "rule": {
+              "kind": "no_gate",
+              "objective": 0.0,
+              "net_rate": 0.0,
+              "gate_rate": 0.0,
+              "prevented": 0,
+              "lost": 0,
+              "net": 0,
+              "gated": 0,
+              "feature": null,
+              "direction": null,
+              "threshold": null,
+              "threshold_label": null,
+              "fill_value": null,
+              "gate_penalty": 0.02,
+              "n_train": 999
+            },
+            "test_summary": {
+              "n": 200,
+              "standard_acc": 0.74,
+              "policy_acc": 0.74,
+              "acc_delta": 0.0,
+              "gate_count": 0,
+              "gate_rate": 0.0,
+              "collapses_prevented": 0,
+              "corrections_lost": 0,
+              "net": 0,
+              "standard_collapses": 11,
+              "standard_corrections": 32
+            }
+          },
+          {
+            "heldout_model": "vllm_qwen3.6-35b-a3b-fp8",
+            "train_models": [
+              "vllm_gemma-4-31b-it",
+              "vllm_qwen3.5-4b",
+              "vllm_qwen3.5-9b",
+              "vllm_qwen3.6-27b-fp8",
+              "vllm_qwen3_32b_a7_n200"
+            ],
+            "rule": {
+              "objective": 0.0014814814814814812,
+              "net_rate": 0.003003003003003003,
+              "gate_rate": 0.07607607607607608,
+              "prevented": 21,
+              "lost": 18,
+              "net": 3,
+              "gated": 76,
+              "kind": "stump",
+              "feature": "r1_n_flipped",
+              "direction": "high",
+              "threshold": 3.0,
+              "threshold_label": "p95",
+              "fill_value": 0.9109109109109109,
+              "gate_penalty": 0.02,
+              "n_train": 999
+            },
+            "test_summary": {
+              "n": 200,
+              "standard_acc": 0.65,
+              "policy_acc": 0.59,
+              "acc_delta": -0.06,
+              "gate_count": 29,
+              "gate_rate": 0.145,
+              "collapses_prevented": 0,
+              "corrections_lost": 12,
+              "net": -12,
+              "standard_collapses": 12,
+              "standard_corrections": 41
+            }
+          },
+          {
+            "heldout_model": "vllm_qwen3_32b_a7_n200",
+            "train_models": [
+              "vllm_gemma-4-31b-it",
+              "vllm_qwen3.5-4b",
+              "vllm_qwen3.5-9b",
+              "vllm_qwen3.6-27b-fp8",
+              "vllm_qwen3.6-35b-a3b-fp8"
+            ],
+            "rule": {
+              "objective": 0.005945945945945946,
+              "net_rate": 0.015015015015015015,
+              "gate_rate": 0.45345345345345345,
+              "prevented": 29,
+              "lost": 14,
+              "net": 15,
+              "gated": 453,
+              "kind": "stump",
+              "feature": "init_agree_frac",
+              "direction": "high",
+              "threshold": 0.666666666667,
+              "threshold_label": "p20",
+              "fill_value": 0.752419085752419,
+              "gate_penalty": 0.02,
+              "n_train": 999
+            },
+            "test_summary": {
+              "n": 200,
+              "standard_acc": 0.52,
+              "policy_acc": 0.48,
+              "acc_delta": -0.04,
+              "gate_count": 77,
+              "gate_rate": 0.385,
+              "collapses_prevented": 0,
+              "corrections_lost": 8,
+              "net": -8,
+              "standard_collapses": 8,
+              "standard_corrections": 39
+            }
+          }
+        ],
+        "learned_r1_probe_percentile_stump": [
+          {
+            "heldout_model": "vllm_gemma-4-31b-it",
+            "train_models": [
+              "vllm_qwen3.5-4b",
+              "vllm_qwen3.5-9b",
+              "vllm_qwen3.6-27b-fp8",
+              "vllm_qwen3.6-35b-a3b-fp8",
+              "vllm_qwen3_32b_a7_n200"
+            ],
+            "rule": {
+              "kind": "no_gate",
+              "objective": 0.0,
+              "net_rate": 0.0,
+              "gate_rate": 0.0,
+              "prevented": 0,
+              "lost": 0,
+              "net": 0,
+              "gated": 0,
+              "feature": null,
+              "direction": null,
+              "threshold": null,
+              "threshold_label": null,
+              "fill_value": null,
+              "gate_penalty": 0.02,
+              "n_train": 999
+            },
+            "test_summary": {
+              "n": 200,
+              "standard_acc": 0.82,
+              "policy_acc": 0.82,
+              "acc_delta": 0.0,
+              "gate_count": 0,
+              "gate_rate": 0.0,
+              "collapses_prevented": 0,
+              "corrections_lost": 0,
+              "net": 0,
+              "standard_collapses": 0,
+              "standard_corrections": 4
+            }
+          },
+          {
+            "heldout_model": "vllm_qwen3.5-4b",
+            "train_models": [
+              "vllm_gemma-4-31b-it",
+              "vllm_qwen3.5-9b",
+              "vllm_qwen3.6-27b-fp8",
+              "vllm_qwen3.6-35b-a3b-fp8",
+              "vllm_qwen3_32b_a7_n200"
+            ],
+            "rule": {
+              "kind": "no_gate",
+              "objective": 0.0,
+              "net_rate": 0.0,
+              "gate_rate": 0.0,
+              "prevented": 0,
+              "lost": 0,
+              "net": 0,
+              "gated": 0,
+              "feature": null,
+              "direction": null,
+              "threshold": null,
+              "threshold_label": null,
+              "fill_value": null,
+              "gate_penalty": 0.02,
+              "n_train": 999
+            },
+            "test_summary": {
+              "n": 200,
+              "standard_acc": 0.315,
+              "policy_acc": 0.315,
+              "acc_delta": 0.0,
+              "gate_count": 0,
+              "gate_rate": 0.0,
+              "collapses_prevented": 0,
+              "corrections_lost": 0,
+              "net": 0,
+              "standard_collapses": 34,
+              "standard_corrections": 19
+            }
+          },
+          {
+            "heldout_model": "vllm_qwen3.5-9b",
+            "train_models": [
+              "vllm_gemma-4-31b-it",
+              "vllm_qwen3.5-4b",
+              "vllm_qwen3.6-27b-fp8",
+              "vllm_qwen3.6-35b-a3b-fp8",
+              "vllm_qwen3_32b_a7_n200"
+            ],
+            "rule": {
+              "kind": "no_gate",
+              "objective": 0.0,
+              "net_rate": 0.0,
+              "gate_rate": 0.0,
+              "prevented": 0,
+              "lost": 0,
+              "net": 0,
+              "gated": 0,
+              "feature": null,
+              "direction": null,
+              "threshold": null,
+              "threshold_label": null,
+              "fill_value": null,
+              "gate_penalty": 0.02,
+              "n_train": 1000
+            },
+            "test_summary": {
+              "n": 199,
+              "standard_acc": 0.35175879396984927,
+              "policy_acc": 0.35175879396984927,
+              "acc_delta": 0.0,
+              "gate_count": 0,
+              "gate_rate": 0.0,
+              "collapses_prevented": 0,
+              "corrections_lost": 0,
+              "net": 0,
+              "standard_collapses": 36,
+              "standard_corrections": 24
+            }
+          },
+          {
+            "heldout_model": "vllm_qwen3.6-27b-fp8",
+            "train_models": [
+              "vllm_gemma-4-31b-it",
+              "vllm_qwen3.5-4b",
+              "vllm_qwen3.5-9b",
+              "vllm_qwen3.6-35b-a3b-fp8",
+              "vllm_qwen3_32b_a7_n200"
+            ],
+            "rule": {
+              "kind": "no_gate",
+              "objective": 0.0,
+              "net_rate": 0.0,
+              "gate_rate": 0.0,
+              "prevented": 0,
+              "lost": 0,
+              "net": 0,
+              "gated": 0,
+              "feature": null,
+              "direction": null,
+              "threshold": null,
+              "threshold_label": null,
+              "fill_value": null,
+              "gate_penalty": 0.02,
+              "n_train": 999
+            },
+            "test_summary": {
+              "n": 200,
+              "standard_acc": 0.74,
+              "policy_acc": 0.74,
+              "acc_delta": 0.0,
+              "gate_count": 0,
+              "gate_rate": 0.0,
+              "collapses_prevented": 0,
+              "corrections_lost": 0,
+              "net": 0,
+              "standard_collapses": 11,
+              "standard_corrections": 32
+            }
+          },
+          {
+            "heldout_model": "vllm_qwen3.6-35b-a3b-fp8",
+            "train_models": [
+              "vllm_gemma-4-31b-it",
+              "vllm_qwen3.5-4b",
+              "vllm_qwen3.5-9b",
+              "vllm_qwen3.6-27b-fp8",
+              "vllm_qwen3_32b_a7_n200"
+            ],
+            "rule": {
+              "objective": 0.0014814814814814812,
+              "net_rate": 0.003003003003003003,
+              "gate_rate": 0.07607607607607608,
+              "prevented": 21,
+              "lost": 18,
+              "net": 3,
+              "gated": 76,
+              "kind": "stump",
+              "feature": "r1_n_flipped",
+              "direction": "high",
+              "threshold": 3.0,
+              "threshold_label": "p95",
+              "fill_value": 0.9109109109109109,
+              "gate_penalty": 0.02,
+              "n_train": 999
+            },
+            "test_summary": {
+              "n": 200,
+              "standard_acc": 0.65,
+              "policy_acc": 0.59,
+              "acc_delta": -0.06,
+              "gate_count": 29,
+              "gate_rate": 0.145,
+              "collapses_prevented": 0,
+              "corrections_lost": 12,
+              "net": -12,
+              "standard_collapses": 12,
+              "standard_corrections": 41
+            }
+          },
+          {
+            "heldout_model": "vllm_qwen3_32b_a7_n200",
+            "train_models": [
+              "vllm_gemma-4-31b-it",
+              "vllm_qwen3.5-4b",
+              "vllm_qwen3.5-9b",
+              "vllm_qwen3.6-27b-fp8",
+              "vllm_qwen3.6-35b-a3b-fp8"
+            ],
+            "rule": {
+              "objective": 0.005945945945945946,
+              "net_rate": 0.015015015015015015,
+              "gate_rate": 0.45345345345345345,
+              "prevented": 29,
+              "lost": 14,
+              "net": 15,
+              "gated": 453,
+              "kind": "stump",
+              "feature": "init_agree_frac",
+              "direction": "high",
+              "threshold": 0.666666666667,
+              "threshold_label": "p20",
+              "fill_value": 0.752419085752419,
+              "gate_penalty": 0.02,
+              "n_train": 999
+            },
+            "test_summary": {
+              "n": 200,
+              "standard_acc": 0.52,
+              "policy_acc": 0.48,
+              "acc_delta": -0.04,
+              "gate_count": 77,
+              "gate_rate": 0.385,
+              "collapses_prevented": 0,
+              "corrections_lost": 8,
+              "net": -8,
+              "standard_collapses": 8,
+              "standard_corrections": 39
+            }
+          }
+        ]
+      },
+      "paper_worthy": false,
+      "paper_worthy_reason": "No strict LOMO policy has a positive question-bootstrap lower CI on accuracy delta."
+    },
+    "backend_openrouter_lomo": {
+      "cohort": "backend_openrouter_lomo",
+      "n_records": 659,
+      "n_models": 4,
+      "models": [
+        "openrouter_deepseek-v4-flash",
+        "openrouter_deepseek-v4-pro",
+        "openrouter_grok_4_1_fast_n200",
+        "openrouter_mistral_small_4_n200"
+      ],
+      "standard_collapses": 9,
+      "standard_corrections": 20,
+      "probe_feature_coverage": 0.6145675265553869,
+      "policies": [
+        {
+          "policy": "standard",
+          "n": 659,
+          "standard_acc": 0.802731411229135,
+          "policy_acc": 0.802731411229135,
+          "acc_delta": 0.0,
+          "gate_count": 0,
+          "gate_rate": 0.0,
+          "collapses_prevented": 0,
+          "corrections_lost": 0,
+          "net": 0,
+          "standard_collapses": 9,
+          "standard_corrections": 20
+        },
+        {
+          "policy": "naive_always_freeze",
+          "n": 659,
+          "standard_acc": 0.802731411229135,
+          "policy_acc": 0.7860394537177542,
+          "acc_delta": -0.01669195751138088,
+          "gate_count": 659,
+          "gate_rate": 1.0,
+          "collapses_prevented": 9,
+          "corrections_lost": 20,
+          "net": -11,
+          "standard_collapses": 9,
+          "standard_corrections": 20,
+          "validation": "fixed_rule_no_training",
+          "question_bootstrap_ci95": {
+            "B": 2000,
+            "B_used": 2000,
+            "n_question_clusters": 383,
+            "acc_delta": {
+              "median": -0.01680673249760721,
+              "ci_2.5": -0.031964688439692614,
+              "ci_97.5": -0.0015312766678746358
+            },
+            "gate_rate": {
+              "median": 1.0,
+              "ci_2.5": 1.0,
+              "ci_97.5": 1.0
+            },
+            "net_rate": {
+              "median": -0.01680673249760721,
+              "ci_2.5": -0.031964688439692614,
+              "ci_97.5": -0.0015312766678746358
+            },
+            "prevented_rate": {
+              "median": 0.013636363636363636,
+              "ci_2.5": 0.005961030090128451,
+              "ci_97.5": 0.023671276717339134
+            },
+            "lost_rate": {
+              "median": 0.030395136778115502,
+              "ci_2.5": 0.018574418071322096,
+              "ci_97.5": 0.04503105590062112
+            }
+          }
+        },
+        {
+          "policy": "naive_r1_majority_changed",
+          "n": 659,
+          "standard_acc": 0.802731411229135,
+          "policy_acc": 0.7845220030349014,
+          "acc_delta": -0.018209408194233688,
+          "gate_count": 36,
+          "gate_rate": 0.054628224582701064,
+          "collapses_prevented": 4,
+          "corrections_lost": 16,
+          "net": -12,
+          "standard_collapses": 9,
+          "standard_corrections": 20,
+          "validation": "fixed_rule_no_training",
+          "question_bootstrap_ci95": {
+            "B": 2000,
+            "B_used": 2000,
+            "n_question_clusters": 383,
+            "acc_delta": {
+              "median": -0.0182648401826484,
+              "ci_2.5": -0.030167051714945797,
+              "ci_97.5": -0.006144393241167435
+            },
+            "gate_rate": {
+              "median": 0.05454545454545454,
+              "ci_2.5": 0.038165034217528204,
+              "ci_97.5": 0.07451900902299904
+            },
+            "net_rate": {
+              "median": -0.0182648401826484,
+              "ci_2.5": -0.030167051714945797,
+              "ci_97.5": -0.006144393241167435
+            },
+            "prevented_rate": {
+              "median": 0.006033182503770739,
+              "ci_2.5": 0.0014970059880239522,
+              "ci_97.5": 0.01238486241178394
+            },
+            "lost_rate": {
+              "median": 0.0243161094224924,
+              "ci_2.5": 0.013636363636363636,
+              "ci_97.5": 0.03603739077423288
+            }
+          }
+        },
+        {
+          "policy": "naive_any_r1_flip",
+          "n": 659,
+          "standard_acc": 0.802731411229135,
+          "policy_acc": 0.787556904400607,
+          "acc_delta": -0.015174506828528073,
+          "gate_count": 100,
+          "gate_rate": 0.15174506828528073,
+          "collapses_prevented": 6,
+          "corrections_lost": 16,
+          "net": -10,
+          "standard_collapses": 9,
+          "standard_corrections": 20,
+          "validation": "fixed_rule_no_training",
+          "question_bootstrap_ci95": {
+            "B": 2000,
+            "B_used": 2000,
+            "n_question_clusters": 383,
+            "acc_delta": {
+              "median": -0.015267175572519083,
+              "ci_2.5": -0.027742537044770532,
+              "ci_97.5": -0.0029850746268656717
+            },
+            "gate_rate": {
+              "median": 0.15220700152207,
+              "ci_2.5": 0.12349351674992654,
+              "ci_97.5": 0.1819561982024046
+            },
+            "net_rate": {
+              "median": -0.015267175572519083,
+              "ci_2.5": -0.027742537044770532,
+              "ci_97.5": -0.0029850746268656717
+            },
+            "prevented_rate": {
+              "median": 0.00904977375565611,
+              "ci_2.5": 0.0030120481927710845,
+              "ci_97.5": 0.01687181353839775
+            },
+            "lost_rate": {
+              "median": 0.024390243902439025,
+              "ci_2.5": 0.013782015257737751,
+              "ci_97.5": 0.036753445635528334
+            }
+          }
+        },
+        {
+          "policy": "learned_r1_percentile_stump",
+          "n": 659,
+          "standard_acc": 0.802731411229135,
+          "policy_acc": 0.802731411229135,
+          "acc_delta": 0.0,
+          "gate_count": 0,
+          "gate_rate": 0.0,
+          "collapses_prevented": 0,
+          "corrections_lost": 0,
+          "net": 0,
+          "standard_collapses": 9,
+          "standard_corrections": 20,
+          "validation": "strict_leave_one_model_out",
+          "mode": "r1_only",
+          "n_models": 4,
+          "question_bootstrap_ci95": {
+            "B": 2000,
+            "B_used": 2000,
+            "n_question_clusters": 383,
+            "acc_delta": {
+              "median": 0.0,
+              "ci_2.5": 0.0,
+              "ci_97.5": 0.0
+            },
+            "gate_rate": {
+              "median": 0.0,
+              "ci_2.5": 0.0,
+              "ci_97.5": 0.0
+            },
+            "net_rate": {
+              "median": 0.0,
+              "ci_2.5": 0.0,
+              "ci_97.5": 0.0
+            },
+            "prevented_rate": {
+              "median": 0.0,
+              "ci_2.5": 0.0,
+              "ci_97.5": 0.0
+            },
+            "lost_rate": {
+              "median": 0.0,
+              "ci_2.5": 0.0,
+              "ci_97.5": 0.0
+            }
+          }
+        },
+        {
+          "policy": "learned_r1_probe_percentile_stump",
+          "n": 659,
+          "standard_acc": 0.802731411229135,
+          "policy_acc": 0.802731411229135,
+          "acc_delta": 0.0,
+          "gate_count": 0,
+          "gate_rate": 0.0,
+          "collapses_prevented": 0,
+          "corrections_lost": 0,
+          "net": 0,
+          "standard_collapses": 9,
+          "standard_corrections": 20,
+          "validation": "strict_leave_one_model_out",
+          "mode": "r1_plus_optional_probe_mean_fr",
+          "n_models": 4,
+          "question_bootstrap_ci95": {
+            "B": 2000,
+            "B_used": 2000,
+            "n_question_clusters": 383,
+            "acc_delta": {
+              "median": 0.0,
+              "ci_2.5": 0.0,
+              "ci_97.5": 0.0
+            },
+            "gate_rate": {
+              "median": 0.0,
+              "ci_2.5": 0.0,
+              "ci_97.5": 0.0
+            },
+            "net_rate": {
+              "median": 0.0,
+              "ci_2.5": 0.0,
+              "ci_97.5": 0.0
+            },
+            "prevented_rate": {
+              "median": 0.0,
+              "ci_2.5": 0.0,
+              "ci_97.5": 0.0
+            },
+            "lost_rate": {
+              "median": 0.0,
+              "ci_2.5": 0.0,
+              "ci_97.5": 0.0
+            }
+          }
+        }
+      ],
+      "learned_folds": {
+        "learned_r1_percentile_stump": [
+          {
+            "heldout_model": "openrouter_deepseek-v4-flash",
+            "train_models": [
+              "openrouter_deepseek-v4-pro",
+              "openrouter_grok_4_1_fast_n200",
+              "openrouter_mistral_small_4_n200"
+            ],
+            "rule": {
+              "kind": "no_gate",
+              "objective": 0.0,
+              "net_rate": 0.0,
+              "gate_rate": 0.0,
+              "prevented": 0,
+              "lost": 0,
+              "net": 0,
+              "gated": 0,
+              "feature": null,
+              "direction": null,
+              "threshold": null,
+              "threshold_label": null,
+              "fill_value": null,
+              "gate_penalty": 0.02,
+              "n_train": 479
+            },
+            "test_summary": {
+              "n": 180,
+              "standard_acc": 0.8333333333333334,
+              "policy_acc": 0.8333333333333334,
+              "acc_delta": 0.0,
+              "gate_count": 0,
+              "gate_rate": 0.0,
+              "collapses_prevented": 0,
+              "corrections_lost": 0,
+              "net": 0,
+              "standard_collapses": 0,
+              "standard_corrections": 1
+            }
+          },
+          {
+            "heldout_model": "openrouter_deepseek-v4-pro",
+            "train_models": [
+              "openrouter_deepseek-v4-flash",
+              "openrouter_grok_4_1_fast_n200",
+              "openrouter_mistral_small_4_n200"
+            ],
+            "rule": {
+              "kind": "no_gate",
+              "objective": 0.0,
+              "net_rate": 0.0,
+              "gate_rate": 0.0,
+              "prevented": 0,
+              "lost": 0,
+              "net": 0,
+              "gated": 0,
+              "feature": null,
+              "direction": null,
+              "threshold": null,
+              "threshold_label": null,
+              "fill_value": null,
+              "gate_penalty": 0.02,
+              "n_train": 580
+            },
+            "test_summary": {
+              "n": 79,
+              "standard_acc": 0.810126582278481,
+              "policy_acc": 0.810126582278481,
+              "acc_delta": 0.0,
+              "gate_count": 0,
+              "gate_rate": 0.0,
+              "collapses_prevented": 0,
+              "corrections_lost": 0,
+              "net": 0,
+              "standard_collapses": 1,
+              "standard_corrections": 3
+            }
+          },
+          {
+            "heldout_model": "openrouter_grok_4_1_fast_n200",
+            "train_models": [
+              "openrouter_deepseek-v4-flash",
+              "openrouter_deepseek-v4-pro",
+              "openrouter_mistral_small_4_n200"
+            ],
+            "rule": {
+              "kind": "no_gate",
+              "objective": 0.0,
+              "net_rate": 0.0,
+              "gate_rate": 0.0,
+              "prevented": 0,
+              "lost": 0,
+              "net": 0,
+              "gated": 0,
+              "feature": null,
+              "direction": null,
+              "threshold": null,
+              "threshold_label": null,
+              "fill_value": null,
+              "gate_penalty": 0.02,
+              "n_train": 459
+            },
+            "test_summary": {
+              "n": 200,
+              "standard_acc": 0.845,
+              "policy_acc": 0.845,
+              "acc_delta": 0.0,
+              "gate_count": 0,
+              "gate_rate": 0.0,
+              "collapses_prevented": 0,
+              "corrections_lost": 0,
+              "net": 0,
+              "standard_collapses": 1,
+              "standard_corrections": 3
+            }
+          },
+          {
+            "heldout_model": "openrouter_mistral_small_4_n200",
+            "train_models": [
+              "openrouter_deepseek-v4-flash",
+              "openrouter_deepseek-v4-pro",
+              "openrouter_grok_4_1_fast_n200"
+            ],
+            "rule": {
+              "kind": "no_gate",
+              "objective": 0.0,
+              "net_rate": 0.0,
+              "gate_rate": 0.0,
+              "prevented": 0,
+              "lost": 0,
+              "net": 0,
+              "gated": 0,
+              "feature": null,
+              "direction": null,
+              "threshold": null,
+              "threshold_label": null,
+              "fill_value": null,
+              "gate_penalty": 0.02,
+              "n_train": 459
+            },
+            "test_summary": {
+              "n": 200,
+              "standard_acc": 0.73,
+              "policy_acc": 0.73,
+              "acc_delta": 0.0,
+              "gate_count": 0,
+              "gate_rate": 0.0,
+              "collapses_prevented": 0,
+              "corrections_lost": 0,
+              "net": 0,
+              "standard_collapses": 7,
+              "standard_corrections": 13
+            }
+          }
+        ],
+        "learned_r1_probe_percentile_stump": [
+          {
+            "heldout_model": "openrouter_deepseek-v4-flash",
+            "train_models": [
+              "openrouter_deepseek-v4-pro",
+              "openrouter_grok_4_1_fast_n200",
+              "openrouter_mistral_small_4_n200"
+            ],
+            "rule": {
+              "objective": 0.002045929018789144,
+              "net_rate": 0.0020876826722338203,
+              "gate_rate": 0.0020876826722338203,
+              "prevented": 1,
+              "lost": 0,
+              "net": 1,
+              "gated": 1,
+              "kind": "stump",
+              "feature": "probe_x_r1_changed",
+              "direction": "high",
+              "threshold": 1.0,
+              "threshold_label": "p100",
+              "fill_value": 0.03372524752475248,
+              "gate_penalty": 0.02,
+              "n_train": 479
+            },
+            "test_summary": {
+              "n": 180,
+              "standard_acc": 0.8333333333333334,
+              "policy_acc": 0.8333333333333334,
+              "acc_delta": 0.0,
+              "gate_count": 0,
+              "gate_rate": 0.0,
+              "collapses_prevented": 0,
+              "corrections_lost": 0,
+              "net": 0,
+              "standard_collapses": 0,
+              "standard_corrections": 1
+            }
+          },
+          {
+            "heldout_model": "openrouter_deepseek-v4-pro",
+            "train_models": [
+              "openrouter_deepseek-v4-flash",
+              "openrouter_grok_4_1_fast_n200",
+              "openrouter_mistral_small_4_n200"
+            ],
+            "rule": {
+              "objective": 0.001689655172413793,
+              "net_rate": 0.0017241379310344827,
+              "gate_rate": 0.0017241379310344827,
+              "prevented": 1,
+              "lost": 0,
+              "net": 1,
+              "gated": 1,
+              "kind": "stump",
+              "feature": "probe_x_r1_changed",
+              "direction": "high",
+              "threshold": 1.0,
+              "threshold_label": "p100",
+              "fill_value": 0.033977556109725686,
+              "gate_penalty": 0.02,
+              "n_train": 580
+            },
+            "test_summary": {
+              "n": 79,
+              "standard_acc": 0.810126582278481,
+              "policy_acc": 0.810126582278481,
+              "acc_delta": 0.0,
+              "gate_count": 0,
+              "gate_rate": 0.0,
+              "collapses_prevented": 0,
+              "corrections_lost": 0,
+              "net": 0,
+              "standard_collapses": 1,
+              "standard_corrections": 3
+            }
+          },
+          {
+            "heldout_model": "openrouter_grok_4_1_fast_n200",
+            "train_models": [
+              "openrouter_deepseek-v4-flash",
+              "openrouter_deepseek-v4-pro",
+              "openrouter_mistral_small_4_n200"
+            ],
+            "rule": {
+              "objective": 0.0021350762527233115,
+              "net_rate": 0.002178649237472767,
+              "gate_rate": 0.002178649237472767,
+              "prevented": 1,
+              "lost": 0,
+              "net": 1,
+              "gated": 1,
+              "kind": "stump",
+              "feature": "probe_x_r1_changed",
+              "direction": "high",
+              "threshold": 1.0,
+              "threshold_label": "p100",
+              "fill_value": 0.060365853658536583,
+              "gate_penalty": 0.02,
+              "n_train": 459
+            },
+            "test_summary": {
+              "n": 200,
+              "standard_acc": 0.845,
+              "policy_acc": 0.845,
+              "acc_delta": 0.0,
+              "gate_count": 0,
+              "gate_rate": 0.0,
+              "collapses_prevented": 0,
+              "corrections_lost": 0,
+              "net": 0,
+              "standard_collapses": 1,
+              "standard_corrections": 3
+            }
+          },
+          {
+            "heldout_model": "openrouter_mistral_small_4_n200",
+            "train_models": [
+              "openrouter_deepseek-v4-flash",
+              "openrouter_deepseek-v4-pro",
+              "openrouter_grok_4_1_fast_n200"
+            ],
+            "rule": {
+              "kind": "no_gate",
+              "objective": 0.0,
+              "net_rate": 0.0,
+              "gate_rate": 0.0,
+              "prevented": 0,
+              "lost": 0,
+              "net": 0,
+              "gated": 0,
+              "feature": null,
+              "direction": null,
+              "threshold": null,
+              "threshold_label": null,
+              "fill_value": null,
+              "gate_penalty": 0.02,
+              "n_train": 459
+            },
+            "test_summary": {
+              "n": 200,
+              "standard_acc": 0.73,
+              "policy_acc": 0.73,
+              "acc_delta": 0.0,
+              "gate_count": 0,
+              "gate_rate": 0.0,
+              "collapses_prevented": 0,
+              "corrections_lost": 0,
+              "net": 0,
+              "standard_collapses": 7,
+              "standard_corrections": 13
+            }
+          }
+        ]
+      },
+      "paper_worthy": false,
+      "paper_worthy_reason": "No strict LOMO policy has a positive question-bootstrap lower CI on accuracy delta."
+    },
+    "excluded_tiny_or_smoke_exploratory": {
+      "cohort": "excluded_tiny_or_smoke_exploratory",
+      "n_records": 50,
+      "n_models": 10,
+      "models": [
+        "gemini_3_1_flash_lite_smoke",
+        "gemini_3_1_pro_smoke",
+        "openrouter_glm_4_6_n20_partial",
+        "openrouter_grok_4_1_fast_smoke",
+        "openrouter_kimi-k2.6",
+        "openrouter_llama_4_maverick_n20_partial",
+        "openrouter_mistral_small_4_n20",
+        "smoke_qwen3-8b",
+        "vllm_qwen3_32b_a7_batch4_bench",
+        "vllm_qwen3_32b_a7_batch8_bench"
+      ],
+      "standard_collapses": 2,
+      "standard_corrections": 1,
+      "probe_feature_coverage": 0.12,
+      "policies": [
+        {
+          "policy": "standard",
+          "n": 50,
+          "standard_acc": 0.62,
+          "policy_acc": 0.62,
+          "acc_delta": 0.0,
+          "gate_count": 0,
+          "gate_rate": 0.0,
+          "collapses_prevented": 0,
+          "corrections_lost": 0,
+          "net": 0,
+          "standard_collapses": 2,
+          "standard_corrections": 1
+        },
+        {
+          "policy": "naive_always_freeze",
+          "n": 50,
+          "standard_acc": 0.62,
+          "policy_acc": 0.64,
+          "acc_delta": 0.02,
+          "gate_count": 50,
+          "gate_rate": 1.0,
+          "collapses_prevented": 2,
+          "corrections_lost": 1,
+          "net": 1,
+          "standard_collapses": 2,
+          "standard_corrections": 1,
+          "validation": "fixed_rule_no_training",
+          "question_bootstrap_ci95": {
+            "B": 2000,
+            "B_used": 2000,
+            "n_question_clusters": 23,
+            "acc_delta": {
+              "median": 0.02,
+              "ci_2.5": -0.03773584905660377,
+              "ci_97.5": 0.1111111111111111
+            },
+            "gate_rate": {
+              "median": 1.0,
+              "ci_2.5": 1.0,
+              "ci_97.5": 1.0
+            },
+            "net_rate": {
+              "median": 0.02,
+              "ci_2.5": -0.03773584905660377,
+              "ci_97.5": 0.1111111111111111
+            },
+            "prevented_rate": {
+              "median": 0.03773584905660377,
+              "ci_2.5": 0.0,
+              "ci_97.5": 0.11428571428571428
+            },
+            "lost_rate": {
+              "median": 0.018867924528301886,
+              "ci_2.5": 0.0,
+              "ci_97.5": 0.05455168119551683
+            }
+          }
+        },
+        {
+          "policy": "naive_r1_majority_changed",
+          "n": 50,
+          "standard_acc": 0.62,
+          "policy_acc": 0.6,
+          "acc_delta": -0.02,
+          "gate_count": 5,
+          "gate_rate": 0.1,
+          "collapses_prevented": 0,
+          "corrections_lost": 1,
+          "net": -1,
+          "standard_collapses": 2,
+          "standard_corrections": 1,
+          "validation": "fixed_rule_no_training",
+          "question_bootstrap_ci95": {
+            "B": 2000,
+            "B_used": 2000,
+            "n_question_clusters": 23,
+            "acc_delta": {
+              "median": -0.018867924528301886,
+              "ci_2.5": -0.05455168119551681,
+              "ci_97.5": 0.0
+            },
+            "gate_rate": {
+              "median": 0.0975609756097561,
+              "ci_2.5": 0.02700924608819346,
+              "ci_97.5": 0.18867924528301888
+            },
+            "net_rate": {
+              "median": -0.018867924528301886,
+              "ci_2.5": -0.05455168119551681,
+              "ci_97.5": 0.0
+            },
+            "prevented_rate": {
+              "median": 0.0,
+              "ci_2.5": 0.0,
+              "ci_97.5": 0.0
+            },
+            "lost_rate": {
+              "median": 0.018867924528301886,
+              "ci_2.5": 0.0,
+              "ci_97.5": 0.05455168119551683
+            }
+          }
+        },
+        {
+          "policy": "naive_any_r1_flip",
+          "n": 50,
+          "standard_acc": 0.62,
+          "policy_acc": 0.62,
+          "acc_delta": 0.0,
+          "gate_count": 13,
+          "gate_rate": 0.26,
+          "collapses_prevented": 1,
+          "corrections_lost": 1,
+          "net": 0,
+          "standard_collapses": 2,
+          "standard_corrections": 1,
+          "validation": "fixed_rule_no_training",
+          "question_bootstrap_ci95": {
+            "B": 2000,
+            "B_used": 2000,
+            "n_question_clusters": 23,
+            "acc_delta": {
+              "median": 0.0,
+              "ci_2.5": -0.04879048380647741,
+              "ci_97.5": 0.06818181818181818
+            },
+            "gate_rate": {
+              "median": 0.2564102564102564,
+              "ci_2.5": 0.15684742647058825,
+              "ci_97.5": 0.391304347826087
+            },
+            "net_rate": {
+              "median": 0.0,
+              "ci_2.5": -0.04879048380647741,
+              "ci_97.5": 0.06818181818181818
+            },
+            "prevented_rate": {
+              "median": 0.018867924528301886,
+              "ci_2.5": 0.0,
+              "ci_97.5": 0.07146103896103907
+            },
+            "lost_rate": {
+              "median": 0.018867924528301886,
+              "ci_2.5": 0.0,
+              "ci_97.5": 0.05455168119551683
+            }
+          }
+        },
+        {
+          "policy": "learned_r1_percentile_stump",
+          "n": 50,
+          "standard_acc": 0.62,
+          "policy_acc": 0.6,
+          "acc_delta": -0.02,
+          "gate_count": 27,
+          "gate_rate": 0.54,
+          "collapses_prevented": 0,
+          "corrections_lost": 1,
+          "net": -1,
+          "standard_collapses": 2,
+          "standard_corrections": 1,
+          "validation": "strict_leave_one_model_out",
+          "mode": "r1_only",
+          "n_models": 10,
+          "question_bootstrap_ci95": {
+            "B": 2000,
+            "B_used": 2000,
+            "n_question_clusters": 23,
+            "acc_delta": {
+              "median": -0.018867924528301886,
+              "ci_2.5": -0.05455168119551681,
+              "ci_97.5": 0.0
+            },
+            "gate_rate": {
+              "median": 0.54,
+              "ci_2.5": 0.325,
+              "ci_97.5": 0.6756756756756757
+            },
+            "net_rate": {
+              "median": -0.018867924528301886,
+              "ci_2.5": -0.05455168119551681,
+              "ci_97.5": 0.0
+            },
+            "prevented_rate": {
+              "median": 0.0,
+              "ci_2.5": 0.0,
+              "ci_97.5": 0.0
+            },
+            "lost_rate": {
+              "median": 0.018867924528301886,
+              "ci_2.5": 0.0,
+              "ci_97.5": 0.05455168119551683
+            }
+          }
+        },
+        {
+          "policy": "learned_r1_probe_percentile_stump",
+          "n": 50,
+          "standard_acc": 0.62,
+          "policy_acc": 0.6,
+          "acc_delta": -0.02,
+          "gate_count": 27,
+          "gate_rate": 0.54,
+          "collapses_prevented": 0,
+          "corrections_lost": 1,
+          "net": -1,
+          "standard_collapses": 2,
+          "standard_corrections": 1,
+          "validation": "strict_leave_one_model_out",
+          "mode": "r1_plus_optional_probe_mean_fr",
+          "n_models": 10,
+          "question_bootstrap_ci95": {
+            "B": 2000,
+            "B_used": 2000,
+            "n_question_clusters": 23,
+            "acc_delta": {
+              "median": -0.018867924528301886,
+              "ci_2.5": -0.05455168119551681,
+              "ci_97.5": 0.0
+            },
+            "gate_rate": {
+              "median": 0.54,
+              "ci_2.5": 0.325,
+              "ci_97.5": 0.6756756756756757
+            },
+            "net_rate": {
+              "median": -0.018867924528301886,
+              "ci_2.5": -0.05455168119551681,
+              "ci_97.5": 0.0
+            },
+            "prevented_rate": {
+              "median": 0.0,
+              "ci_2.5": 0.0,
+              "ci_97.5": 0.0
+            },
+            "lost_rate": {
+              "median": 0.018867924528301886,
+              "ci_2.5": 0.0,
+              "ci_97.5": 0.05455168119551683
+            }
+          }
+        }
+      ],
+      "learned_folds": {
+        "learned_r1_percentile_stump": [
+          {
+            "heldout_model": "gemini_3_1_flash_lite_smoke",
+            "train_models": [
+              "gemini_3_1_pro_smoke",
+              "openrouter_glm_4_6_n20_partial",
+              "openrouter_grok_4_1_fast_smoke",
+              "openrouter_kimi-k2.6",
+              "openrouter_llama_4_maverick_n20_partial",
+              "openrouter_mistral_small_4_n20",
+              "smoke_qwen3-8b",
+              "vllm_qwen3_32b_a7_batch4_bench",
+              "vllm_qwen3_32b_a7_batch8_bench"
+            ],
+            "rule": {
+              "objective": 0.023749999999999997,
+              "net_rate": 0.041666666666666664,
+              "gate_rate": 0.8958333333333334,
+              "prevented": 2,
+              "lost": 0,
+              "net": 2,
+              "gated": 43,
+              "kind": "stump",
+              "feature": "r1_majority_changed",
+              "direction": "low",
+              "threshold": 0.0,
+              "threshold_label": "p0",
+              "fill_value": 0.10416666666666667,
+              "gate_penalty": 0.02,
+              "n_train": 48
+            },
+            "test_summary": {
+              "n": 2,
+              "standard_acc": 1.0,
+              "policy_acc": 1.0,
+              "acc_delta": 0.0,
+              "gate_count": 2,
+              "gate_rate": 1.0,
+              "collapses_prevented": 0,
+              "corrections_lost": 0,
+              "net": 0,
+              "standard_collapses": 0,
+              "standard_corrections": 0
+            }
+          },
+          {
+            "heldout_model": "gemini_3_1_pro_smoke",
+            "train_models": [
+              "gemini_3_1_flash_lite_smoke",
+              "openrouter_glm_4_6_n20_partial",
+              "openrouter_grok_4_1_fast_smoke",
+              "openrouter_kimi-k2.6",
+              "openrouter_llama_4_maverick_n20_partial",
+              "openrouter_mistral_small_4_n20",
+              "smoke_qwen3-8b",
+              "vllm_qwen3_32b_a7_batch4_bench",
+              "vllm_qwen3_32b_a7_batch8_bench"
+            ],
+            "rule": {
+              "objective": 0.023749999999999997,
+              "net_rate": 0.041666666666666664,
+              "gate_rate": 0.8958333333333334,
+              "prevented": 2,
+              "lost": 0,
+              "net": 2,
+              "gated": 43,
+              "kind": "stump",
+              "feature": "r1_majority_changed",
+              "direction": "low",
+              "threshold": 0.0,
+              "threshold_label": "p0",
+              "fill_value": 0.10416666666666667,
+              "gate_penalty": 0.02,
+              "n_train": 48
+            },
+            "test_summary": {
+              "n": 2,
+              "standard_acc": 1.0,
+              "policy_acc": 1.0,
+              "acc_delta": 0.0,
+              "gate_count": 2,
+              "gate_rate": 1.0,
+              "collapses_prevented": 0,
+              "corrections_lost": 0,
+              "net": 0,
+              "standard_collapses": 0,
+              "standard_corrections": 0
+            }
+          },
+          {
+            "heldout_model": "openrouter_glm_4_6_n20_partial",
+            "train_models": [
+              "gemini_3_1_flash_lite_smoke",
+              "gemini_3_1_pro_smoke",
+              "openrouter_grok_4_1_fast_smoke",
+              "openrouter_kimi-k2.6",
+              "openrouter_llama_4_maverick_n20_partial",
+              "openrouter_mistral_small_4_n20",
+              "smoke_qwen3-8b",
+              "vllm_qwen3_32b_a7_batch4_bench",
+              "vllm_qwen3_32b_a7_batch8_bench"
+            ],
+            "rule": {
+              "objective": 0.028372093023255815,
+              "net_rate": 0.046511627906976744,
+              "gate_rate": 0.9069767441860465,
+              "prevented": 2,
+              "lost": 0,
+              "net": 2,
+              "gated": 39,
+              "kind": "stump",
+              "feature": "r1_majority_changed",
+              "direction": "low",
+              "threshold": 0.0,
+              "threshold_label": "p0",
+              "fill_value": 0.09302325581395349,
+              "gate_penalty": 0.02,
+              "n_train": 43
+            },
+            "test_summary": {
+              "n": 7,
+              "standard_acc": 0.8571428571428571,
+              "policy_acc": 0.8571428571428571,
+              "acc_delta": 0.0,
+              "gate_count": 6,
+              "gate_rate": 0.8571428571428571,
+              "collapses_prevented": 0,
+              "corrections_lost": 0,
+              "net": 0,
+              "standard_collapses": 0,
+              "standard_corrections": 0
+            }
+          },
+          {
+            "heldout_model": "openrouter_grok_4_1_fast_smoke",
+            "train_models": [
+              "gemini_3_1_flash_lite_smoke",
+              "gemini_3_1_pro_smoke",
+              "openrouter_glm_4_6_n20_partial",
+              "openrouter_kimi-k2.6",
+              "openrouter_llama_4_maverick_n20_partial",
+              "openrouter_mistral_small_4_n20",
+              "smoke_qwen3-8b",
+              "vllm_qwen3_32b_a7_batch4_bench",
+              "vllm_qwen3_32b_a7_batch8_bench"
+            ],
+            "rule": {
+              "objective": 0.022857142857142854,
+              "net_rate": 0.04081632653061224,
+              "gate_rate": 0.8979591836734694,
+              "prevented": 2,
+              "lost": 0,
+              "net": 2,
+              "gated": 44,
+              "kind": "stump",
+              "feature": "r1_majority_changed",
+              "direction": "low",
+              "threshold": 0.0,
+              "threshold_label": "p0",
+              "fill_value": 0.10204081632653061,
+              "gate_penalty": 0.02,
+              "n_train": 49
+            },
+            "test_summary": {
+              "n": 1,
+              "standard_acc": 1.0,
+              "policy_acc": 1.0,
+              "acc_delta": 0.0,
+              "gate_count": 1,
+              "gate_rate": 1.0,
+              "collapses_prevented": 0,
+              "corrections_lost": 0,
+              "net": 0,
+              "standard_collapses": 0,
+              "standard_corrections": 0
+            }
+          },
+          {
+            "heldout_model": "openrouter_kimi-k2.6",
+            "train_models": [
+              "gemini_3_1_flash_lite_smoke",
+              "gemini_3_1_pro_smoke",
+              "openrouter_glm_4_6_n20_partial",
+              "openrouter_grok_4_1_fast_smoke",
+              "openrouter_llama_4_maverick_n20_partial",
+              "openrouter_mistral_small_4_n20",
+              "smoke_qwen3-8b",
+              "vllm_qwen3_32b_a7_batch4_bench",
+              "vllm_qwen3_32b_a7_batch8_bench"
+            ],
+            "rule": {
+              "objective": 0.023749999999999997,
+              "net_rate": 0.041666666666666664,
+              "gate_rate": 0.8958333333333334,
+              "prevented": 2,
+              "lost": 0,
+              "net": 2,
+              "gated": 43,
+              "kind": "stump",
+              "feature": "r1_majority_changed",
+              "direction": "low",
+              "threshold": 0.0,
+              "threshold_label": "p0",
+              "fill_value": 0.10416666666666667,
+              "gate_penalty": 0.02,
+              "n_train": 48
+            },
+            "test_summary": {
+              "n": 2,
+              "standard_acc": 1.0,
+              "policy_acc": 1.0,
+              "acc_delta": 0.0,
+              "gate_count": 2,
+              "gate_rate": 1.0,
+              "collapses_prevented": 0,
+              "corrections_lost": 0,
+              "net": 0,
+              "standard_collapses": 0,
+              "standard_corrections": 0
+            }
+          },
+          {
+            "heldout_model": "openrouter_llama_4_maverick_n20_partial",
+            "train_models": [
+              "gemini_3_1_flash_lite_smoke",
+              "gemini_3_1_pro_smoke",
+              "openrouter_glm_4_6_n20_partial",
+              "openrouter_grok_4_1_fast_smoke",
+              "openrouter_kimi-k2.6",
+              "openrouter_mistral_small_4_n20",
+              "smoke_qwen3-8b",
+              "vllm_qwen3_32b_a7_batch4_bench",
+              "vllm_qwen3_32b_a7_batch8_bench"
+            ],
+            "rule": {
+              "objective": 0.025652173913043478,
+              "net_rate": 0.043478260869565216,
+              "gate_rate": 0.8913043478260869,
+              "prevented": 2,
+              "lost": 0,
+              "net": 2,
+              "gated": 41,
+              "kind": "stump",
+              "feature": "r1_majority_changed",
+              "direction": "low",
+              "threshold": 0.0,
+              "threshold_label": "p0",
+              "fill_value": 0.10869565217391304,
+              "gate_penalty": 0.02,
+              "n_train": 46
+            },
+            "test_summary": {
+              "n": 4,
+              "standard_acc": 0.75,
+              "policy_acc": 0.75,
+              "acc_delta": 0.0,
+              "gate_count": 4,
+              "gate_rate": 1.0,
+              "collapses_prevented": 0,
+              "corrections_lost": 0,
+              "net": 0,
+              "standard_collapses": 0,
+              "standard_corrections": 0
+            }
+          },
+          {
+            "heldout_model": "openrouter_mistral_small_4_n20",
+            "train_models": [
+              "gemini_3_1_flash_lite_smoke",
+              "gemini_3_1_pro_smoke",
+              "openrouter_glm_4_6_n20_partial",
+              "openrouter_grok_4_1_fast_smoke",
+              "openrouter_kimi-k2.6",
+              "openrouter_llama_4_maverick_n20_partial",
+              "smoke_qwen3-8b",
+              "vllm_qwen3_32b_a7_batch4_bench",
+              "vllm_qwen3_32b_a7_batch8_bench"
+            ],
+            "rule": {
+              "kind": "no_gate",
+              "objective": 0.0,
+              "net_rate": 0.0,
+              "gate_rate": 0.0,
+              "prevented": 0,
+              "lost": 0,
+              "net": 0,
+              "gated": 0,
+              "feature": null,
+              "direction": null,
+              "threshold": null,
+              "threshold_label": null,
+              "fill_value": null,
+              "gate_penalty": 0.02,
+              "n_train": 30
+            },
+            "test_summary": {
+              "n": 20,
+              "standard_acc": 0.55,
+              "policy_acc": 0.55,
+              "acc_delta": 0.0,
+              "gate_count": 0,
+              "gate_rate": 0.0,
+              "collapses_prevented": 0,
+              "corrections_lost": 0,
+              "net": 0,
+              "standard_collapses": 2,
+              "standard_corrections": 0
+            }
+          },
+          {
+            "heldout_model": "smoke_qwen3-8b",
+            "train_models": [
+              "gemini_3_1_flash_lite_smoke",
+              "gemini_3_1_pro_smoke",
+              "openrouter_glm_4_6_n20_partial",
+              "openrouter_grok_4_1_fast_smoke",
+              "openrouter_kimi-k2.6",
+              "openrouter_llama_4_maverick_n20_partial",
+              "openrouter_mistral_small_4_n20",
+              "vllm_qwen3_32b_a7_batch4_bench",
+              "vllm_qwen3_32b_a7_batch8_bench"
+            ],
+            "rule": {
+              "objective": 0.022857142857142854,
+              "net_rate": 0.04081632653061224,
+              "gate_rate": 0.8979591836734694,
+              "prevented": 2,
+              "lost": 0,
+              "net": 2,
+              "gated": 44,
+              "kind": "stump",
+              "feature": "r1_majority_changed",
+              "direction": "low",
+              "threshold": 0.0,
+              "threshold_label": "p0",
+              "fill_value": 0.10204081632653061,
+              "gate_penalty": 0.02,
+              "n_train": 49
+            },
+            "test_summary": {
+              "n": 1,
+              "standard_acc": 1.0,
+              "policy_acc": 1.0,
+              "acc_delta": 0.0,
+              "gate_count": 1,
+              "gate_rate": 1.0,
+              "collapses_prevented": 0,
+              "corrections_lost": 0,
+              "net": 0,
+              "standard_collapses": 0,
+              "standard_corrections": 0
+            }
+          },
+          {
+            "heldout_model": "vllm_qwen3_32b_a7_batch4_bench",
+            "train_models": [
+              "gemini_3_1_flash_lite_smoke",
+              "gemini_3_1_pro_smoke",
+              "openrouter_glm_4_6_n20_partial",
+              "openrouter_grok_4_1_fast_smoke",
+              "openrouter_kimi-k2.6",
+              "openrouter_llama_4_maverick_n20_partial",
+              "openrouter_mistral_small_4_n20",
+              "smoke_qwen3-8b",
+              "vllm_qwen3_32b_a7_batch8_bench"
+            ],
+            "rule": {
+              "objective": 0.024680851063829785,
+              "net_rate": 0.0425531914893617,
+              "gate_rate": 0.8936170212765957,
+              "prevented": 2,
+              "lost": 0,
+              "net": 2,
+              "gated": 42,
+              "kind": "stump",
+              "feature": "r1_majority_changed",
+              "direction": "low",
+              "threshold": 0.0,
+              "threshold_label": "p0",
+              "fill_value": 0.10638297872340426,
+              "gate_penalty": 0.02,
+              "n_train": 47
+            },
+            "test_summary": {
+              "n": 3,
+              "standard_acc": 0.3333333333333333,
+              "policy_acc": 0.3333333333333333,
+              "acc_delta": 0.0,
+              "gate_count": 3,
+              "gate_rate": 1.0,
+              "collapses_prevented": 0,
+              "corrections_lost": 0,
+              "net": 0,
+              "standard_collapses": 0,
+              "standard_corrections": 0
+            }
+          },
+          {
+            "heldout_model": "vllm_qwen3_32b_a7_batch8_bench",
+            "train_models": [
+              "gemini_3_1_flash_lite_smoke",
+              "gemini_3_1_pro_smoke",
+              "openrouter_glm_4_6_n20_partial",
+              "openrouter_grok_4_1_fast_smoke",
+              "openrouter_kimi-k2.6",
+              "openrouter_llama_4_maverick_n20_partial",
+              "openrouter_mistral_small_4_n20",
+              "smoke_qwen3-8b",
+              "vllm_qwen3_32b_a7_batch4_bench"
+            ],
+            "rule": {
+              "objective": 0.03952380952380952,
+              "net_rate": 0.047619047619047616,
+              "gate_rate": 0.40476190476190477,
+              "prevented": 2,
+              "lost": 0,
+              "net": 2,
+              "gated": 17,
+              "kind": "stump",
+              "feature": "init_agree_frac",
+              "direction": "low",
+              "threshold": 0.666666666667,
+              "threshold_label": "p5",
+              "fill_value": 0.8492063492063492,
+              "gate_penalty": 0.02,
+              "n_train": 42
+            },
+            "test_summary": {
+              "n": 8,
+              "standard_acc": 0.25,
+              "policy_acc": 0.125,
+              "acc_delta": -0.125,
+              "gate_count": 6,
+              "gate_rate": 0.75,
+              "collapses_prevented": 0,
+              "corrections_lost": 1,
+              "net": -1,
+              "standard_collapses": 0,
+              "standard_corrections": 1
+            }
+          }
+        ],
+        "learned_r1_probe_percentile_stump": [
+          {
+            "heldout_model": "gemini_3_1_flash_lite_smoke",
+            "train_models": [
+              "gemini_3_1_pro_smoke",
+              "openrouter_glm_4_6_n20_partial",
+              "openrouter_grok_4_1_fast_smoke",
+              "openrouter_kimi-k2.6",
+              "openrouter_llama_4_maverick_n20_partial",
+              "openrouter_mistral_small_4_n20",
+              "smoke_qwen3-8b",
+              "vllm_qwen3_32b_a7_batch4_bench",
+              "vllm_qwen3_32b_a7_batch8_bench"
+            ],
+            "rule": {
+              "objective": 0.023749999999999997,
+              "net_rate": 0.041666666666666664,
+              "gate_rate": 0.8958333333333334,
+              "prevented": 2,
+              "lost": 0,
+              "net": 2,
+              "gated": 43,
+              "kind": "stump",
+              "feature": "r1_majority_changed",
+              "direction": "low",
+              "threshold": 0.0,
+              "threshold_label": "p0",
+              "fill_value": 0.10416666666666667,
+              "gate_penalty": 0.02,
+              "n_train": 48
+            },
+            "test_summary": {
+              "n": 2,
+              "standard_acc": 1.0,
+              "policy_acc": 1.0,
+              "acc_delta": 0.0,
+              "gate_count": 2,
+              "gate_rate": 1.0,
+              "collapses_prevented": 0,
+              "corrections_lost": 0,
+              "net": 0,
+              "standard_collapses": 0,
+              "standard_corrections": 0
+            }
+          },
+          {
+            "heldout_model": "gemini_3_1_pro_smoke",
+            "train_models": [
+              "gemini_3_1_flash_lite_smoke",
+              "openrouter_glm_4_6_n20_partial",
+              "openrouter_grok_4_1_fast_smoke",
+              "openrouter_kimi-k2.6",
+              "openrouter_llama_4_maverick_n20_partial",
+              "openrouter_mistral_small_4_n20",
+              "smoke_qwen3-8b",
+              "vllm_qwen3_32b_a7_batch4_bench",
+              "vllm_qwen3_32b_a7_batch8_bench"
+            ],
+            "rule": {
+              "objective": 0.023749999999999997,
+              "net_rate": 0.041666666666666664,
+              "gate_rate": 0.8958333333333334,
+              "prevented": 2,
+              "lost": 0,
+              "net": 2,
+              "gated": 43,
+              "kind": "stump",
+              "feature": "r1_majority_changed",
+              "direction": "low",
+              "threshold": 0.0,
+              "threshold_label": "p0",
+              "fill_value": 0.10416666666666667,
+              "gate_penalty": 0.02,
+              "n_train": 48
+            },
+            "test_summary": {
+              "n": 2,
+              "standard_acc": 1.0,
+              "policy_acc": 1.0,
+              "acc_delta": 0.0,
+              "gate_count": 2,
+              "gate_rate": 1.0,
+              "collapses_prevented": 0,
+              "corrections_lost": 0,
+              "net": 0,
+              "standard_collapses": 0,
+              "standard_corrections": 0
+            }
+          },
+          {
+            "heldout_model": "openrouter_glm_4_6_n20_partial",
+            "train_models": [
+              "gemini_3_1_flash_lite_smoke",
+              "gemini_3_1_pro_smoke",
+              "openrouter_grok_4_1_fast_smoke",
+              "openrouter_kimi-k2.6",
+              "openrouter_llama_4_maverick_n20_partial",
+              "openrouter_mistral_small_4_n20",
+              "smoke_qwen3-8b",
+              "vllm_qwen3_32b_a7_batch4_bench",
+              "vllm_qwen3_32b_a7_batch8_bench"
+            ],
+            "rule": {
+              "objective": 0.028372093023255815,
+              "net_rate": 0.046511627906976744,
+              "gate_rate": 0.9069767441860465,
+              "prevented": 2,
+              "lost": 0,
+              "net": 2,
+              "gated": 39,
+              "kind": "stump",
+              "feature": "r1_majority_changed",
+              "direction": "low",
+              "threshold": 0.0,
+              "threshold_label": "p0",
+              "fill_value": 0.09302325581395349,
+              "gate_penalty": 0.02,
+              "n_train": 43
+            },
+            "test_summary": {
+              "n": 7,
+              "standard_acc": 0.8571428571428571,
+              "policy_acc": 0.8571428571428571,
+              "acc_delta": 0.0,
+              "gate_count": 6,
+              "gate_rate": 0.8571428571428571,
+              "collapses_prevented": 0,
+              "corrections_lost": 0,
+              "net": 0,
+              "standard_collapses": 0,
+              "standard_corrections": 0
+            }
+          },
+          {
+            "heldout_model": "openrouter_grok_4_1_fast_smoke",
+            "train_models": [
+              "gemini_3_1_flash_lite_smoke",
+              "gemini_3_1_pro_smoke",
+              "openrouter_glm_4_6_n20_partial",
+              "openrouter_kimi-k2.6",
+              "openrouter_llama_4_maverick_n20_partial",
+              "openrouter_mistral_small_4_n20",
+              "smoke_qwen3-8b",
+              "vllm_qwen3_32b_a7_batch4_bench",
+              "vllm_qwen3_32b_a7_batch8_bench"
+            ],
+            "rule": {
+              "objective": 0.022857142857142854,
+              "net_rate": 0.04081632653061224,
+              "gate_rate": 0.8979591836734694,
+              "prevented": 2,
+              "lost": 0,
+              "net": 2,
+              "gated": 44,
+              "kind": "stump",
+              "feature": "r1_majority_changed",
+              "direction": "low",
+              "threshold": 0.0,
+              "threshold_label": "p0",
+              "fill_value": 0.10204081632653061,
+              "gate_penalty": 0.02,
+              "n_train": 49
+            },
+            "test_summary": {
+              "n": 1,
+              "standard_acc": 1.0,
+              "policy_acc": 1.0,
+              "acc_delta": 0.0,
+              "gate_count": 1,
+              "gate_rate": 1.0,
+              "collapses_prevented": 0,
+              "corrections_lost": 0,
+              "net": 0,
+              "standard_collapses": 0,
+              "standard_corrections": 0
+            }
+          },
+          {
+            "heldout_model": "openrouter_kimi-k2.6",
+            "train_models": [
+              "gemini_3_1_flash_lite_smoke",
+              "gemini_3_1_pro_smoke",
+              "openrouter_glm_4_6_n20_partial",
+              "openrouter_grok_4_1_fast_smoke",
+              "openrouter_llama_4_maverick_n20_partial",
+              "openrouter_mistral_small_4_n20",
+              "smoke_qwen3-8b",
+              "vllm_qwen3_32b_a7_batch4_bench",
+              "vllm_qwen3_32b_a7_batch8_bench"
+            ],
+            "rule": {
+              "objective": 0.023749999999999997,
+              "net_rate": 0.041666666666666664,
+              "gate_rate": 0.8958333333333334,
+              "prevented": 2,
+              "lost": 0,
+              "net": 2,
+              "gated": 43,
+              "kind": "stump",
+              "feature": "r1_majority_changed",
+              "direction": "low",
+              "threshold": 0.0,
+              "threshold_label": "p0",
+              "fill_value": 0.10416666666666667,
+              "gate_penalty": 0.02,
+              "n_train": 48
+            },
+            "test_summary": {
+              "n": 2,
+              "standard_acc": 1.0,
+              "policy_acc": 1.0,
+              "acc_delta": 0.0,
+              "gate_count": 2,
+              "gate_rate": 1.0,
+              "collapses_prevented": 0,
+              "corrections_lost": 0,
+              "net": 0,
+              "standard_collapses": 0,
+              "standard_corrections": 0
+            }
+          },
+          {
+            "heldout_model": "openrouter_llama_4_maverick_n20_partial",
+            "train_models": [
+              "gemini_3_1_flash_lite_smoke",
+              "gemini_3_1_pro_smoke",
+              "openrouter_glm_4_6_n20_partial",
+              "openrouter_grok_4_1_fast_smoke",
+              "openrouter_kimi-k2.6",
+              "openrouter_mistral_small_4_n20",
+              "smoke_qwen3-8b",
+              "vllm_qwen3_32b_a7_batch4_bench",
+              "vllm_qwen3_32b_a7_batch8_bench"
+            ],
+            "rule": {
+              "objective": 0.025652173913043478,
+              "net_rate": 0.043478260869565216,
+              "gate_rate": 0.8913043478260869,
+              "prevented": 2,
+              "lost": 0,
+              "net": 2,
+              "gated": 41,
+              "kind": "stump",
+              "feature": "r1_majority_changed",
+              "direction": "low",
+              "threshold": 0.0,
+              "threshold_label": "p0",
+              "fill_value": 0.10869565217391304,
+              "gate_penalty": 0.02,
+              "n_train": 46
+            },
+            "test_summary": {
+              "n": 4,
+              "standard_acc": 0.75,
+              "policy_acc": 0.75,
+              "acc_delta": 0.0,
+              "gate_count": 4,
+              "gate_rate": 1.0,
+              "collapses_prevented": 0,
+              "corrections_lost": 0,
+              "net": 0,
+              "standard_collapses": 0,
+              "standard_corrections": 0
+            }
+          },
+          {
+            "heldout_model": "openrouter_mistral_small_4_n20",
+            "train_models": [
+              "gemini_3_1_flash_lite_smoke",
+              "gemini_3_1_pro_smoke",
+              "openrouter_glm_4_6_n20_partial",
+              "openrouter_grok_4_1_fast_smoke",
+              "openrouter_kimi-k2.6",
+              "openrouter_llama_4_maverick_n20_partial",
+              "smoke_qwen3-8b",
+              "vllm_qwen3_32b_a7_batch4_bench",
+              "vllm_qwen3_32b_a7_batch8_bench"
+            ],
+            "rule": {
+              "kind": "no_gate",
+              "objective": 0.0,
+              "net_rate": 0.0,
+              "gate_rate": 0.0,
+              "prevented": 0,
+              "lost": 0,
+              "net": 0,
+              "gated": 0,
+              "feature": null,
+              "direction": null,
+              "threshold": null,
+              "threshold_label": null,
+              "fill_value": null,
+              "gate_penalty": 0.02,
+              "n_train": 30
+            },
+            "test_summary": {
+              "n": 20,
+              "standard_acc": 0.55,
+              "policy_acc": 0.55,
+              "acc_delta": 0.0,
+              "gate_count": 0,
+              "gate_rate": 0.0,
+              "collapses_prevented": 0,
+              "corrections_lost": 0,
+              "net": 0,
+              "standard_collapses": 2,
+              "standard_corrections": 0
+            }
+          },
+          {
+            "heldout_model": "smoke_qwen3-8b",
+            "train_models": [
+              "gemini_3_1_flash_lite_smoke",
+              "gemini_3_1_pro_smoke",
+              "openrouter_glm_4_6_n20_partial",
+              "openrouter_grok_4_1_fast_smoke",
+              "openrouter_kimi-k2.6",
+              "openrouter_llama_4_maverick_n20_partial",
+              "openrouter_mistral_small_4_n20",
+              "vllm_qwen3_32b_a7_batch4_bench",
+              "vllm_qwen3_32b_a7_batch8_bench"
+            ],
+            "rule": {
+              "objective": 0.022857142857142854,
+              "net_rate": 0.04081632653061224,
+              "gate_rate": 0.8979591836734694,
+              "prevented": 2,
+              "lost": 0,
+              "net": 2,
+              "gated": 44,
+              "kind": "stump",
+              "feature": "r1_majority_changed",
+              "direction": "low",
+              "threshold": 0.0,
+              "threshold_label": "p0",
+              "fill_value": 0.10204081632653061,
+              "gate_penalty": 0.02,
+              "n_train": 49
+            },
+            "test_summary": {
+              "n": 1,
+              "standard_acc": 1.0,
+              "policy_acc": 1.0,
+              "acc_delta": 0.0,
+              "gate_count": 1,
+              "gate_rate": 1.0,
+              "collapses_prevented": 0,
+              "corrections_lost": 0,
+              "net": 0,
+              "standard_collapses": 0,
+              "standard_corrections": 0
+            }
+          },
+          {
+            "heldout_model": "vllm_qwen3_32b_a7_batch4_bench",
+            "train_models": [
+              "gemini_3_1_flash_lite_smoke",
+              "gemini_3_1_pro_smoke",
+              "openrouter_glm_4_6_n20_partial",
+              "openrouter_grok_4_1_fast_smoke",
+              "openrouter_kimi-k2.6",
+              "openrouter_llama_4_maverick_n20_partial",
+              "openrouter_mistral_small_4_n20",
+              "smoke_qwen3-8b",
+              "vllm_qwen3_32b_a7_batch8_bench"
+            ],
+            "rule": {
+              "objective": 0.024680851063829785,
+              "net_rate": 0.0425531914893617,
+              "gate_rate": 0.8936170212765957,
+              "prevented": 2,
+              "lost": 0,
+              "net": 2,
+              "gated": 42,
+              "kind": "stump",
+              "feature": "r1_majority_changed",
+              "direction": "low",
+              "threshold": 0.0,
+              "threshold_label": "p0",
+              "fill_value": 0.10638297872340426,
+              "gate_penalty": 0.02,
+              "n_train": 47
+            },
+            "test_summary": {
+              "n": 3,
+              "standard_acc": 0.3333333333333333,
+              "policy_acc": 0.3333333333333333,
+              "acc_delta": 0.0,
+              "gate_count": 3,
+              "gate_rate": 1.0,
+              "collapses_prevented": 0,
+              "corrections_lost": 0,
+              "net": 0,
+              "standard_collapses": 0,
+              "standard_corrections": 0
+            }
+          },
+          {
+            "heldout_model": "vllm_qwen3_32b_a7_batch8_bench",
+            "train_models": [
+              "gemini_3_1_flash_lite_smoke",
+              "gemini_3_1_pro_smoke",
+              "openrouter_glm_4_6_n20_partial",
+              "openrouter_grok_4_1_fast_smoke",
+              "openrouter_kimi-k2.6",
+              "openrouter_llama_4_maverick_n20_partial",
+              "openrouter_mistral_small_4_n20",
+              "smoke_qwen3-8b",
+              "vllm_qwen3_32b_a7_batch4_bench"
+            ],
+            "rule": {
+              "objective": 0.03952380952380952,
+              "net_rate": 0.047619047619047616,
+              "gate_rate": 0.40476190476190477,
+              "prevented": 2,
+              "lost": 0,
+              "net": 2,
+              "gated": 17,
+              "kind": "stump",
+              "feature": "init_agree_frac",
+              "direction": "low",
+              "threshold": 0.666666666667,
+              "threshold_label": "p5",
+              "fill_value": 0.8492063492063492,
+              "gate_penalty": 0.02,
+              "n_train": 42
+            },
+            "test_summary": {
+              "n": 8,
+              "standard_acc": 0.25,
+              "policy_acc": 0.125,
+              "acc_delta": -0.125,
+              "gate_count": 6,
+              "gate_rate": 0.75,
+              "collapses_prevented": 0,
+              "corrections_lost": 1,
+              "net": -1,
+              "standard_collapses": 0,
+              "standard_corrections": 1
+            }
+          }
+        ]
+      },
+      "paper_worthy": false,
+      "paper_worthy_reason": "No strict LOMO policy has a positive question-bootstrap lower CI on accuracy delta."
+    }
+  }
+}

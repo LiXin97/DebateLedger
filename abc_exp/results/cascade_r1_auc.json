@@ -1,0 +1,402 @@
+{
+  "cascade_round_distribution": {
+    "gemini_3-flash": {
+      "n_debates": 200,
+      "n_collapses": 1,
+      "round_1": 1,
+      "round_2": 0,
+      "round_3": 0,
+      "unlocalized": 0
+    },
+    "openai_gpt-5.4-mini": {
+      "n_debates": 200,
+      "n_collapses": 1,
+      "round_1": 0,
+      "round_2": 0,
+      "round_3": 1,
+      "unlocalized": 0
+    },
+    "vllm_llama-3.1-8b": {
+      "n_debates": 2003,
+      "n_collapses": 86,
+      "round_1": 43,
+      "round_2": 21,
+      "round_3": 22,
+      "unlocalized": 0
+    },
+    "vllm_phi-4-mini": {
+      "n_debates": 2161,
+      "n_collapses": 112,
+      "round_1": 67,
+      "round_2": 17,
+      "round_3": 28,
+      "unlocalized": 0
+    },
+    "vllm_qwen3-4b": {
+      "n_debates": 2161,
+      "n_collapses": 50,
+      "round_1": 35,
+      "round_2": 9,
+      "round_3": 6,
+      "unlocalized": 0
+    },
+    "vllm_qwen3-8b": {
+      "n_debates": 200,
+      "n_collapses": 3,
+      "round_1": 3,
+      "round_2": 0,
+      "round_3": 0,
+      "unlocalized": 0
+    },
+    "_pooled": {
+      "n_debates": 6925,
+      "n_collapses": 253,
+      "round_1": 149,
+      "round_2": 47,
+      "round_3": 57,
+      "unlocalized": 0
+    }
+  },
+  "per_model_auc": {
+    "gemini_3-flash": {
+      "baseline": {
+        "mean": NaN,
+        "std": NaN,
+        "folds": [],
+        "n": 200,
+        "n_pos": 1
+      },
+      "r1_trajectory": {
+        "mean": NaN,
+        "std": NaN,
+        "folds": [],
+        "n": 200,
+        "n_pos": 1
+      },
+      "full_trajectory": {
+        "mean": NaN,
+        "std": NaN,
+        "folds": [],
+        "n": 200,
+        "n_pos": 1
+      }
+    },
+    "openai_gpt-5.4-mini": {
+      "baseline": {
+        "mean": NaN,
+        "std": NaN,
+        "folds": [],
+        "n": 200,
+        "n_pos": 1
+      },
+      "r1_trajectory": {
+        "mean": NaN,
+        "std": NaN,
+        "folds": [],
+        "n": 200,
+        "n_pos": 1
+      },
+      "full_trajectory": {
+        "mean": NaN,
+        "std": NaN,
+        "folds": [],
+        "n": 200,
+        "n_pos": 1
+      }
+    },
+    "vllm_llama-3.1-8b": {
+      "baseline": {
+        "mean": 0.7502932154680859,
+        "std": 0.09008950194912518,
+        "folds": [
+          0.7653409090909091,
+          0.8895104895104895,
+          0.7792746113989637,
+          0.6995550745550746,
+          0.6177849927849928
+        ],
+        "n": 2003,
+        "n_pos": 86
+      },
+      "r1_trajectory": {
+        "mean": 0.7853402836369158,
+        "std": 0.061601184689187335,
+        "folds": [
+          0.7762175324675324,
+          0.8917249417249418,
+          0.7944732297063903,
+          0.7018999518999519,
+          0.7623857623857624
+        ],
+        "n": 2003,
+        "n_pos": 86
+      },
+      "full_trajectory": {
+        "mean": 0.8326126977033713,
+        "std": 0.020524426345849143,
+        "folds": [
+          0.8290584415584416,
+          0.8675990675990676,
+          0.8411053540587219,
+          0.8131313131313131,
+          0.8121693121693122
+        ],
+        "n": 2003,
+        "n_pos": 86
+      }
+    },
+    "vllm_phi-4-mini": {
+      "baseline": {
+        "mean": 0.8016026090904635,
+        "std": 0.023996295031003416,
+        "folds": [
+          0.7873811103738111,
+          0.7917910447761194,
+          0.8460558252427185,
+          0.7773210489014883,
+          0.8054640161581801
+        ],
+        "n": 2161,
+        "n_pos": 112
+      },
+      "r1_trajectory": {
+        "mean": 0.8467078948762914,
+        "std": 0.028595877012838423,
+        "folds": [
+          0.8078411855784119,
+          0.8158789386401327,
+          0.8714199029126214,
+          0.8708008504606662,
+          0.8675985967896247
+        ],
+        "n": 2161,
+        "n_pos": 112
+      },
+      "full_trajectory": {
+        "mean": 0.9056898889423728,
+        "std": 0.014259278266976337,
+        "folds": [
+          0.8958748064587481,
+          0.8867330016583748,
+          0.9071601941747572,
+          0.9289865343727852,
+          0.9096949080471989
+        ],
+        "n": 2161,
+        "n_pos": 112
+      }
+    },
+    "vllm_qwen3-4b": {
+      "baseline": {
+        "mean": 0.556448161717219,
+        "std": 0.051790230801221526,
+        "folds": [
+          0.5034067085953878,
+          0.5896919431279621,
+          0.6336309523809524,
+          0.5584873949579832,
+          0.49702380952380953
+        ],
+        "n": 2161,
+        "n_pos": 50
+      },
+      "r1_trajectory": {
+        "mean": 0.5845856681430807,
+        "std": 0.07914403697064451,
+        "folds": [
+          0.6644392033542977,
+          0.6356635071090048,
+          0.6239087301587302,
+          0.4433613445378151,
+          0.5555555555555556
+        ],
+        "n": 2161,
+        "n_pos": 50
+      },
+      "full_trajectory": {
+        "mean": 0.7859998048341515,
+        "std": 0.03904514256250681,
+        "folds": [
+          0.8325471698113207,
+          0.7267772511848342,
+          0.7617063492063492,
+          0.8228571428571428,
+          0.7861111111111111
+        ],
+        "n": 2161,
+        "n_pos": 50
+      }
+    },
+    "vllm_qwen3-8b": {
+      "baseline": {
+        "mean": 0.794112685560054,
+        "std": 0.10332321187584348,
+        "folds": [
+          0.6907894736842105,
+          0.8974358974358975
+        ],
+        "n": 200,
+        "n_pos": 3
+      },
+      "r1_trajectory": {
+        "mean": 0.22587719298245612,
+        "std": 0.1074561403508772,
+        "folds": [
+          0.11842105263157894,
+          0.3333333333333333
+        ],
+        "n": 200,
+        "n_pos": 3
+      },
+      "full_trajectory": {
+        "mean": 0.2515182186234818,
+        "std": 0.13309716599190285,
+        "folds": [
+          0.11842105263157894,
+          0.38461538461538464
+        ],
+        "n": 200,
+        "n_pos": 3
+      }
+    }
+  },
+  "pooled_auc": {
+    "baseline": {
+      "mean": 0.6632136808783959,
+      "std": 0.077945622465595,
+      "folds": [
+        0.5916131237183869,
+        0.6273383281704008,
+        0.8142142327650111,
+        0.6310697489942773,
+        0.6518329707439037
+      ],
+      "n": 6925,
+      "n_pos": 253
+    },
+    "r1_trajectory": {
+      "mean": 0.7763998678854668,
+      "std": 0.020889435077793513,
+      "folds": [
+        0.7520027341079972,
+        0.7522392719064429,
+        0.7887220986739149,
+        0.7846549379568247,
+        0.8043802967821541
+      ],
+      "n": 6925,
+      "n_pos": 253
+    },
+    "full_trajectory": {
+      "mean": 0.8511320265499579,
+      "std": 0.013523210312010947,
+      "folds": [
+        0.8403007518796992,
+        0.8370314338544294,
+        0.8434025203854707,
+        0.8658635050144484,
+        0.8690619216157418
+      ],
+      "n": 6925,
+      "n_pos": 253
+    }
+  },
+  "bootstrap_delta_auc": {
+    "seed": 20260424,
+    "B": 1000,
+    "B_used": 1000,
+    "B_skipped_degenerate": 0,
+    "delta_r1_minus_baseline": {
+      "obs": 0.09937494668296987,
+      "median": 0.09905791875948411,
+      "ci_2.5": 0.08025392252893289,
+      "ci_97.5": 0.11777589172728409
+    },
+    "delta_full_minus_r1": {
+      "obs": 0.07740003649254501,
+      "median": 0.07697861214327179,
+      "ci_2.5": 0.06385655975917832,
+      "ci_97.5": 0.09163213680704226
+    },
+    "pooled_oof_auc": {
+      "baseline": 0.6690917029222472,
+      "r1_trajectory": 0.768466649605217,
+      "full_trajectory": 0.845866686097762
+    }
+  },
+  "bootstrap_delta_auc_clustered": {
+    "status": "infeasible_missing_reported_cohort_row_level_data",
+    "seed": 20260424,
+    "B": 1000,
+    "oof_seed": 42,
+    "observed_delta_source": "cascade_r1_auc.json:bootstrap_delta_auc",
+    "input_audit": [
+      "Missing reported-cohort raw trace files: results/debate_traces_gemini_3-flash.jsonl, results/debate_traces_openai_gpt-5.4-mini.jsonl, results/debate_traces_vllm_llama-3.1-8b.jsonl, results/debate_traces_vllm_phi-4-mini.jsonl, results/debate_traces_vllm_qwen3-4b.jsonl, results/debate_traces_vllm_qwen3-8b.jsonl",
+      "results/per_debate_r1_features.jsonl exists but is empty"
+    ],
+    "question_clustered": {
+      "status": "infeasible_missing_reported_cohort_row_level_data",
+      "B": 1000,
+      "B_used": 0,
+      "delta_r1_minus_baseline": {
+        "obs": 0.09937494668296987,
+        "median": null,
+        "ci_2.5": null,
+        "ci_97.5": null
+      },
+      "delta_full_minus_r1": {
+        "obs": 0.07740003649254501,
+        "median": null,
+        "ci_2.5": null,
+        "ci_97.5": null
+      },
+      "caveat": "The checked-out cascade_r1_auc.json has aggregate AUCs and the old debate-index bootstrap, but the exact reported-cohort row-level traces/cache with question_id and model identifiers are absent or empty. Clustered CIs cannot be recovered from aggregate AUC summaries without changing the estimand.",
+      "cluster_key": "question_id",
+      "n_clusters": null
+    },
+    "model_clustered": {
+      "status": "infeasible_missing_reported_cohort_row_level_data",
+      "B": 1000,
+      "B_used": 0,
+      "delta_r1_minus_baseline": {
+        "obs": 0.09937494668296987,
+        "median": null,
+        "ci_2.5": null,
+        "ci_97.5": null
+      },
+      "delta_full_minus_r1": {
+        "obs": 0.07740003649254501,
+        "median": null,
+        "ci_2.5": null,
+        "ci_97.5": null
+      },
+      "caveat": "The checked-out cascade_r1_auc.json has aggregate AUCs and the old debate-index bootstrap, but the exact reported-cohort row-level traces/cache with question_id and model identifiers are absent or empty. Clustered CIs cannot be recovered from aggregate AUC summaries without changing the estimand.",
+      "cluster_key": "model",
+      "n_clusters": null
+    },
+    "two_way_like_clustered": {
+      "status": "infeasible_missing_reported_cohort_row_level_data",
+      "B": 1000,
+      "B_used": 0,
+      "delta_r1_minus_baseline": {
+        "obs": 0.09937494668296987,
+        "median": null,
+        "ci_2.5": null,
+        "ci_97.5": null
+      },
+      "delta_full_minus_r1": {
+        "obs": 0.07740003649254501,
+        "median": null,
+        "ci_2.5": null,
+        "ci_97.5": null
+      },
+      "caveat": "The checked-out cascade_r1_auc.json has aggregate AUCs and the old debate-index bootstrap, but the exact reported-cohort row-level traces/cache with question_id and model identifiers are absent or empty. Clustered CIs cannot be recovered from aggregate AUC summaries without changing the estimand.",
+      "cluster_keys": [
+        "question_id",
+        "model"
+      ],
+      "n_question_clusters": null,
+      "n_model_clusters": null
+    }
+  }
+}

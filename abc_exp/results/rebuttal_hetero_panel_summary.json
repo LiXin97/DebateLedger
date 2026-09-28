@@ -1,0 +1,126 @@
+{
+ "heterogeneous_pilot_msl4_llama70b_dsv4f": {
+  "n_debates": 200,
+  "init_acc_pct": 74.0,
+  "final_acc_pct": 81.5,
+  "collapses": 5,
+  "n_init_correct": 148,
+  "c_cond_pct": 3.38,
+  "c_cond_wilson95_pct": [
+   1.45,
+   7.66
+  ],
+  "corrections": 20,
+  "n_init_wrong": 52,
+  "correction_pct": 38.46,
+  "correction_wilson95_pct": [
+   26.47,
+   52.04
+  ],
+  "onset_by_round": {
+   "1": 5
+  },
+  "net_debate_gain": 15,
+  "qc_think_tag_rate": 0.0,
+  "qc_think_truncated_rate": 0.0,
+  "qc_parse_none_rate": 0.0177,
+  "per_agent_flip_rate": {
+   "mistral-small-4": 0.18,
+   "llama-3.3-70b-instruct": 0.29,
+   "deepseek-v4-flash": 0.14
+  },
+  "panel": [
+   "mistral-small-4",
+   "llama-3.3-70b-instruct",
+   "deepseek-v4-flash"
+  ],
+  "homogeneous_reference_same_pool": {
+   "mistral-small-4_ccond_pct": 5.0,
+   "deepseek-v4-flash_ccond_pct": 0.0
+  }
+ },
+ "heterogeneous_pilot3_dsv4f_msl4_local_qwen3_4b": {
+  "n_debates": 199,
+  "init_acc_pct": 71.86,
+  "final_acc_pct": 71.36,
+  "collapses": 8,
+  "n_init_correct": 143,
+  "c_cond_pct": 5.59,
+  "c_cond_wilson95_pct": [
+   2.86,
+   10.65
+  ],
+  "corrections": 7,
+  "n_init_wrong": 56,
+  "correction_pct": 12.5,
+  "correction_wilson95_pct": [
+   6.19,
+   23.63
+  ],
+  "onset_by_round": {
+   "1": 5,
+   "2": 2,
+   "4": 1
+  },
+  "net_debate_gain": -1,
+  "qc_think_tag_rate": 0.0,
+  "qc_think_truncated_rate": 0.0,
+  "qc_parse_none_rate": 0.0127,
+  "per_agent_flip_rate": {
+   "deepseek-v4-flash": 0.136,
+   "mistral-small-4": 0.116,
+   "local-qwen3-4b": 0.322
+  }
+ },
+ "heterogeneous_pilot2_dsv4f_msl4_llama4scout": {
+  "n_debates": 200,
+  "init_acc_pct": 78.5,
+  "final_acc_pct": 81.0,
+  "collapses": 4,
+  "n_init_correct": 157,
+  "c_cond_pct": 2.55,
+  "c_cond_wilson95_pct": [
+   1.0,
+   6.37
+  ],
+  "corrections": 9,
+  "n_init_wrong": 43,
+  "correction_pct": 20.93,
+  "correction_wilson95_pct": [
+   11.42,
+   35.21
+  ],
+  "onset_by_round": {
+   "1": 2,
+   "3": 1,
+   "4": 1
+  },
+  "net_debate_gain": 5,
+  "qc_think_tag_rate": 0.0,
+  "qc_think_truncated_rate": 0.0,
+  "qc_parse_none_rate": 0.0157,
+  "per_agent_flip_rate": {
+   "deepseek-v4-flash": 0.125,
+   "mistral-small-4": 0.135,
+   "llama-4-scout": 0.225
+  }
+ },
+ "r3_tie_sensitivity": {
+  "alphabetic_tie_rule_nets": {
+   "panel1": 14,
+   "panel2": 6,
+   "panel3": 0
+  },
+  "strict_plurality_nets": {
+   "panel1": 22,
+   "panel2": 8,
+   "panel3": 7
+  },
+  "initial_no_unique_plurality": {
+   "panel1": "26/200",
+   "panel2": "20/200",
+   "panel3": "28/200"
+  },
+  "note": "magnitudes tie-rule-dependent; ordering unchanged under these two rules; reported as feasibility pilots only"
+ }
+}

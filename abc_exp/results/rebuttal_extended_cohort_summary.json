@@ -1,0 +1,173 @@
+{
+ "status": "SUPERSEDED: do not cite or package; use abc_exp/results/rebuttal_extension_R3_frozen.json",
+ "superseded_reason": "This earlier mixed-endpoint summary predates the frozen all-row R3 recode.",
+ "description": "Extended-cohort screen association (superseded sensitivity beside the submitted-paper primary G=7 analysis)",
+ "rows": [
+  {
+   "model": "sonnet-4.5",
+   "family": "Anthropic",
+   "alpha_tot": 0.4504,
+   "c_cond_pct": 2.1505
+  },
+  {
+   "model": "deepseek-v4-flash",
+   "family": "DeepSeek",
+   "alpha_tot": 0.1129,
+   "c_cond_pct": 0.0
+  },
+  {
+   "model": "gemini-3-flash",
+   "family": "Google",
+   "alpha_tot": 0.2644,
+   "c_cond_pct": 0.5882
+  },
+  {
+   "model": "gemma-4-31b-it-awq",
+   "family": "Google",
+   "alpha_tot": 0.3106,
+   "c_cond_pct": 0.0
+  },
+  {
+   "model": "llama-3.1-8b",
+   "family": "Meta",
+   "alpha_tot": 0.7737,
+   "c_cond_pct": 8.4646
+  },
+  {
+   "model": "gpt-4o-mini",
+   "family": "OpenAI",
+   "alpha_tot": 0.3424,
+   "c_cond_pct": 2.346
+  },
+  {
+   "model": "gpt-5.4-mini",
+   "family": "OpenAI",
+   "alpha_tot": 0.3499,
+   "c_cond_pct": 0.6993
+  },
+  {
+   "model": "phi-4-mini",
+   "family": "Phi",
+   "alpha_tot": 0.4686,
+   "c_cond_pct": 10.2377
+  },
+  {
+   "model": "qwen3-4b",
+   "family": "Qwen",
+   "alpha_tot": 0.6068,
+   "c_cond_pct": 5.1073
+  },
+  {
+   "model": "qwen3-8b",
+   "family": "Qwen",
+   "alpha_tot": 0.6111,
+   "c_cond_pct": 5.3571
+  },
+  {
+   "model": "qwen3.5-4b",
+   "family": "Qwen",
+   "alpha_tot": 0.6897,
+   "c_cond_pct": 43.58974358974359
+  },
+  {
+   "model": "qwen3.5-9b",
+   "family": "Qwen",
+   "alpha_tot": 0.7303,
+   "c_cond_pct": 43.90243902439025
+  },
+  {
+   "model": "qwen3.6-27b-fp8",
+   "family": "Qwen",
+   "alpha_tot": 0.795,
+   "c_cond_pct": 8.661417322834646
+  },
+  {
+   "model": "qwen3.6-35b-a3b-fp8",
+   "family": "Qwen",
+   "alpha_tot": 0.7595,
+   "c_cond_pct": 11.881188118811881
+  },
+  {
+   "model": "gemini-3.1-flash-lite",
+   "family": "Google",
+   "alpha_tot": 0.3017,
+   "c_cond_pct": 0.0
+  },
+  {
+   "model": "gemini-3.1-pro",
+   "family": "Google",
+   "alpha_tot": 0.2013,
+   "c_cond_pct": 0.0
+  },
+  {
+   "model": "mistral-small-4",
+   "family": "Mistral",
+   "alpha_tot": 0.3772,
+   "c_cond_pct": 5.0
+  },
+  {
+   "model": "grok-4.1-fast",
+   "family": "xAI",
+   "alpha_tot": 0.1452,
+   "c_cond_pct": 0.5988
+  },
+  {
+   "model": "qwen3-32b",
+   "family": "Qwen",
+   "alpha_tot": 0.6767,
+   "c_cond_pct": 10.9589
+  },
+  {
+   "model": "llama-3.3-70b",
+   "family": "Meta",
+   "alpha_tot": 0.4308,
+   "c_cond_pct": 3.15
+  },
+  {
+   "model": "llama-4-maverick",
+   "family": "Meta",
+   "alpha_tot": 0.6881,
+   "c_cond_pct": 3.16
+  },
+  {
+   "model": "llama-4-scout",
+   "family": "Meta",
+   "alpha_tot": 0.5311,
+   "c_cond_pct": 5.48
+  },
+  {
+   "model": "hy3-preview",
+   "family": "Tencent",
+   "alpha_tot": 0.2683,
+   "c_cond_pct": 5.62
+  },
+  {
+   "model": "glm-4.6",
+   "family": "Z.ai",
+   "alpha_tot": 0.5274,
+   "c_cond_pct": 3.95
+  },
+  {
+   "model": "qwq-32b",
+   "family": "Qwen",
+   "alpha_tot": 0.5849,
+   "c_cond_pct": 3.33
+  }
+ ],
+ "n_rows": 25,
+ "row_spearman": {
+  "rho": 0.8035,
+  "p": 1.32e-06
+ },
+ "g_families": 11,
+ "family_spearman": {
+  "rho": 0.7091,
+  "p": 0.01455
+ },
+ "caveats": [
+  "hy3 alpha from free-tier endpoint, debate from paid endpoint with reasoning disabled (endpoint change disclosed)",
+  "glm-4.6 alpha+debate both reasoning-disabled",
+  "maverick/scout alpha post-None 9-10%",
+  "extension rows never merged into the submitted-paper primary G=7 analysis"
+ ]
+}

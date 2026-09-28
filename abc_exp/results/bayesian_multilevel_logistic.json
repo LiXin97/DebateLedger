@@ -1,0 +1,90 @@
+{
+  "n_debates": 3145,
+  "n_collapsed": 251,
+  "n_models": 4,
+  "n_questions": 1509,
+  "seed": 20260424,
+  "priors": {
+    "fixed_effects": "Normal(0, 1)",
+    "intercept": "Normal(0, 2)",
+    "sd_components": "HalfNormal(0, 2)"
+  },
+  "coefficients": {
+    "intercept": {
+      "mean": -4.254,
+      "hdi_2_5": -5.463,
+      "hdi_97_5": -2.96,
+      "rhat": 1.0,
+      "ess_bulk": 1550.0
+    },
+    "b_R1_majchange": {
+      "mean": 0.904,
+      "hdi_2_5": 0.681,
+      "hdi_97_5": 1.119,
+      "rhat": 1.0,
+      "ess_bulk": 1181.0
+    },
+    "b_R1_flips": {
+      "mean": 0.43,
+      "hdi_2_5": 0.227,
+      "hdi_97_5": 0.618,
+      "rhat": 1.0,
+      "ess_bulk": 4796.0
+    },
+    "b_R1_unanimous": {
+      "mean": -0.983,
+      "hdi_2_5": -1.232,
+      "hdi_97_5": -0.758,
+      "rhat": 1.0,
+      "ess_bulk": 1698.0
+    },
+    "b_alpha": {
+      "mean": -0.065,
+      "hdi_2_5": -0.966,
+      "hdi_97_5": 0.805,
+      "rhat": 1.0,
+      "ess_bulk": 3674.0
+    },
+    "sigma_model": {
+      "mean": 0.708,
+      "hdi_2_5": 0.0,
+      "hdi_97_5": 2.069,
+      "rhat": 1.0,
+      "ess_bulk": 2120.0
+    },
+    "sigma_question": {
+      "mean": 1.444,
+      "hdi_2_5": 0.758,
+      "hdi_97_5": 2.209,
+      "rhat": 1.0,
+      "ess_bulk": 694.0
+    }
+  },
+  "icc": {
+    "model_median": 0.04404774633567532,
+    "model_hdi_2_5": 0.00010354014774506002,
+    "model_hdi_97_5": 0.5394259738171251,
+    "question_median": 0.3440761400938221,
+    "question_hdi_2_5": 0.1025264586041469,
+    "question_hdi_97_5": 0.5614165485580849
+  },
+  "per_model_random_intercept_post_mean": {
+    "Llama-3.1-8B": -0.053238047945854065,
+    "Phi-4-mini": -0.003474858967682504,
+    "Qwen3-4B": -0.33089266968128034,
+    "Qwen3-8B": -0.37078772488156897
+  },
+  "ppc": {
+    "observed_collapse_rate": 0.07980922098569157,
+    "replicate_mean": 0.0802600158982512,
+    "replicate_q025": 0.0712241653418124,
+    "replicate_q975": 0.08998410174880764,
+    "ppc_p_one_sided": 0.542625
+  },
+  "models": [
+    "Llama-3.1-8B",
+    "Phi-4-mini",
+    "Qwen3-4B",
+    "Qwen3-8B"
+  ]
+}

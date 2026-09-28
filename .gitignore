@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+.venv/
+.DS_Store
+# Traces come from the Hugging Face datasets; keep them out of git.
+abc_exp/results/*.jsonl

@@ -1,0 +1,128 @@
+{
+  "alpha_distribution": {
+    "n_values": 582,
+    "mean": 4.009241289618832,
+    "std": 4.209897348417801,
+    "min": 0.01,
+    "max": 10.0,
+    "q25": 0.01,
+    "median": 2.266480875041177,
+    "q75": 10.0,
+    "per_agent": {
+      "agent_0": {
+        "n": 195,
+        "mean": 3.7452026554584754,
+        "std": 4.099310564481725,
+        "median": 1.9258223354370163
+      },
+      "agent_1": {
+        "n": 194,
+        "mean": 4.080312884910741,
+        "std": 4.241932286688688,
+        "median": 2.2664809518484668
+      },
+      "agent_2": {
+        "n": 193,
+        "mean": 4.204576233528878,
+        "std": 4.295332940139765,
+        "median": 2.266480875041177
+      }
+    }
+  },
+  "icc": {
+    "icc": 0.4846109876571468,
+    "icc_ci_lower": 0.40635796191522133,
+    "icc_ci_upper": 0.5578221801222542,
+    "pearson_r": 0.4842574757173064,
+    "n_pairs": 576
+  },
+  "cronbach": {
+    "cronbach_alpha": 0.8107872214980368,
+    "n_subjects": 582,
+    "n_items": 8,
+    "item_labels": [
+      "weak",
+      "weak_social",
+      "moderate",
+      "moderate_social",
+      "strong",
+      "strong_social",
+      "very_strong",
+      "very_strong_social"
+    ]
+  },
+  "debate_stats": {
+    "n_total": 1000,
+    "n_collapse": 55,
+    "collapse_rate": 0.055,
+    "n_correction": 292,
+    "correction_rate": 0.292,
+    "n_any_flip": 420,
+    "flip_rate": 0.42,
+    "n_majority_correct": 782,
+    "majority_accuracy": 0.782,
+    "mean_accuracy_delta": 0.46,
+    "mean_initial_correct": 1.846,
+    "mean_final_correct": 2.306,
+    "per_profile": {
+      "(0.3, 0.5, 0.7)": {
+        "total": 200,
+        "collapse": 11,
+        "correction": 55
+      },
+      "(0.5, 0.7, 0.9)": {
+        "total": 200,
+        "collapse": 9,
+        "correction": 61
+      },
+      "(0.7, 0.9, 1.1)": {
+        "total": 200,
+        "collapse": 11,
+        "correction": 57
+      },
+      "(0.3, 0.7, 1.1)": {
+        "total": 200,
+        "collapse": 13,
+        "correction": 62
+      },
+      "(0.5, 0.9, 1.0)": {
+        "total": 200,
+        "collapse": 11,
+        "correction": 57
+      }
+    }
+  },
+  "prediction": {
+    "auc": 0.6399132321041214,
+    "auc_ci_lower": 0.5697767190969157,
+    "auc_ci_upper": 0.716012277963794,
+    "n_total": 975,
+    "n_collapse": 53,
+    "n_no_collapse": 922,
+    "collapse_rate": 0.05435897435897436,
+    "intercept": -2.989097077488639,
+    "feature_importance": {
+      "mean_alpha": 0.01114433884567665,
+      "max_alpha": -0.19129362912885273,
+      "min_alpha": 0.014883291253172016,
+      "alpha_spread": -0.2061769203820728,
+      "alpha_std": 0.7906392239416302
+    }
+  },
+  "decision": {
+    "decision": "RED",
+    "reasons": [
+      "ICC=0.485 <= 0.50",
+      "AUC=0.640 > 0.60",
+      "Cronbach alpha=0.811 (good)"
+    ],
+    "criteria": {
+      "icc_available": true,
+      "icc_value": 0.4846109876571468,
+      "auc_available": true,
+      "auc_value": 0.6399132321041214,
+      "cronbach_available": true,
+      "cronbach_value": 0.8107872214980368
+    }
+  }
+}

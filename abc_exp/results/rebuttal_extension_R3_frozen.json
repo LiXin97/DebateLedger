@@ -1,0 +1,286 @@
+{
+ "description": "FROZEN post-hoc response-period extension cohort at the paper's R3 endpoint. Reported beside, never merged into, the submitted-paper primary G=7 analysis.",
+ "generator": "abc_exp/scripts/freeze_extension_R3.py",
+ "endpoint": "R3 (round_traces[2]); majority = plurality over parsed answers, alphabetic tie-break",
+ "ranking": "midrank (tie-corrected) Spearman; exact family-label permutation for the unadjusted statistic; partial p-values are sensitivity calculations",
+ "n_rows": 25,
+ "g_families": 11,
+ "row_marginal_spearman": 0.8239,
+ "family_marginal": {
+  "rho": 0.7517,
+  "exact_p_two_sided": 0.0101
+ },
+ "family_partial_after_init_acc": {
+  "rho": 0.5969,
+  "t_approx_p_two_sided": 0.0685,
+  "label_permutation_p_two_sided": 0.0695,
+  "note": "The full-enumeration label permutation is not an exact conditional-null test because it does not preserve the collapse/capability association."
+ },
+ "documented_mismatch_sensitivity": {
+  "excluded_family": "Tencent",
+  "reason": "Hy3 screen used a free-tier endpoint; debate used a paid endpoint with provider reasoning disabled.",
+  "status": "post-hoc family-drop sensitivity chosen from a documented measurement mismatch; not a replacement confirmatory analysis",
+  "n_rows": 24,
+  "g_families": 10,
+  "family_marginal": {
+   "rho": 0.9483,
+   "exact_p_two_sided": 0.00013
+  },
+  "family_partial_after_init_acc": {
+   "rho": 0.9311,
+   "t_approx_p_two_sided": 0.000265,
+   "label_permutation_p_two_sided": 0.000474,
+   "note": "The label-permutation value remains a sensitivity, not an exact conditional-null test."
+  },
+  "n_permutations": 3628800
+ },
+ "n_permutations": 39916800,
+ "families_tied_at_same_c_cond": [
+  "DeepSeek",
+  "xAI"
+ ],
+ "rows": [
+  {
+   "model": "sonnet-4.5",
+   "family": "Anthropic",
+   "alpha_tot": 0.4504,
+   "c_cond_pct": 2.1505,
+   "init_acc": 0.775,
+   "coding": "paper-cohort (as published)"
+  },
+  {
+   "model": "deepseek-v4-flash",
+   "family": "DeepSeek",
+   "alpha_tot": 0.1129,
+   "c_cond_pct": 0.0,
+   "init_acc": 0.745,
+   "coding": "paper-cohort (as published)"
+  },
+  {
+   "model": "gemini-3-flash",
+   "family": "Google",
+   "alpha_tot": 0.2644,
+   "c_cond_pct": 0.5882,
+   "init_acc": 0.85,
+   "coding": "paper-cohort (as published)"
+  },
+  {
+   "model": "gemma-4-31b-it-awq",
+   "family": "Google",
+   "alpha_tot": 0.3106,
+   "c_cond_pct": 0.0,
+   "init_acc": 0.8,
+   "coding": "paper-cohort (as published)"
+  },
+  {
+   "model": "llama-3.1-8b",
+   "family": "Meta",
+   "alpha_tot": 0.7737,
+   "c_cond_pct": 8.4646,
+   "init_acc": 0.5072391412880679,
+   "coding": "paper-cohort (as published)"
+  },
+  {
+   "model": "gpt-4o-mini",
+   "family": "OpenAI",
+   "alpha_tot": 0.3424,
+   "c_cond_pct": 2.346,
+   "init_acc": 0.6847389558232931,
+   "coding": "paper-cohort (as published)"
+  },
+  {
+   "model": "gpt-5.4-mini",
+   "family": "OpenAI",
+   "alpha_tot": 0.3499,
+   "c_cond_pct": 0.6993,
+   "init_acc": 0.715,
+   "coding": "paper-cohort (as published)"
+  },
+  {
+   "model": "phi-4-mini",
+   "family": "Phi",
+   "alpha_tot": 0.4686,
+   "c_cond_pct": 10.2377,
+   "init_acc": 0.5062471078204535,
+   "coding": "paper-cohort (as published)"
+  },
+  {
+   "model": "qwen3-4b",
+   "family": "Qwen",
+   "alpha_tot": 0.6068,
+   "c_cond_pct": 5.1073,
+   "init_acc": 0.45303100416473857,
+   "coding": "paper-cohort (as published)"
+  },
+  {
+   "model": "qwen3-8b",
+   "family": "Qwen",
+   "alpha_tot": 0.6111,
+   "c_cond_pct": 5.3571,
+   "init_acc": 0.28,
+   "coding": "paper-cohort (as published)"
+  },
+  {
+   "model": "qwen3.5-4b",
+   "family": "Qwen",
+   "alpha_tot": 0.6897,
+   "c_cond_pct": 43.58974358974359,
+   "init_acc": 0.39,
+   "coding": "paper-cohort (as published)"
+  },
+  {
+   "model": "qwen3.5-9b",
+   "family": "Qwen",
+   "alpha_tot": 0.7303,
+   "c_cond_pct": 43.90243902439025,
+   "init_acc": 0.41,
+   "coding": "paper-cohort (as published)"
+  },
+  {
+   "model": "qwen3.6-27b-fp8",
+   "family": "Qwen",
+   "alpha_tot": 0.795,
+   "c_cond_pct": 8.661417322834646,
+   "init_acc": 0.635,
+   "coding": "paper-cohort (as published)"
+  },
+  {
+   "model": "qwen3.6-35b-a3b-fp8",
+   "family": "Qwen",
+   "alpha_tot": 0.7595,
+   "c_cond_pct": 11.881188118811881,
+   "init_acc": 0.505,
+   "coding": "paper-cohort (as published)"
+  },
+  {
+   "model": "gemini-3.1-flash-lite",
+   "family": "Google",
+   "alpha_tot": 0.3017361111111111,
+   "c_cond_pct": 0.0,
+   "init_acc": 0.82,
+   "coding": "R3 recode from round_traces[2]",
+   "parse_none_rate": 0.0003,
+   "collapses": 0,
+   "n_init_correct": 164
+  },
+  {
+   "model": "gemini-3.1-pro",
+   "family": "Google",
+   "alpha_tot": 0.20128419877163595,
+   "c_cond_pct": 0.6897,
+   "init_acc": 0.725,
+   "coding": "R3 recode from round_traces[2]",
+   "parse_none_rate": 0.1087,
+   "collapses": 1,
+   "n_init_correct": 145
+  },
+  {
+   "model": "mistral-small-4",
+   "family": "Mistral",
+   "alpha_tot": 0.3771527777777778,
+   "c_cond_pct": 2.8571,
+   "init_acc": 0.7,
+   "coding": "R3 recode from round_traces[2]",
+   "parse_none_rate": 0.0007,
+   "collapses": 4,
+   "n_init_correct": 140
+  },
+  {
+   "model": "grok-4.1-fast",
+   "family": "xAI",
+   "alpha_tot": 0.14521956642579212,
+   "c_cond_pct": 0.0,
+   "init_acc": 0.835,
+   "coding": "R3 recode from round_traces[2]",
+   "parse_none_rate": 0.0013,
+   "collapses": 0,
+   "n_init_correct": 167
+  },
+  {
+   "model": "qwen3-32b",
+   "family": "Qwen",
+   "alpha_tot": 0.6767,
+   "c_cond_pct": 10.9589,
+   "init_acc": 0.365,
+   "coding": "R3 recode from round_traces[2]",
+   "parse_none_rate": 0.008,
+   "collapses": 8,
+   "n_init_correct": 73
+  },
+  {
+   "model": "llama-3.3-70b",
+   "family": "Meta",
+   "alpha_tot": 0.4308,
+   "c_cond_pct": 1.5748,
+   "init_acc": 0.6382,
+   "coding": "R3 recode from round_traces[2]",
+   "parse_none_rate": 0.002,
+   "collapses": 2,
+   "n_init_correct": 127
+  },
+  {
+   "model": "llama-4-maverick",
+   "family": "Meta",
+   "alpha_tot": 0.6881,
+   "c_cond_pct": 3.1646,
+   "init_acc": 0.79,
+   "coding": "R3 recode from round_traces[2]",
+   "parse_none_rate": 0.0003,
+   "collapses": 5,
+   "n_init_correct": 158
+  },
+  {
+   "model": "llama-4-scout",
+   "family": "Meta",
+   "alpha_tot": 0.5311,
+   "c_cond_pct": 4.7945,
+   "init_acc": 0.73,
+   "coding": "R3 recode from round_traces[2]",
+   "parse_none_rate": 0.0007,
+   "collapses": 7,
+   "n_init_correct": 146
+  },
+  {
+   "model": "hy3-preview",
+   "family": "Tencent",
+   "alpha_tot": 0.2683,
+   "c_cond_pct": 5.625,
+   "init_acc": 0.8,
+   "coding": "R3 recode from round_traces[2]",
+   "parse_none_rate": 0.0,
+   "collapses": 9,
+   "n_init_correct": 160
+  },
+  {
+   "model": "glm-4.6",
+   "family": "Z.ai",
+   "alpha_tot": 0.5274,
+   "c_cond_pct": 3.9474,
+   "init_acc": 0.76,
+   "coding": "R3 recode from round_traces[2]",
+   "parse_none_rate": 0.0,
+   "collapses": 6,
+   "n_init_correct": 152
+  },
+  {
+   "model": "qwq-32b",
+   "family": "Qwen",
+   "alpha_tot": 0.5849,
+   "c_cond_pct": 3.3333,
+   "init_acc": 0.6,
+   "coding": "R3 recode from round_traces[2]",
+   "parse_none_rate": 0.0003,
+   "collapses": 4,
+   "n_init_correct": 120
+  }
+ ],
+ "exclusions": {
+  "r1_distill": "QC-excluded: 25.7% parse failure at an 8192-token budget (diagnostic only)",
+  "step_minimax": "structurally broken probe lanes (93.7% / 36.3% parse failure)"
+ },
+ "caveats": [
+  "hy3 screen row from the free-tier endpoint, debate row from the paid endpoint with reasoning disabled (endpoint mismatch disclosed)",
+  "glm-4.6 screen and debate rows both collected with provider reasoning disabled",
+  "capability-adjusted family partial NOT confirmed \u2014 supports the paper's triage-only boundary"
+ ]
+}

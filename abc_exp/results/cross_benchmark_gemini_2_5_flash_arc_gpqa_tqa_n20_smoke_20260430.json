@@ -1,0 +1,103 @@
+{
+  "config": {
+    "model": "models/gemini-2.5-flash",
+    "benchmarks": [
+      "arc",
+      "gpqa",
+      "truthfulqa"
+    ],
+    "n_questions": 20,
+    "seed": 46,
+    "n_rounds": 3,
+    "question_concurrency": 4
+  },
+  "summary": {
+    "overall": {
+      "n": 60,
+      "initial_accuracy": 0.6833333333333333,
+      "final_accuracy": 0.8,
+      "n_init_majority_correct": 41,
+      "n_collapses": 0,
+      "conditional_collapse_pct": 0.0,
+      "n_corrections": 7,
+      "mean_alpha": 0.43283045977011503,
+      "spearman_alpha_vs_collapse": {
+        "n": 58,
+        "rho": null,
+        "p_two_sided": null,
+        "note": "insufficient variation"
+      },
+      "spearman_alpha_vs_final_wrong": {
+        "n": 58,
+        "rho": -0.07374367047680543,
+        "p_two_sided": 0.5822237897564135
+      }
+    },
+    "per_benchmark": {
+      "arc": {
+        "n": 20,
+        "initial_accuracy": 1.0,
+        "final_accuracy": 1.0,
+        "n_init_majority_correct": 20,
+        "n_collapses": 0,
+        "conditional_collapse_pct": 0.0,
+        "n_corrections": 0,
+        "mean_alpha": 0.4729166666666667,
+        "spearman_alpha_vs_collapse": {
+          "n": 20,
+          "rho": null,
+          "p_two_sided": null,
+          "note": "insufficient variation"
+        },
+        "spearman_alpha_vs_final_wrong": {
+          "n": 20,
+          "rho": null,
+          "p_two_sided": null,
+          "note": "insufficient variation"
+        }
+      },
+      "gpqa": {
+        "n": 20,
+        "initial_accuracy": 0.45,
+        "final_accuracy": 0.75,
+        "n_init_majority_correct": 9,
+        "n_collapses": 0,
+        "conditional_collapse_pct": 0.0,
+        "n_corrections": 6,
+        "mean_alpha": 0.3946759259259259,
+        "spearman_alpha_vs_collapse": {
+          "n": 18,
+          "rho": null,
+          "p_two_sided": null,
+          "note": "insufficient variation"
+        },
+        "spearman_alpha_vs_final_wrong": {
+          "n": 18,
+          "rho": 0.025972322479944847,
+          "p_two_sided": 0.9185209215968081
+        }
+      },
+      "truthfulqa": {
+        "n": 20,
+        "initial_accuracy": 0.6,
+        "final_accuracy": 0.65,
+        "n_init_majority_correct": 12,
+        "n_collapses": 0,
+        "conditional_collapse_pct": 0.0,
+        "n_corrections": 1,
+        "mean_alpha": 0.42708333333333337,
+        "spearman_alpha_vs_collapse": {
+          "n": 20,
+          "rho": null,
+          "p_two_sided": null,
+          "note": "insufficient variation"
+        },
+        "spearman_alpha_vs_final_wrong": {
+          "n": 20,
+          "rho": -0.2188138552517957,
+          "p_two_sided": 0.3540006571893103
+        }
+      }
+    }
+  }
+}

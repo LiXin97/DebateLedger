@@ -1,0 +1,61 @@
+{
+  "model_label": "Qwen3-32B (local vLLM)",
+  "alpha_path": "abc_exp/results/sa_causal_vllm_qwen3_32b_a7_n200.jsonl",
+  "debate_path": "abc_exp/results/debate_traces_vllm_qwen3_32b_a7_n200.jsonl",
+  "alpha": {
+    "n_rows": 1800,
+    "n_questions": 200,
+    "n_expected_rows_observed_grid": 1800,
+    "missing_rows_observed_grid": 0,
+    "duplicate_triples": 0,
+    "conditions": [
+      "anti_argument",
+      "anti_social",
+      "default"
+    ],
+    "agent_indices": [
+      0,
+      1,
+      2
+    ],
+    "condition_counts": {
+      "default": 600,
+      "anti_social": 600,
+      "anti_argument": 600
+    },
+    "alpha_tot": 0.6767361111111111,
+    "alpha_by_condition": {
+      "anti_argument": 0.7002083333333333,
+      "anti_social": 0.6754166666666667,
+      "default": 0.6545833333333333
+    },
+    "question_alpha_mean": 0.6767361111111111,
+    "total_cost": 0.0,
+    "provider_distribution": {}
+  },
+  "debate": {
+    "n_debates": 200,
+    "n_questions": 200,
+    "duplicate_questions": 0,
+    "init_majority_correct": 73,
+    "final_majority_correct": 104,
+    "initial_accuracy_pct": 36.5,
+    "final_accuracy_pct": 52.0,
+    "majority_collapses": 8,
+    "majority_corrections": 39,
+    "conditional_collapse_pct": 10.95890410958904,
+    "conditional_correction_pct": 30.708661417322833,
+    "majority_flip_rate_pct": 37.0,
+    "agent_level_collapse_events": 17,
+    "agent_level_correction_events": 72,
+    "total_cost": 0.0,
+    "provider_distribution": {}
+  },
+  "pair_qc": {
+    "alpha_questions": 200,
+    "debate_questions": 200,
+    "overlap_questions": 200,
+    "alpha_only_questions": 0,
+    "debate_only_questions": 0
+  }
+}

@@ -1,0 +1,84 @@
+{
+ "low": {
+  "n_debates": 200,
+  "init_acc_pct": 81.0,
+  "final_acc_pct": 82.5,
+  "collapses": 2,
+  "n_init_correct": 162,
+  "c_cond_pct": 1.23,
+  "c_cond_wilson95_pct": [
+   0.34,
+   4.39
+  ],
+  "corrections": 5,
+  "n_init_wrong": 38,
+  "correction_pct": 13.16,
+  "correction_wilson95_pct": [
+   5.75,
+   27.33
+  ],
+  "onset_by_round": {
+   "1": 2
+  },
+  "net_debate_gain": 3,
+  "qc_think_tag_rate": 0.0,
+  "qc_think_truncated_rate": 0.0,
+  "qc_parse_none_rate": 0.0,
+  "reasoning_effort": "low"
+ },
+ "medium": {
+  "n_debates": 200,
+  "init_acc_pct": 77.5,
+  "final_acc_pct": 82.5,
+  "collapses": 2,
+  "n_init_correct": 155,
+  "c_cond_pct": 1.29,
+  "c_cond_wilson95_pct": [
+   0.35,
+   4.58
+  ],
+  "corrections": 12,
+  "n_init_wrong": 45,
+  "correction_pct": 26.67,
+  "correction_wilson95_pct": [
+   15.96,
+   41.04
+  ],
+  "onset_by_round": {
+   "1": 2
+  },
+  "net_debate_gain": 10,
+  "qc_think_tag_rate": 0.0,
+  "qc_think_truncated_rate": 0.0,
+  "qc_parse_none_rate": 0.0237,
+  "reasoning_effort": "medium"
+ },
+ "high": {
+  "n_debates": 200,
+  "init_acc_pct": 80.5,
+  "final_acc_pct": 82.5,
+  "collapses": 3,
+  "n_init_correct": 161,
+  "c_cond_pct": 1.86,
+  "c_cond_wilson95_pct": [
+   0.64,
+   5.33
+  ],
+  "corrections": 7,
+  "n_init_wrong": 39,
+  "correction_pct": 17.95,
+  "correction_wilson95_pct": [
+   8.98,
+   32.67
+  ],
+  "onset_by_round": {
+   "1": 2,
+   "2": 1
+  },
+  "net_debate_gain": 4,
+  "qc_think_tag_rate": 0.0,
+  "qc_think_truncated_rate": 0.0,
+  "qc_parse_none_rate": 0.073,
+  "reasoning_effort": "high"
+ }
+}

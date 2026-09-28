@@ -1,0 +1,176 @@
+{
+  "description": "Family-level partial Spearman after collapsing the realized N=14 model table to G=7 family means.",
+  "source": "results/reviewer_hardening_analyses.json:per_model",
+  "aggregation": "simple mean over model rows within each family, matching the headline family aggregation",
+  "controls": [
+    "family_mean_initial_majority_accuracy"
+  ],
+  "family_rows": [
+    {
+      "family": "Anthropic",
+      "n_models": 1,
+      "models": [
+        "sonnet-4.5"
+      ],
+      "alpha_tot": 0.4504,
+      "c_cond_pct": 2.1505,
+      "init_acc": 0.775
+    },
+    {
+      "family": "DeepSeek",
+      "n_models": 1,
+      "models": [
+        "deepseek-v4-flash"
+      ],
+      "alpha_tot": 0.1129,
+      "c_cond_pct": 0.0,
+      "init_acc": 0.745
+    },
+    {
+      "family": "Google",
+      "n_models": 2,
+      "models": [
+        "gemini-3-flash",
+        "gemma-4-31b-it-awq"
+      ],
+      "alpha_tot": 0.2875,
+      "c_cond_pct": 0.2941,
+      "init_acc": 0.825
+    },
+    {
+      "family": "Meta",
+      "n_models": 1,
+      "models": [
+        "llama-3.1-8b"
+      ],
+      "alpha_tot": 0.7737,
+      "c_cond_pct": 8.4646,
+      "init_acc": 0.5072391412880679
+    },
+    {
+      "family": "OpenAI",
+      "n_models": 2,
+      "models": [
+        "gpt-4o-mini",
+        "gpt-5.4-mini"
+      ],
+      "alpha_tot": 0.34614999999999996,
+      "c_cond_pct": 1.52265,
+      "init_acc": 0.6998694779116466
+    },
+    {
+      "family": "Phi",
+      "n_models": 1,
+      "models": [
+        "phi-4-mini"
+      ],
+      "alpha_tot": 0.4686,
+      "c_cond_pct": 10.2377,
+      "init_acc": 0.5062471078204535
+    },
+    {
+      "family": "Qwen",
+      "n_models": 6,
+      "models": [
+        "qwen3-4b",
+        "qwen3-8b",
+        "qwen3.5-4b",
+        "qwen3.5-9b",
+        "qwen3.6-27b-fp8",
+        "qwen3.6-35b-a3b-fp8"
+      ],
+      "alpha_tot": 0.6987333333333333,
+      "c_cond_pct": 19.749864675963394,
+      "init_acc": 0.4455051673607897
+    }
+  ],
+  "family_marginal_spearman": {
+    "n": 7,
+    "rho": 0.8928571428571429,
+    "p_two_sided_scipy": 0.006807187408935392
+  },
+  "family_partial_spearman": {
+    "rho": 0.7669649888473703,
+    "df": 4,
+    "t_statistic": 2.3904572186687862,
+    "p_two_sided_t_approx": 0.07513045462522985,
+    "rank_alpha": [
+      4.0,
+      1.0,
+      2.0,
+      7.0,
+      3.0,
+      5.0,
+      6.0
+    ],
+    "rank_c_cond": [
+      4.0,
+      1.0,
+      2.0,
+      5.0,
+      3.0,
+      6.0,
+      7.0
+    ],
+    "rank_controls": [
+      [
+        6.0
+      ],
+      [
+        5.0
+      ],
+      [
+        7.0
+      ],
+      [
+        3.0
+      ],
+      [
+        4.0
+      ],
+      [
+        2.0
+      ],
+      [
+        1.0
+      ]
+    ],
+    "residual_alpha": [
+      1.428571428571428,
+      -2.2857142857142856,
+      0.14285714285714235,
+      2.2857142857142856,
+      -1.0,
+      -0.4285714285714288,
+      -0.14285714285714235
+    ],
+    "residual_c_cond": [
+      1.642857142857145,
+      -2.178571428571427,
+      0.4642857142857162,
+      0.1785714285714306,
+      -0.9999999999999982,
+      0.3571428571428594,
+      0.5357142857142874
+    ]
+  },
+  "family_partial_exact_permutation": {
+    "n_permutations": 5040,
+    "one_sided_ge_count": 221,
+    "p_one_sided_positive_exact": 0.043849206349206346,
+    "two_sided_abs_count": 442,
+    "p_two_sided_exact": 0.08769841269841269,
+    "null_min": -1.0,
+    "null_max": 1.0
+  },
+  "model_row_partial_for_comparison": {
+    "controls": [
+      "init_acc"
+    ],
+    "df": 11,
+    "n": 14,
+    "p_two_sided": 0.014400797733645544,
+    "rho": 0.6584623461422373
+  },
+  "p_value_note": "Exact permutation permutes family-level C^cond values while holding family alpha_tot and initial-majority accuracy fixed, then recomputes the rank-residualized partial Spearman for all 7! assignments."
+}

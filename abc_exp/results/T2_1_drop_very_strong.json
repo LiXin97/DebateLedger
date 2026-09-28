@@ -1,0 +1,184 @@
+{
+  "description": "T2.1 sensitivity: rerun headline \u03c1 after dropping very_strong probe.",
+  "drop_levels": [
+    "very_strong"
+  ],
+  "per_model": {
+    "Sonnet 4.5": {
+      "orig": {
+        "alpha_total": 0.42,
+        "alpha_adv": 0.3789840637450199,
+        "alpha_cor": 0.6301020408163265,
+        "n_probe": 2400,
+        "n_adv": 2008,
+        "n_cor": 392
+      },
+      "drop_vs": {
+        "alpha_total": 0.3472222222222222,
+        "alpha_adv": 0.300132802124834,
+        "alpha_cor": 0.5884353741496599,
+        "n_probe": 1800,
+        "n_adv": 1506,
+        "n_cor": 294
+      }
+    },
+    "GPT-4o-mini": {
+      "orig": {
+        "alpha_total": 0.31916666666666665,
+        "alpha_adv": 0.2508680555555556,
+        "alpha_cor": 0.38221153846153844,
+        "n_probe": 2400,
+        "n_adv": 1152,
+        "n_cor": 1248
+      },
+      "drop_vs": {
+        "alpha_total": 0.2972222222222222,
+        "alpha_adv": 0.23726851851851852,
+        "alpha_cor": 0.3525641025641026,
+        "n_probe": 1800,
+        "n_adv": 864,
+        "n_cor": 936
+      }
+    },
+    "GPT-5.4-mini": {
+      "orig": {
+        "alpha_total": 0.34541666666666665,
+        "alpha_adv": 0.2728915662650602,
+        "alpha_cor": 0.5081081081081081,
+        "n_probe": 2400,
+        "n_adv": 1660,
+        "n_cor": 740
+      },
+      "drop_vs": {
+        "alpha_total": 0.2811111111111111,
+        "alpha_adv": 0.20240963855421687,
+        "alpha_cor": 0.45765765765765765,
+        "n_probe": 1800,
+        "n_adv": 1245,
+        "n_cor": 555
+      }
+    },
+    "Gemini 3-flash": {
+      "orig": {
+        "alpha_total": 0.25583333333333336,
+        "alpha_adv": 0.2455621301775148,
+        "alpha_cor": 0.3118279569892473,
+        "n_probe": 2400,
+        "n_adv": 2028,
+        "n_cor": 372
+      },
+      "drop_vs": {
+        "alpha_total": 0.2238888888888889,
+        "alpha_adv": 0.21564760026298488,
+        "alpha_cor": 0.26881720430107525,
+        "n_probe": 1800,
+        "n_adv": 1521,
+        "n_cor": 279
+      }
+    },
+    "Phi-4-mini": {
+      "orig": {
+        "alpha_total": 0.4195833333333333,
+        "alpha_adv": 0.3463414634146341,
+        "alpha_cor": 0.45759493670886076,
+        "n_probe": 2400,
+        "n_adv": 820,
+        "n_cor": 1580
+      },
+      "drop_vs": {
+        "alpha_total": 0.37555555555555553,
+        "alpha_adv": 0.3170731707317073,
+        "alpha_cor": 0.4059071729957806,
+        "n_probe": 1800,
+        "n_adv": 615,
+        "n_cor": 1185
+      }
+    },
+    "Qwen3-4B": {
+      "orig": {
+        "alpha_total": 0.5816666666666667,
+        "alpha_adv": 0.7104430379746836,
+        "alpha_cor": 0.5356334841628959,
+        "n_probe": 2400,
+        "n_adv": 632,
+        "n_cor": 1768
+      },
+      "drop_vs": {
+        "alpha_total": 0.5538888888888889,
+        "alpha_adv": 0.6772151898734177,
+        "alpha_cor": 0.5098039215686274,
+        "n_probe": 1800,
+        "n_adv": 474,
+        "n_cor": 1326
+      }
+    },
+    "Llama-3.1-8B": {
+      "orig": {
+        "alpha_total": 0.7108333333333333,
+        "alpha_adv": 0.715962441314554,
+        "alpha_cor": 0.7080103359173127,
+        "n_probe": 2400,
+        "n_adv": 852,
+        "n_cor": 1548
+      },
+      "drop_vs": {
+        "alpha_total": 0.6472222222222223,
+        "alpha_adv": 0.6525821596244131,
+        "alpha_cor": 0.6442721791559001,
+        "n_probe": 1800,
+        "n_adv": 639,
+        "n_cor": 1161
+      }
+    },
+    "Qwen3-8B": {
+      "orig": {
+        "alpha_total": 0.59125,
+        "alpha_adv": 0.7027439024390244,
+        "alpha_cor": 0.5493119266055045,
+        "n_probe": 2400,
+        "n_adv": 656,
+        "n_cor": 1744
+      },
+      "drop_vs": {
+        "alpha_total": 0.5505555555555556,
+        "alpha_adv": 0.6483739837398373,
+        "alpha_cor": 0.5137614678899083,
+        "n_probe": 1800,
+        "n_adv": 492,
+        "n_cor": 1308
+      }
+    },
+    "Qwen3-32B": {
+      "orig": {
+        "alpha_total": 0.6441554809843401,
+        "alpha_adv": 0.6633838383838384,
+        "alpha_cor": 0.6203007518796992,
+        "n_probe": 7152,
+        "n_adv": 3960,
+        "n_cor": 3192
+      },
+      "drop_vs": {
+        "alpha_total": 0.6146532438478747,
+        "alpha_adv": 0.6259259259259259,
+        "alpha_cor": 0.6006683375104428,
+        "n_probe": 5364,
+        "n_adv": 2970,
+        "n_cor": 2394
+      }
+    }
+  },
+  "headline_original": {
+    "rho": 0.6833333333333333,
+    "ci_lo": 0.03517430574374914,
+    "ci_hi": 0.9268398321754965,
+    "p": 0.04244227208707231,
+    "n": 9
+  },
+  "headline_dropped": {
+    "rho": 0.7999999999999999,
+    "ci_lo": 0.28990298392943603,
+    "ci_hi": 0.9561315392482285,
+    "p": 0.00962792472537983,
+    "n": 9
+  }
+}

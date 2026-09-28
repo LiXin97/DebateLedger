@@ -1,0 +1,83 @@
+{
+  "config": {
+    "model": "models/gemini-3.1-flash-lite-preview",
+    "benchmarks": [
+      "gpqa",
+      "truthfulqa"
+    ],
+    "n_questions": 1,
+    "seed": 45,
+    "n_rounds": 3,
+    "question_concurrency": 2
+  },
+  "summary": {
+    "overall": {
+      "n": 2,
+      "initial_accuracy": 0.5,
+      "final_accuracy": 0.5,
+      "n_init_majority_correct": 1,
+      "n_collapses": 0,
+      "conditional_collapse_pct": 0.0,
+      "n_corrections": 0,
+      "mean_alpha": 0.4791666666666667,
+      "spearman_alpha_vs_collapse": {
+        "n": 2,
+        "rho": null,
+        "p_two_sided": null,
+        "note": "insufficient variation"
+      },
+      "spearman_alpha_vs_final_wrong": {
+        "n": 2,
+        "rho": null,
+        "p_two_sided": null,
+        "note": "insufficient variation"
+      }
+    },
+    "per_benchmark": {
+      "gpqa": {
+        "n": 1,
+        "initial_accuracy": 0.0,
+        "final_accuracy": 0.0,
+        "n_init_majority_correct": 0,
+        "n_collapses": 0,
+        "conditional_collapse_pct": null,
+        "n_corrections": 0,
+        "mean_alpha": 0.9583333333333334,
+        "spearman_alpha_vs_collapse": {
+          "n": 1,
+          "rho": null,
+          "p_two_sided": null,
+          "note": "insufficient variation"
+        },
+        "spearman_alpha_vs_final_wrong": {
+          "n": 1,
+          "rho": null,
+          "p_two_sided": null,
+          "note": "insufficient variation"
+        }
+      },
+      "truthfulqa": {
+        "n": 1,
+        "initial_accuracy": 1.0,
+        "final_accuracy": 1.0,
+        "n_init_majority_correct": 1,
+        "n_collapses": 0,
+        "conditional_collapse_pct": 0.0,
+        "n_corrections": 0,
+        "mean_alpha": 0.0,
+        "spearman_alpha_vs_collapse": {
+          "n": 1,
+          "rho": null,
+          "p_two_sided": null,
+          "note": "insufficient variation"
+        },
+        "spearman_alpha_vs_final_wrong": {
+          "n": 1,
+          "rho": null,
+          "p_two_sided": null,
+          "note": "insufficient variation"
+        }
+      }
+    }
+  }
+}

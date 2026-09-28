@@ -1,0 +1,78 @@
+{
+  "config": {
+    "backend": "openrouter",
+    "model": "mistral-small-4",
+    "model_id": "mistralai/mistral-small-2603",
+    "benchmarks": [
+      "gpqa"
+    ],
+    "n_questions": 198,
+    "seed": 49,
+    "n_rounds": 3,
+    "question_concurrency": 8,
+    "max_concurrent": 24,
+    "pin_provider": null
+  },
+  "openrouter_usage": {
+    "model_alias": "mistral-small-4",
+    "model_id": "mistralai/mistral-small-2603",
+    "budget_cap": 8.0,
+    "total_cost": 3.349965286799996,
+    "remaining": 4.650034713200004,
+    "n_calls": 7538,
+    "input_tokens": 6312014,
+    "output_tokens": 3921709,
+    "providers": {
+      "Mistral": 6017,
+      "Venice": 1521
+    },
+    "returned_models": {
+      "mistralai/mistral-small-2603": 7538
+    },
+    "log_path": "abc_exp/results/logs/openrouter_log_20260430_023537.jsonl"
+  },
+  "summary": {
+    "overall": {
+      "n": 198,
+      "initial_accuracy": 0.6060606060606061,
+      "final_accuracy": 0.6111111111111112,
+      "n_init_majority_correct": 120,
+      "n_collapses": 20,
+      "conditional_collapse_pct": 16.666666666666668,
+      "n_corrections": 21,
+      "mean_alpha": 0.5769557823129252,
+      "spearman_alpha_vs_collapse": {
+        "n": 196,
+        "rho": 0.20236893483372345,
+        "p_two_sided": 0.004447633866516875
+      },
+      "spearman_alpha_vs_final_wrong": {
+        "n": 196,
+        "rho": 0.10228383055503723,
+        "p_two_sided": 0.15370721450341088
+      }
+    },
+    "per_benchmark": {
+      "gpqa": {
+        "n": 198,
+        "initial_accuracy": 0.6060606060606061,
+        "final_accuracy": 0.6111111111111112,
+        "n_init_majority_correct": 120,
+        "n_collapses": 20,
+        "conditional_collapse_pct": 16.666666666666668,
+        "n_corrections": 21,
+        "mean_alpha": 0.5769557823129252,
+        "spearman_alpha_vs_collapse": {
+          "n": 196,
+          "rho": 0.20236893483372345,
+          "p_two_sided": 0.004447633866516875
+        },
+        "spearman_alpha_vs_final_wrong": {
+          "n": 196,
+          "rho": 0.10228383055503723,
+          "p_two_sided": 0.15370721450341088
+        }
+      }
+    }
+  }
+}

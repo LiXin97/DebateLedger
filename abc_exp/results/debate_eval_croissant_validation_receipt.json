@@ -1,0 +1,111 @@
+{
+  "status": "PASS",
+  "validator": "mlcroissant.Dataset load validation",
+  "metadata_file": "abc_exp/results/debate_eval_croissant_rai_metadata.json",
+  "top_level_metadata_file": "croissant.json",
+  "dataset_url": "https://huggingface.co/datasets/XINLI1997/DebateLedger",
+  "dataset_url_is_placeholder": false,
+  "error": null,
+  "files": [
+    {
+      "path": "README_REPRO.md",
+      "sha256": "490012234e940b5942ca086b8e31e2f78801c52953a87d3db2bad2ae7bd8709a"
+    },
+    {
+      "path": "requirements-artifact.txt",
+      "sha256": "a93bd89c724fa0d4b79f20dfb62bbf356407549157c4e98b0bcf6b970171a14d"
+    },
+    {
+      "path": "abc_exp/results/DEBATE_EVAL_ARTIFACT_DATASHEET.md",
+      "sha256": "2a7e2e4f882bcd16a4ee7134888699963c018e57f23ececc08ba705332bce4bb"
+    },
+    {
+      "path": "abc_exp/results/debate_eval_reuse_card.schema.json",
+      "sha256": "4d6c028c58cd501c8fac851b5cdb07ca58c73ee81b34b63c0ffe5a7e8ed8015f"
+    },
+    {
+      "path": "abc_exp/results/cohort_n14_headline.json",
+      "sha256": "83568df98c0bc013e55c8f45a8eed1ea95ac42a67a4588d37b89db005e07cd9d"
+    },
+    {
+      "path": "abc_exp/results/family_level_headline_aggregation.json",
+      "sha256": "11fc1b8de06a396b24b39119bb0dac1d79a1ee05cb3037ed9f63d632f467e049"
+    },
+    {
+      "path": "abc_exp/results/conditional_collapse_table.json",
+      "sha256": "2df5c2ae2f8047c2d5706fe82339229774d4614c0583351042034f07ccaa5eba"
+    },
+    {
+      "path": "abc_exp/results/reviewer_hardening_analyses.json",
+      "sha256": "5fc36d977086d7e3b2a9b2ccaf408670d8dbd520bf7ff4a7691b479bc2feac03"
+    },
+    {
+      "path": "abc_exp/results/N14_REVIEWER_HARDENING_ARTIFACTS.md",
+      "sha256": "14d5d3a1e220330b46d1572e1a808e3b09a01cd3295437e505e38c3a9b148775"
+    },
+    {
+      "path": "abc_exp/results/n14_reviewer_hardening_artifacts.json",
+      "sha256": "86f7dcd2a28e3a586ac041a3ab09e45514f45392ca10439cd81a96964a877273"
+    },
+    {
+      "path": "abc_exp/results/ROUND4_CAMERA_READY_HARDENING.md",
+      "sha256": "8f14b8dfbb908c868b8c1894688d1d16c355f40ac395019b2934359c3877c611"
+    },
+    {
+      "path": "abc_exp/results/ROUND5_API_CROSSBENCH_HARDENING.md",
+      "sha256": "cda64761dab8e7c2b056187213b784c8891c5d11619e284f9b2ee5630357c7a9"
+    },
+    {
+      "path": "abc_exp/results/round5_api_crossbench_hardening.json",
+      "sha256": "a117f6e0e01e8a5a080f9dfd13f5570da7f4893d93e1376b3cfc69c9cf6e693d"
+    },
+    {
+      "path": "abc_exp/results/PARSER_CELL_STABILITY_AUDIT.md",
+      "sha256": "5549c6e54e81772a22e74f87a2fa1364a6e9e1241b51d0cd040b7f7a59c2d2aa"
+    },
+    {
+      "path": "abc_exp/results/parser_cell_stability_audit.json",
+      "sha256": "4f05af44a6d9f76b33c1a8048f23b49d33ee9408f2d5ff9f39136a9e72e9ab56"
+    },
+    {
+      "path": "abc_exp/results/correction_preserving_policy_replay.json",
+      "sha256": "d966b0587b5eb8938ef6aff13fe97fd1f67a19215b2de13b4e3da84bf8c6f09f"
+    },
+    {
+      "path": "abc_exp/results/CORRECTION_PRESERVING_POLICY_REPLAY.md",
+      "sha256": "4085b3c32a02c3beefc8cbb87a45757766f1074bac3060a3a03fd83e12f218db"
+    },
+    {
+      "path": "abc_exp/results/block0_alpha.jsonl",
+      "sha256": "6d5ad54efe4eeb055d7d220dd31f753edceefcd220dab52f7a886adb602092a9"
+    },
+    {
+      "path": "abc_exp/results/block0_debates.jsonl",
+      "sha256": "c3c05b9b3ca388cdabc802109b6d1a166e56d10daf65a6bc8f0db64a7fa30274"
+    },
+    {
+      "path": "abc_exp/results/block1_abc_vs_baselines.jsonl",
+      "sha256": "7cba65bb6ab84ba8c870652ba99c968f4ebe138e9cdb2028214a7a85f708092c"
+    },
+    {
+      "path": "abc_exp/results/block3_multi_benchmark.jsonl",
+      "sha256": "72a7397af3a6469e64cc2412b58faca14c9dbd3366c8d3114b2d2093d82f9e5e"
+    }
+  ],
+  "rai_fields_populated": [
+    "rai:dataCollection",
+    "rai:hasSyntheticData",
+    "rai:dataCollectionType",
+    "rai:dataCollectionMissingData",
+    "rai:dataCollectionRawData",
+    "rai:dataPreprocessingProtocol",
+    "rai:dataAnnotationProtocol",
+    "rai:machineAnnotationTools",
+    "rai:dataBiases",
+    "rai:dataUseCases",
+    "rai:dataLimitations",
+    "rai:dataSocialImpact",
+    "rai:personalSensitiveInformation",
+    "rai:dataReleaseMaintenancePlan"
+  ]
+}

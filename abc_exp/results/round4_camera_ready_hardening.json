@@ -1,0 +1,346 @@
+{
+  "artifact_audit": {
+    "candidate_lomo_json_files": [],
+    "per_debate_r1_features_jsonl_bytes": 0,
+    "pilot_gated_lomo_json_present": false,
+    "strict_6525_lomo_matrix_status": "not recoverable from this checkout; only aggregate LOMO ledger and 1,255 saved-trace replay are available locally"
+  },
+  "description": "Round-4 zero-API camera-ready hardening diagnostics.",
+  "eiv_lofo_prediction": {
+    "coverage_80_clipped": {
+      "covered": 5,
+      "total": 7
+    },
+    "coverage_95_clipped": {
+      "covered": 7,
+      "total": 7
+    },
+    "description": "Jeffreys conditional-collapse uncertainty propagated through the six-family LoFO linear predictive fit; alpha is fixed at the measured family mean. Intervals are posterior predictive Monte Carlo quantiles, clipped to [0,100] for displayed coverage.",
+    "n_draws_per_fold": 20000,
+    "rows": [
+      {
+        "alpha_tot": 0.4504,
+        "covered_80_clipped": true,
+        "covered_95_clipped": true,
+        "eiv_pi80_pct": [
+          -1.7095440354289955,
+          15.882643952164658
+        ],
+        "eiv_pi80_pct_clipped": [
+          0.0,
+          15.882643952164658
+        ],
+        "eiv_pi95_pct": [
+          -8.947466092990878,
+          23.25019890958195
+        ],
+        "eiv_pi95_pct_clipped": [
+          0.0,
+          23.25019890958195
+        ],
+        "heldout_family": "Anthropic",
+        "observed_c_cond_pct": 2.1505
+      },
+      {
+        "alpha_tot": 0.1129,
+        "covered_80_clipped": true,
+        "covered_95_clipped": true,
+        "eiv_pi80_pct": [
+          -15.82843554841156,
+          8.321084529887175
+        ],
+        "eiv_pi80_pct_clipped": [
+          0.0,
+          8.321084529887175
+        ],
+        "eiv_pi95_pct": [
+          -25.428448397701622,
+          17.623454989700274
+        ],
+        "eiv_pi95_pct_clipped": [
+          0.0,
+          17.623454989700274
+        ],
+        "heldout_family": "DeepSeek",
+        "observed_c_cond_pct": 0.0
+      },
+      {
+        "alpha_tot": 0.2875,
+        "covered_80_clipped": true,
+        "covered_95_clipped": true,
+        "eiv_pi80_pct": [
+          -7.012636667814501,
+          12.597188554572094
+        ],
+        "eiv_pi80_pct_clipped": [
+          0.0,
+          12.597188554572094
+        ],
+        "eiv_pi95_pct": [
+          -14.686704742255241,
+          21.01259858907921
+        ],
+        "eiv_pi95_pct_clipped": [
+          0.0,
+          21.01259858907921
+        ],
+        "heldout_family": "Google",
+        "observed_c_cond_pct": 0.2941
+      },
+      {
+        "alpha_tot": 0.7737,
+        "covered_80_clipped": false,
+        "covered_95_clipped": true,
+        "eiv_pi80_pct": [
+          10.177775027202252,
+          28.38520503679736
+        ],
+        "eiv_pi80_pct_clipped": [
+          10.177775027202252,
+          28.38520503679736
+        ],
+        "eiv_pi95_pct": [
+          2.313540507758261,
+          35.94910566267428
+        ],
+        "eiv_pi95_pct_clipped": [
+          2.313540507758261,
+          35.94910566267428
+        ],
+        "heldout_family": "Meta",
+        "observed_c_cond_pct": 8.4646
+      },
+      {
+        "alpha_tot": 0.34614999999999996,
+        "covered_80_clipped": true,
+        "covered_95_clipped": true,
+        "eiv_pi80_pct": [
+          -5.284152702020596,
+          13.890204754006128
+        ],
+        "eiv_pi80_pct_clipped": [
+          0.0,
+          13.890204754006128
+        ],
+        "eiv_pi95_pct": [
+          -13.066530993012577,
+          21.77094719988952
+        ],
+        "eiv_pi95_pct_clipped": [
+          0.0,
+          21.77094719988952
+        ],
+        "heldout_family": "OpenAI",
+        "observed_c_cond_pct": 1.52265
+      },
+      {
+        "alpha_tot": 0.4686,
+        "covered_80_clipped": true,
+        "covered_95_clipped": true,
+        "eiv_pi80_pct": [
+          -2.7388538592414844,
+          15.013937550621225
+        ],
+        "eiv_pi80_pct_clipped": [
+          0.0,
+          15.013937550621225
+        ],
+        "eiv_pi95_pct": [
+          -10.24639990582653,
+          22.598710658519547
+        ],
+        "eiv_pi95_pct_clipped": [
+          0.0,
+          22.598710658519547
+        ],
+        "heldout_family": "Phi",
+        "observed_c_cond_pct": 10.2377
+      },
+      {
+        "alpha_tot": 0.6987333333333333,
+        "covered_80_clipped": false,
+        "covered_95_clipped": true,
+        "eiv_pi80_pct": [
+          2.2201422893544134,
+          14.601230227143812
+        ],
+        "eiv_pi80_pct_clipped": [
+          2.2201422893544134,
+          14.601230227143812
+        ],
+        "eiv_pi95_pct": [
+          -2.894418209240453,
+          19.756658579219724
+        ],
+        "eiv_pi95_pct_clipped": [
+          0.0,
+          19.756658579219724
+        ],
+        "heldout_family": "Qwen",
+        "observed_c_cond_pct": 19.749864675963394
+      }
+    ],
+    "seed": 20260430
+  },
+  "inputs": {
+    "model_rows": "abc_exp/results/reviewer_hardening_analyses.json:per_model",
+    "r5_panels_pattern": "abc_exp/results/r5_gemini_alpha_panel_202604*_day*.json"
+  },
+  "leverage_sensitivity": {
+    "description": "Leverage sensitivity requested by fresh reviewers; all rows are sensitivity diagnostics, not new primary tests.",
+    "family_model_counts": {
+      "Anthropic": 1,
+      "DeepSeek": 1,
+      "Google": 2,
+      "Meta": 1,
+      "OpenAI": 2,
+      "Phi": 1,
+      "Qwen": 6
+    },
+    "model_row_effective_family_n_inverse_simpson": 4.083333333333334,
+    "rows": [
+      {
+        "dropped_families": [
+          "Meta"
+        ],
+        "kept_families": [
+          "Anthropic",
+          "DeepSeek",
+          "Google",
+          "OpenAI",
+          "Phi",
+          "Qwen"
+        ],
+        "name": "drop_meta",
+        "spearman_exact": {
+          "n": 6,
+          "n_permutations": 720,
+          "one_sided_ge_count": 1,
+          "p_one_sided": 0.001388888888888889,
+          "p_two_sided": 0.002777777777777778,
+          "rho": 1.0,
+          "two_sided_abs_count": 2
+        }
+      },
+      {
+        "dropped_families": [
+          "Qwen"
+        ],
+        "kept_families": [
+          "Anthropic",
+          "DeepSeek",
+          "Google",
+          "Meta",
+          "OpenAI",
+          "Phi"
+        ],
+        "name": "drop_qwen",
+        "spearman_exact": {
+          "n": 6,
+          "n_permutations": 720,
+          "one_sided_ge_count": 6,
+          "p_one_sided": 0.008333333333333333,
+          "p_two_sided": 0.016666666666666666,
+          "rho": 0.942857142857143,
+          "two_sided_abs_count": 12
+        }
+      },
+      {
+        "dropped_families": [
+          "Meta",
+          "Qwen"
+        ],
+        "kept_families": [
+          "Anthropic",
+          "DeepSeek",
+          "Google",
+          "OpenAI",
+          "Phi"
+        ],
+        "name": "drop_meta_qwen",
+        "spearman_exact": {
+          "n": 5,
+          "n_permutations": 120,
+          "one_sided_ge_count": 1,
+          "p_one_sided": 0.008333333333333333,
+          "p_two_sided": 0.016666666666666666,
+          "rho": 0.9999999999999999,
+          "two_sided_abs_count": 2
+        }
+      }
+    ]
+  },
+  "r5_panel_comparison": {
+    "description": "Closed-API same-prompt R5 panels found in the checkout. This is a drift audit only and is not an input to the headline association.",
+    "pairwise": [
+      {
+        "alpha_mean_spearman": 0.9999999999999999,
+        "alpha_mean_spearman_p_two_sided": 2.4335320021951557e-142,
+        "alpha_pair_count": 20,
+        "initial_answer_majority_changes": 0,
+        "max_abs_alpha_mean_delta": 0.0,
+        "mean_abs_alpha_mean_delta": 0.0,
+        "panel_a": "r5_gemini_alpha_panel_20260427_day1",
+        "panel_b": "r5_gemini_alpha_panel_20260428_day2",
+        "shared_questions": 20
+      },
+      {
+        "alpha_mean_spearman": 0.9999999999999999,
+        "alpha_mean_spearman_p_two_sided": 2.4335320021951557e-142,
+        "alpha_pair_count": 20,
+        "initial_answer_majority_changes": 0,
+        "max_abs_alpha_mean_delta": 0.0,
+        "mean_abs_alpha_mean_delta": 0.0,
+        "panel_a": "r5_gemini_alpha_panel_20260427_day1",
+        "panel_b": "r5_gemini_alpha_panel_20260430_day3",
+        "shared_questions": 20
+      },
+      {
+        "alpha_mean_spearman": 0.9999999999999999,
+        "alpha_mean_spearman_p_two_sided": 2.4335320021951557e-142,
+        "alpha_pair_count": 20,
+        "initial_answer_majority_changes": 0,
+        "max_abs_alpha_mean_delta": 0.0,
+        "mean_abs_alpha_mean_delta": 0.0,
+        "panel_a": "r5_gemini_alpha_panel_20260428_day2",
+        "panel_b": "r5_gemini_alpha_panel_20260430_day3",
+        "shared_questions": 20
+      }
+    ],
+    "panels": [
+      {
+        "max_alpha_range_within_question": 0.0,
+        "mean_alpha_range_within_question": 0.0,
+        "n_questions": 20,
+        "n_records": 60,
+        "name": "r5_gemini_alpha_panel_20260427_day1",
+        "path": "abc_exp/results/r5_gemini_alpha_panel_20260427_day1.json",
+        "probe_post_answer_none_rate": 0.04375,
+        "questions_with_initial_answer_instability": 0,
+        "total_cost": 0.35196225
+      },
+      {
+        "max_alpha_range_within_question": 0.0,
+        "mean_alpha_range_within_question": 0.0,
+        "n_questions": 20,
+        "n_records": 60,
+        "name": "r5_gemini_alpha_panel_20260428_day2",
+        "path": "abc_exp/results/r5_gemini_alpha_panel_20260428_day2.json",
+        "probe_post_answer_none_rate": 0.04375,
+        "questions_with_initial_answer_instability": 0,
+        "total_cost": 0.35196225
+      },
+      {
+        "max_alpha_range_within_question": 0.0,
+        "mean_alpha_range_within_question": 0.0,
+        "n_questions": 20,
+        "n_records": 60,
+        "name": "r5_gemini_alpha_panel_20260430_day3",
+        "path": "abc_exp/results/r5_gemini_alpha_panel_20260430_day3.json",
+        "probe_post_answer_none_rate": 0.04375,
+        "questions_with_initial_answer_instability": 0,
+        "total_cost": 0.35196225
+      }
+    ]
+  }
+}

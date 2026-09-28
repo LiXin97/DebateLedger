@@ -1,0 +1,130 @@
+{
+  "pilot_pre_reg_sha": "204193c",
+  "pre_reg_sha_a4": "73cec9d",
+  "pre_reg_sha_a6": "256ad21",
+  "probe_ladder_sha256": "eef635b0130e0c13f0c25bfb64eded44e08317996939cd8b36bc34974f876228",
+  "pool_sha256": "05d3f5b98e3b375f9ad10398bf4f0f14b2cd0bdbef575e447927148c47c41fef",
+  "models": [
+    "Qwen/Qwen3.5-4B",
+    "Qwen/Qwen3.5-9B",
+    "Qwen/Qwen3.6-27B-FP8"
+  ],
+  "pool": "abc_exp/results/high_fr_question_ids.json[:50]",
+  "decoding": {
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "max_tokens": 64
+  },
+  "per_model": [
+    {
+      "model": "Qwen/Qwen3.5-4B",
+      "p_k": [
+        0.02,
+        0.06,
+        0.0,
+        0.08,
+        0.06,
+        0.16,
+        0.08,
+        0.1,
+        0.22
+      ],
+      "n_per_k": [
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50
+      ],
+      "spearman_rho_k_p": 0.8403658068160179,
+      "spearman_exact_perm_p": 0.003036816578483245,
+      "max_inversion_drop": 0.08,
+      "f3_floor": 0.2,
+      "f3_floor_mcnemar_p_one_sided": 0.003173828125,
+      "f3_floor_discordant_b_c": [
+        11,
+        1
+      ]
+    },
+    {
+      "model": "Qwen/Qwen3.5-9B",
+      "p_k": [
+        0.04,
+        0.06,
+        0.08,
+        0.02,
+        0.02,
+        0.04,
+        0.04,
+        0.06,
+        0.02
+      ],
+      "n_per_k": [
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50
+      ],
+      "spearman_rho_k_p": -0.2945959721156873,
+      "spearman_exact_perm_p": 0.7816881613756613,
+      "max_inversion_drop": 0.06,
+      "f3_floor": -0.02,
+      "f3_floor_mcnemar_p_one_sided": 1.0,
+      "f3_floor_discordant_b_c": [
+        0,
+        1
+      ]
+    },
+    {
+      "model": "Qwen/Qwen3.6-27B-FP8",
+      "p_k": [
+        0.0,
+        0.08,
+        0.06,
+        0.08,
+        0.02,
+        0.02,
+        0.04,
+        0.04,
+        0.1
+      ],
+      "n_per_k": [
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50
+      ],
+      "spearman_rho_k_p": 0.2531848417709166,
+      "spearman_exact_perm_p": 0.2466655643738977,
+      "max_inversion_drop": 0.06,
+      "f3_floor": 0.1,
+      "f3_floor_mcnemar_p_one_sided": 0.03125,
+      "f3_floor_discordant_b_c": [
+        5,
+        0
+      ]
+    }
+  ],
+  "median_rho": 0.2531848417709166,
+  "page_L": 723.0,
+  "page_L_p_one_sided": 0.09570921261880366,
+  "page_L_p_one_sided_mc": null,
+  "decision": "fail",
+  "f3_usable": true,
+  "wall_clock_s": 230.9678440093994,
+  "dry_run": false
+}

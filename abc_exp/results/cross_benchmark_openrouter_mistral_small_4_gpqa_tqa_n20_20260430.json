@@ -1,0 +1,101 @@
+{
+  "config": {
+    "backend": "openrouter",
+    "model": "mistral-small-4",
+    "model_id": "mistralai/mistral-small-2603",
+    "benchmarks": [
+      "gpqa",
+      "truthfulqa"
+    ],
+    "n_questions": 20,
+    "seed": 48,
+    "n_rounds": 3,
+    "question_concurrency": 4,
+    "max_concurrent": 12,
+    "pin_provider": null
+  },
+  "openrouter_usage": {
+    "model_alias": "mistral-small-4",
+    "model_id": "mistralai/mistral-small-2603",
+    "budget_cap": 3.0,
+    "total_cost": 0.4736353891500003,
+    "remaining": 2.5263646108499995,
+    "n_calls": 1528,
+    "input_tokens": 980247,
+    "output_tokens": 561651,
+    "providers": {
+      "Mistral": 1343,
+      "Venice": 184,
+      "unknown": 1
+    },
+    "returned_models": {
+      "mistralai/mistral-small-2603": 1528
+    },
+    "log_path": "abc_exp/results/logs/openrouter_log_20260430_022050.jsonl"
+  },
+  "summary": {
+    "overall": {
+      "n": 40,
+      "initial_accuracy": 0.6,
+      "final_accuracy": 0.725,
+      "n_init_majority_correct": 24,
+      "n_collapses": 1,
+      "conditional_collapse_pct": 4.166666666666667,
+      "n_corrections": 6,
+      "mean_alpha": 0.621875,
+      "spearman_alpha_vs_collapse": {
+        "n": 40,
+        "rho": -0.24391546888671178,
+        "p_two_sided": 0.12932918620484177
+      },
+      "spearman_alpha_vs_final_wrong": {
+        "n": 40,
+        "rho": -0.04873469551579594,
+        "p_two_sided": 0.7652231864703299
+      }
+    },
+    "per_benchmark": {
+      "gpqa": {
+        "n": 20,
+        "initial_accuracy": 0.4,
+        "final_accuracy": 0.6,
+        "n_init_majority_correct": 8,
+        "n_collapses": 1,
+        "conditional_collapse_pct": 12.5,
+        "n_corrections": 5,
+        "mean_alpha": 0.5479166666666667,
+        "spearman_alpha_vs_collapse": {
+          "n": 20,
+          "rho": -0.299976002879616,
+          "p_two_sided": 0.19879539338825278
+        },
+        "spearman_alpha_vs_final_wrong": {
+          "n": 20,
+          "rho": -0.13345280235321794,
+          "p_two_sided": 0.574859397072254
+        }
+      },
+      "truthfulqa": {
+        "n": 20,
+        "initial_accuracy": 0.8,
+        "final_accuracy": 0.85,
+        "n_init_majority_correct": 16,
+        "n_collapses": 0,
+        "conditional_collapse_pct": 0.0,
+        "n_corrections": 1,
+        "mean_alpha": 0.6958333333333333,
+        "spearman_alpha_vs_collapse": {
+          "n": 20,
+          "rho": null,
+          "p_two_sided": null,
+          "note": "insufficient variation"
+        },
+        "spearman_alpha_vs_final_wrong": {
+          "n": 20,
+          "rho": 0.2816040366955708,
+          "p_two_sided": 0.2290490554259371
+        }
+      }
+    }
+  }
+}

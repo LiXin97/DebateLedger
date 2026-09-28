@@ -1,0 +1,94 @@
+{
+  "n_debates": 3458,
+  "n_collapsed": 253,
+  "n_models": 6,
+  "n_questions": 1569,
+  "seed": 20260424,
+  "priors": {
+    "fixed_effects": "Normal(0, 1)",
+    "intercept": "Normal(0, 2)",
+    "sd_components": "HalfNormal(0, 2)"
+  },
+  "coefficients": {
+    "intercept": {
+      "mean": -4.703,
+      "hdi_2_5": -5.822,
+      "hdi_97_5": -3.635,
+      "rhat": 1.0,
+      "ess_bulk": 1850.0
+    },
+    "b_R1_majchange": {
+      "mean": 0.896,
+      "hdi_2_5": 0.684,
+      "hdi_97_5": 1.112,
+      "rhat": 1.0,
+      "ess_bulk": 1676.0
+    },
+    "b_R1_flips": {
+      "mean": 0.465,
+      "hdi_2_5": 0.271,
+      "hdi_97_5": 0.666,
+      "rhat": 1.0,
+      "ess_bulk": 7818.0
+    },
+    "b_R1_unanimous": {
+      "mean": -0.989,
+      "hdi_2_5": -1.222,
+      "hdi_97_5": -0.754,
+      "rhat": 1.0,
+      "ess_bulk": 2449.0
+    },
+    "b_alpha": {
+      "mean": 0.216,
+      "hdi_2_5": -0.396,
+      "hdi_97_5": 0.972,
+      "rhat": 1.0,
+      "ess_bulk": 6451.0
+    },
+    "sigma_model": {
+      "mean": 0.647,
+      "hdi_2_5": 0.001,
+      "hdi_97_5": 1.636,
+      "rhat": 1.0,
+      "ess_bulk": 3077.0
+    },
+    "sigma_question": {
+      "mean": 1.56,
+      "hdi_2_5": 0.889,
+      "hdi_97_5": 2.243,
+      "rhat": 1.0,
+      "ess_bulk": 1013.0
+    }
+  },
+  "icc": {
+    "model_median": 0.0462469238553274,
+    "model_hdi_2_5": 0.00031515639053341656,
+    "model_hdi_97_5": 0.400827687842409,
+    "question_median": 0.38810998889682397,
+    "question_hdi_2_5": 0.16011262367040843,
+    "question_hdi_97_5": 0.5782284006457649
+  },
+  "per_model_random_intercept_post_mean": {
+    "GPT-5.4-mini": -0.20256532648869213,
+    "Gemini 3-flash": -0.3008179063978486,
+    "Llama-3.1-8B": -0.2391908721477164,
+    "Phi-4-mini": 0.41409304728702484,
+    "Qwen3-4B": -0.17698730995159184,
+    "Qwen3-8B": -0.27442085563107316
+  },
+  "ppc": {
+    "observed_collapse_rate": 0.07316367842683633,
+    "replicate_mean": 0.0734406087333719,
+    "replicate_q025": 0.0653556969346443,
+    "replicate_q975": 0.08183921341816079,
+    "ppc_p_one_sided": 0.53325
+  },
+  "models": [
+    "GPT-5.4-mini",
+    "Gemini 3-flash",
+    "Llama-3.1-8B",
+    "Phi-4-mini",
+    "Qwen3-4B",
+    "Qwen3-8B"
+  ]
+}

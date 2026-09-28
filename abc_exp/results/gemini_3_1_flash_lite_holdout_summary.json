@@ -1,0 +1,107 @@
+{
+  "model": "models/gemini-3.1-flash-lite-preview",
+  "alpha": {
+    "n_rows": 1800,
+    "n_questions": 200,
+    "condition_counts": {
+      "default": 600,
+      "anti_argument": 600,
+      "anti_social": 600
+    },
+    "alpha_tot": 0.3017361111111111,
+    "alpha_by_condition": {
+      "anti_argument": 0.32416666666666666,
+      "anti_social": 0.27458333333333335,
+      "default": 0.30645833333333333
+    },
+    "question_alpha_mean": 0.3017361111111111,
+    "total_cost": 12.177710250000017
+  },
+  "debate": {
+    "n_debates": 200,
+    "init_majority_correct": 164,
+    "final_majority_correct": 169,
+    "initial_accuracy_pct": 82.0,
+    "final_accuracy_pct": 84.5,
+    "majority_collapses": 0,
+    "majority_corrections": 5,
+    "conditional_collapse_pct": 0.0,
+    "conditional_correction_pct": 13.88888888888889,
+    "majority_flip_rate_pct": 4.5,
+    "agent_level_collapse_events": 2,
+    "agent_level_correction_events": 7,
+    "total_cost": 3.183891749999998
+  },
+  "cross_benchmark_summary": {
+    "overall": {
+      "n": 100,
+      "initial_accuracy": 0.73,
+      "final_accuracy": 0.75,
+      "n_init_majority_correct": 73,
+      "n_collapses": 1,
+      "conditional_collapse_pct": 1.36986301369863,
+      "n_corrections": 3,
+      "mean_alpha": 0.4725,
+      "spearman_alpha_vs_collapse": {
+        "n": 100,
+        "rho": 0.029712319275601688,
+        "p_two_sided": 0.7691763682574289
+      },
+      "spearman_alpha_vs_final_wrong": {
+        "n": 100,
+        "rho": 0.026104654504520385,
+        "p_two_sided": 0.7965547257989941
+      }
+    },
+    "per_benchmark": {
+      "gpqa": {
+        "n": 50,
+        "initial_accuracy": 0.62,
+        "final_accuracy": 0.66,
+        "n_init_majority_correct": 31,
+        "n_collapses": 1,
+        "conditional_collapse_pct": 3.225806451612903,
+        "n_corrections": 3,
+        "mean_alpha": 0.5741666666666666,
+        "spearman_alpha_vs_collapse": {
+          "n": 50,
+          "rho": -0.019882542875406316,
+          "p_two_sided": 0.890992589966221
+        },
+        "spearman_alpha_vs_final_wrong": {
+          "n": 50,
+          "rho": -0.2732382467092093,
+          "p_two_sided": 0.05486685678427678
+        }
+      },
+      "truthfulqa": {
+        "n": 50,
+        "initial_accuracy": 0.84,
+        "final_accuracy": 0.84,
+        "n_init_majority_correct": 42,
+        "n_collapses": 0,
+        "conditional_collapse_pct": 0.0,
+        "n_corrections": 0,
+        "mean_alpha": 0.37083333333333335,
+        "spearman_alpha_vs_collapse": {
+          "n": 50,
+          "rho": null,
+          "p_two_sided": null,
+          "note": "insufficient variation"
+        },
+        "spearman_alpha_vs_final_wrong": {
+          "n": 50,
+          "rho": 0.22724255813139282,
+          "p_two_sided": 0.11250202202651474
+        }
+      }
+    }
+  },
+  "actual_costs_usd": {
+    "alpha": 12.177710250000017,
+    "debate": 3.183891749999998,
+    "cross_benchmark_n50_each": 2.6323,
+    "alpha_plus_debate": 15.361602000000016
+  },
+  "interpretation": "This is a latest-Gemini Google-family holdout. It is strong as a boundary-condition / floor-collapse result, not as a new-family independent replication of the cross-model alpha-Ccond trend."
+}

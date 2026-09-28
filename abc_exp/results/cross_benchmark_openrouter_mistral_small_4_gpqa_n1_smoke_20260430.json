@@ -1,0 +1,82 @@
+{
+  "config": {
+    "backend": "openrouter",
+    "model": "mistral-small-4",
+    "model_id": "mistralai/mistral-small-2603",
+    "benchmarks": [
+      "gpqa"
+    ],
+    "n_questions": 1,
+    "seed": 47,
+    "n_rounds": 3,
+    "question_concurrency": 1,
+    "max_concurrent": 4,
+    "pin_provider": null
+  },
+  "openrouter_usage": {
+    "model_alias": "mistral-small-4",
+    "model_id": "mistralai/mistral-small-2603",
+    "budget_cap": 1.0,
+    "total_cost": 0.011969263349999999,
+    "remaining": 0.98803073665,
+    "n_calls": 39,
+    "input_tokens": 18447,
+    "output_tokens": 14015,
+    "providers": {
+      "Mistral": 24,
+      "Venice": 15
+    },
+    "returned_models": {
+      "mistralai/mistral-small-2603": 39
+    },
+    "log_path": "abc_exp/results/logs/openrouter_log_20260430_021923.jsonl"
+  },
+  "summary": {
+    "overall": {
+      "n": 1,
+      "initial_accuracy": 1.0,
+      "final_accuracy": 1.0,
+      "n_init_majority_correct": 1,
+      "n_collapses": 0,
+      "conditional_collapse_pct": 0.0,
+      "n_corrections": 0,
+      "mean_alpha": 0.9166666666666666,
+      "spearman_alpha_vs_collapse": {
+        "n": 1,
+        "rho": null,
+        "p_two_sided": null,
+        "note": "insufficient variation"
+      },
+      "spearman_alpha_vs_final_wrong": {
+        "n": 1,
+        "rho": null,
+        "p_two_sided": null,
+        "note": "insufficient variation"
+      }
+    },
+    "per_benchmark": {
+      "gpqa": {
+        "n": 1,
+        "initial_accuracy": 1.0,
+        "final_accuracy": 1.0,
+        "n_init_majority_correct": 1,
+        "n_collapses": 0,
+        "conditional_collapse_pct": 0.0,
+        "n_corrections": 0,
+        "mean_alpha": 0.9166666666666666,
+        "spearman_alpha_vs_collapse": {
+          "n": 1,
+          "rho": null,
+          "p_two_sided": null,
+          "note": "insufficient variation"
+        },
+        "spearman_alpha_vs_final_wrong": {
+          "n": 1,
+          "rho": null,
+          "p_two_sided": null,
+          "note": "insufficient variation"
+        }
+      }
+    }
+  }
+}
