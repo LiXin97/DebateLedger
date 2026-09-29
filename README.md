@@ -4,7 +4,7 @@
 
 Xin Li\*, Mengbing Liu\*, Chau Yuen · Nanyang Technological University · \*Equal contribution
 
-[Project page](https://lixin.ai/DebateLedger/) · [OpenReview](https://openreview.net/forum?id=E8FfL8c7XE) · [Dataset (Hugging Face)](https://huggingface.co/datasets/XINLI1997/DebateLedger) · [Gated dataset (Hugging Face)](https://huggingface.co/datasets/XINLI1997/DebateLedger-gated)
+[Project page](https://lixin.ai/DebateLedger/) · [arXiv](https://arxiv.org/abs/2609.35279) · [OpenReview](https://openreview.net/forum?id=E8FfL8c7XE) · [Dataset (Hugging Face)](https://huggingface.co/datasets/XINLI1997/DebateLedger) · [Gated dataset (Hugging Face)](https://huggingface.co/datasets/XINLI1997/DebateLedger-gated)
 
 DebateLedger evaluates multi-agent LLM debate by the transitions it causes rather
 than by final accuracy alone. Three copies of one model answer a multiple-choice
