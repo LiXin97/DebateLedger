@@ -591,10 +591,9 @@ dialog.zoom::backdrop { background: color-mix(in srgb, var(--stage) 78%, transpa
           <p class="authors"><strong><a href="https://lixin.ai">Xin Li</a>*</strong>, <strong>Mengbing Liu*</strong>, <strong>Chau Yuen</strong><span class="aff">Nanyang Technological University · *Equal contribution</span></p>
         </div>
         <div class="links rise" id="links" style="--d: 240ms">
-          <span class="btn is-soon" aria-disabled="true">Paper <span class="soon">coming soon</span></span>
-          <span class="btn is-soon" aria-disabled="true">OpenReview <span class="soon">coming soon</span></span>
-          <span class="btn is-soon" aria-disabled="true">Code <span class="soon">coming soon</span></span>
-          <span class="btn is-soon" aria-disabled="true">Data <span class="soon">coming soon</span></span>
+          <a class="btn" href="https://arxiv.org/abs/2609.35279" target="_blank" rel="noopener noreferrer">Paper</a>
+          <a class="btn" href="https://github.com/LiXin97/DebateLedger" target="_blank" rel="noopener noreferrer">Code</a>
+          <a class="btn" href="https://huggingface.co/datasets/XINLI1997/DebateLedger" target="_blank" rel="noopener noreferrer">Data</a>
         </div>
       </div>
     </section>
@@ -979,10 +978,9 @@ year={2026}
 </div>
 
 <script>
-// Fill these when the pages exist.
+// Header buttons; an empty URL renders as "coming soon".
 const LINKS = [
-  ["Paper", ""],        // arXiv
-  ["OpenReview", "https://openreview.net/forum?id=E8FfL8c7XE"],
+  ["Paper", "https://arxiv.org/abs/2609.35279"],
   ["Code", "https://github.com/LiXin97/DebateLedger"],
   ["Data", "https://huggingface.co/datasets/XINLI1997/DebateLedger"],
 ];
@@ -1004,7 +1002,6 @@ const LINKS = [
   /* ---------- Links ---------- */
   const ICON = {
     Paper: '<path d="M7 3h7l4 4v14H7z M14 3v4h4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>',
-    OpenReview: '<path d="M4 5h16v11H9l-5 4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>',
     Code: '<path d="M9 7l-5 5 5 5M15 7l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>',
     Data: '<ellipse cx="12" cy="6" rx="7" ry="2.6" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M5 6v12c0 1.4 3.1 2.6 7 2.6s7-1.2 7-2.6V6M5 12c0 1.4 3.1 2.6 7 2.6s7-1.2 7-2.6" fill="none" stroke="currentColor" stroke-width="1.8"/>'
   };
