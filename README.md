@@ -1,87 +1,48 @@
+<div align="center">
+
 # DebateLedger
 
-**Measuring Collapse and Correction in Homogeneous-Panel LLM Debate** · NeurIPS 2026, Evaluations and Datasets Track
+### Measuring Collapse and Correction in Homogeneous-Panel LLM Debate
 
-Xin Li\*, Mengbing Liu\*, Chau Yuen · Nanyang Technological University · \*Equal contribution
+*NeurIPS 2026, Evaluations and Datasets Track*
 
-[Project page](https://lixin.ai/DebateLedger/) · [arXiv](https://arxiv.org/abs/2609.35279) · [OpenReview](https://openreview.net/forum?id=E8FfL8c7XE) · [Dataset (Hugging Face)](https://huggingface.co/datasets/XINLI1997/DebateLedger) · [Gated dataset (Hugging Face)](https://huggingface.co/datasets/XINLI1997/DebateLedger-gated)
+Xin Li\*, Mengbing Liu\*, Chau Yuen<br>
+Nanyang Technological University · \*Equal contribution
 
-DebateLedger evaluates multi-agent LLM debate by the transitions it causes rather
-than by final accuracy alone. Three copies of one model answer a multiple-choice
-question and debate for three rounds. Each run is recorded as a transition
-ledger that crosses initial-majority with final-majority correctness
-(preserved, collapse, correction, unrepaired), together with the onset round at
-which a correct majority first breaks. An intervention is scored on the same
-saved debates by the collapses it prevents and the corrections it loses. On
-6,925 MMLU-Pro debates the ledger records 253 collapses. A leave-one-model-out
-probe-gated freeze prevents 29 of 251 collapses but loses 108 of 804
-corrections on 6,525 held-out debates, a net of −1.21 accuracy points under
-equal weights. A pre-debate 8-probe screen ranks model families for trace
-logging (G = 7, Spearman ρ = 0.893); initial-majority accuracy is a close
-comparator (ρ = 0.821), so the screen is a triage signal, not a calibrated
-predictor.
+[![arXiv](https://img.shields.io/badge/arXiv-2609.35279-b31b1b?logo=arxiv)](https://arxiv.org/abs/2609.35279)
+[![OpenReview](https://img.shields.io/badge/OpenReview-NeurIPS%202026-8c1b13)](https://openreview.net/forum?id=E8FfL8c7XE)
+[![Project page](https://img.shields.io/badge/Project-page-059669)](https://lixin.ai/DebateLedger/)
+[![Data](https://img.shields.io/badge/%F0%9F%A4%97%20Data-DebateLedger-ffcc4d)](https://huggingface.co/datasets/XINLI1997/DebateLedger)
+[![Code license](https://img.shields.io/badge/code-MIT-blue)](LICENSE)
+[![Data license](https://img.shields.io/badge/data-per%20tier-lightgrey)](#license)
 
-## Data release (alpha-tot-v1.0)
+**DebateLedger evaluates multi-agent LLM debate by the transitions it causes rather than by final accuracy alone.**
 
-The traces are distributed on Hugging Face in two tiers. Download the open tier
-into the root of this repository; the files land in `abc_exp/results/`, where
-the scripts expect them.
+</div>
 
-```bash
-pip install -U huggingface_hub
-hf download XINLI1997/DebateLedger --repo-type dataset --local-dir .
-```
+## News
 
-### Open tier ([XINLI1997/DebateLedger](https://huggingface.co/datasets/XINLI1997/DebateLedger), CC BY 4.0)
+- **2026-09-28** The paper is on arXiv: [2609.35279](https://arxiv.org/abs/2609.35279). The data release alpha-tot-v1.0
+  and the code are public.
 
-Every trace with the model-generated text fields set to `null`. Parsed answers,
-correctness labels, round structure, token counts and costs are kept.
+## The idea in 30 seconds
 
-| Files (`abc_exp/results/`) | Content | Records |
-|---|---|---:|
-| `debate_traces_{gemini_3-flash, openai_gpt-5.4-mini, vllm_llama-3.1-8b, vllm_phi-4-mini, vllm_qwen3-4b, vllm_qwen3-8b}.jsonl` | Primary MMLU-Pro debate cohort (six models), per-round answers | 6,925 debates |
-| `per_debate_r1_features.jsonl` | Round-1 feature matrix derived from the primary cohort | 6,925 debates |
-| other `debate_traces_*.jsonl` (50 files) | Extension and response-period debates: further models, reasoning-mode and private-revision checks, mixed-model panels, GSM8K | 7,636 debates |
-| `sa_causal_*.jsonl` (44 files) | 8-probe screen: one record per model, question and agent with the initial answer and the eight probe replies | 35,664 records |
-| `cross_benchmark_*.jsonl` (16 files) | GPQA, TruthfulQA and ARC-Challenge stress checks | 1,033 debates |
-| `block0_*`, `block1_*`, `block3_*` | Early pilot blocks | 1,705 records |
-| `r5_gemini_alpha_panel_*.jsonl` | Three-day closed-API repeatability panel | 190 records |
+- **Score transitions, not only final accuracy.** Three copies of one model answer a multiple-choice question and
+  debate for three rounds. Each run is recorded as a transition ledger that crosses initial-majority with
+  final-majority correctness (preserved, collapse, correction, unrepaired), together with the onset round at which a
+  correct majority first breaks.
+- **Score interventions on the same debates.** An intervention is scored on the same saved debates by the collapses it
+  prevents and the corrections it loses.
+- **Result.** On 6,925 MMLU-Pro debates the ledger records 253 collapses. A leave-one-model-out probe-gated freeze
+  prevents 29 of 251 collapses but loses 108 of 804 corrections on 6,525 held-out debates, a net of −1.21 accuracy
+  points under equal weights.
+- **A pre-debate screen.** A pre-debate 8-probe screen ranks model families for trace logging (G = 7, Spearman ρ =
+  0.893); initial-majority accuracy is a close comparator (ρ = 0.821), so the screen is a triage signal, not a
+  calibrated predictor.
 
-Aggregate tables and audits (`*.json`, `*.md`, `*.csv`) are also in this
-repository. `croissant.json` carries Croissant and Responsible AI metadata with
-SHA-256 digests of the core files; `abc_exp/results/DEBATE_EVAL_ARTIFACT_DATASHEET.md`
-is the datasheet.
+## Quick start
 
-### Gated tier ([XINLI1997/DebateLedger-gated](https://huggingface.co/datasets/XINLI1997/DebateLedger-gated), research-use license)
-
-The full-text versions of the 57 trace files that contain model text (agent
-responses in debate rounds and probe response prefixes), and the very-strong
-(convince-wrong) probe template and social-pressure suffix. These can be reused
-as a misleading-answer corpus, so access is reviewed on request. In this
-repository the two templates are replaced by a placeholder in
-`abc_exp/config/prompts.py`, `abc_exp/scripts/run_alpha_probe_openrouter.py` and
-`abc_exp/scripts/run_alpha_probe_vllm.py`; downloading the gated tier into the
-repository root restores the full files.
-
-No model weights are released.
-
-### Reproducibility boundary
-
-- The paper's tables are rebuilt from the open tier without API calls (commands
-  below). A rerun differs from the checked-in outputs in three documented
-  places: the final-answer-tag counts in `n14_reviewer_hardening_artifacts.py`
-  and `parser_cell_stability_audit.py` re-read model text and need the gated
-  tier; `n14_reviewer_hardening_artifacts.py` inventories every probe trace, and
-  traces added after the submission extend that inventory; and
-  `round4_camera_ready_hardening.py` records the size of
-  `per_debate_r1_features.jsonl`, which was an empty placeholder at submission.
-- The primary debate cohort was recorded with per-round answers only. No model
-  text exists for it in either tier.
-- Closed-API rows cannot be regenerated bit for bit, because providers can
-  route model aliases to changing snapshots. The traces keep the provider,
-  backend and timestamp metadata that was available at collection time.
-
-## Reproducing the paper's tables
+The paper's tables are rebuilt from the open tier without API calls:
 
 ```bash
 python -m venv .venv && source .venv/bin/activate
@@ -104,7 +65,21 @@ python abc_exp/experiments/gemini_r5_stability_aggregate.py \
 inputs, protocol pointers, and the closed-API panels that can be rerun with
 provider keys.
 
-## Code
+## Data
+
+The traces are distributed on Hugging Face in two tiers. Download the open tier into the root of this repository; the
+files land in `abc_exp/results/`, where the scripts expect them.
+
+- [🤗 XINLI1997/DebateLedger](https://huggingface.co/datasets/XINLI1997/DebateLedger) (open tier, CC BY 4.0): every
+  trace with the model-generated text fields set to `null`.
+- [🤗 XINLI1997/DebateLedger-gated](https://huggingface.co/datasets/XINLI1997/DebateLedger-gated) (gated tier,
+  research-use license): the full-text versions of the trace files that contain model text; access is reviewed on
+  request.
+
+No model weights are released. The file list with record counts, the gated tier and the reproducibility boundary are in
+[docs/DATA.md](docs/DATA.md).
+
+## Repository layout
 
 | Path | Purpose |
 |---|---|
@@ -116,6 +91,7 @@ provider keys.
 | `abc_exp/experiments/cascade_r1_auc.py`, `abc_exp/experiments/bayesian_multilevel_logistic.py` | Collapse onset and Round-1 trajectory analyses |
 | `abc_exp/experiments/instrument_new_model_reuse_card.py` | Reuse card for adding a new model–scaffold row under the same denominators |
 | `abc_exp/experiments/validate_croissant_metadata.py` | Croissant and RAI metadata generation and validation |
+| `docs/DATA.md` | Data release: files, tiers and reproducibility boundary |
 
 ## Citation
 
