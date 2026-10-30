@@ -5,7 +5,7 @@
  "ranking": "midrank (tie-corrected) Spearman; exact family-label permutation for the unadjusted statistic; partial p-values are sensitivity calculations",
  "n_rows": 25,
  "g_families": 11,
- "row_marginal_spearman": 0.8239,
+ "row_marginal_spearman": 0.8378,
  "family_marginal": {
   "rho": 0.7517,
   "exact_p_two_sided": 0.0101
@@ -124,7 +124,7 @@
    "model": "qwen3.5-4b",
    "family": "Qwen",
    "alpha_tot": 0.6897,
-   "c_cond_pct": 43.58974358974359,
+   "c_cond_pct": 41.02564102564103,
    "init_acc": 0.39,
    "coding": "paper-cohort (as published)"
   },
@@ -132,7 +132,7 @@
    "model": "qwen3.5-9b",
    "family": "Qwen",
    "alpha_tot": 0.7303,
-   "c_cond_pct": 43.90243902439025,
+   "c_cond_pct": 47.5609756097561,
    "init_acc": 0.41,
    "coding": "paper-cohort (as published)"
   },
@@ -140,7 +140,7 @@
    "model": "qwen3.6-27b-fp8",
    "family": "Qwen",
    "alpha_tot": 0.795,
-   "c_cond_pct": 8.661417322834646,
+   "c_cond_pct": 22.04724409448819,
    "init_acc": 0.635,
    "coding": "paper-cohort (as published)"
   },
@@ -148,7 +148,7 @@
    "model": "qwen3.6-35b-a3b-fp8",
    "family": "Qwen",
    "alpha_tot": 0.7595,
-   "c_cond_pct": 11.881188118811881,
+   "c_cond_pct": 29.702970297029704,
    "init_acc": 0.505,
    "coding": "paper-cohort (as published)"
   },

@@ -1,0 +1,146 @@
+# Cohort N=20 model spec (A6 SHA 256ad21, supersedes cohort_n17_models.yaml)
+#
+# Pre-registration trail:
+# - PRE_REGISTRATION_N18.md (685724b)
+# - AMENDMENT_4_COHORT_EXPANSION.md (73cec9d)   N=9 -> N=17
+# - AMENDMENT_6_COHORT_RESIZE.md   (256ad21)    N=17 -> N=20  ← BINDING
+# - PRE_REGISTRATION_DEVIATIONS.md A7 (6c3d409) D1.4 byte-equal -> schema-equiv
+#
+# Loadtest evidence (local-gpu-host vllm-n17 env, 2026-04-25 22:39-23:06 CST):
+#   loadtest_Qwen3.6-27B-FP8.json        pass=true  238.3s  TP=1
+#   loadtest_Qwen3.6-35B-A3B-FP8.json    pass=true  173.7s  TP=1
+#   loadtest_gemma-4-31B-it-AWQ-4bit.json pass=true  50.6s   TP=2 (compressed-tensors auto-detect)
+#
+# Format: each entry has {name, source, backend, tp, notes}
+# - backend=local_vllm: load from /redacted/local-model-cache on local-gpu-host
+# - backend=openrouter: route via abc_exp/scripts/openrouter_client.py
+# - tp: tensor-parallel size for vllm
+
+# -------------------- A4 legacy planning block --------------------
+# Originally labeled "existing 9 traces" inherited from N18 / A4 §1.1.
+# That label was over-broadly applied: only the 4 OpenRouter entries
+# (sonnet, opus, gpt-5, gemini-2.5-pro) and the 3 Qwen-local entries
+# correspond to actually-collected pre-A4 traces. The 2 AWQ entries
+# (Llama-3.3-70B-AWQ, Mistral-Large-AWQ) were EXCLUDED by Deviation 1
+# (2026-04-19, AWQ-kernel degenerate output on A6000 hardware) and were
+# silently re-included in this manifest; Deviation 7 (2026-04-26)
+# re-affirms D1's exclusion. Qwen3-32B was excluded by Deviation 5
+# (2026-04-26, wrong-pool selection at trace time).
+a4_legacy_planning_block:
+  - {name: Qwen2.5-7B-Instruct,        backend: local_vllm,  tp: 1}
+  - {name: Qwen3-8B,                   backend: local_vllm,  tp: 1}
+  - {name: Qwen3-32B,                  backend: local_vllm,  tp: 2}   # D5-EXCLUDED (post-cohort-build, wrong-pool)
+  - {name: Llama-3.3-70B-AWQ,          backend: local_vllm,  tp: 4}   # D1+D7-EXCLUDED (AWQ kernel on A6000; D7 re-affirms D1)
+  - {name: Mistral-Large-AWQ,          backend: local_vllm,  tp: 4}   # D1+D7-EXCLUDED (AWQ kernel on A6000; D7 re-affirms D1)
+  - {name: claude-sonnet-4-5,          backend: openrouter}
+  - {name: claude-opus-4-5,            backend: openrouter}
+  - {name: gpt-5,                      backend: openrouter}
+  - {name: gemini-2.5-pro,             backend: openrouter}
+
+# -------------------- 11 NEW (D2-D4 collection, per A6 §1.2) --------------------
+# Group A: NEW local OSS additions (loadtest PASS confirmed)
+new_local:
+  - name: Qwen3.6-27B-FP8
+    source: Qwen/Qwen3.6-27B-Instruct-FP8
+    path: /redacted/local-model-cache
+    backend: local_vllm
+    tp: 1
+    quantization: null   # FP8 native — do NOT pass --quantization flag
+    loadtest: pass
+    notes: "A4. FP8 fits single 48GB."
+
+  - name: Qwen3.6-35B-A3B-FP8
+    source: Qwen/Qwen3.6-35B-A3B-Instruct-FP8
+    path: /redacted/local-model-cache
+    backend: local_vllm
+    tp: 1
+    quantization: null
+    loadtest: pass
+    notes: "A4. MoE (36B/3B-active). FP8 chosen over BF16 for VRAM."
+
+  - name: gemma-4-31B-it-AWQ-4bit
+    source: cyankiwi/gemma-4-31B-it-AWQ-4bit
+    path: /redacted/local-model-cache
+    backend: local_vllm
+    tp: 2
+    quantization: null   # checkpoint config says compressed-tensors; do NOT override
+    loadtest: pass
+    notes: "A4. Community AWQ — no official google/ AWQ exists. Loadtest PASS at TP=2; --quantization awq override fails (config mismatch)."
+
+  - name: DeepSeek-V4-Flash
+    source: deepseek-ai/DeepSeek-V4-Flash
+    path: null   # NOT YET DOWNLOADED on local-gpu-host — A6 RESTORED slot, blocked
+    backend: local_vllm
+    tp: 2
+    quantization: null
+    loadtest: pending
+    notes: "A6 RESTORED. HF createdAt 2026-04-22. 158B MoE. Not on /redacted/local-model-cache yet."
+
+  - name: Qwen3.5-4B
+    source: Qwen/Qwen3.5-4B
+    path: /redacted/local-model-cache
+    backend: local_vllm
+    tp: 1
+    quantization: null
+    loadtest: pending   # downloaded; loadtest not run yet (small enough to skip-or-trial during first trace launch)
+    notes: "A6 NEW. Size-matched 2026-Q1. HF createdAt 2026-02-27."
+
+  - name: Qwen3.5-9B
+    source: Qwen/Qwen3.5-9B
+    path: /redacted/local-model-cache
+    backend: local_vllm
+    tp: 1
+    quantization: null
+    loadtest: pending
+    notes: "A6 NEW. Size-matched 2026-Q1. HF createdAt 2026-02-27."
+
+  - name: Mistral-Small-4-119B-2603-AWQ-4bit
+    source: cyankiwi/Mistral-Small-4-119B-2603-AWQ-4bit  # community AWQ resolved similarly to gemma
+    path: /redacted/local-model-cache
+    backend: local_vllm
+    tp: 2
+    quantization: null
+    loadtest: pending
+    notes: "A6 NEW. Size-matched 2026-Q1. HF createdAt 2026-01-23 (base, AWQ derived). D7-EXCLUDED 2026-04-26 (extends D1 by analogy: same cyankiwi AWQ-4bit packaging family that failed on A6000 hardware; never load-tested; pre-flight load-test precluded by hardware constraints in D5.1 window)."
+
+# Group B: NEW openrouter-routed debate traces
+# Reasoning models budget max_tokens=4096 per mitigation-design / team-lead.
+new_openrouter:
+  - {name: deepseek-v4-pro,   backend: openrouter, openrouter_id: deepseek/deepseek-v4-pro,   pinned_key: deepseek-v4-pro,   reasoning: true,  max_tokens: 4096, notes: "A4. Verified D1.2 smoke."}
+  - {name: kimi-k2.6,         backend: openrouter, openrouter_id: moonshotai/kimi-k2.6,       pinned_key: kimi-k2.6,         reasoning: true,  max_tokens: 4096, notes: "A4. Verified D1.2 smoke."}
+  - {name: deepseek-v4-flash, backend: openrouter, openrouter_id: deepseek/deepseek-v4-flash, pinned_key: deepseek-v4-flash, reasoning: true,  max_tokens: 4096,
+     notes: "A6 RESTORED via OpenRouter. Local checkpoint (158B MoE) too big for 4×48GB at TP=2 with rest of fan-out; routing via OpenRouter preserves cohort while keeping local GPUs available for Qwen3.5/3.6 + Mistral-Small-4 lanes. If team-lead wants strict local serving, swap to local_vllm once download lands."}
+
+# -------------------- Family clusters (per A6 §1.3, locked) --------------------
+# Anthropic {1}: Sonnet-4.5 (existing 1) → cluster size 1
+# OpenAI    {2}: GPT-4o-mini, GPT-5.4-mini → 2 (named in A6, realized in existing block as gpt-5)
+# Google    {2}: Gemini-3-flash, Gemma-4-31B-AWQ → 2
+# Microsoft {1}: Phi-4-mini → 1
+# Meta      {2}: Llama-3.1-8B (existing), Llama-3.3-70B-AWQ → 2
+# Qwen      {7}: Qwen3-{4B,8B,32B} (existing), Qwen3.5-{4B,9B}, Qwen3.6-27B-FP8, Qwen3.6-35B-A3B-FP8 → 7
+# Mistral   {2}: Mistral-Large-AWQ (existing), Mistral-Small-4-119B-2603-AWQ → 2
+# DeepSeek  {2}: DeepSeek-V4-Pro (API), DeepSeek-V4-Flash → 2
+# Moonshot  {1}: Kimi-K2.6 → 1
+# G = 9 families (A6 §1.3)
+
+# -------------------- Substitutions vs A6 §1.2 --------------------
+substitutions:
+  - original: Qwen3.6-27B-Instruct-FP8 (A6 #10)
+    resolved: Qwen/Qwen3.6-27B-Instruct-FP8
+    action: "Local /redacted/local-model-cache (HF symlink)."
+  - original: Qwen3.6-35B-A3B-Instruct-FP8 (A6 #11)
+    resolved: Qwen/Qwen3.6-35B-A3B-Instruct-FP8
+    action: "Local /redacted/local-model-cache"
+  - original: Gemma-4-31B-it-AWQ (A6 #12)
+    resolved: cyankiwi/gemma-4-31B-it-AWQ-4bit
+    action: "No official google/ AWQ exists; community AWQ retained from A4 (loadtest PASS)."
+  - original: DeepSeek-V4-Flash (A6 #16)
+    resolved: deepseek/deepseek-v4-flash (OpenRouter)
+    action: "Routed via OpenRouter (see new_openrouter). Local 158B MoE checkpoint pending download; OpenRouter preserves cohort without blocking critical path. Snapshot SHA captured per row in trace JSON."
+    notes: "Pre-data routing decision; if download lands before D5 we re-attempt local serving and report the local-vs-API agreement as an internal QC check. No analysis-gate impact."
+  - original: Mistral-Small-4-119B-2603-AWQ (A6 #20)
+    resolved: cyankiwi/Mistral-Small-4-119B-2603-AWQ-4bit
+    action: "Community AWQ used by analogy with gemma; loadtest PENDING."
+
+# -------------------- Cohort total --------------------
+# 9 existing + 7 new local + 4 new openrouter = N=20.  Matches A6 §1.2.

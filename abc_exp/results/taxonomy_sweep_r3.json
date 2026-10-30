@@ -1,0 +1,45 @@
+{
+ "source": "family_level_headline_aggregation.json",
+ "rows": [
+  {
+   "rule": "Canonical family mean",
+   "groups": 7,
+   "rho": 0.8928571428571429
+  },
+  {
+   "rule": "Canonical family median",
+   "groups": 7,
+   "rho": 0.8928571428571429
+  },
+  {
+   "rule": "Worst leave-one-family-out (drop Anthropic/DeepSeek/Google/OpenAI)",
+   "groups": 6,
+   "rho": 0.8285714285714287
+  },
+  {
+   "rule": "Drop Qwen family",
+   "groups": 6,
+   "rho": 0.942857142857143
+  },
+  {
+   "rule": "Drop Meta and Qwen",
+   "groups": 5,
+   "rho": 0.9999999999999999
+  },
+  {
+   "rule": "Qwen split by generation",
+   "groups": 9,
+   "rho": 0.8833333333333333
+  },
+  {
+   "rule": "Phi + Gemma small-dense merge",
+   "groups": 7,
+   "rho": 0.9285714285714288
+  },
+  {
+   "rule": "Both alternative taxonomy choices",
+   "groups": 9,
+   "rho": 0.9333333333333332
+  }
+ ]
+}

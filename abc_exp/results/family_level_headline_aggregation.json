@@ -1,6 +1,6 @@
 {
   "description": "Family-level mean/median aggregation of the D5.2 N=14 headline table.",
-  "source": "results/D5.2_gate_decision.md",
+  "source": "abc_exp/results/D5.2_gate_decision.md",
   "n_models": 14,
   "n_families": 7,
   "per_model_rows": [
@@ -78,29 +78,29 @@
       "model": "qwen3.5-4b",
       "family": "Qwen",
       "alpha_tot": 0.6897,
-      "c_cond_pct": 43.5897,
-      "wilson_hw": 0.11
+      "c_cond_pct": 41.0256,
+      "wilson_hw": 0.1092
     },
     {
       "model": "qwen3.5-9b",
       "family": "Qwen",
       "alpha_tot": 0.7303,
-      "c_cond_pct": 43.9024,
-      "wilson_hw": 0.1074
+      "c_cond_pct": 47.561,
+      "wilson_hw": 0.1081
     },
     {
       "model": "qwen3.6-27b-fp8",
       "family": "Qwen",
       "alpha_tot": 0.795,
-      "c_cond_pct": 8.6614,
-      "wilson_hw": 0.0489
+      "c_cond_pct": 22.0472,
+      "wilson_hw": 0.0721
     },
     {
       "model": "qwen3.6-35b-a3b-fp8",
       "family": "Qwen",
       "alpha_tot": 0.7595,
-      "c_cond_pct": 11.8812,
-      "wilson_hw": 0.0631
+      "c_cond_pct": 29.703,
+      "wilson_hw": 0.0891
     }
   ],
   "aggregations": {
@@ -174,7 +174,7 @@
             "qwen3.6-35b-a3b-fp8"
           ],
           "alpha_tot": 0.6987333333333333,
-          "c_cond_pct": 19.74985
+          "c_cond_pct": 25.133533333333332
         }
       ],
       "spearman": {
@@ -185,8 +185,8 @@
         "p_one_sided_positive_exact": 0.006150793650793651,
         "two_sided_abs_count": 62,
         "p_two_sided_exact": 0.012301587301587301,
-        "p_two_sided_scipy": 0.006807187408935392,
-        "p_one_sided_positive_scipy": 0.003403593704467696
+        "p_two_sided_scipy": 0.006807187408935393,
+        "p_one_sided_positive_scipy": 0.0034035937044676963
       }
     },
     "median": {
@@ -259,7 +259,7 @@
             "qwen3.6-35b-a3b-fp8"
           ],
           "alpha_tot": 0.71,
-          "c_cond_pct": 10.2713
+          "c_cond_pct": 25.8751
         }
       ],
       "spearman": {
@@ -270,8 +270,8 @@
         "p_one_sided_positive_exact": 0.006150793650793651,
         "two_sided_abs_count": 62,
         "p_two_sided_exact": 0.012301587301587301,
-        "p_two_sided_scipy": 0.006807187408935392,
-        "p_one_sided_positive_scipy": 0.003403593704467696
+        "p_two_sided_scipy": 0.006807187408935393,
+        "p_one_sided_positive_scipy": 0.0034035937044676963
       }
     }
   },

@@ -1,6 +1,6 @@
 {
   "description": "Family-level partial Spearman after collapsing the realized N=14 model table to G=7 family means.",
-  "source": "results/reviewer_hardening_analyses.json:per_model",
+  "source": "abc_exp/results/reviewer_hardening_analyses.json:per_model",
   "aggregation": "simple mean over model rows within each family, matching the headline family aggregation",
   "controls": [
     "family_mean_initial_majority_accuracy"
@@ -80,14 +80,14 @@
         "qwen3.6-35b-a3b-fp8"
       ],
       "alpha_tot": 0.6987333333333333,
-      "c_cond_pct": 19.749864675963394,
+      "c_cond_pct": 25.133538504485838,
       "init_acc": 0.4455051673607897
     }
   ],
   "family_marginal_spearman": {
     "n": 7,
     "rho": 0.8928571428571429,
-    "p_two_sided_scipy": 0.006807187408935392
+    "p_two_sided_scipy": 0.006807187408935393
   },
   "family_partial_spearman": {
     "rho": 0.7669649888473703,
@@ -169,8 +169,8 @@
     ],
     "df": 11,
     "n": 14,
-    "p_two_sided": 0.014400797733645544,
-    "rho": 0.6584623461422373
+    "p_two_sided": 0.004851539092201055,
+    "rho": 0.7272105855960294
   },
   "p_value_note": "Exact permutation permutes family-level C^cond values while holding family alpha_tot and initial-majority accuracy fixed, then recomputes the rank-residualized partial Spearman for all 7! assignments."
 }

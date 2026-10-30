@@ -127,7 +127,7 @@ def state_answers(states: list[dict[str, Any]], mode: str) -> list[str | None]:
 def final_states(row: dict[str, Any]) -> list[dict[str, Any]]:
     rounds = row.get("round_traces") or row.get("round_states") or []
     if rounds:
-        return rounds[-1]
+        return rounds[2] if len(rounds) > 3 else rounds[-1]
     return row.get("final_states") or []
 
 

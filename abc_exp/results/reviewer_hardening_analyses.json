@@ -34,8 +34,8 @@
       ],
       "df": 11,
       "n": 14,
-      "p_two_sided": 0.014400797733645544,
-      "rho": 0.6584623461422373
+      "p_two_sided": 0.004851539092201055,
+      "rho": 0.7272105855960294
     },
     "alpha_controlling_init_acc_and_revision_proxy": {
       "controls": [
@@ -44,8 +44,8 @@
       ],
       "df": 10,
       "n": 14,
-      "p_two_sided": 0.01779537693808586,
-      "rho": 0.6671144435110008
+      "p_two_sided": 0.0059019326813302304,
+      "rho": 0.7402712208675358
     },
     "alpha_controlling_init_and_final_acc": {
       "controls": [
@@ -54,8 +54,8 @@
       ],
       "df": 10,
       "n": 14,
-      "p_two_sided": 0.023145101293237103,
-      "rho": 0.6463508854202445
+      "p_two_sided": 0.07319055506937418,
+      "rho": 0.534831040692295
     },
     "alpha_controlling_init_final_and_revision_proxy": {
       "controls": [
@@ -65,8 +65,8 @@
       ],
       "df": 9,
       "n": 14,
-      "p_two_sided": 0.020229989754067597,
-      "rho": 0.6841914917292908
+      "p_two_sided": 0.09853641703464118,
+      "rho": 0.5233218779516096
     },
     "alpha_controlling_revision_proxy": {
       "controls": [
@@ -74,8 +74,8 @@
       ],
       "df": 11,
       "n": 14,
-      "p_two_sided": 0.00166103119458481,
-      "rho": 0.7799952670067175
+      "p_two_sided": 0.000671696982114171,
+      "rho": 0.8158833766166945
     }
   },
   "per_model": [
@@ -276,9 +276,9 @@
     {
       "alpha_tot": 0.6897,
       "at_risk_initial_disagreement_rate": 0.5897435897435898,
-      "c_cond_pct": 43.58974358974359,
-      "correction_pct": 15.573770491803279,
-      "debate_revision_proxy": 0.495,
+      "c_cond_pct": 41.02564102564103,
+      "correction_pct": 13.934426229508198,
+      "debate_revision_proxy": 0.465,
       "diagnostic_source": "debate_trace_summary",
       "family": "Qwen",
       "final_acc": 0.315,
@@ -286,92 +286,92 @@
       "initial_disagreement_rate": 0.71,
       "initial_entropy_norm": 0.523040805446422,
       "initial_unanimity_rate": 0.255,
-      "majority_flip_rate": 0.495,
+      "majority_flip_rate": 0.465,
       "mean_initial_majority_margin": 0.6691666666666669,
       "model": "qwen3.5-4b",
-      "n_collapses": 34,
-      "n_corrections": 19,
+      "n_collapses": 32,
+      "n_corrections": 17,
       "n_debates": 200,
       "n_init_correct": 78,
       "n_init_wrong": 122,
-      "raw_collapse_pct": 17.0,
+      "raw_collapse_pct": 16.0,
       "trace_path": "abc_exp/results/debate_traces_vllm_qwen3.5-4b.jsonl",
-      "wilson_hw": 0.11
+      "wilson_hw": 0.1092
     },
     {
       "alpha_tot": 0.7303,
       "at_risk_initial_disagreement_rate": 0.524390243902439,
-      "c_cond_pct": 43.90243902439025,
-      "correction_pct": 20.338983050847457,
-      "debate_revision_proxy": 0.5,
+      "c_cond_pct": 47.5609756097561,
+      "correction_pct": 16.949152542372882,
+      "debate_revision_proxy": 0.465,
       "diagnostic_source": "debate_trace_summary",
       "family": "Qwen",
-      "final_acc": 0.35,
+      "final_acc": 0.315,
       "init_acc": 0.41,
       "initial_disagreement_rate": 0.68,
       "initial_entropy_norm": 0.5004222103749928,
       "initial_unanimity_rate": 0.29,
-      "majority_flip_rate": 0.5,
+      "majority_flip_rate": 0.465,
       "mean_initial_majority_margin": 0.6808333333333336,
       "model": "qwen3.5-9b",
-      "n_collapses": 36,
-      "n_corrections": 24,
+      "n_collapses": 39,
+      "n_corrections": 20,
       "n_debates": 200,
       "n_init_correct": 82,
       "n_init_wrong": 118,
-      "raw_collapse_pct": 18.0,
+      "raw_collapse_pct": 19.5,
       "trace_path": "abc_exp/results/debate_traces_vllm_qwen3.5-9b.jsonl",
-      "wilson_hw": 0.1074
+      "wilson_hw": 0.1081
     },
     {
       "alpha_tot": 0.795,
       "at_risk_initial_disagreement_rate": 0.3700787401574803,
-      "c_cond_pct": 8.661417322834646,
-      "correction_pct": 43.83561643835616,
-      "debate_revision_proxy": 0.285,
+      "c_cond_pct": 22.04724409448819,
+      "correction_pct": 38.35616438356164,
+      "debate_revision_proxy": 0.375,
       "diagnostic_source": "debate_trace_summary",
       "family": "Qwen",
-      "final_acc": 0.74,
+      "final_acc": 0.635,
       "init_acc": 0.635,
       "initial_disagreement_rate": 0.525,
       "initial_entropy_norm": 0.35280361530356374,
       "initial_unanimity_rate": 0.46,
-      "majority_flip_rate": 0.285,
+      "majority_flip_rate": 0.375,
       "mean_initial_majority_margin": 0.7858333333333328,
       "model": "qwen3.6-27b-fp8",
-      "n_collapses": 11,
-      "n_corrections": 32,
+      "n_collapses": 28,
+      "n_corrections": 28,
       "n_debates": 200,
       "n_init_correct": 127,
       "n_init_wrong": 73,
-      "raw_collapse_pct": 5.5,
+      "raw_collapse_pct": 14.0,
       "trace_path": "abc_exp/results/debate_traces_vllm_qwen3.6-27b-fp8.jsonl",
-      "wilson_hw": 0.0489
+      "wilson_hw": 0.0721
     },
     {
       "alpha_tot": 0.7595,
       "at_risk_initial_disagreement_rate": 0.39603960396039606,
-      "c_cond_pct": 11.881188118811881,
-      "correction_pct": 41.41414141414141,
-      "debate_revision_proxy": 0.385,
+      "c_cond_pct": 29.702970297029704,
+      "correction_pct": 24.242424242424242,
+      "debate_revision_proxy": 0.43,
       "diagnostic_source": "debate_trace_summary",
       "family": "Qwen",
-      "final_acc": 0.65,
+      "final_acc": 0.475,
       "init_acc": 0.505,
       "initial_disagreement_rate": 0.59,
       "initial_entropy_norm": 0.4232985533928508,
       "initial_unanimity_rate": 0.39,
-      "majority_flip_rate": 0.385,
+      "majority_flip_rate": 0.43,
       "mean_initial_majority_margin": 0.7350000000000004,
       "model": "qwen3.6-35b-a3b-fp8",
-      "n_collapses": 12,
-      "n_corrections": 41,
+      "n_collapses": 30,
+      "n_corrections": 24,
       "n_debates": 200,
       "n_init_correct": 101,
       "n_init_wrong": 99,
-      "raw_collapse_pct": 6.0,
+      "raw_collapse_pct": 15.0,
       "trace_path": "abc_exp/results/debate_traces_vllm_qwen3.6-35b-a3b-fp8.jsonl",
-      "wilson_hw": 0.0631
+      "wilson_hw": 0.0891
     }
   ],
   "predictor_bakeoff": {
@@ -389,8 +389,8 @@
       "label": "8-probe $\\alpha_{\\mathrm{tot}}$",
       "model_row_spearman": {
         "n": 14,
-        "p_two_sided": 0.00024315115661964303,
-        "rho": 0.8294834502328513
+        "p_two_sided": 7.892516986851823e-05,
+        "rho": 0.8602865491804904
       },
       "note": "predictor of record; measured before debate compute",
       "role": "pre-debate fingerprint"
@@ -409,8 +409,8 @@
       "label": "conditional correction rate",
       "model_row_spearman": {
         "n": 14,
-        "p_two_sided": 0.06760058984191057,
-        "rho": 0.5016504685758358
+        "p_two_sided": 0.11535188843221608,
+        "rho": 0.44004427068055774
       },
       "note": "not deployable pre-debate; captures the opposing productive-revision transition",
       "role": "post-debate transition control"
@@ -429,8 +429,8 @@
       "label": "raw debate revision proxy",
       "model_row_spearman": {
         "n": 14,
-        "p_two_sided": 0.10130516387820034,
-        "rho": 0.45594713656387664
+        "p_two_sided": 0.08845956644165273,
+        "rho": 0.4718856230821204
       },
       "note": "debate FR for sealed rows and majority-flip rate for post-A6 trace rows",
       "role": "revision-quantity baseline"
@@ -440,17 +440,17 @@
         "n": 7,
         "n_permutations": 5040,
         "observed_direction": "negative",
-        "one_sided_in_observed_direction_count": 276,
-        "p_one_sided_in_observed_direction_exact": 0.05476190476190476,
-        "p_two_sided_exact": 0.10952380952380952,
-        "rho": -0.6785714285714287,
-        "two_sided_abs_count": 552
+        "one_sided_in_observed_direction_count": 121,
+        "p_one_sided_in_observed_direction_exact": 0.02400793650793651,
+        "p_two_sided_exact": 0.04801587301587302,
+        "rho": -0.7857142857142859,
+        "two_sided_abs_count": 242
       },
       "label": "final debate accuracy",
       "model_row_spearman": {
         "n": 14,
-        "p_two_sided": 0.0001116140529706439,
-        "rho": -0.8514856637668792
+        "p_two_sided": 1.0413067142742162e-06,
+        "rho": -0.9339207048458151
       },
       "note": "not deployable as a predictor; included to measure capability confounding pressure",
       "role": "post-debate descriptive control"
@@ -469,8 +469,8 @@
       "label": "initial-majority accuracy",
       "model_row_spearman": {
         "n": 14,
-        "p_two_sided": 0.0005426816683701478,
-        "rho": -0.8030807939920179
+        "p_two_sided": 0.0006911818212165432,
+        "rho": -0.7942799085784067
       },
       "note": "pre-debate capability/difficulty proxy; negative rho means weaker initial panels collapse more",
       "role": "capability proxy"
@@ -489,8 +489,8 @@
       "label": "raw collapse rate",
       "model_row_spearman": {
         "n": 14,
-        "p_two_sided": 3.0958986867736347e-08,
-        "rho": 0.9636169032097505
+        "p_two_sided": 1.4396106692963283e-08,
+        "rho": 0.9680270492198639
       },
       "note": "shares the collapse numerator with C_cond; sanity check only, not a usable predictor",
       "role": "outcome-derived upper bound"
@@ -499,41 +499,41 @@
   "predictor_bakeoff_spearman_vs_ccond": {
     "alpha_tot": {
       "n": 14,
-      "p_two_sided": 0.00024315115661964303,
-      "rho": 0.8294834502328513
+      "p_two_sided": 7.892516986851823e-05,
+      "rho": 0.8602865491804904
     },
     "correction_pct": {
       "n": 14,
-      "p_two_sided": 0.06760058984191057,
-      "rho": 0.5016504685758358
+      "p_two_sided": 0.11535188843221608,
+      "rho": 0.44004427068055774
     },
     "debate_revision_proxy": {
       "n": 14,
-      "p_two_sided": 0.10130516387820034,
-      "rho": 0.45594713656387664
+      "p_two_sided": 0.08845956644165273,
+      "rho": 0.4718856230821204
     },
     "final_acc": {
       "n": 14,
-      "p_two_sided": 0.0001116140529706439,
-      "rho": -0.8514856637668792
+      "p_two_sided": 1.0413067142742162e-06,
+      "rho": -0.9339207048458151
     },
     "init_acc": {
       "n": 14,
-      "p_two_sided": 0.0005426816683701478,
-      "rho": -0.8030807939920179
+      "p_two_sided": 0.0006911818212165432,
+      "rho": -0.7942799085784067
     },
     "raw_collapse_pct": {
       "n": 14,
-      "p_two_sided": 3.0958986867736347e-08,
-      "rho": 0.9636169032097505
+      "p_two_sided": 1.4396106692963283e-08,
+      "rho": 0.9680270492198639
     }
   },
   "selection_utility": {
     "accuracy_matched_pair_window_init_acc": 0.05,
     "high_alpha_group": {
-      "conditional_collapse_pct": 9.51209512095121,
-      "correction_pct": 27.376146788990827,
-      "final_acc": 0.5718435321456236,
+      "conditional_collapse_pct": 10.988109881098811,
+      "correction_pct": 26.38532110091743,
+      "final_acc": 0.5596436870642912,
       "mean_alpha": 0.7094428571428572,
       "models": [
         "llama-3.1-8b",
@@ -565,7 +565,7 @@
       "n_models": 7
     },
     "low_alpha_lower_collapse_pairs": 7,
-    "mean_delta_ccond_low_minus_high": -4.058404707442868,
+    "mean_delta_ccond_low_minus_high": -6.173586753487214,
     "median_alpha_split": 0.5377000000000001,
     "n_accuracy_matched_pairs": 11,
     "pairs": [
@@ -605,8 +605,8 @@
         "low_alpha_model": "phi-4-mini"
       },
       {
-        "delta_ccond_low_minus_high": 3.4165881188118803,
-        "delta_final_acc_low_minus_high": 0.13676984523215174,
+        "delta_ccond_low_minus_high": 21.238370297029704,
+        "delta_final_acc_low_minus_high": -0.0382301547678483,
         "high_alpha_model": "llama-3.1-8b",
         "init_acc_gap": 0.002239141288067903,
         "low_alpha_model": "qwen3.6-35b-a3b-fp8"
@@ -619,29 +619,29 @@
         "low_alpha_model": "gpt-4o-mini"
       },
       {
-        "delta_ccond_low_minus_high": -6.315417322834646,
-        "delta_final_acc_low_minus_high": -0.039196787148594314,
+        "delta_ccond_low_minus_high": -19.70124409448819,
+        "delta_final_acc_low_minus_high": 0.06580321285140567,
         "high_alpha_model": "qwen3.6-27b-fp8",
         "init_acc_gap": 0.04973895582329313,
         "low_alpha_model": "gpt-4o-mini"
       },
       {
-        "delta_ccond_low_minus_high": -1.6434881188118808,
-        "delta_final_acc_low_minus_high": -0.11506247107820455,
+        "delta_ccond_low_minus_high": -19.465270297029704,
+        "delta_final_acc_low_minus_high": 0.05993752892179549,
         "high_alpha_model": "qwen3.6-35b-a3b-fp8",
         "init_acc_gap": 0.0012471078204534525,
         "low_alpha_model": "phi-4-mini"
       },
       {
-        "delta_ccond_low_minus_high": -38.795139024390245,
-        "delta_final_acc_low_minus_high": 0.2932207311429894,
+        "delta_ccond_low_minus_high": -42.4536756097561,
+        "delta_final_acc_low_minus_high": 0.3282207311429894,
         "high_alpha_model": "qwen3.5-9b",
         "init_acc_gap": 0.043031004164738595,
         "low_alpha_model": "qwen3-4b"
       },
       {
-        "delta_ccond_low_minus_high": -0.31269543464665617,
-        "delta_final_acc_low_minus_high": -0.034999999999999976,
+        "delta_ccond_low_minus_high": -6.53533458411507,
+        "delta_final_acc_low_minus_high": 0.0,
         "high_alpha_model": "qwen3.5-9b",
         "init_acc_gap": 0.019999999999999962,
         "low_alpha_model": "qwen3.5-4b"
@@ -694,7 +694,7 @@
       {
         "alpha_tot": 0.6897,
         "at_risk_initial_disagreement_rate": 0.5897435897435898,
-        "c_cond_pct": 43.58974358974359,
+        "c_cond_pct": 41.02564102564103,
         "initial_disagreement_rate": 0.71,
         "initial_entropy_norm": 0.523040805446422,
         "initial_unanimity_rate": 0.255,
@@ -704,7 +704,7 @@
       {
         "alpha_tot": 0.7303,
         "at_risk_initial_disagreement_rate": 0.524390243902439,
-        "c_cond_pct": 43.90243902439025,
+        "c_cond_pct": 47.5609756097561,
         "initial_disagreement_rate": 0.68,
         "initial_entropy_norm": 0.5004222103749928,
         "initial_unanimity_rate": 0.29,
@@ -714,7 +714,7 @@
       {
         "alpha_tot": 0.795,
         "at_risk_initial_disagreement_rate": 0.3700787401574803,
-        "c_cond_pct": 8.661417322834646,
+        "c_cond_pct": 22.04724409448819,
         "initial_disagreement_rate": 0.525,
         "initial_entropy_norm": 0.35280361530356374,
         "initial_unanimity_rate": 0.46,
@@ -724,7 +724,7 @@
       {
         "alpha_tot": 0.7595,
         "at_risk_initial_disagreement_rate": 0.39603960396039606,
-        "c_cond_pct": 11.881188118811881,
+        "c_cond_pct": 29.702970297029704,
         "initial_disagreement_rate": 0.59,
         "initial_entropy_norm": 0.4232985533928508,
         "initial_unanimity_rate": 0.39,
@@ -737,28 +737,28 @@
         "label": "at-risk initial disagreement rate",
         "n": 6,
         "note": "initial disagreement restricted to debates whose initial majority is correct",
-        "p_two_sided": 0.007665844187473165,
+        "p_two_sided": 0.00766584418747316,
         "rho": 0.9276336570439175
       },
       "initial_disagreement_rate": {
         "label": "initial disagreement rate",
         "n": 6,
         "note": "fraction of debates where the three initial answers are not unanimous",
-        "p_two_sided": 0.007665844187473165,
+        "p_two_sided": 0.00766584418747316,
         "rho": 0.9276336570439175
       },
       "initial_entropy_norm": {
         "label": "normalized initial-answer entropy",
         "n": 6,
         "note": "mean Shannon entropy of initial answers, normalized by log2(3)",
-        "p_two_sided": 0.007665844187473165,
+        "p_two_sided": 0.00766584418747316,
         "rho": 0.9276336570439175
       },
       "initial_unanimity_rate": {
         "label": "initial unanimity rate",
         "n": 6,
         "note": "fraction of debates where all parsed initial answers agree",
-        "p_two_sided": 0.007665844187473165,
+        "p_two_sided": 0.00766584418747316,
         "rho": -0.9276336570439175
       }
     }

@@ -250,6 +250,12 @@ TRACE_SETS = [
         ],
     },
 ]
+TRACE_SETS += [
+    dict(TRACE_SETS[0], id="thinking_off_debate_traces", includes="abc_exp/results/thinking_off_rerun/debate_traces_*.jsonl",
+         description="Debate traces of the thinking-off rerun of the four Qwen3.5/3.6 rows. Model output text is null in the open tier."),
+    dict(TRACE_SETS[1], id="thinking_off_probe_traces", includes="abc_exp/results/thinking_off_rerun/sa_causal_*.jsonl",
+         description="8-probe screen traces of the thinking-off rerun of the four Qwen3.5/3.6 rows. Model output text is null in the open tier."),
+]
 
 
 def build_trace_sets(mlc: Any) -> tuple[list[Any], list[Any]]:
@@ -291,8 +297,8 @@ def build_metadata(mlc: Any) -> dict[str, Any]:
             "Validated Croissant/RAI metadata for the collapse/correction "
             "evaluation protocol bundle used in a homogeneous-panel LLM debate audit."
         ),
-        version="1.0.1",
-        cite_as="Xin Li, Mengbing Liu, and Chau Yuen. Measuring Collapse and Correction in Homogeneous-Panel LLM Debate. NeurIPS 2026 Evaluations and Datasets Track. DebateLedger artifact version 1.0.1.",
+        version="1.0.2",
+        cite_as="Xin Li, Mengbing Liu, and Chau Yuen. Measuring Collapse and Correction in Homogeneous-Panel LLM Debate. NeurIPS 2026 Evaluations and Datasets Track. DebateLedger artifact version 1.0.2.",
         date_created=datetime(2026, 5, 2),
         date_published=datetime(2026, 9, 28),
         url=review_url(),
@@ -352,7 +358,7 @@ def build_metadata(mlc: Any) -> dict[str, Any]:
         ),
         personal_sensitive_information=["none"],
         data_release_maintenance_plan=(
-            "Versioned public release (alpha-tot-v1.0.1): open data on Hugging Face, code on GitHub, "
+            "Versioned public release (alpha-tot-v1.0.2): open data on Hugging Face, code on GitHub, "
             "and a gated Hugging Face dataset for full transcripts and convince-wrong templates. "
             "Corrections and provider or parser changes are released as new minor versions."
         ),

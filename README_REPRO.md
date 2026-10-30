@@ -4,6 +4,8 @@ This repository contains the code and data for *Measuring Collapse and Correctio
 
 ## Zero-API Rebuild
 
+The paper reads every debate row at Round 3 with alphabetic ties. Traces store the majority of their last logged round, so rows with a fourth round are recoded first. Run `bash abc_exp/r3_unified/rebuild_r3.sh --in-place` on a working copy with the open tier downloaded into it; it rewrites traces in place and regenerates the aggregates listed in that script. The signed-replay numbers are in `abc_exp/results/replay_1255_reproduction_r3unified.json`. `correction_preserving_policy_replay.json` is a wider 2,438-debate replay at the stored endpoint, not the paper's cohort. On the open tier the model text is null, so the strict-parser audit does not run (the released `parser_cell_stability_audit.*` come from the gated full text) and the tag counts in `n14_reviewer_hardening_artifacts.json` come out as 0; every other number rebuilds. `bash abc_exp/r3_unified/rebuild_thinkoff.sh` rebuilds the thinking-off table from `abc_exp/results/thinking_off_rerun/`; its truncation sensitivities need the gated full text (`FULL_TEXT=1`). The commands below rebuild the remaining summaries.
+
 Run from the root of a clone of https://github.com/LiXin97/DebateLedger. The traces live in the Hugging Face dataset; download them first, into the same root:
 
 ```bash
@@ -167,4 +169,4 @@ The release has three parts:
 - Open data tier (https://huggingface.co/datasets/XINLI1997/DebateLedger), CC BY 4.0: the aggregate files plus every probe and debate trace with the model-generated text fields set to `null`. Parsed answers, correctness labels, round structure, token counts and costs are kept. The non-social weak, moderate and strong probe templates are open.
 - Gated data tier (https://huggingface.co/datasets/XINLI1997/DebateLedger-gated), research-use license with no redistribution and no fine-tuning of models that target real users without independent safety review: the full-text versions of the traces that contain model text, and the very-strong (convince-wrong) probe and social-pressure suffix. These can be reused as a misleading-answer corpus, so access is reviewed on request.
 
-The first public release is versioned `alpha-tot-v1.0`. Closed-API snapshot reruns and corrections are released as new minor versions rather than in-place replacements.
+The first public release is versioned `alpha-tot-v1.0`; the current one is `alpha-tot-v1.0.2`. Closed-API snapshot reruns and corrections are released as new minor versions rather than in-place replacements.

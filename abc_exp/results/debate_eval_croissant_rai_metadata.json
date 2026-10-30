@@ -50,7 +50,7 @@
   "name": "Debate Collapse/Correction Evaluation Artifact",
   "description": "Validated Croissant/RAI metadata for the collapse/correction evaluation protocol bundle used in a homogeneous-panel LLM debate audit.",
   "conformsTo": "http://mlcommons.org/croissant/1.0",
-  "citeAs": "Xin Li, Mengbing Liu, and Chau Yuen. Measuring Collapse and Correction in Homogeneous-Panel LLM Debate. NeurIPS 2026 Evaluations and Datasets Track. DebateLedger artifact version 1.0.1.",
+  "citeAs": "Xin Li, Mengbing Liu, and Chau Yuen. Measuring Collapse and Correction in Homogeneous-Panel LLM Debate. NeurIPS 2026 Evaluations and Datasets Track. DebateLedger artifact version 1.0.2.",
   "dateCreated": "2026-05-02",
   "datePublished": "2026-09-28",
   "inLanguage": "en",
@@ -71,14 +71,14 @@
   "rai:dataCollectionType": "machine-generated traces from public benchmark questions",
   "rai:dataLimitations": "Not a benchmark-general law; not a calibrated per-question oracle; not a deployable controller; gated tier needed for convince-wrong templates and full transcripts.",
   "rai:dataPreprocessingProtocol": "Rule-based MCQ answer extraction; majority voting after filtering unparsed answers; alphabetic tie-breaking; deterministic collapse/correction/onset labels.",
-  "rai:dataReleaseMaintenancePlan": "Versioned public release (alpha-tot-v1.0.1): open data on Hugging Face, code on GitHub, and a gated Hugging Face dataset for full transcripts and convince-wrong templates. Corrections and provider or parser changes are released as new minor versions.",
+  "rai:dataReleaseMaintenancePlan": "Versioned public release (alpha-tot-v1.0.2): open data on Hugging Face, code on GitHub, and a gated Hugging Face dataset for full transcripts and convince-wrong templates. Corrections and provider or parser changes are released as new minor versions.",
   "rai:dataSocialImpact": "Helps audit debate interventions that may reduce collapses while discarding corrections; gated release mitigates misuse as a misleading-answer corpus.",
   "rai:dataUseCases": "Zero-API recomputation of aggregate tables; applying the transition-table and signed-utility protocol to new model-scaffold pairs; documenting gated release boundaries; public artifact hosting on Hugging Face with code on GitHub.",
   "rai:hasSyntheticData": true,
   "rai:machineAnnotationTools": "Rule-based MCQ answer parser included in the artifact; no LLM judge step is used.",
   "rai:personalSensitiveInformation": "none",
   "url": "https://huggingface.co/datasets/XINLI1997/DebateLedger",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "distribution": [
     {
       "@type": "cr:FileObject",
@@ -86,7 +86,7 @@
       "name": "README_REPRO.md",
       "contentUrl": "README_REPRO.md",
       "encodingFormat": "text/markdown",
-      "sha256": "4e1b939ac41ec13349c3a6fee87768d509ce250d27b2d38d13fb7022c87b1cf3"
+      "sha256": "b2ed25f8c426f8bd1d066223496f858736240240f85451afdae9dd08f4264e9d"
     },
     {
       "@type": "cr:FileObject",
@@ -94,7 +94,7 @@
       "name": "requirements-artifact.txt",
       "contentUrl": "requirements-artifact.txt",
       "encodingFormat": "text/plain",
-      "sha256": "a93bd89c724fa0d4b79f20dfb62bbf356407549157c4e98b0bcf6b970171a14d"
+      "sha256": "bd67dc76cf315a0a2684785229899f8b262fc7dadf0c51d6e86d4e453c69d254"
     },
     {
       "@type": "cr:FileObject",
@@ -102,7 +102,7 @@
       "name": "DEBATE_EVAL_ARTIFACT_DATASHEET.md",
       "contentUrl": "abc_exp/results/DEBATE_EVAL_ARTIFACT_DATASHEET.md",
       "encodingFormat": "text/markdown",
-      "sha256": "2a7e2e4f882bcd16a4ee7134888699963c018e57f23ececc08ba705332bce4bb"
+      "sha256": "39b8584e628adbbcca109a5e035323f2405ba4961a8e5f0c520032d64e82c36a"
     },
     {
       "@type": "cr:FileObject",
@@ -118,7 +118,7 @@
       "name": "cohort_n14_headline.json",
       "contentUrl": "abc_exp/results/cohort_n14_headline.json",
       "encodingFormat": "application/json",
-      "sha256": "83568df98c0bc013e55c8f45a8eed1ea95ac42a67a4588d37b89db005e07cd9d"
+      "sha256": "9727061b9b7c35bffffabb42d6f76d53f7ddd489025a5fed6a5c5e4b50e0a0d4"
     },
     {
       "@type": "cr:FileObject",
@@ -126,7 +126,7 @@
       "name": "family_level_headline_aggregation.json",
       "contentUrl": "abc_exp/results/family_level_headline_aggregation.json",
       "encodingFormat": "application/json",
-      "sha256": "11fc1b8de06a396b24b39119bb0dac1d79a1ee05cb3037ed9f63d632f467e049"
+      "sha256": "958e2ebbe78144b3f38e0255366140acc0587462f90d427eef605c57e0c613ca"
     },
     {
       "@type": "cr:FileObject",
@@ -142,7 +142,7 @@
       "name": "reviewer_hardening_analyses.json",
       "contentUrl": "abc_exp/results/reviewer_hardening_analyses.json",
       "encodingFormat": "application/json",
-      "sha256": "5fc36d977086d7e3b2a9b2ccaf408670d8dbd520bf7ff4a7691b479bc2feac03"
+      "sha256": "2a7da77d2ce23ed1db976f2b8ee37985263cd6a70f3e09433d06c4036169d2cb"
     },
     {
       "@type": "cr:FileObject",
@@ -150,7 +150,7 @@
       "name": "N14_REVIEWER_HARDENING_ARTIFACTS.md",
       "contentUrl": "abc_exp/results/N14_REVIEWER_HARDENING_ARTIFACTS.md",
       "encodingFormat": "text/markdown",
-      "sha256": "14d5d3a1e220330b46d1572e1a808e3b09a01cd3295437e505e38c3a9b148775"
+      "sha256": "797a36b82322072b81e1c8ad50132a17fc1cd78cbd0a1ef660275e65d6b49fa9"
     },
     {
       "@type": "cr:FileObject",
@@ -158,7 +158,7 @@
       "name": "n14_reviewer_hardening_artifacts.json",
       "contentUrl": "abc_exp/results/n14_reviewer_hardening_artifacts.json",
       "encodingFormat": "application/json",
-      "sha256": "86f7dcd2a28e3a586ac041a3ab09e45514f45392ca10439cd81a96964a877273"
+      "sha256": "167509bdabc0031ecb13f0645304538952885e9dfc2bc52d590d84344483b568"
     },
     {
       "@type": "cr:FileObject",
@@ -166,7 +166,7 @@
       "name": "ROUND4_CAMERA_READY_HARDENING.md",
       "contentUrl": "abc_exp/results/ROUND4_CAMERA_READY_HARDENING.md",
       "encodingFormat": "text/markdown",
-      "sha256": "8f14b8dfbb908c868b8c1894688d1d16c355f40ac395019b2934359c3877c611"
+      "sha256": "ce32ee81036472f1362714170e87c952a4e5f9b2cb630686c337fea02443a112"
     },
     {
       "@type": "cr:FileObject",
@@ -190,7 +190,7 @@
       "name": "PARSER_CELL_STABILITY_AUDIT.md",
       "contentUrl": "abc_exp/results/PARSER_CELL_STABILITY_AUDIT.md",
       "encodingFormat": "text/markdown",
-      "sha256": "5549c6e54e81772a22e74f87a2fa1364a6e9e1241b51d0cd040b7f7a59c2d2aa"
+      "sha256": "cb3f22e84b144494f54be8a5589cfa0a2d8ae01a593adc6798a8c32f889f2df7"
     },
     {
       "@type": "cr:FileObject",
@@ -198,7 +198,7 @@
       "name": "parser_cell_stability_audit.json",
       "contentUrl": "abc_exp/results/parser_cell_stability_audit.json",
       "encodingFormat": "application/json",
-      "sha256": "4f05af44a6d9f76b33c1a8048f23b49d33ee9408f2d5ff9f39136a9e72e9ab56"
+      "sha256": "71cf4bb4e0c290d2e943f026ccc868e34b1f2f004fc8f247bf9993d86474b264"
     },
     {
       "@type": "cr:FileObject",
@@ -287,6 +287,22 @@
       "description": "Transcript-free per-debate matrix: transition labels and per-round agreement features for the 6,925 primary MMLU-Pro debates.",
       "encodingFormat": "application/jsonlines",
       "includes": "abc_exp/results/per_debate_r1_features.jsonl"
+    },
+    {
+      "@type": "cr:FileSet",
+      "@id": "fileset_thinking_off_debate_traces",
+      "name": "fileset_thinking_off_debate_traces",
+      "description": "Debate traces of the thinking-off rerun of the four Qwen3.5/3.6 rows. Model output text is null in the open tier.",
+      "encodingFormat": "application/jsonlines",
+      "includes": "abc_exp/results/thinking_off_rerun/debate_traces_*.jsonl"
+    },
+    {
+      "@type": "cr:FileSet",
+      "@id": "fileset_thinking_off_probe_traces",
+      "name": "fileset_thinking_off_probe_traces",
+      "description": "8-probe screen traces of the thinking-off rerun of the four Qwen3.5/3.6 rows. Model output text is null in the open tier.",
+      "encodingFormat": "application/jsonlines",
+      "includes": "abc_exp/results/thinking_off_rerun/sa_causal_*.jsonl"
     }
   ],
   "recordSet": [
@@ -340,21 +356,21 @@
           "artifact_path": "README_REPRO.md",
           "artifact_role": "zero-api rebuild card",
           "encoding_format": "text/markdown",
-          "sha256": "4e1b939ac41ec13349c3a6fee87768d509ce250d27b2d38d13fb7022c87b1cf3",
+          "sha256": "b2ed25f8c426f8bd1d066223496f858736240240f85451afdae9dd08f4264e9d",
           "release_tier": "open; full transcripts and convince-wrong templates are in the gated dataset"
         },
         {
           "artifact_path": "requirements-artifact.txt",
           "artifact_role": "Python dependency manifest",
           "encoding_format": "text/plain",
-          "sha256": "a93bd89c724fa0d4b79f20dfb62bbf356407549157c4e98b0bcf6b970171a14d",
+          "sha256": "bd67dc76cf315a0a2684785229899f8b262fc7dadf0c51d6e86d4e453c69d254",
           "release_tier": "open; full transcripts and convince-wrong templates are in the gated dataset"
         },
         {
           "artifact_path": "abc_exp/results/DEBATE_EVAL_ARTIFACT_DATASHEET.md",
           "artifact_role": "artifact datasheet",
           "encoding_format": "text/markdown",
-          "sha256": "2a7e2e4f882bcd16a4ee7134888699963c018e57f23ececc08ba705332bce4bb",
+          "sha256": "39b8584e628adbbcca109a5e035323f2405ba4961a8e5f0c520032d64e82c36a",
           "release_tier": "open; full transcripts and convince-wrong templates are in the gated dataset"
         },
         {
@@ -368,14 +384,14 @@
           "artifact_path": "abc_exp/results/cohort_n14_headline.json",
           "artifact_role": "N14 headline rows",
           "encoding_format": "application/json",
-          "sha256": "83568df98c0bc013e55c8f45a8eed1ea95ac42a67a4588d37b89db005e07cd9d",
+          "sha256": "9727061b9b7c35bffffabb42d6f76d53f7ddd489025a5fed6a5c5e4b50e0a0d4",
           "release_tier": "open; full transcripts and convince-wrong templates are in the gated dataset"
         },
         {
           "artifact_path": "abc_exp/results/family_level_headline_aggregation.json",
           "artifact_role": "family-level primary aggregation",
           "encoding_format": "application/json",
-          "sha256": "11fc1b8de06a396b24b39119bb0dac1d79a1ee05cb3037ed9f63d632f467e049",
+          "sha256": "958e2ebbe78144b3f38e0255366140acc0587462f90d427eef605c57e0c613ca",
           "release_tier": "open; full transcripts and convince-wrong templates are in the gated dataset"
         },
         {
@@ -389,28 +405,28 @@
           "artifact_path": "abc_exp/results/reviewer_hardening_analyses.json",
           "artifact_role": "review audit diagnostics",
           "encoding_format": "application/json",
-          "sha256": "5fc36d977086d7e3b2a9b2ccaf408670d8dbd520bf7ff4a7691b479bc2feac03",
+          "sha256": "2a7da77d2ce23ed1db976f2b8ee37985263cd6a70f3e09433d06c4036169d2cb",
           "release_tier": "open; full transcripts and convince-wrong templates are in the gated dataset"
         },
         {
           "artifact_path": "abc_exp/results/N14_REVIEWER_HARDENING_ARTIFACTS.md",
           "artifact_role": "N14 diagnostic summary",
           "encoding_format": "text/markdown",
-          "sha256": "14d5d3a1e220330b46d1572e1a808e3b09a01cd3295437e505e38c3a9b148775",
+          "sha256": "797a36b82322072b81e1c8ad50132a17fc1cd78cbd0a1ef660275e65d6b49fa9",
           "release_tier": "open; full transcripts and convince-wrong templates are in the gated dataset"
         },
         {
           "artifact_path": "abc_exp/results/n14_reviewer_hardening_artifacts.json",
           "artifact_role": "N14 diagnostic data",
           "encoding_format": "application/json",
-          "sha256": "86f7dcd2a28e3a586ac041a3ab09e45514f45392ca10439cd81a96964a877273",
+          "sha256": "167509bdabc0031ecb13f0645304538952885e9dfc2bc52d590d84344483b568",
           "release_tier": "open; full transcripts and convince-wrong templates are in the gated dataset"
         },
         {
           "artifact_path": "abc_exp/results/ROUND4_CAMERA_READY_HARDENING.md",
           "artifact_role": "revision audit summary",
           "encoding_format": "text/markdown",
-          "sha256": "8f14b8dfbb908c868b8c1894688d1d16c355f40ac395019b2934359c3877c611",
+          "sha256": "ce32ee81036472f1362714170e87c952a4e5f9b2cb630686c337fea02443a112",
           "release_tier": "open; full transcripts and convince-wrong templates are in the gated dataset"
         },
         {
@@ -431,14 +447,14 @@
           "artifact_path": "abc_exp/results/PARSER_CELL_STABILITY_AUDIT.md",
           "artifact_role": "parser stability summary",
           "encoding_format": "text/markdown",
-          "sha256": "5549c6e54e81772a22e74f87a2fa1364a6e9e1241b51d0cd040b7f7a59c2d2aa",
+          "sha256": "cb3f22e84b144494f54be8a5589cfa0a2d8ae01a593adc6798a8c32f889f2df7",
           "release_tier": "open; full transcripts and convince-wrong templates are in the gated dataset"
         },
         {
           "artifact_path": "abc_exp/results/parser_cell_stability_audit.json",
           "artifact_role": "parser stability data",
           "encoding_format": "application/json",
-          "sha256": "4f05af44a6d9f76b33c1a8048f23b49d33ee9408f2d5ff9f39136a9e72e9ab56",
+          "sha256": "71cf4bb4e0c290d2e943f026ccc868e34b1f2f004fc8f247bf9993d86474b264",
           "release_tier": "open; full transcripts and convince-wrong templates are in the gated dataset"
         },
         {
@@ -952,6 +968,198 @@
             },
             "extract": {
               "column": "r1_agree_frac"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "@type": "cr:RecordSet",
+      "@id": "thinking_off_debate_traces",
+      "name": "thinking_off_debate_traces",
+      "description": "Debate traces of the thinking-off rerun of the four Qwen3.5/3.6 rows. Model output text is null in the open tier.",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "thinking_off_debate_traces/question_id",
+          "name": "question_id",
+          "description": "Benchmark question identifier.",
+          "dataType": "sc:Text",
+          "repeated": false,
+          "source": {
+            "fileSet": {
+              "@id": "fileset_thinking_off_debate_traces"
+            },
+            "extract": {
+              "column": "question_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "thinking_off_debate_traces/correct_label",
+          "name": "correct_label",
+          "description": "Answer-key option letter.",
+          "dataType": "sc:Text",
+          "repeated": false,
+          "source": {
+            "fileSet": {
+              "@id": "fileset_thinking_off_debate_traces"
+            },
+            "extract": {
+              "column": "correct_label"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "thinking_off_debate_traces/n_rounds",
+          "name": "n_rounds",
+          "description": "Number of rounds, Round 0 included.",
+          "dataType": "sc:Integer",
+          "repeated": false,
+          "source": {
+            "fileSet": {
+              "@id": "fileset_thinking_off_debate_traces"
+            },
+            "extract": {
+              "column": "n_rounds"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "thinking_off_debate_traces/initial_answers",
+          "name": "initial_answers",
+          "description": "Parsed Round-0 answers of the three agents.",
+          "dataType": "sc:Text",
+          "repeated": true,
+          "source": {
+            "fileSet": {
+              "@id": "fileset_thinking_off_debate_traces"
+            },
+            "extract": {
+              "column": "initial_answers"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "thinking_off_debate_traces/final_answers",
+          "name": "final_answers",
+          "description": "Parsed final-round answers of the three agents.",
+          "dataType": "sc:Text",
+          "repeated": true,
+          "source": {
+            "fileSet": {
+              "@id": "fileset_thinking_off_debate_traces"
+            },
+            "extract": {
+              "column": "final_answers"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "@type": "cr:RecordSet",
+      "@id": "thinking_off_probe_traces",
+      "name": "thinking_off_probe_traces",
+      "description": "8-probe screen traces of the thinking-off rerun of the four Qwen3.5/3.6 rows. Model output text is null in the open tier.",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "thinking_off_probe_traces/question_id",
+          "name": "question_id",
+          "description": "Benchmark question identifier.",
+          "dataType": "sc:Text",
+          "repeated": false,
+          "source": {
+            "fileSet": {
+              "@id": "fileset_thinking_off_probe_traces"
+            },
+            "extract": {
+              "column": "question_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "thinking_off_probe_traces/agent_idx",
+          "name": "agent_idx",
+          "description": "Agent index within the panel.",
+          "dataType": "sc:Integer",
+          "repeated": false,
+          "source": {
+            "fileSet": {
+              "@id": "fileset_thinking_off_probe_traces"
+            },
+            "extract": {
+              "column": "agent_idx"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "thinking_off_probe_traces/condition",
+          "name": "condition",
+          "description": "System-prompt condition of the probe run.",
+          "dataType": "sc:Text",
+          "repeated": false,
+          "source": {
+            "fileSet": {
+              "@id": "fileset_thinking_off_probe_traces"
+            },
+            "extract": {
+              "column": "condition"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "thinking_off_probe_traces/initial_answer",
+          "name": "initial_answer",
+          "description": "Parsed answer before any probe.",
+          "dataType": "sc:Text",
+          "repeated": false,
+          "source": {
+            "fileSet": {
+              "@id": "fileset_thinking_off_probe_traces"
+            },
+            "extract": {
+              "column": "initial_answer"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "thinking_off_probe_traces/initial_correct",
+          "name": "initial_correct",
+          "description": "Whether the initial answer matches the key.",
+          "dataType": "sc:Boolean",
+          "repeated": false,
+          "source": {
+            "fileSet": {
+              "@id": "fileset_thinking_off_probe_traces"
+            },
+            "extract": {
+              "column": "initial_correct"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "thinking_off_probe_traces/flip_rate",
+          "name": "flip_rate",
+          "description": "Fraction of the eight probes that changed the answer.",
+          "dataType": "sc:Float",
+          "repeated": false,
+          "source": {
+            "fileSet": {
+              "@id": "fileset_thinking_off_probe_traces"
+            },
+            "extract": {
+              "column": "flip_rate"
             }
           }
         }

@@ -8,12 +8,12 @@ Only the fingerprint and initial-majority accuracy are pre-debate quantities. Fi
 
 | Predictor | Role | Model-row Spearman | Family-mean exact Spearman | Note |
 |---|---|---:|---:|---|
-| 8-probe $\alpha_{\mathrm{tot}}$ | pre-debate fingerprint | +0.829 (n=14, p=0.000243) | +0.893 (G=7, exact p2=0.0123, p1-pos=0.00615) | predictor of record; measured before debate compute |
-| initial-majority accuracy | capability proxy | -0.803 (n=14, p=0.000543) | -0.821 (G=7, exact p2=0.0341, p1-neg=0.0171) | pre-debate capability/difficulty proxy; negative rho means weaker initial panels collapse more |
-| final debate accuracy | post-debate descriptive control | -0.851 (n=14, p=0.000112) | -0.679 (G=7, exact p2=0.11, p1-neg=0.0548) | not deployable as a predictor; included to measure capability confounding pressure |
-| conditional correction rate | post-debate transition control | +0.502 (n=14, p=0.0676) | +0.571 (G=7, exact p2=0.2, p1-pos=0.1) | not deployable pre-debate; captures the opposing productive-revision transition |
-| raw debate revision proxy | revision-quantity baseline | +0.456 (n=14, p=0.101) | +0.714 (G=7, exact p2=0.0881, p1-pos=0.044) | debate FR for sealed rows and majority-flip rate for post-A6 trace rows |
-| raw collapse rate | outcome-derived upper bound | +0.964 (n=14, p=3.1e-08) | +1.000 (G=7, exact p2=0.000397, p1-pos=0.000198) | shares the collapse numerator with C_cond; sanity check only, not a usable predictor |
+| 8-probe $\alpha_{\mathrm{tot}}$ | pre-debate fingerprint | +0.860 (n=14, p=7.89e-05) | +0.893 (G=7, exact p2=0.0123, p1-pos=0.00615) | predictor of record; measured before debate compute |
+| initial-majority accuracy | capability proxy | -0.794 (n=14, p=0.000691) | -0.821 (G=7, exact p2=0.0341, p1-neg=0.0171) | pre-debate capability/difficulty proxy; negative rho means weaker initial panels collapse more |
+| final debate accuracy | post-debate descriptive control | -0.934 (n=14, p=1.04e-06) | -0.786 (G=7, exact p2=0.048, p1-neg=0.024) | not deployable as a predictor; included to measure capability confounding pressure |
+| conditional correction rate | post-debate transition control | +0.440 (n=14, p=0.115) | +0.571 (G=7, exact p2=0.2, p1-pos=0.1) | not deployable pre-debate; captures the opposing productive-revision transition |
+| raw debate revision proxy | revision-quantity baseline | +0.472 (n=14, p=0.0885) | +0.714 (G=7, exact p2=0.0881, p1-pos=0.044) | debate FR for sealed rows and majority-flip rate for post-A6 trace rows |
+| raw collapse rate | outcome-derived upper bound | +0.968 (n=14, p=1.44e-08) | +1.000 (G=7, exact p2=0.000397, p1-pos=0.000198) | shares the collapse numerator with C_cond; sanity check only, not a usable predictor |
 
 ## Partial Spearman Checks
 
@@ -21,11 +21,11 @@ Rank residualization tests whether the fingerprint remains associated with condi
 
 | Check | Result | Controls |
 |---|---:|---|
-| `alpha_controlling_init_acc` | +0.658 (n=14, p=0.0144) | init_acc |
-| `alpha_controlling_init_and_final_acc` | +0.646 (n=14, p=0.0231) | init_acc, final_acc |
-| `alpha_controlling_revision_proxy` | +0.780 (n=14, p=0.00166) | debate_revision_proxy |
-| `alpha_controlling_init_acc_and_revision_proxy` | +0.667 (n=14, p=0.0178) | init_acc, debate_revision_proxy |
-| `alpha_controlling_init_final_and_revision_proxy` | +0.684 (n=14, p=0.0202) | init_acc, final_acc, debate_revision_proxy |
+| `alpha_controlling_init_acc` | +0.727 (n=14, p=0.00485) | init_acc |
+| `alpha_controlling_init_and_final_acc` | +0.535 (n=14, p=0.0732) | init_acc, final_acc |
+| `alpha_controlling_revision_proxy` | +0.816 (n=14, p=0.000672) | debate_revision_proxy |
+| `alpha_controlling_init_acc_and_revision_proxy` | +0.740 (n=14, p=0.0059) | init_acc, debate_revision_proxy |
+| `alpha_controlling_init_final_and_revision_proxy` | +0.523 (n=14, p=0.0985) | init_acc, final_acc, debate_revision_proxy |
 
 ## Family Aggregation
 
@@ -49,10 +49,10 @@ Partial alpha check within the same trace-only slice, controlling initial disagr
 |---|---:|---:|---:|---:|---:|---:|---:|
 | deepseek-v4-flash | 200 | 0.1129 | 0.00% | 4.00% | 76.00% | 0.023 | 0.67% |
 | gemma-4-31b-it-awq | 200 | 0.3106 | 0.00% | 12.00% | 87.00% | 0.078 | 5.62% |
-| qwen3.5-4b | 200 | 0.6897 | 43.59% | 71.00% | 25.50% | 0.523 | 58.97% |
-| qwen3.5-9b | 200 | 0.7303 | 43.90% | 68.00% | 29.00% | 0.500 | 52.44% |
-| qwen3.6-27b-fp8 | 200 | 0.7950 | 8.66% | 52.50% | 46.00% | 0.353 | 37.01% |
-| qwen3.6-35b-a3b-fp8 | 200 | 0.7595 | 11.88% | 59.00% | 39.00% | 0.423 | 39.60% |
+| qwen3.5-4b | 200 | 0.6897 | 41.03% | 71.00% | 25.50% | 0.523 | 58.97% |
+| qwen3.5-9b | 200 | 0.7303 | 47.56% | 68.00% | 29.00% | 0.500 | 52.44% |
+| qwen3.6-27b-fp8 | 200 | 0.7950 | 22.05% | 52.50% | 46.00% | 0.353 | 37.01% |
+| qwen3.6-35b-a3b-fp8 | 200 | 0.7595 | 29.70% | 59.00% | 39.00% | 0.423 | 39.60% |
 
 ## Selection Utility Diagnostic
 
@@ -61,10 +61,10 @@ Median alpha split: `0.5377`.
 | Group | Models | C^cond | Correction | Final acc |
 |---|---:|---:|---:|---:|
 | low alpha group | 7 | 5.77% | 15.12% | 62.64% |
-| high alpha group | 7 | 9.51% | 27.38% | 57.18% |
+| high alpha group | 7 | 10.99% | 26.39% | 55.96% |
 
 Accuracy-matched pair window on initial accuracy: +/-0.05.
-Low-alpha model has lower conditional collapse in 7/11 matched pairs; mean low-minus-high C^cond delta = -4.06pp.
+Low-alpha model has lower conditional collapse in 7/11 matched pairs; mean low-minus-high C^cond delta = -6.17pp.
 
 ## Notes
 

@@ -17,7 +17,7 @@ Zero-cost diagnostic computed from `D5.2_gate_decision.md` section 1. The N=14 p
 | Meta | 1 | 0.7737 | 8.4646% | 0.7737 | 8.4646% |
 | OpenAI | 2 | 0.3461 | 1.5227% | 0.3461 | 1.5227% |
 | Phi | 1 | 0.4686 | 10.2377% | 0.4686 | 10.2377% |
-| Qwen | 6 | 0.6987 | 19.7498% | 0.7100 | 10.2713% |
+| Qwen | 6 | 0.6987 | 25.1335% | 0.7100 | 25.8751% |
 
 ## Leave-One-Family Sensitivity (Family Mean)
 

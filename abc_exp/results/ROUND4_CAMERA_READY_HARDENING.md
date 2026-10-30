@@ -6,17 +6,17 @@ Zero-API diagnostics computed from checked-in artifacts. These rows are camera-r
 
 Jeffreys conditional-collapse uncertainty propagated through the six-family LoFO linear predictive fit; alpha is fixed at the measured family mean. Intervals are posterior predictive Monte Carlo quantiles, clipped to [0,100] for displayed coverage.
 
-Coverage after clipping to [0,100]%: 80% 5/7; 95% 7/7.
+Coverage after clipping to [0,100]%: 80% 5/7; 95% 6/7.
 
 | Held-out family | observed C^cond | EIV 80% PI clipped | EIV 95% PI clipped | covered 80 | covered 95 |
 |---|---:|---:|---:|---:|---:|
-| Anthropic | 2.15% | [+0.00, +15.88] | [+0.00, +23.25] | 1 | 1 |
-| DeepSeek | 0.00% | [+0.00, +8.32] | [+0.00, +17.62] | 1 | 1 |
-| Google | 0.29% | [+0.00, +12.60] | [+0.00, +21.01] | 1 | 1 |
-| Meta | 8.46% | [+10.18, +28.39] | [+2.31, +35.95] | 0 | 1 |
-| OpenAI | 1.52% | [+0.00, +13.89] | [+0.00, +21.77] | 1 | 1 |
-| Phi | 10.24% | [+0.00, +15.01] | [+0.00, +22.60] | 1 | 1 |
-| Qwen | 19.75% | [+2.22, +14.60] | [+0.00, +19.76] | 0 | 1 |
+| Anthropic | 2.15% | [+0.00, +19.87] | [+0.00, +29.78] | 1 | 1 |
+| DeepSeek | 0.00% | [+0.00, +11.04] | [+0.00, +23.19] | 1 | 1 |
+| Google | 0.29% | [+0.00, +16.21] | [+0.00, +27.32] | 1 | 1 |
+| Meta | 8.46% | [+11.71, +34.99] | [+1.92, +44.66] | 0 | 1 |
+| OpenAI | 1.52% | [+0.00, +17.52] | [+0.00, +28.02] | 1 | 1 |
+| Phi | 10.24% | [+0.00, +19.31] | [+0.00, +29.77] | 1 | 1 |
+| Qwen | 25.13% | [+2.16, +14.55] | [+0.00, +19.67] | 0 | 0 |
 
 ## Meta/Qwen Leverage Sensitivity
 
@@ -48,5 +48,5 @@ R5 remains a drift/nondeterminism audit, not a headline input.
 
 `pilot_gated_lomo.json` present: False.
 Candidate LOMO JSON files found: none.
-`per_debate_r1_features.jsonl` size: 0 bytes.
+`per_debate_r1_features.jsonl` size: 3850163 bytes.
 Conclusion: the strict 6,525-row matched-tau DisagreementGate/DRS comparison is not recoverable from this checkout and should remain explicitly disclaimed unless the gated matrix is restored.

@@ -9,15 +9,15 @@
   "files": [
     {
       "path": "README_REPRO.md",
-      "sha256": "4e1b939ac41ec13349c3a6fee87768d509ce250d27b2d38d13fb7022c87b1cf3"
+      "sha256": "b2ed25f8c426f8bd1d066223496f858736240240f85451afdae9dd08f4264e9d"
     },
     {
       "path": "requirements-artifact.txt",
-      "sha256": "a93bd89c724fa0d4b79f20dfb62bbf356407549157c4e98b0bcf6b970171a14d"
+      "sha256": "bd67dc76cf315a0a2684785229899f8b262fc7dadf0c51d6e86d4e453c69d254"
     },
     {
       "path": "abc_exp/results/DEBATE_EVAL_ARTIFACT_DATASHEET.md",
-      "sha256": "2a7e2e4f882bcd16a4ee7134888699963c018e57f23ececc08ba705332bce4bb"
+      "sha256": "39b8584e628adbbcca109a5e035323f2405ba4961a8e5f0c520032d64e82c36a"
     },
     {
       "path": "abc_exp/results/debate_eval_reuse_card.schema.json",
@@ -25,11 +25,11 @@
     },
     {
       "path": "abc_exp/results/cohort_n14_headline.json",
-      "sha256": "83568df98c0bc013e55c8f45a8eed1ea95ac42a67a4588d37b89db005e07cd9d"
+      "sha256": "9727061b9b7c35bffffabb42d6f76d53f7ddd489025a5fed6a5c5e4b50e0a0d4"
     },
     {
       "path": "abc_exp/results/family_level_headline_aggregation.json",
-      "sha256": "11fc1b8de06a396b24b39119bb0dac1d79a1ee05cb3037ed9f63d632f467e049"
+      "sha256": "958e2ebbe78144b3f38e0255366140acc0587462f90d427eef605c57e0c613ca"
     },
     {
       "path": "abc_exp/results/conditional_collapse_table.json",
@@ -37,19 +37,19 @@
     },
     {
       "path": "abc_exp/results/reviewer_hardening_analyses.json",
-      "sha256": "5fc36d977086d7e3b2a9b2ccaf408670d8dbd520bf7ff4a7691b479bc2feac03"
+      "sha256": "2a7da77d2ce23ed1db976f2b8ee37985263cd6a70f3e09433d06c4036169d2cb"
     },
     {
       "path": "abc_exp/results/N14_REVIEWER_HARDENING_ARTIFACTS.md",
-      "sha256": "14d5d3a1e220330b46d1572e1a808e3b09a01cd3295437e505e38c3a9b148775"
+      "sha256": "797a36b82322072b81e1c8ad50132a17fc1cd78cbd0a1ef660275e65d6b49fa9"
     },
     {
       "path": "abc_exp/results/n14_reviewer_hardening_artifacts.json",
-      "sha256": "86f7dcd2a28e3a586ac041a3ab09e45514f45392ca10439cd81a96964a877273"
+      "sha256": "167509bdabc0031ecb13f0645304538952885e9dfc2bc52d590d84344483b568"
     },
     {
       "path": "abc_exp/results/ROUND4_CAMERA_READY_HARDENING.md",
-      "sha256": "8f14b8dfbb908c868b8c1894688d1d16c355f40ac395019b2934359c3877c611"
+      "sha256": "ce32ee81036472f1362714170e87c952a4e5f9b2cb630686c337fea02443a112"
     },
     {
       "path": "abc_exp/results/ROUND5_API_CROSSBENCH_HARDENING.md",
@@ -61,11 +61,11 @@
     },
     {
       "path": "abc_exp/results/PARSER_CELL_STABILITY_AUDIT.md",
-      "sha256": "5549c6e54e81772a22e74f87a2fa1364a6e9e1241b51d0cd040b7f7a59c2d2aa"
+      "sha256": "cb3f22e84b144494f54be8a5589cfa0a2d8ae01a593adc6798a8c32f889f2df7"
     },
     {
       "path": "abc_exp/results/parser_cell_stability_audit.json",
-      "sha256": "4f05af44a6d9f76b33c1a8048f23b49d33ee9408f2d5ff9f39136a9e72e9ab56"
+      "sha256": "71cf4bb4e0c290d2e943f026ccc868e34b1f2f004fc8f247bf9993d86474b264"
     },
     {
       "path": "abc_exp/results/correction_preserving_policy_replay.json",

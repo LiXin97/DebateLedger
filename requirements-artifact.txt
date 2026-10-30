@@ -8,3 +8,4 @@ google-genai
 mlcroissant
 pymc
 arviz
+pyyaml

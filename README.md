@@ -22,6 +22,8 @@ Nanyang Technological University · \*Equal contribution
 
 ## News
 
+- **2026-10-30** Release alpha-tot-v1.0.2: aggregates read every row at the paper's endpoint, Round 3 majority with alphabetic ties.
+  Earlier traces are unchanged; the thinking-off rerun of the four Qwen3.5/3.6 rows is added. `abc_exp/r3_unified/rebuild_r3.sh` rebuilds the aggregates; see `README_REPRO.md`.
 - **2026-10-30** Release alpha-tot-v1.0.1: `croissant.json` now describes the trace files record by record.
   The data files are unchanged from alpha-tot-v1.0.
 - **2026-09-28** The paper is on arXiv: [2609.35279](https://arxiv.org/abs/2609.35279). The data release alpha-tot-v1.0
