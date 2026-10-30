@@ -50,7 +50,7 @@
   "name": "Debate Collapse/Correction Evaluation Artifact",
   "description": "Validated Croissant/RAI metadata for the collapse/correction evaluation protocol bundle used in a homogeneous-panel LLM debate audit.",
   "conformsTo": "http://mlcommons.org/croissant/1.0",
-  "citeAs": "Xin Li, Mengbing Liu, and Chau Yuen. Measuring Collapse and Correction in Homogeneous-Panel LLM Debate. NeurIPS 2026 Evaluations and Datasets Track. DebateLedger artifact version 1.0.2.",
+  "citeAs": "Xin Li, Mengbing Liu, and Chau Yuen. Measuring Collapse and Correction in Homogeneous-Panel LLM Debate. NeurIPS 2026 Evaluations and Datasets Track. DebateLedger artifact version 1.0.3.",
   "dateCreated": "2026-05-02",
   "datePublished": "2026-09-28",
   "inLanguage": "en",
@@ -71,14 +71,14 @@
   "rai:dataCollectionType": "machine-generated traces from public benchmark questions",
   "rai:dataLimitations": "Not a benchmark-general law; not a calibrated per-question oracle; not a deployable controller; gated tier needed for convince-wrong templates and full transcripts.",
   "rai:dataPreprocessingProtocol": "Rule-based MCQ answer extraction; majority voting after filtering unparsed answers; alphabetic tie-breaking; deterministic collapse/correction/onset labels.",
-  "rai:dataReleaseMaintenancePlan": "Versioned public release (alpha-tot-v1.0.2): open data on Hugging Face, code on GitHub, and a gated Hugging Face dataset for full transcripts and convince-wrong templates. Corrections and provider or parser changes are released as new minor versions.",
+  "rai:dataReleaseMaintenancePlan": "Versioned public release (alpha-tot-v1.0.3): open data on Hugging Face, code on GitHub, and a gated Hugging Face dataset for full transcripts and convince-wrong templates. Corrections and provider or parser changes are released as new minor versions.",
   "rai:dataSocialImpact": "Helps audit debate interventions that may reduce collapses while discarding corrections; gated release mitigates misuse as a misleading-answer corpus.",
   "rai:dataUseCases": "Zero-API recomputation of aggregate tables; applying the transition-table and signed-utility protocol to new model-scaffold pairs; documenting gated release boundaries; public artifact hosting on Hugging Face with code on GitHub.",
   "rai:hasSyntheticData": true,
   "rai:machineAnnotationTools": "Rule-based MCQ answer parser included in the artifact; no LLM judge step is used.",
   "rai:personalSensitiveInformation": "none",
   "url": "https://huggingface.co/datasets/XINLI1997/DebateLedger",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "distribution": [
     {
       "@type": "cr:FileObject",
@@ -86,7 +86,7 @@
       "name": "README_REPRO.md",
       "contentUrl": "README_REPRO.md",
       "encodingFormat": "text/markdown",
-      "sha256": "b2ed25f8c426f8bd1d066223496f858736240240f85451afdae9dd08f4264e9d"
+      "sha256": "c6e9a51e08dfd87c7b19f3ba63e40ceecabb3df06abacafc9907a523d5189c06"
     },
     {
       "@type": "cr:FileObject",
@@ -94,7 +94,7 @@
       "name": "requirements-artifact.txt",
       "contentUrl": "requirements-artifact.txt",
       "encodingFormat": "text/plain",
-      "sha256": "bd67dc76cf315a0a2684785229899f8b262fc7dadf0c51d6e86d4e453c69d254"
+      "sha256": "a092c219f71461e180656dde0b8959e7fcb6cf4450d1a2b696efa64b5526c8db"
     },
     {
       "@type": "cr:FileObject",
@@ -102,7 +102,7 @@
       "name": "DEBATE_EVAL_ARTIFACT_DATASHEET.md",
       "contentUrl": "abc_exp/results/DEBATE_EVAL_ARTIFACT_DATASHEET.md",
       "encodingFormat": "text/markdown",
-      "sha256": "39b8584e628adbbcca109a5e035323f2405ba4961a8e5f0c520032d64e82c36a"
+      "sha256": "a5aa8fc5f8355743d836e609420f4a47f4e8d67c66c6a65caf231fa340848e96"
     },
     {
       "@type": "cr:FileObject",
@@ -356,21 +356,21 @@
           "artifact_path": "README_REPRO.md",
           "artifact_role": "zero-api rebuild card",
           "encoding_format": "text/markdown",
-          "sha256": "b2ed25f8c426f8bd1d066223496f858736240240f85451afdae9dd08f4264e9d",
+          "sha256": "c6e9a51e08dfd87c7b19f3ba63e40ceecabb3df06abacafc9907a523d5189c06",
           "release_tier": "open; full transcripts and convince-wrong templates are in the gated dataset"
         },
         {
           "artifact_path": "requirements-artifact.txt",
           "artifact_role": "Python dependency manifest",
           "encoding_format": "text/plain",
-          "sha256": "bd67dc76cf315a0a2684785229899f8b262fc7dadf0c51d6e86d4e453c69d254",
+          "sha256": "a092c219f71461e180656dde0b8959e7fcb6cf4450d1a2b696efa64b5526c8db",
           "release_tier": "open; full transcripts and convince-wrong templates are in the gated dataset"
         },
         {
           "artifact_path": "abc_exp/results/DEBATE_EVAL_ARTIFACT_DATASHEET.md",
           "artifact_role": "artifact datasheet",
           "encoding_format": "text/markdown",
-          "sha256": "39b8584e628adbbcca109a5e035323f2405ba4961a8e5f0c520032d64e82c36a",
+          "sha256": "a5aa8fc5f8355743d836e609420f4a47f4e8d67c66c6a65caf231fa340848e96",
           "release_tier": "open; full transcripts and convince-wrong templates are in the gated dataset"
         },
         {

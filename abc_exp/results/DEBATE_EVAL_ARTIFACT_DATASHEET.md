@@ -44,7 +44,7 @@ Answer extraction uses the parser documented in `README_REPRO.md` and Appendix C
 
 ## Maintenance And Versioning
 
-The initial release is versioned as `alpha-tot-v1.0`; the current one is `alpha-tot-v1.0.2`, which reads every row at Round 3 with alphabetic ties. The archived rows are immutable. Future closed-API reruns, provider snapshot changes, parser changes, or benchmark-pool revisions should be released as new minor versions with a changelog rather than overwriting the archived artifact. Each public version is archived with a DOI and cross-links the code repository, the open and gated datasets, this datasheet, and the metadata files.
+The initial release is versioned as `alpha-tot-v1.0`; the current one is `alpha-tot-v1.0.3`; since `alpha-tot-v1.0.2` every row is read at Round 3 with alphabetic ties. The archived rows are immutable. Future closed-API reruns, provider snapshot changes, parser changes, or benchmark-pool revisions should be released as new minor versions with a changelog rather than overwriting the archived artifact. Each public version is archived with a DOI and cross-links the code repository, the open and gated datasets, this datasheet, and the metadata files.
 
 ## Known Limitations
 

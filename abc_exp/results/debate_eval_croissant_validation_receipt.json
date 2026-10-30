@@ -9,15 +9,15 @@
   "files": [
     {
       "path": "README_REPRO.md",
-      "sha256": "b2ed25f8c426f8bd1d066223496f858736240240f85451afdae9dd08f4264e9d"
+      "sha256": "c6e9a51e08dfd87c7b19f3ba63e40ceecabb3df06abacafc9907a523d5189c06"
     },
     {
       "path": "requirements-artifact.txt",
-      "sha256": "bd67dc76cf315a0a2684785229899f8b262fc7dadf0c51d6e86d4e453c69d254"
+      "sha256": "a092c219f71461e180656dde0b8959e7fcb6cf4450d1a2b696efa64b5526c8db"
     },
     {
       "path": "abc_exp/results/DEBATE_EVAL_ARTIFACT_DATASHEET.md",
-      "sha256": "39b8584e628adbbcca109a5e035323f2405ba4961a8e5f0c520032d64e82c36a"
+      "sha256": "a5aa8fc5f8355743d836e609420f4a47f4e8d67c66c6a65caf231fa340848e96"
     },
     {
       "path": "abc_exp/results/debate_eval_reuse_card.schema.json",

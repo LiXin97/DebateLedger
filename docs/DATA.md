@@ -1,6 +1,6 @@
-# DebateLedger data release (alpha-tot-v1.0.2)
+# DebateLedger data release (alpha-tot-v1.0.3)
 
-Version 1.0.2 reads every row at the paper's endpoint, Round 3 majority with alphabetic ties. Earlier traces are the
+Version 1.0.3 adds the N=9 sensitivity results; the traces are the same as in version 1.0.2. Since version 1.0.2 the release reads every row at the paper's endpoint, Round 3 majority with alphabetic ties. Earlier traces are the
 same as in alpha-tot-v1.0; rows with a logged fourth round still store its majority in `majority_answer`. The thinking-off
 rerun of the four Qwen3.5/3.6 rows is added in `abc_exp/results/thinking_off_rerun/`.
 

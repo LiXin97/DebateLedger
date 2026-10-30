@@ -297,8 +297,8 @@ def build_metadata(mlc: Any) -> dict[str, Any]:
             "Validated Croissant/RAI metadata for the collapse/correction "
             "evaluation protocol bundle used in a homogeneous-panel LLM debate audit."
         ),
-        version="1.0.2",
-        cite_as="Xin Li, Mengbing Liu, and Chau Yuen. Measuring Collapse and Correction in Homogeneous-Panel LLM Debate. NeurIPS 2026 Evaluations and Datasets Track. DebateLedger artifact version 1.0.2.",
+        version="1.0.3",
+        cite_as="Xin Li, Mengbing Liu, and Chau Yuen. Measuring Collapse and Correction in Homogeneous-Panel LLM Debate. NeurIPS 2026 Evaluations and Datasets Track. DebateLedger artifact version 1.0.3.",
         date_created=datetime(2026, 5, 2),
         date_published=datetime(2026, 9, 28),
         url=review_url(),
@@ -358,7 +358,7 @@ def build_metadata(mlc: Any) -> dict[str, Any]:
         ),
         personal_sensitive_information=["none"],
         data_release_maintenance_plan=(
-            "Versioned public release (alpha-tot-v1.0.2): open data on Hugging Face, code on GitHub, "
+            "Versioned public release (alpha-tot-v1.0.3): open data on Hugging Face, code on GitHub, "
             "and a gated Hugging Face dataset for full transcripts and convince-wrong templates. "
             "Corrections and provider or parser changes are released as new minor versions."
         ),

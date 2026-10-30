@@ -30,9 +30,9 @@ The metadata URL is set to the public Hugging Face dataset. If the URL changes, 
 
 | File | SHA256 prefix |
 |---|---:|
-| `README_REPRO.md` | `b2ed25f8c426` |
-| `requirements-artifact.txt` | `bd67dc76cf31` |
-| `abc_exp/results/DEBATE_EVAL_ARTIFACT_DATASHEET.md` | `39b8584e628a` |
+| `README_REPRO.md` | `c6e9a51e08df` |
+| `requirements-artifact.txt` | `a092c219f714` |
+| `abc_exp/results/DEBATE_EVAL_ARTIFACT_DATASHEET.md` | `a5aa8fc5f835` |
 | `abc_exp/results/debate_eval_reuse_card.schema.json` | `4d6c028c58cd` |
 | `abc_exp/results/cohort_n14_headline.json` | `9727061b9b7c` |
 | `abc_exp/results/family_level_headline_aggregation.json` | `958e2ebbe781` |

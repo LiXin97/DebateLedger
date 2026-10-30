@@ -1,0 +1,21 @@
+{
+ "n_models": 9,
+ "alpha_total": {
+  "rho": 0.7833333333333333,
+  "p_two_sided_random": 0.0176,
+  "p_two_sided_exact": 0.017223324514991183,
+  "p_asymptotic": 0.012519873019449882,
+  "lomo_r2_rank": 0.46558793766935014,
+  "lomo_r2_rank_loo_mean": 0.5777484939609681,
+  "lomo_r2_raw": 0.38780122675692974
+ },
+ "alpha_adv": {
+  "rho": 0.6166666666666666,
+  "p_two_sided_random": 0.0905,
+  "p_two_sided_exact": 0.0857253086419753,
+  "p_asymptotic": 0.07692880993776309,
+  "lomo_r2_rank": 0.08849274491978243,
+  "lomo_r2_rank_loo_mean": 0.27979673672674166,
+  "lomo_r2_raw": 0.0689777607250267
+ }
+}
