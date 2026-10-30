@@ -1,4 +1,7 @@
-# DebateLedger data release (alpha-tot-v1.0)
+# DebateLedger data release (alpha-tot-v1.0.1)
+
+Version 1.0.1 changes metadata only: `croissant.json` now describes the trace files record by
+record. The data files are the same as in alpha-tot-v1.0.
 
 The traces are distributed on Hugging Face in two tiers. Download the open tier
 into the root of this repository; the files land in `abc_exp/results/`, where
@@ -26,7 +29,7 @@ correctness labels, round structure, token counts and costs are kept.
 
 Aggregate tables and audits (`*.json`, `*.md`, `*.csv`) are also in this
 repository. `croissant.json` carries Croissant and Responsible AI metadata with
-SHA-256 digests of the core files; `abc_exp/results/DEBATE_EVAL_ARTIFACT_DATASHEET.md`
+SHA-256 digests of the core files and record sets for the trace files; `abc_exp/results/DEBATE_EVAL_ARTIFACT_DATASHEET.md`
 is the datasheet.
 
 ## Gated tier ([XINLI1997/DebateLedger-gated](https://huggingface.co/datasets/XINLI1997/DebateLedger-gated), research-use license)

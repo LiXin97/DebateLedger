@@ -30,7 +30,7 @@ The metadata URL is set to the public Hugging Face dataset. If the URL changes, 
 
 | File | SHA256 prefix |
 |---|---:|
-| `README_REPRO.md` | `490012234e94` |
+| `README_REPRO.md` | `4e1b939ac41e` |
 | `requirements-artifact.txt` | `a93bd89c724f` |
 | `abc_exp/results/DEBATE_EVAL_ARTIFACT_DATASHEET.md` | `2a7e2e4f882b` |
 | `abc_exp/results/debate_eval_reuse_card.schema.json` | `4d6c028c58cd` |

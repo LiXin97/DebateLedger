@@ -98,6 +98,15 @@ python abc_exp/experiments/instrument_new_model_reuse_card.py \
 
 The script validates that the card contains identity, question-pool, selection-time screen, debate outcome accounting, signed-utility, and release-boundary fields. It is a packaging step, not a substitute for the actual alpha/debate run.
 
+## Reproducibility Tiers
+
+Results in the paper fall into four tiers (paper Appendix G.6):
+
+1. **Zero-API rebuilds** from the released traces and scripts: the family association, transition tables, parser audits, and the response-period summaries.
+2. **Aggregate-only results**: the 6,525-debate probe-gated leave-one-model-out ledger is released as a frozen aggregate, and its row-level decision matrix is not part of the release. The Round 1 replay rows use a separate 1,255-trace cohort.
+3. **Provider-dependent reruns**: closed-API rows can drift as providers update models.
+4. **Gated fields**: convince-wrong probe text and full transcripts are in the gated dataset. The transcript-free per-debate Round 1 feature matrix (`abc_exp/results/per_debate_r1_features.jsonl`) is open.
+
 ## Closed-API Limits
 
 The zero-API artifacts are exactly reproducible from checked-in traces. Closed-API runs are not bitwise reproducible because providers can route aliases to changing snapshots. Newer traces include timestamp/backend/model metadata where available; older sealed lanes have partial metadata and are marked as such in the provenance tables.

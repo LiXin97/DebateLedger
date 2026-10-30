@@ -180,15 +180,119 @@ def build_file_inventory_record_set(mlc: Any) -> Any:
     )
 
 
+# Trace files described record by record (added 2026-10-30, release 1.0.1). Each FileSet
+# groups files that share a schema; each RecordSet lists only the keys present in every
+# record of that group, so the records load with mlcroissant across all files.
+TRACE_SETS = [
+    {
+        "id": "debate_traces",
+        "includes": "abc_exp/results/debate_traces_*.jsonl",
+        "description": "Debate traces, one record per three-agent debate from Round 0 to the final round. "
+        "Model output text is null in the open tier; full text is in the gated dataset.",
+        "fields": [
+            ("question_id", "TEXT", False, "Benchmark question identifier."),
+            ("correct_label", "TEXT", False, "Answer-key option letter."),
+            ("n_rounds", "INTEGER", False, "Number of rounds, Round 0 included."),
+            ("initial_answers", "TEXT", True, "Parsed Round-0 answers of the three agents."),
+            ("final_answers", "TEXT", True, "Parsed final-round answers of the three agents."),
+        ],
+    },
+    {
+        "id": "probe_traces",
+        "includes": "abc_exp/results/sa_causal_*.jsonl",
+        "description": "8-probe screen traces, one record per agent and question: the initial answer and "
+        "the revision outcome under each probe condition.",
+        "fields": [
+            ("question_id", "TEXT", False, "Benchmark question identifier."),
+            ("agent_idx", "INTEGER", False, "Agent index within the panel."),
+            ("condition", "TEXT", False, "System-prompt condition of the probe run."),
+            ("initial_answer", "TEXT", False, "Parsed answer before any probe."),
+            ("initial_correct", "BOOL", False, "Whether the initial answer matches the key."),
+            ("flip_rate", "FLOAT", False, "Fraction of the eight probes that changed the answer."),
+        ],
+    },
+    {
+        "id": "cross_benchmark_traces",
+        "includes": "abc_exp/results/cross_benchmark_*.jsonl",
+        "description": "Cross-benchmark probe and debate rows (ARC, GPQA, TruthfulQA and others).",
+        "fields": [
+            ("question_id", "TEXT", False, "Benchmark question identifier."),
+            ("benchmark", "TEXT", False, "Benchmark name."),
+            ("model", "TEXT", False, "Model identifier."),
+            ("correct_label", "TEXT", False, "Answer-key option letter."),
+        ],
+    },
+    {
+        "id": "probe_panel_traces",
+        "includes": "abc_exp/results/r5_*.jsonl",
+        "description": "Repeated probe-panel rows used for the multi-day aggregation check.",
+        "fields": [
+            ("question_id", "TEXT", False, "Benchmark question identifier."),
+            ("model", "TEXT", False, "Model identifier."),
+            ("initial_answer", "TEXT", False, "Parsed answer before any probe."),
+            ("n_probes", "INTEGER", False, "Number of probes administered."),
+            ("n_revised", "INTEGER", False, "Number of probes that changed the answer."),
+        ],
+    },
+    {
+        "id": "round1_feature_matrix",
+        "includes": "abc_exp/results/per_debate_r1_features.jsonl",
+        "description": "Transcript-free per-debate matrix: transition labels and per-round agreement "
+        "features for the 6,925 primary MMLU-Pro debates.",
+        "fields": [
+            ("model", "TEXT", False, "Model identifier."),
+            ("question_id", "TEXT", False, "Benchmark question identifier."),
+            ("collapsed", "BOOL", False, "Correct initial majority, wrong final majority."),
+            ("corrected", "BOOL", False, "Wrong initial majority, correct final majority."),
+            ("init_majority_correct", "BOOL", False, "Whether the Round-0 majority is correct."),
+            ("r1_majority_changed", "BOOL", False, "Whether the majority changed in Round 1."),
+            ("r1_agree_frac", "FLOAT", False, "Fraction of agents agreeing after Round 1."),
+        ],
+    },
+]
+
+
+def build_trace_sets(mlc: Any) -> tuple[list[Any], list[Any]]:
+    file_sets, record_sets = [], []
+    for spec in TRACE_SETS:
+        fs_id = f"fileset_{spec['id']}"
+        file_sets.append(
+            mlc.FileSet(
+                id=fs_id,
+                name=fs_id,
+                description=spec["description"],
+                encoding_formats=["application/jsonlines"],
+                includes=[spec["includes"]],
+            )
+        )
+        fields = []
+        for name, dtype, repeated, desc in spec["fields"]:
+            fields.append(
+                mlc.Field(
+                    id=f"{spec['id']}/{name}",
+                    name=name,
+                    description=desc,
+                    data_types=[getattr(mlc.DataType, dtype)],
+                    repeated=repeated,
+                    source=mlc.Source(file_set=fs_id, extract=mlc.Extract(column=name)),
+                )
+            )
+        record_sets.append(
+            mlc.RecordSet(id=spec["id"], name=spec["id"], description=spec["description"], fields=fields)
+        )
+    return file_sets, record_sets
+
+
 def build_metadata(mlc: Any) -> dict[str, Any]:
+    trace_file_sets, trace_record_sets = build_trace_sets(mlc)
     metadata = mlc.Metadata(
         name="Debate Collapse/Correction Evaluation Artifact",
         description=(
             "Validated Croissant/RAI metadata for the collapse/correction "
             "evaluation protocol bundle used in a homogeneous-panel LLM debate audit."
         ),
-        version="1.0.0",
-        cite_as="Xin Li, Mengbing Liu, and Chau Yuen. Measuring Collapse and Correction in Homogeneous-Panel LLM Debate. NeurIPS 2026 Evaluations and Datasets Track. DebateLedger artifact version 1.0.0.",
+        version="1.0.1",
+        cite_as="Xin Li, Mengbing Liu, and Chau Yuen. Measuring Collapse and Correction in Homogeneous-Panel LLM Debate. NeurIPS 2026 Evaluations and Datasets Track. DebateLedger artifact version 1.0.1.",
         date_created=datetime(2026, 5, 2),
         date_published=datetime(2026, 9, 28),
         url=review_url(),
@@ -212,7 +316,7 @@ def build_metadata(mlc: Any) -> dict[str, Any]:
         data_collection_type=["machine-generated traces from public benchmark questions"],
         data_collection_missing_data=(
             "Closed-API snapshot metadata are partial for older sealed lanes; full transcripts "
-            "and the R1 feature matrix are gated for dual-use reasons."
+            "and convince-wrong templates are gated for dual-use reasons."
         ),
         data_collection_raw_data=(
             "Upstream public MCQ benchmark questions are not owned by this artifact; derived "
@@ -248,12 +352,12 @@ def build_metadata(mlc: Any) -> dict[str, Any]:
         ),
         personal_sensitive_information=["none"],
         data_release_maintenance_plan=(
-            "Versioned public release (alpha-tot-v1.0): open data on Hugging Face, code on GitHub, "
+            "Versioned public release (alpha-tot-v1.0.1): open data on Hugging Face, code on GitHub, "
             "and a gated Hugging Face dataset for full transcripts and convince-wrong templates. "
             "Corrections and provider or parser changes are released as new minor versions."
         ),
-        distribution=[file_object(mlc, rel_path) for rel_path in FILES],
-        record_sets=[build_file_inventory_record_set(mlc)],
+        distribution=[file_object(mlc, rel_path) for rel_path in FILES] + trace_file_sets,
+        record_sets=[build_file_inventory_record_set(mlc)] + trace_record_sets,
     )
     return metadata.to_json()
 

@@ -50,7 +50,7 @@
   "name": "Debate Collapse/Correction Evaluation Artifact",
   "description": "Validated Croissant/RAI metadata for the collapse/correction evaluation protocol bundle used in a homogeneous-panel LLM debate audit.",
   "conformsTo": "http://mlcommons.org/croissant/1.0",
-  "citeAs": "Xin Li, Mengbing Liu, and Chau Yuen. Measuring Collapse and Correction in Homogeneous-Panel LLM Debate. NeurIPS 2026 Evaluations and Datasets Track. DebateLedger artifact version 1.0.0.",
+  "citeAs": "Xin Li, Mengbing Liu, and Chau Yuen. Measuring Collapse and Correction in Homogeneous-Panel LLM Debate. NeurIPS 2026 Evaluations and Datasets Track. DebateLedger artifact version 1.0.1.",
   "dateCreated": "2026-05-02",
   "datePublished": "2026-09-28",
   "inLanguage": "en",
@@ -66,19 +66,19 @@
   "rai:dataAnnotationProtocol": "No human labeling. Collapse/correction labels are deterministic functions of parsed MCQ answers and answer keys.",
   "rai:dataBiases": "Primary evidence is MMLU-Pro; homogeneous same-model three-agent scaffold; realized G=7 family cohort with Qwen-heavy model rows.",
   "rai:dataCollection": "Public benchmark MCQ questions were processed by LLM agents under fixed probe and debate prompts. No human-subjects or personal data were collected.",
-  "rai:dataCollectionMissingData": "Closed-API snapshot metadata are partial for older sealed lanes; full transcripts and the R1 feature matrix are gated for dual-use reasons.",
+  "rai:dataCollectionMissingData": "Closed-API snapshot metadata are partial for older sealed lanes; full transcripts and convince-wrong templates are gated for dual-use reasons.",
   "rai:dataCollectionRawData": "Upstream public MCQ benchmark questions are not owned by this artifact; derived aggregate tables and trace summaries are released subject to upstream benchmark terms.",
   "rai:dataCollectionType": "machine-generated traces from public benchmark questions",
   "rai:dataLimitations": "Not a benchmark-general law; not a calibrated per-question oracle; not a deployable controller; gated tier needed for convince-wrong templates and full transcripts.",
   "rai:dataPreprocessingProtocol": "Rule-based MCQ answer extraction; majority voting after filtering unparsed answers; alphabetic tie-breaking; deterministic collapse/correction/onset labels.",
-  "rai:dataReleaseMaintenancePlan": "Versioned public release (alpha-tot-v1.0): open data on Hugging Face, code on GitHub, and a gated Hugging Face dataset for full transcripts and convince-wrong templates. Corrections and provider or parser changes are released as new minor versions.",
+  "rai:dataReleaseMaintenancePlan": "Versioned public release (alpha-tot-v1.0.1): open data on Hugging Face, code on GitHub, and a gated Hugging Face dataset for full transcripts and convince-wrong templates. Corrections and provider or parser changes are released as new minor versions.",
   "rai:dataSocialImpact": "Helps audit debate interventions that may reduce collapses while discarding corrections; gated release mitigates misuse as a misleading-answer corpus.",
   "rai:dataUseCases": "Zero-API recomputation of aggregate tables; applying the transition-table and signed-utility protocol to new model-scaffold pairs; documenting gated release boundaries; public artifact hosting on Hugging Face with code on GitHub.",
   "rai:hasSyntheticData": true,
   "rai:machineAnnotationTools": "Rule-based MCQ answer parser included in the artifact; no LLM judge step is used.",
   "rai:personalSensitiveInformation": "none",
   "url": "https://huggingface.co/datasets/XINLI1997/DebateLedger",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "distribution": [
     {
       "@type": "cr:FileObject",
@@ -86,7 +86,7 @@
       "name": "README_REPRO.md",
       "contentUrl": "README_REPRO.md",
       "encodingFormat": "text/markdown",
-      "sha256": "490012234e940b5942ca086b8e31e2f78801c52953a87d3db2bad2ae7bd8709a"
+      "sha256": "4e1b939ac41ec13349c3a6fee87768d509ce250d27b2d38d13fb7022c87b1cf3"
     },
     {
       "@type": "cr:FileObject",
@@ -247,6 +247,46 @@
       "contentUrl": "abc_exp/results/block3_multi_benchmark.jsonl",
       "encodingFormat": "application/jsonlines",
       "sha256": "72a7397af3a6469e64cc2412b58faca14c9dbd3366c8d3114b2d2093d82f9e5e"
+    },
+    {
+      "@type": "cr:FileSet",
+      "@id": "fileset_debate_traces",
+      "name": "fileset_debate_traces",
+      "description": "Debate traces, one record per three-agent debate from Round 0 to the final round. Model output text is null in the open tier; full text is in the gated dataset.",
+      "encodingFormat": "application/jsonlines",
+      "includes": "abc_exp/results/debate_traces_*.jsonl"
+    },
+    {
+      "@type": "cr:FileSet",
+      "@id": "fileset_probe_traces",
+      "name": "fileset_probe_traces",
+      "description": "8-probe screen traces, one record per agent and question: the initial answer and the revision outcome under each probe condition.",
+      "encodingFormat": "application/jsonlines",
+      "includes": "abc_exp/results/sa_causal_*.jsonl"
+    },
+    {
+      "@type": "cr:FileSet",
+      "@id": "fileset_cross_benchmark_traces",
+      "name": "fileset_cross_benchmark_traces",
+      "description": "Cross-benchmark probe and debate rows (ARC, GPQA, TruthfulQA and others).",
+      "encodingFormat": "application/jsonlines",
+      "includes": "abc_exp/results/cross_benchmark_*.jsonl"
+    },
+    {
+      "@type": "cr:FileSet",
+      "@id": "fileset_probe_panel_traces",
+      "name": "fileset_probe_panel_traces",
+      "description": "Repeated probe-panel rows used for the multi-day aggregation check.",
+      "encodingFormat": "application/jsonlines",
+      "includes": "abc_exp/results/r5_*.jsonl"
+    },
+    {
+      "@type": "cr:FileSet",
+      "@id": "fileset_round1_feature_matrix",
+      "name": "fileset_round1_feature_matrix",
+      "description": "Transcript-free per-debate matrix: transition labels and per-round agreement features for the 6,925 primary MMLU-Pro debates.",
+      "encodingFormat": "application/jsonlines",
+      "includes": "abc_exp/results/per_debate_r1_features.jsonl"
     }
   ],
   "recordSet": [
@@ -300,7 +340,7 @@
           "artifact_path": "README_REPRO.md",
           "artifact_role": "zero-api rebuild card",
           "encoding_format": "text/markdown",
-          "sha256": "490012234e940b5942ca086b8e31e2f78801c52953a87d3db2bad2ae7bd8709a",
+          "sha256": "4e1b939ac41ec13349c3a6fee87768d509ce250d27b2d38d13fb7022c87b1cf3",
           "release_tier": "open; full transcripts and convince-wrong templates are in the gated dataset"
         },
         {
@@ -442,6 +482,478 @@
           "encoding_format": "application/jsonlines",
           "sha256": "72a7397af3a6469e64cc2412b58faca14c9dbd3366c8d3114b2d2093d82f9e5e",
           "release_tier": "open; full transcripts and convince-wrong templates are in the gated dataset"
+        }
+      ]
+    },
+    {
+      "@type": "cr:RecordSet",
+      "@id": "debate_traces",
+      "name": "debate_traces",
+      "description": "Debate traces, one record per three-agent debate from Round 0 to the final round. Model output text is null in the open tier; full text is in the gated dataset.",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "debate_traces/question_id",
+          "name": "question_id",
+          "description": "Benchmark question identifier.",
+          "dataType": "sc:Text",
+          "repeated": false,
+          "source": {
+            "fileSet": {
+              "@id": "fileset_debate_traces"
+            },
+            "extract": {
+              "column": "question_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "debate_traces/correct_label",
+          "name": "correct_label",
+          "description": "Answer-key option letter.",
+          "dataType": "sc:Text",
+          "repeated": false,
+          "source": {
+            "fileSet": {
+              "@id": "fileset_debate_traces"
+            },
+            "extract": {
+              "column": "correct_label"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "debate_traces/n_rounds",
+          "name": "n_rounds",
+          "description": "Number of rounds, Round 0 included.",
+          "dataType": "sc:Integer",
+          "repeated": false,
+          "source": {
+            "fileSet": {
+              "@id": "fileset_debate_traces"
+            },
+            "extract": {
+              "column": "n_rounds"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "debate_traces/initial_answers",
+          "name": "initial_answers",
+          "description": "Parsed Round-0 answers of the three agents.",
+          "dataType": "sc:Text",
+          "repeated": true,
+          "source": {
+            "fileSet": {
+              "@id": "fileset_debate_traces"
+            },
+            "extract": {
+              "column": "initial_answers"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "debate_traces/final_answers",
+          "name": "final_answers",
+          "description": "Parsed final-round answers of the three agents.",
+          "dataType": "sc:Text",
+          "repeated": true,
+          "source": {
+            "fileSet": {
+              "@id": "fileset_debate_traces"
+            },
+            "extract": {
+              "column": "final_answers"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "@type": "cr:RecordSet",
+      "@id": "probe_traces",
+      "name": "probe_traces",
+      "description": "8-probe screen traces, one record per agent and question: the initial answer and the revision outcome under each probe condition.",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "probe_traces/question_id",
+          "name": "question_id",
+          "description": "Benchmark question identifier.",
+          "dataType": "sc:Text",
+          "repeated": false,
+          "source": {
+            "fileSet": {
+              "@id": "fileset_probe_traces"
+            },
+            "extract": {
+              "column": "question_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "probe_traces/agent_idx",
+          "name": "agent_idx",
+          "description": "Agent index within the panel.",
+          "dataType": "sc:Integer",
+          "repeated": false,
+          "source": {
+            "fileSet": {
+              "@id": "fileset_probe_traces"
+            },
+            "extract": {
+              "column": "agent_idx"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "probe_traces/condition",
+          "name": "condition",
+          "description": "System-prompt condition of the probe run.",
+          "dataType": "sc:Text",
+          "repeated": false,
+          "source": {
+            "fileSet": {
+              "@id": "fileset_probe_traces"
+            },
+            "extract": {
+              "column": "condition"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "probe_traces/initial_answer",
+          "name": "initial_answer",
+          "description": "Parsed answer before any probe.",
+          "dataType": "sc:Text",
+          "repeated": false,
+          "source": {
+            "fileSet": {
+              "@id": "fileset_probe_traces"
+            },
+            "extract": {
+              "column": "initial_answer"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "probe_traces/initial_correct",
+          "name": "initial_correct",
+          "description": "Whether the initial answer matches the key.",
+          "dataType": "sc:Boolean",
+          "repeated": false,
+          "source": {
+            "fileSet": {
+              "@id": "fileset_probe_traces"
+            },
+            "extract": {
+              "column": "initial_correct"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "probe_traces/flip_rate",
+          "name": "flip_rate",
+          "description": "Fraction of the eight probes that changed the answer.",
+          "dataType": "sc:Float",
+          "repeated": false,
+          "source": {
+            "fileSet": {
+              "@id": "fileset_probe_traces"
+            },
+            "extract": {
+              "column": "flip_rate"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "@type": "cr:RecordSet",
+      "@id": "cross_benchmark_traces",
+      "name": "cross_benchmark_traces",
+      "description": "Cross-benchmark probe and debate rows (ARC, GPQA, TruthfulQA and others).",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "cross_benchmark_traces/question_id",
+          "name": "question_id",
+          "description": "Benchmark question identifier.",
+          "dataType": "sc:Text",
+          "repeated": false,
+          "source": {
+            "fileSet": {
+              "@id": "fileset_cross_benchmark_traces"
+            },
+            "extract": {
+              "column": "question_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "cross_benchmark_traces/benchmark",
+          "name": "benchmark",
+          "description": "Benchmark name.",
+          "dataType": "sc:Text",
+          "repeated": false,
+          "source": {
+            "fileSet": {
+              "@id": "fileset_cross_benchmark_traces"
+            },
+            "extract": {
+              "column": "benchmark"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "cross_benchmark_traces/model",
+          "name": "model",
+          "description": "Model identifier.",
+          "dataType": "sc:Text",
+          "repeated": false,
+          "source": {
+            "fileSet": {
+              "@id": "fileset_cross_benchmark_traces"
+            },
+            "extract": {
+              "column": "model"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "cross_benchmark_traces/correct_label",
+          "name": "correct_label",
+          "description": "Answer-key option letter.",
+          "dataType": "sc:Text",
+          "repeated": false,
+          "source": {
+            "fileSet": {
+              "@id": "fileset_cross_benchmark_traces"
+            },
+            "extract": {
+              "column": "correct_label"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "@type": "cr:RecordSet",
+      "@id": "probe_panel_traces",
+      "name": "probe_panel_traces",
+      "description": "Repeated probe-panel rows used for the multi-day aggregation check.",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "probe_panel_traces/question_id",
+          "name": "question_id",
+          "description": "Benchmark question identifier.",
+          "dataType": "sc:Text",
+          "repeated": false,
+          "source": {
+            "fileSet": {
+              "@id": "fileset_probe_panel_traces"
+            },
+            "extract": {
+              "column": "question_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "probe_panel_traces/model",
+          "name": "model",
+          "description": "Model identifier.",
+          "dataType": "sc:Text",
+          "repeated": false,
+          "source": {
+            "fileSet": {
+              "@id": "fileset_probe_panel_traces"
+            },
+            "extract": {
+              "column": "model"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "probe_panel_traces/initial_answer",
+          "name": "initial_answer",
+          "description": "Parsed answer before any probe.",
+          "dataType": "sc:Text",
+          "repeated": false,
+          "source": {
+            "fileSet": {
+              "@id": "fileset_probe_panel_traces"
+            },
+            "extract": {
+              "column": "initial_answer"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "probe_panel_traces/n_probes",
+          "name": "n_probes",
+          "description": "Number of probes administered.",
+          "dataType": "sc:Integer",
+          "repeated": false,
+          "source": {
+            "fileSet": {
+              "@id": "fileset_probe_panel_traces"
+            },
+            "extract": {
+              "column": "n_probes"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "probe_panel_traces/n_revised",
+          "name": "n_revised",
+          "description": "Number of probes that changed the answer.",
+          "dataType": "sc:Integer",
+          "repeated": false,
+          "source": {
+            "fileSet": {
+              "@id": "fileset_probe_panel_traces"
+            },
+            "extract": {
+              "column": "n_revised"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "@type": "cr:RecordSet",
+      "@id": "round1_feature_matrix",
+      "name": "round1_feature_matrix",
+      "description": "Transcript-free per-debate matrix: transition labels and per-round agreement features for the 6,925 primary MMLU-Pro debates.",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "round1_feature_matrix/model",
+          "name": "model",
+          "description": "Model identifier.",
+          "dataType": "sc:Text",
+          "repeated": false,
+          "source": {
+            "fileSet": {
+              "@id": "fileset_round1_feature_matrix"
+            },
+            "extract": {
+              "column": "model"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "round1_feature_matrix/question_id",
+          "name": "question_id",
+          "description": "Benchmark question identifier.",
+          "dataType": "sc:Text",
+          "repeated": false,
+          "source": {
+            "fileSet": {
+              "@id": "fileset_round1_feature_matrix"
+            },
+            "extract": {
+              "column": "question_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "round1_feature_matrix/collapsed",
+          "name": "collapsed",
+          "description": "Correct initial majority, wrong final majority.",
+          "dataType": "sc:Boolean",
+          "repeated": false,
+          "source": {
+            "fileSet": {
+              "@id": "fileset_round1_feature_matrix"
+            },
+            "extract": {
+              "column": "collapsed"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "round1_feature_matrix/corrected",
+          "name": "corrected",
+          "description": "Wrong initial majority, correct final majority.",
+          "dataType": "sc:Boolean",
+          "repeated": false,
+          "source": {
+            "fileSet": {
+              "@id": "fileset_round1_feature_matrix"
+            },
+            "extract": {
+              "column": "corrected"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "round1_feature_matrix/init_majority_correct",
+          "name": "init_majority_correct",
+          "description": "Whether the Round-0 majority is correct.",
+          "dataType": "sc:Boolean",
+          "repeated": false,
+          "source": {
+            "fileSet": {
+              "@id": "fileset_round1_feature_matrix"
+            },
+            "extract": {
+              "column": "init_majority_correct"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "round1_feature_matrix/r1_majority_changed",
+          "name": "r1_majority_changed",
+          "description": "Whether the majority changed in Round 1.",
+          "dataType": "sc:Boolean",
+          "repeated": false,
+          "source": {
+            "fileSet": {
+              "@id": "fileset_round1_feature_matrix"
+            },
+            "extract": {
+              "column": "r1_majority_changed"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "round1_feature_matrix/r1_agree_frac",
+          "name": "r1_agree_frac",
+          "description": "Fraction of agents agreeing after Round 1.",
+          "dataType": "sc:Float",
+          "repeated": false,
+          "source": {
+            "fileSet": {
+              "@id": "fileset_round1_feature_matrix"
+            },
+            "extract": {
+              "column": "r1_agree_frac"
+            }
+          }
         }
       ]
     }
