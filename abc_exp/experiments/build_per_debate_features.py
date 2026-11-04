@@ -20,6 +20,16 @@ from collections import Counter
 
 RES = Path(os.environ.get('ABC_RESULTS', Path(__file__).resolve().parent.parent / 'results'))
 
+# The six primary-cohort trace files; the released results directory holds other trace files in other formats.
+PRIMARY_TRACES = (
+    "debate_traces_gemini_3-flash.jsonl",
+    "debate_traces_openai_gpt-5.4-mini.jsonl",
+    "debate_traces_vllm_llama-3.1-8b.jsonl",
+    "debate_traces_vllm_phi-4-mini.jsonl",
+    "debate_traces_vllm_qwen3-4b.jsonl",
+    "debate_traces_vllm_qwen3-8b.jsonl",
+)
+
 
 def round_majority_correct(answers, correct):
     if not answers:
@@ -98,7 +108,7 @@ def featurize(row):
 
 
 def main():
-    files = sorted(glob.glob(str(RES / 'debate_traces_*.jsonl')))
+    files = [str(RES / name) for name in PRIMARY_TRACES]
     out_jsonl = RES / 'per_debate_r1_features.jsonl'
     out_csv = RES / 'per_debate_r1_features.csv'
     rows = []

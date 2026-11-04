@@ -22,6 +22,16 @@ from collections import Counter, defaultdict
 
 RES = Path(os.environ.get('ABC_RESULTS', Path(__file__).resolve().parent.parent / 'results'))
 
+# The six primary-cohort trace files; the released results directory holds other trace files in other formats.
+PRIMARY_TRACES = (
+    "debate_traces_gemini_3-flash.jsonl",
+    "debate_traces_openai_gpt-5.4-mini.jsonl",
+    "debate_traces_vllm_llama-3.1-8b.jsonl",
+    "debate_traces_vllm_phi-4-mini.jsonl",
+    "debate_traces_vllm_qwen3-4b.jsonl",
+    "debate_traces_vllm_qwen3-8b.jsonl",
+)
+
 
 def round_of_collapse(row):
     """Return 1, 2, or 3 (debate round in which majority first became wrong),
@@ -191,7 +201,7 @@ def per_model(rows):
 
 
 def main():
-    files = sorted(glob.glob(str(RES / 'debate_traces_*.jsonl')))
+    files = [str(RES / name) for name in PRIMARY_TRACES]
     summary = {'cascade_round_distribution': {}, 'per_model_auc': {}}
     pooled_rows = []
     pooled_round_dist = Counter()

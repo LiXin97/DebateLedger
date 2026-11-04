@@ -177,13 +177,19 @@ def usage_totals(usages: list[dict[str, Any]]) -> dict[str, int]:
     }
 
 
-def load_high_fr_questions(n_questions_cap: int | None) -> list[Question]:
+def load_high_fr_questions(n_questions_cap: int | None, ids_path: Path = HIGH_FR_PATH) -> list[Question]:
     all_questions = load_benchmark("mmlu_pro", n_samples=12000, seed=0)
-    high_fr_ids = json.loads(HIGH_FR_PATH.read_text())
+    high_fr_ids = json.loads(Path(ids_path).read_text())
     if n_questions_cap is not None:
         high_fr_ids = high_fr_ids[:n_questions_cap]
     by_id = {question.id: question for question in all_questions}
     missing = [qid for qid in high_fr_ids if qid not in by_id]
+    if missing:
+        # The stratified 12000-question sample drops 32 of the 12,032 test rows, and some debate
+        # questions are among them. Ids are row indices of the test split and the sample keeps the same objects, so
+        # the full split resolves the missing ids to the same questions and leaves every sampled id unchanged.
+        by_id = {question.id: question for question in load_benchmark("mmlu_pro")}
+        missing = [qid for qid in high_fr_ids if qid not in by_id]
     if missing:
         raise SystemExit(f"Missing question_ids in MMLU-Pro load: {missing[:3]} ...")
     questions = [by_id[qid] for qid in high_fr_ids]
@@ -206,10 +212,11 @@ def load_completed(output_path: Path, resume: bool) -> set[tuple[str, str, int]]
     return completed
 
 
-def build_triples(questions: list[Question], completed: set[tuple[str, str, int]]) -> list[dict[str, Any]]:
+def build_triples(questions: list[Question], completed: set[tuple[str, str, int]],
+                  conditions: list[str] | None = None) -> list[dict[str, Any]]:
     triples: list[dict[str, Any]] = []
     for question in questions:
-        for condition in CONDITION_SYSTEMS:
+        for condition in (conditions or list(CONDITION_SYSTEMS)):
             for agent_idx, temperature in enumerate(DEFAULT_TEMPERATURES):
                 key = (question.id, condition, agent_idx)
                 if key in completed:
@@ -250,7 +257,7 @@ def generate_initial_answers(
             SamplingParams,
             temperature=triple["temperature"],
             max_tokens=max_tokens_initial,
-            seed=seed + idx,
+            seed=triple["seed_base"] if "seed_base" in triple else seed + idx,
         ))
 
     outputs = llm.generate(prompts, samplings)
@@ -295,7 +302,7 @@ def repair_initial_answers(
                 SamplingParams,
                 temperature=0.0,
                 max_tokens=8,
-                seed=seed + 10_000 + attempt * 1_000 + idx,
+                seed=(triple["seed_base"] + 10_000 + attempt * 1_000) if "seed_base" in triple else seed + 10_000 + attempt * 1_000 + idx,
             ))
 
         outputs = llm.generate(prompts, samplings)
@@ -341,7 +348,7 @@ def generate_probe_results(
                     SamplingParams,
                     temperature=reply_temperature,
                     max_tokens=max_tokens_probe,
-                    seed=seed + 100_000 + len(prompts),
+                    seed=(triple["seed_base"] + 100_000 + list(PROBE_STRENGTHS).index(strength) * 2 + int(social)) if "seed_base" in triple else seed + 100_000 + len(prompts),
                 ))
                 metadata.append({
                     "state_idx": state_idx,
@@ -371,6 +378,7 @@ def generate_probe_results(
             "revised": revised,
             "cost": 0.0,
             "usage": output_usage(output),
+            "text": text,  # model output, for think-tag and truncation audits
         })
     return grouped
 
@@ -431,6 +439,7 @@ def build_alpha_row(
         "category": question.metadata.get("category"),
         "correct_label": question.correct_label,
         "condition": triple["condition"],
+        "seed_base": triple.get("seed_base"),
         "agent_idx": triple["agent_idx"],
         "temperature": triple["temperature"],
         "initial_answer": initial_answer,
@@ -462,6 +471,14 @@ def build_alpha_row(
         "initial_repair_attempts": state["initial_repair_attempts"],
         "initial_text_chars": len(state["initial_text"]),
         "usage": usage_totals(usages),
+        # per-call truncation evidence and the generation settings
+        "initial_text": state["initial_text"],
+        "initial_usage": state["initial_usage"],
+        "initial_repair_usages": state["initial_repair_usages"],
+        "enable_thinking": args.enable_thinking,
+        "max_tokens_initial": args.max_tokens_initial,
+        "max_tokens_probe": args.max_tokens_probe,
+        "batch_triples": args.batch_triples,
     }
 
 
@@ -532,6 +549,8 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--model", required=True, help="Model name for provenance, or HF repo id if --model-path is unset")
     parser.add_argument("--model-path", default=None, help="Optional local snapshot path used for vLLM loading")
     parser.add_argument("--n-questions", type=int, default=None, help="Optional cap on high-FR MMLU-Pro questions")
+    parser.add_argument("--questions", default=None, help="JSON list of MMLU-Pro question_ids to probe instead of the high-FR pool")
+    parser.add_argument("--conditions", default=None, help="Comma list of prompt conditions to run (default: all three)")
     parser.add_argument("--output", required=True, help="JSONL output path")
     parser.add_argument("--resume", action="store_true", help="Skip existing (question_id, condition, agent_idx) rows")
     parser.add_argument("--tensor-parallel-size", type=int, default=1)
@@ -542,6 +561,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--max-tokens-initial", type=int, default=1024)
     parser.add_argument("--max-tokens-probe", type=int, default=512)
     parser.add_argument("--seed", type=int, default=42)
+    parser.add_argument("--stable-seeds", action="store_true", help="Per-triple seeds hashed from (seed, question_id, condition, agent_idx), stable across resume and chunking")
     parser.add_argument("--enable-thinking", choices=["on", "off", "default"], default="default",
                         help="Pass enable_thinking to the chat template (Qwen3 hybrid toggle); "
                              "'default' omits the kwarg")
@@ -553,6 +573,11 @@ def parse_args() -> argparse.Namespace:
 
 def main(args: argparse.Namespace) -> int:
     global _WRAP_THINKING
+    gated = [f"PROBE_TEMPLATES[{k!r}]" for k, v in PROBE_TEMPLATES.items() if v.startswith("[GATED TEMPLATE")]
+    gated += ["SOCIAL_SUFFIX"] if SOCIAL_SUFFIX.startswith("[GATED TEMPLATE") else []
+    if gated:
+        raise SystemExit("This public copy has placeholder probe templates (" + ", ".join(gated) + "). Copy them from "
+                         "abc_exp/scripts/run_alpha_probe_vllm.py in the DebateLedger-gated dataset before collecting probe scores.")
     _WRAP_THINKING = {"on": True, "off": False, "default": None}[args.enable_thinking]
     if args.batch_triples <= 0:
         raise SystemExit("--batch-triples must be positive")
@@ -560,9 +585,17 @@ def main(args: argparse.Namespace) -> int:
     output_path = Path(args.output)
     output_path.parent.mkdir(parents=True, exist_ok=True)
 
-    questions = load_high_fr_questions(args.n_questions)
+    questions = load_high_fr_questions(args.n_questions, Path(args.questions) if args.questions else HIGH_FR_PATH)
+    conditions = args.conditions.split(",") if args.conditions else None
+    if conditions and set(conditions) - set(CONDITION_SYSTEMS):
+        raise SystemExit(f"Unknown conditions: {sorted(set(conditions) - set(CONDITION_SYSTEMS))}")
     completed = load_completed(output_path, args.resume)
-    triples = build_triples(questions, completed)
+    triples = build_triples(questions, completed, conditions)
+    if args.stable_seeds:
+        import hashlib
+        for tr in triples:
+            key = f"{args.seed}|{tr['question'].id}|{tr['condition']}|{tr['agent_idx']}".encode()
+            tr["seed_base"] = int(hashlib.sha256(key).hexdigest()[:8], 16) % 2_000_000_000
     print(
         f"[alpha-vllm] pool={len(questions)} high-FR questions; "
         f"resume_completed={len(completed)}; to_run={len(triples)} triples",

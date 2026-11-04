@@ -1,0 +1,182 @@
+{
+ "sa_causal_vllm_llama-3.1-8b_rerun.jsonl": {
+  "present": true,
+  "cap_probe": [
+   2048
+  ],
+  "expected": 1800,
+  "rows": 1800,
+  "missing": 0,
+  "duplicates": 0,
+  "rows_not_8": 0,
+  "init_trunc_pct": 10.17,
+  "probe_trunc_pct": 15.84,
+  "trunc_loop_share": 0.0,
+  "init_none": 0,
+  "post_none_pct": 3.74,
+  "verdict": "OVER_2PCT",
+  "complete": true
+ },
+ "sa_causal_vllm_phi-4-mini_rerun.jsonl": {
+  "present": true,
+  "cap_probe": [
+   2048
+  ],
+  "expected": 1800,
+  "rows": 1800,
+  "missing": 0,
+  "duplicates": 0,
+  "rows_not_8": 0,
+  "init_trunc_pct": 0.39,
+  "probe_trunc_pct": 1.8,
+  "trunc_loop_share": 0.0,
+  "init_none": 0,
+  "post_none_pct": 1.06,
+  "verdict": "OK",
+  "complete": true
+ },
+ "sa_causal_vllm_qwen3-4b_rerun.jsonl": {
+  "present": true,
+  "cap_probe": [
+   2048
+  ],
+  "expected": 1800,
+  "rows": 1800,
+  "missing": 0,
+  "duplicates": 0,
+  "rows_not_8": 0,
+  "init_trunc_pct": 0.22,
+  "probe_trunc_pct": 0.07,
+  "trunc_loop_share": 0.0,
+  "init_none": 0,
+  "post_none_pct": 0.01,
+  "verdict": "OK",
+  "complete": true
+ },
+ "sa_causal_vllm_qwen3-8b_rerun.jsonl": {
+  "present": true,
+  "cap_probe": [
+   2048
+  ],
+  "expected": 1800,
+  "rows": 1800,
+  "missing": 0,
+  "duplicates": 0,
+  "rows_not_8": 0,
+  "init_trunc_pct": 0.28,
+  "probe_trunc_pct": 1.18,
+  "trunc_loop_share": 0.0,
+  "init_none": 0,
+  "post_none_pct": 0.24,
+  "verdict": "OK",
+  "complete": true
+ },
+ "gate_default_vllm_llama-3.1-8b_s0.jsonl": {
+  "present": true,
+  "cap_probe": [
+   2048
+  ],
+  "expected": 2685,
+  "rows": 2685,
+  "missing": 0,
+  "duplicates": 0,
+  "rows_not_8": 0,
+  "init_trunc_pct": 3.87,
+  "probe_trunc_pct": 12.77,
+  "trunc_loop_share": 0.0,
+  "init_none": 0,
+  "post_none_pct": 5.36,
+  "verdict": "OVER_2PCT",
+  "complete": true
+ },
+ "gate_default_vllm_llama-3.1-8b_s1.jsonl": {
+  "present": true,
+  "cap_probe": [
+   2048
+  ],
+  "expected": 2685,
+  "rows": 2685,
+  "missing": 0,
+  "duplicates": 0,
+  "rows_not_8": 0,
+  "init_trunc_pct": 4.99,
+  "probe_trunc_pct": 15.82,
+  "trunc_loop_share": 0.0,
+  "init_none": 0,
+  "post_none_pct": 6.48,
+  "verdict": "OVER_2PCT",
+  "complete": true
+ },
+ "gate_default_vllm_phi-4-mini_s0.jsonl": {
+  "present": true,
+  "cap_probe": [
+   2048
+  ],
+  "expected": 2943,
+  "rows": 2943,
+  "missing": 0,
+  "duplicates": 0,
+  "rows_not_8": 0,
+  "init_trunc_pct": 0.2,
+  "probe_trunc_pct": 1.06,
+  "trunc_loop_share": 0.0,
+  "init_none": 0,
+  "post_none_pct": 0.9,
+  "verdict": "OK",
+  "complete": true
+ },
+ "gate_default_vllm_phi-4-mini_s1.jsonl": {
+  "present": true,
+  "cap_probe": [
+   2048
+  ],
+  "expected": 2940,
+  "rows": 2940,
+  "missing": 0,
+  "duplicates": 0,
+  "rows_not_8": 0,
+  "init_trunc_pct": 0.51,
+  "probe_trunc_pct": 2.4,
+  "trunc_loop_share": 0.0,
+  "init_none": 0,
+  "post_none_pct": 1.72,
+  "verdict": "OVER_2PCT",
+  "complete": true
+ },
+ "gate_default_vllm_qwen3-4b_s0.jsonl": {
+  "present": true,
+  "cap_probe": [
+   2048
+  ],
+  "expected": 2943,
+  "rows": 2943,
+  "missing": 0,
+  "duplicates": 0,
+  "rows_not_8": 0,
+  "init_trunc_pct": 0.24,
+  "probe_trunc_pct": 0.17,
+  "trunc_loop_share": 0.0,
+  "init_none": 0,
+  "post_none_pct": 0.0,
+  "verdict": "OK",
+  "complete": true
+ },
+ "gate_default_vllm_qwen3-4b_s1.jsonl": {
+  "present": true,
+  "cap_probe": [
+   2048
+  ],
+  "expected": 2940,
+  "rows": 2939,
+  "missing": 1,
+  "duplicates": 0,
+  "rows_not_8": 0,
+  "init_trunc_pct": 0.31,
+  "probe_trunc_pct": 0.26,
+  "trunc_loop_share": 0.0,
+  "init_none": 0,
+  "post_none_pct": 0.03,
+  "verdict": "OK",
+  "complete": true
+ }
+}

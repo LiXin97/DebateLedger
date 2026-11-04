@@ -50,7 +50,7 @@
   "name": "Debate Collapse/Correction Evaluation Artifact",
   "description": "Validated Croissant/RAI metadata for the collapse/correction evaluation protocol bundle used in a homogeneous-panel LLM debate audit.",
   "conformsTo": "http://mlcommons.org/croissant/1.0",
-  "citeAs": "Xin Li, Mengbing Liu, and Chau Yuen. Measuring Collapse and Correction in Homogeneous-Panel LLM Debate. NeurIPS 2026 Evaluations and Datasets Track. DebateLedger artifact version 1.0.3.",
+  "citeAs": "Xin Li, Mengbing Liu, and Chau Yuen. Measuring Collapse and Correction in Homogeneous-Panel LLM Debate. NeurIPS 2026 Evaluations and Datasets Track. DebateLedger artifact version 1.0.4.",
   "dateCreated": "2026-05-02",
   "datePublished": "2026-09-28",
   "inLanguage": "en",
@@ -71,14 +71,14 @@
   "rai:dataCollectionType": "machine-generated traces from public benchmark questions",
   "rai:dataLimitations": "Not a benchmark-general law; not a calibrated per-question oracle; not a deployable controller; gated tier needed for convince-wrong templates and full transcripts.",
   "rai:dataPreprocessingProtocol": "Rule-based MCQ answer extraction; majority voting after filtering unparsed answers; alphabetic tie-breaking; deterministic collapse/correction/onset labels.",
-  "rai:dataReleaseMaintenancePlan": "Versioned public release (alpha-tot-v1.0.3): open data on Hugging Face, code on GitHub, and a gated Hugging Face dataset for full transcripts and convince-wrong templates. Corrections and provider or parser changes are released as new minor versions.",
+  "rai:dataReleaseMaintenancePlan": "Versioned public release (alpha-tot-v1.0.4): open data on Hugging Face, code on GitHub, and a gated Hugging Face dataset for full transcripts and convince-wrong templates. Corrections and provider or parser changes are released as new minor versions.",
   "rai:dataSocialImpact": "Helps audit debate interventions that may reduce collapses while discarding corrections; gated release mitigates misuse as a misleading-answer corpus.",
   "rai:dataUseCases": "Zero-API recomputation of aggregate tables; applying the transition-table and signed-utility protocol to new model-scaffold pairs; documenting gated release boundaries; public artifact hosting on Hugging Face with code on GitHub.",
   "rai:hasSyntheticData": true,
   "rai:machineAnnotationTools": "Rule-based MCQ answer parser included in the artifact; no LLM judge step is used.",
   "rai:personalSensitiveInformation": "none",
   "url": "https://huggingface.co/datasets/XINLI1997/DebateLedger",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "distribution": [
     {
       "@type": "cr:FileObject",
@@ -86,7 +86,7 @@
       "name": "README_REPRO.md",
       "contentUrl": "README_REPRO.md",
       "encodingFormat": "text/markdown",
-      "sha256": "c6e9a51e08dfd87c7b19f3ba63e40ceecabb3df06abacafc9907a523d5189c06"
+      "sha256": "5e0b142177ed0ca20479c161e0243d9f6560579c99404fef657951c21f74ca9a"
     },
     {
       "@type": "cr:FileObject",
@@ -102,7 +102,7 @@
       "name": "DEBATE_EVAL_ARTIFACT_DATASHEET.md",
       "contentUrl": "abc_exp/results/DEBATE_EVAL_ARTIFACT_DATASHEET.md",
       "encodingFormat": "text/markdown",
-      "sha256": "a5aa8fc5f8355743d836e609420f4a47f4e8d67c66c6a65caf231fa340848e96"
+      "sha256": "e4ab47578fca06c1904f680d78da011f43e96dcc58d0cb874a5cc734bb8fcbd3"
     },
     {
       "@type": "cr:FileObject",
@@ -134,7 +134,7 @@
       "name": "conditional_collapse_table.json",
       "contentUrl": "abc_exp/results/conditional_collapse_table.json",
       "encodingFormat": "application/json",
-      "sha256": "2df5c2ae2f8047c2d5706fe82339229774d4614c0583351042034f07ccaa5eba"
+      "sha256": "d6a11d548753d89b695d700e7f21755c414a5def11c2204acb7382192e9bbd21"
     },
     {
       "@type": "cr:FileObject",
@@ -249,6 +249,22 @@
       "sha256": "72a7397af3a6469e64cc2412b58faca14c9dbd3366c8d3114b2d2093d82f9e5e"
     },
     {
+      "@type": "cr:FileObject",
+      "@id": "file_abc_exp_results_gate_rerun_gate_lomo_paper_json",
+      "name": "gate_lomo_paper.json",
+      "contentUrl": "abc_exp/results/gate_rerun/gate_lomo_paper.json",
+      "encodingFormat": "application/json",
+      "sha256": "1350c4e952a1e03995a9eb65f422b02fa4174af35a371d45e7d2fcef746c18f9"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "file_abc_exp_results_channel_panel_channel_panel_22_json",
+      "name": "channel_panel_22.json",
+      "contentUrl": "abc_exp/results/channel_panel/channel_panel_22.json",
+      "encodingFormat": "application/json",
+      "sha256": "5320543ee013297441def772f7ac62545cf406f81c55d699a8908e86801d1027"
+    },
+    {
       "@type": "cr:FileSet",
       "@id": "fileset_debate_traces",
       "name": "fileset_debate_traces",
@@ -303,6 +319,14 @@
       "description": "8-probe screen traces of the thinking-off rerun of the four Qwen3.5/3.6 rows. Model output text is null in the open tier.",
       "encodingFormat": "application/jsonlines",
       "includes": "abc_exp/results/thinking_off_rerun/sa_causal_*.jsonl"
+    },
+    {
+      "@type": "cr:FileSet",
+      "@id": "fileset_gate_rerun_probe_traces",
+      "name": "fileset_gate_rerun_probe_traces",
+      "description": "8-probe screen traces of the four local models collected for the probe-gated freeze and the channel panel. Model output text is null in the open tier.",
+      "encodingFormat": "application/jsonlines",
+      "includes": "abc_exp/results/gate_rerun/*.jsonl"
     }
   ],
   "recordSet": [
@@ -356,7 +380,7 @@
           "artifact_path": "README_REPRO.md",
           "artifact_role": "zero-api rebuild card",
           "encoding_format": "text/markdown",
-          "sha256": "c6e9a51e08dfd87c7b19f3ba63e40ceecabb3df06abacafc9907a523d5189c06",
+          "sha256": "5e0b142177ed0ca20479c161e0243d9f6560579c99404fef657951c21f74ca9a",
           "release_tier": "open; full transcripts and convince-wrong templates are in the gated dataset"
         },
         {
@@ -370,7 +394,7 @@
           "artifact_path": "abc_exp/results/DEBATE_EVAL_ARTIFACT_DATASHEET.md",
           "artifact_role": "artifact datasheet",
           "encoding_format": "text/markdown",
-          "sha256": "a5aa8fc5f8355743d836e609420f4a47f4e8d67c66c6a65caf231fa340848e96",
+          "sha256": "e4ab47578fca06c1904f680d78da011f43e96dcc58d0cb874a5cc734bb8fcbd3",
           "release_tier": "open; full transcripts and convince-wrong templates are in the gated dataset"
         },
         {
@@ -398,7 +422,7 @@
           "artifact_path": "abc_exp/results/conditional_collapse_table.json",
           "artifact_role": "collapse/correction transition table",
           "encoding_format": "application/json",
-          "sha256": "2df5c2ae2f8047c2d5706fe82339229774d4614c0583351042034f07ccaa5eba",
+          "sha256": "d6a11d548753d89b695d700e7f21755c414a5def11c2204acb7382192e9bbd21",
           "release_tier": "open; full transcripts and convince-wrong templates are in the gated dataset"
         },
         {
@@ -497,6 +521,20 @@
           "artifact_role": "boundary benchmark trace rows",
           "encoding_format": "application/jsonlines",
           "sha256": "72a7397af3a6469e64cc2412b58faca14c9dbd3366c8d3114b2d2093d82f9e5e",
+          "release_tier": "open; full transcripts and convince-wrong templates are in the gated dataset"
+        },
+        {
+          "artifact_path": "abc_exp/results/gate_rerun/gate_lomo_paper.json",
+          "artifact_role": "probe-gated freeze ledger",
+          "encoding_format": "application/json",
+          "sha256": "1350c4e952a1e03995a9eb65f422b02fa4174af35a371d45e7d2fcef746c18f9",
+          "release_tier": "open; full transcripts and convince-wrong templates are in the gated dataset"
+        },
+        {
+          "artifact_path": "abc_exp/results/channel_panel/channel_panel_22.json",
+          "artifact_role": "22-model channel panel",
+          "encoding_format": "application/json",
+          "sha256": "5320543ee013297441def772f7ac62545cf406f81c55d699a8908e86801d1027",
           "release_tier": "open; full transcripts and convince-wrong templates are in the gated dataset"
         }
       ]
@@ -1157,6 +1195,110 @@
           "source": {
             "fileSet": {
               "@id": "fileset_thinking_off_probe_traces"
+            },
+            "extract": {
+              "column": "flip_rate"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "@type": "cr:RecordSet",
+      "@id": "gate_rerun_probe_traces",
+      "name": "gate_rerun_probe_traces",
+      "description": "8-probe screen traces of the four local models collected for the probe-gated freeze and the channel panel. Model output text is null in the open tier.",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "gate_rerun_probe_traces/question_id",
+          "name": "question_id",
+          "description": "Benchmark question identifier.",
+          "dataType": "sc:Text",
+          "repeated": false,
+          "source": {
+            "fileSet": {
+              "@id": "fileset_gate_rerun_probe_traces"
+            },
+            "extract": {
+              "column": "question_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "gate_rerun_probe_traces/agent_idx",
+          "name": "agent_idx",
+          "description": "Agent index within the panel.",
+          "dataType": "sc:Integer",
+          "repeated": false,
+          "source": {
+            "fileSet": {
+              "@id": "fileset_gate_rerun_probe_traces"
+            },
+            "extract": {
+              "column": "agent_idx"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "gate_rerun_probe_traces/condition",
+          "name": "condition",
+          "description": "System-prompt condition of the probe run.",
+          "dataType": "sc:Text",
+          "repeated": false,
+          "source": {
+            "fileSet": {
+              "@id": "fileset_gate_rerun_probe_traces"
+            },
+            "extract": {
+              "column": "condition"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "gate_rerun_probe_traces/initial_answer",
+          "name": "initial_answer",
+          "description": "Parsed answer before any probe.",
+          "dataType": "sc:Text",
+          "repeated": false,
+          "source": {
+            "fileSet": {
+              "@id": "fileset_gate_rerun_probe_traces"
+            },
+            "extract": {
+              "column": "initial_answer"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "gate_rerun_probe_traces/initial_correct",
+          "name": "initial_correct",
+          "description": "Whether the initial answer matches the key.",
+          "dataType": "sc:Boolean",
+          "repeated": false,
+          "source": {
+            "fileSet": {
+              "@id": "fileset_gate_rerun_probe_traces"
+            },
+            "extract": {
+              "column": "initial_correct"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "gate_rerun_probe_traces/flip_rate",
+          "name": "flip_rate",
+          "description": "Fraction of the eight probes that changed the answer.",
+          "dataType": "sc:Float",
+          "repeated": false,
+          "source": {
+            "fileSet": {
+              "@id": "fileset_gate_rerun_probe_traces"
             },
             "extract": {
               "column": "flip_rate"

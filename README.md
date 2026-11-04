@@ -22,6 +22,7 @@ Nanyang Technological University · \*Equal contribution
 
 ## News
 
+- **2026-11-04** Release alpha-tot-v1.0.4: adds the probe scores, scripts and results of the probe-gated freeze and the 22-model channel panel, and fixes three scripts so that their outputs rebuild on the open tier. Earlier traces are unchanged.
 - **2026-10-30** Release alpha-tot-v1.0.3: adds the B pilot harness and the N=9 sensitivity scripts and results. Traces are unchanged; `README_REPRO.md` lists which debate sources are not public.
 - **2026-10-30** Release alpha-tot-v1.0.2: aggregates read every row at the paper's endpoint, Round 3 majority with alphabetic ties.
   Earlier traces are unchanged; the thinking-off rerun of the four Qwen3.5/3.6 rows is added. `abc_exp/r3_unified/rebuild_r3.sh` rebuilds the aggregates; see `README_REPRO.md`.

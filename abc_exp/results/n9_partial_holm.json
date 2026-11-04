@@ -1,0 +1,54 @@
+{
+ "n_models": 9,
+ "models": [
+  "Sonnet 4.5",
+  "GPT-4o-mini",
+  "GPT-5.4-mini",
+  "Gemini 3-flash",
+  "Phi-4-mini",
+  "Qwen3-4B",
+  "Llama-3.1-8B",
+  "Qwen3-8B",
+  "Qwen3-32B"
+ ],
+ "holm_family_size": 7,
+ "secondary_spearman": {
+  "alpha_adv": {
+   "rho": 0.6166666666666666,
+   "p_raw": 0.07692880993776312,
+   "p_holm": 0.4615728596265787
+  },
+  "alpha_cor": {
+   "rho": -0.19999999999999998,
+   "p_raw": 0.6059012741795534,
+   "p_holm": 1.0
+  },
+  "debate_FR": {
+   "rho": 0.326362689414732,
+   "p_raw": 0.3913604492997979,
+   "p_holm": 1.0
+  },
+  "init_acc": {
+   "rho": -0.7333333333333334,
+   "p_raw": 0.024554150071469705,
+   "p_holm": 0.17187905050028793
+  }
+ },
+ "partial_given_init_acc": {
+  "alpha_total": {
+   "partial_rho": 0.5685642641633971,
+   "p_raw": 0.14140768041442225,
+   "p_holm": 0.7070384020721112
+  },
+  "alpha_adv": {
+   "partial_rho": 0.21282857659767226,
+   "p_raw": 0.6128330238165054,
+   "p_holm": 1.0
+  },
+  "alpha_cor": {
+   "partial_rho": -0.061940498376286415,
+   "p_raw": 0.8841582767470036,
+   "p_holm": 1.0
+  }
+ }
+}

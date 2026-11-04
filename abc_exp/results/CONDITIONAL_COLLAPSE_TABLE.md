@@ -7,7 +7,7 @@ N models = 11
 | Claude Sonnet 4.5 | Anthropic | 120 | 77.5% | 0.705 | +0.15 | 1.67 [0.46, 5.87] | 2.15 [0.59, 7.51] | 11.11 | 1.50 |
 | Claude Haiku 4.5 | Anthropic | 500 | 82.2% | 0.512 | -0.03 | 9.20 [6.97, 12.05] | 11.19 [8.50, 14.61] | 19.10 | 0.37 |
 | GPT-4o-mini | OpenAI | 498 | 68.5% | 0.458 | +0.05 | 1.61 [0.82, 3.14] | 2.35 [1.19, 4.56] | 10.19 | 2.00 |
-| Gemini 2.5 Flash | Google | 200 | 36.5% | 0.648 | +0.14 | 0.50 [0.09, 2.78] | 1.37 [0.24, 7.36] | 11.81 | 15.00 |
+| Gemini 2.5 Flash | Google | 118 | 61.9% | 0.648 | +0.14 | 0.85 [0.15, 4.64] | 1.37 [0.24, 7.36] | 33.33 | 15.00 |
 | GPT-5.4-mini | OpenAI | 200 | 71.5% | 0.350 | +0.05 | 0.50 [0.09, 2.78] | 0.70 [0.12, 3.85] | 17.54 | 10.00 |
 | Gemini 3-flash | Google | 200 | 85.0% | 0.249 | -0.08 | 0.50 [0.09, 2.78] | 0.59 [0.10, 3.26] | 6.67 | 2.00 |
 | Phi-4-mini | Microsoft | 2161 | 50.6% | 0.451 | +0.23 | 5.18 [4.33, 6.20] | 10.24 [8.58, 12.18] | 16.31 | 1.55 |
@@ -18,10 +18,10 @@ N models = 11
 
 ## Cross-model rank tests
 - **N_models**: 11
-- **spearman_FR_raw**: stat=0.087, p=0.7984
+- **spearman_FR_raw**: stat=0.151, p=0.6583
 - **spearman_FR_cond**: stat=0.196, p=0.5637
-- **spearman_FR_recover**: stat=-0.091, p=0.7899
+- **spearman_FR_recover**: stat=0.036, p=0.9153
 - **spearman_SA_cond**: stat=0.251, p=0.4574
 - **kendall_FR_cond**: stat=0.147, p=0.5322
-- **spearman_init_acc_cond**: stat=-0.218, p=0.5192
-- **spearman_init_acc_raw**: stat=0.037, p=0.9147
+- **spearman_init_acc_cond**: stat=-0.409, p=0.2115
+- **spearman_init_acc_raw**: stat=-0.232, p=0.4918

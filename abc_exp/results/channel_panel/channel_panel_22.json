@@ -1,0 +1,698 @@
+{
+ "summary": {
+  "models": 22,
+  "AA_gt_AS": 22,
+  "holm_sig": 20,
+  "strict_order": 18,
+  "mean_d": 0.7581603463423218,
+  "family_mean_d": {
+   "Google": 0.6336727557237534,
+   "DeepSeek": 0.33550202258285333,
+   "Zhipu": 1.5264401201263489,
+   "xAI": 0.49747040928574393,
+   "Tencent": 1.037212115456171,
+   "Mistral": 2.549272831429903,
+   "Meta": 0.9168727314675933,
+   "Microsoft": 0.6596764763471628,
+   "Qwen": 0.5051813818506653
+  },
+  "group_mean_d": {
+   "API models": 0.8791145741171492,
+   "Local open-weight models (vLLM)": 0.6130152730125289
+  },
+  "group_counts": {
+   "API models": 12,
+   "Local open-weight models (vLLM)": 10
+  },
+  "shared_questions": 188,
+  "sa_positive_per_model_pool": 21,
+  "sa_positive_shared": 21,
+  "sa_ci_excludes_zero_pos": 13,
+  "spearman_rho": 0.9909655561829477,
+  "spearman_p": 6.29840888794503e-19,
+  "sign_flips": [],
+  "rerun_dir": "abc_exp/results/gate_rerun"
+ },
+ "per_model": {
+  "Gemini 3-flash": {
+   "family": "Google",
+   "group": "API models",
+   "file": "rel:sa_causal_gemini_3_flash_n200.jsonl",
+   "N": 1800,
+   "pairs": 600,
+   "FR_D": 0.14020833333333332,
+   "FR_AS": 0.03208333333333333,
+   "FR_AA": 0.384375,
+   "order": "check",
+   "d": 1.360310278049752,
+   "p": 1.656367866361095e-138,
+   "sa_default": 0.15791640208381125,
+   "sa_ci": [
+    0.12916644745873265,
+    0.1870830196047337
+   ],
+   "sa_questions": 200,
+   "p_holm": 3.1470989460860803e-137,
+   "holm_sig": true,
+   "shared": {
+    "records": 564,
+    "questions": 188,
+    "alpha": 0.12078900709219857,
+    "S_sens": 0.10150709219858157,
+    "A_sens": 0.08732269503546099,
+    "SA": 0.1533685372345071,
+    "InitAcc": 0.8581560283687943
+   }
+  },
+  "Gemini 3.1-flash-lite": {
+   "family": "Google",
+   "group": "API models",
+   "file": "rel:sa_causal_gemini_3_1_flash_lite_n200.jsonl",
+   "N": 1800,
+   "pairs": 600,
+   "FR_D": 0.30645833333333333,
+   "FR_AS": 0.27458333333333335,
+   "FR_AA": 0.32416666666666666,
+   "order": "check",
+   "d": 0.19302509010521768,
+   "p": 2.8279431675340454e-06,
+   "sa_default": 0.028749936250133747,
+   "sa_ci": [
+    -0.02124995914591339,
+    0.07624984306281832
+   ],
+   "sa_questions": 200,
+   "p_holm": 1.1311772670136182e-05,
+   "holm_sig": true,
+   "shared": {
+    "records": 564,
+    "questions": 188,
+    "alpha": 0.2910017730496454,
+    "S_sens": 0.01374113475177305,
+    "A_sens": 0.11835106382978723,
+    "SA": 0.03280134751787765,
+    "InitAcc": 0.8492907801418439
+   }
+  },
+  "Gemini 3.1-pro": {
+   "family": "Google",
+   "group": "API models",
+   "file": "rel:sa_causal_gemini_3_1_pro_n200.jsonl",
+   "N": 1791,
+   "pairs": 597,
+   "FR_D": 0.15117252931323283,
+   "FR_AS": 0.13295644891122277,
+   "FR_AA": 0.31972361809045224,
+   "order": "check",
+   "d": 0.6342806868514714,
+   "p": 9.146279706587667e-46,
+   "sa_default": -0.01340030318264824,
+   "sa_ci": [
+    -0.033919523890439215,
+    0.007118926737845415
+   ],
+   "sa_questions": 199,
+   "p_holm": 1.09755356479052e-44,
+   "holm_sig": true,
+   "shared": {
+    "records": 564,
+    "questions": 188,
+    "alpha": 0.13054078014184395,
+    "S_sens": -0.00044326241134751853,
+    "A_sens": 0.0022163120567375884,
+    "SA": -0.007978700354663118,
+    "InitAcc": 0.8652482269503545
+   }
+  },
+  "DeepSeek V4 Flash": {
+   "family": "DeepSeek",
+   "group": "API models",
+   "file": "rel:sa_causal_router_deepseek-v4-flash.jsonl",
+   "N": 1793,
+   "pairs": 598,
+   "FR_D": 0.11723993288590603,
+   "FR_AS": 0.03574414715719063,
+   "FR_AA": 0.18468280467445744,
+   "order": "check",
+   "d": 0.6562866443684916,
+   "p": 1.8829024514262912e-48,
+   "sa_default": 0.061666561250192924,
+   "sa_ci": [
+    0.037499943333428334,
+    0.08666651708360874
+   ],
+   "sa_questions": 200,
+   "p_holm": 2.447773186854179e-47,
+   "holm_sig": true,
+   "shared": {
+    "records": 563,
+    "questions": 188,
+    "alpha": 0.10992907801418439,
+    "S_sens": 0.035460992907801414,
+    "A_sens": 0.09397163120567377,
+    "SA": 0.05629422828032314,
+    "InitAcc": 0.8492907801418439
+   }
+  },
+  "DeepSeek V4 Pro": {
+   "family": "DeepSeek",
+   "group": "API models",
+   "file": "rel:sa_causal_router_deepseek-v4-pro.jsonl",
+   "N": 1614,
+   "pairs": 523,
+   "FR_D": 0.03997227356746765,
+   "FR_AS": 0.04460966542750929,
+   "FR_AA": 0.046261682242990654,
+   "order": "sim",
+   "d": 0.014717400797215022,
+   "p": 0.7365725067900777,
+   "sa_default": 0.01693401559720633,
+   "sa_ci": [
+    -0.0031194206773823502,
+    0.03698745374344714
+   ],
+   "sa_questions": 187,
+   "p_holm": 0.7365725067900777,
+   "holm_sig": false,
+   "shared": {
+    "records": 541,
+    "questions": 187,
+    "alpha": 0.038658645276292335,
+    "S_sens": 0.010026737967914439,
+    "A_sens": -0.0015597147950089107,
+    "SA": 0.01693401559720633,
+    "InitAcc": 0.8716577540106952
+   }
+  },
+  "GLM-4.6 (no reasoning)": {
+   "family": "Zhipu",
+   "group": "API models",
+   "file": "rel:sa_causal_openrouter_glm_4_6_noreason_n200.jsonl",
+   "N": 1800,
+   "pairs": 600,
+   "FR_D": 0.54125,
+   "FR_AS": 0.2864583333333333,
+   "FR_AA": 0.716875,
+   "order": "check",
+   "d": 1.5264401201263489,
+   "p": 9.236647647368552e-159,
+   "sa_default": 0.02208330708336792,
+   "sa_ci": [
+    -0.009999962583425578,
+    0.0529165963334385
+   ],
+   "sa_questions": 200,
+   "p_holm": 1.8473295294737104e-157,
+   "holm_sig": true,
+   "shared": {
+    "records": 564,
+    "questions": 188,
+    "alpha": 0.5283687943262411,
+    "S_sens": 0.018617021276595747,
+    "A_sens": 0.45035460992907794,
+    "SA": 0.022606352393663567,
+    "InitAcc": 0.6843971631205673
+   }
+  },
+  "Grok 4.1 Fast": {
+   "family": "xAI",
+   "group": "API models",
+   "file": "rel:sa_causal_openrouter_grok_4_1_fast_n200.jsonl",
+   "N": 1799,
+   "pairs": 599,
+   "FR_D": 0.18291666666666667,
+   "FR_AS": 0.06833333333333333,
+   "FR_AA": 0.18447412353923207,
+   "order": "check",
+   "d": 0.49747040928574393,
+   "p": 1.2726557462531835e-30,
+   "sa_default": 0.003333333333326666,
+   "sa_ci": [
+    -0.0266666141876041,
+    0.03291660958343875
+   ],
+   "sa_questions": 200,
+   "p_holm": 1.0181245970025468e-29,
+   "holm_sig": true,
+   "shared": {
+    "records": 564,
+    "questions": 188,
+    "alpha": 0.16843971631205673,
+    "S_sens": 0.0044326241134751785,
+    "A_sens": 0.11702127659574468,
+    "SA": 0.0008865310283484103,
+    "InitAcc": 0.7163120567375888
+   }
+  },
+  "HY3 Preview": {
+   "family": "Tencent",
+   "group": "API models",
+   "file": "rel:sa_causal_openrouter_hy3_preview_free_n200.jsonl",
+   "N": 1785,
+   "pairs": 590,
+   "FR_D": 0.3123949579831933,
+   "FR_AS": 0.08340336134453781,
+   "FR_AA": 0.4016806722689076,
+   "order": "check",
+   "d": 1.037212115456171,
+   "p": 1.3626786726276777e-95,
+   "sa_default": 0.024374973125031882,
+   "sa_ci": [
+    -0.009166628354263266,
+    0.05770824481265015
+   ],
+   "sa_questions": 200,
+   "p_holm": 2.316553743467052e-94,
+   "holm_sig": true,
+   "shared": {
+    "records": 559,
+    "questions": 188,
+    "alpha": 0.28734485815602834,
+    "S_sens": 0.021941489361702128,
+    "A_sens": 0.18107269503546097,
+    "SA": 0.02194146742023471,
+    "InitAcc": 0.801418439716312
+   }
+  },
+  "Mistral Small 4": {
+   "family": "Mistral",
+   "group": "API models",
+   "file": "rel:sa_causal_openrouter_mistral_small_4_n200.jsonl",
+   "N": 1800,
+   "pairs": 600,
+   "FR_D": 0.420625,
+   "FR_AS": 0.06604166666666667,
+   "FR_AA": 0.6447916666666667,
+   "order": "check",
+   "d": 2.549272831429903,
+   "p": 1.9770419770592286e-264,
+   "sa_default": 0.03791659708346625,
+   "sa_ci": [
+    9.145805896781952e-09,
+    0.0754269547398181
+   ],
+   "sa_questions": 200,
+   "p_holm": 4.349492349530303e-263,
+   "holm_sig": true,
+   "shared": {
+    "records": 564,
+    "questions": 188,
+    "alpha": 0.42220744680851063,
+    "S_sens": 0.023492907801418435,
+    "A_sens": 0.21675531914893617,
+    "SA": 0.0407800664895062,
+    "InitAcc": 0.6648936170212765
+   }
+  },
+  "Llama 3.3 70B": {
+   "family": "Meta",
+   "group": "API models",
+   "file": "rel:sa_causal_openrouter_llama_3_3_70b_instruct_n200.jsonl",
+   "N": 1797,
+   "pairs": 598,
+   "FR_D": 0.47036727879799667,
+   "FR_AS": 0.19145833333333334,
+   "FR_AA": 0.5796404682274248,
+   "order": "check",
+   "d": 1.3064661232671453,
+   "p": 2.430831809605083e-131,
+   "sa_default": 0.07458322000019083,
+   "sa_ci": [
+    0.04374994537507637,
+    0.10541649379197446
+   ],
+   "sa_questions": 200,
+   "p_holm": 4.375497257289149e-130,
+   "holm_sig": true,
+   "shared": {
+    "records": 564,
+    "questions": 188,
+    "alpha": 0.4532358156028369,
+    "S_sens": 0.05363475177304964,
+    "A_sens": 0.2646276595744681,
+    "SA": 0.07180840248245034,
+    "InitAcc": 0.6187943262411348
+   }
+  },
+  "Llama 4 Scout": {
+   "family": "Meta",
+   "group": "API models",
+   "file": "rel:sa_causal_openrouter_llama_4_scout_n200.jsonl",
+   "N": 1800,
+   "pairs": 600,
+   "FR_D": 0.43416666666666665,
+   "FR_AS": 0.425625,
+   "FR_AA": 0.5741666666666667,
+   "order": "check",
+   "d": 0.5400995102531039,
+   "p": 3.095527782959672e-35,
+   "sa_default": 0.03708326375013458,
+   "sa_ci": [
+    0.0029166569166900872,
+    0.07249985277113002
+   ],
+   "sa_questions": 200,
+   "p_holm": 2.7859750046637047e-34,
+   "holm_sig": true,
+   "shared": {
+    "records": 564,
+    "questions": 188,
+    "alpha": 0.4273049645390071,
+    "S_sens": 0.024822695035460994,
+    "A_sens": 0.16489361702127658,
+    "SA": 0.042996374556889635,
+    "InitAcc": 0.7074468085106383
+   }
+  },
+  "Llama 4 Maverick": {
+   "family": "Meta",
+   "group": "API models",
+   "file": "rel:sa_causal_openrouter_llama_4_maverick_n200.jsonl",
+   "N": 1794,
+   "pairs": 598,
+   "FR_D": 0.5727768456375839,
+   "FR_AS": 0.6220784641068448,
+   "FR_AA": 0.6798831385642737,
+   "order": "sim",
+   "d": 0.23379367941522572,
+   "p": 1.7120815256254766e-08,
+   "sa_default": 0.07499988583352585,
+   "sa_ci": [
+    0.03312496428129091,
+    0.11708836267217773
+   ],
+   "sa_questions": 200,
+   "p_holm": 8.560407628127382e-08,
+   "holm_sig": true,
+   "shared": {
+    "records": 560,
+    "questions": 188,
+    "alpha": 0.5675975177304964,
+    "S_sens": 0.05851063829787234,
+    "A_sens": 0.17154255319148937,
+    "SA": 0.08156015602858864,
+    "InitAcc": 0.772163120567376
+   }
+  },
+  "Gemma 4 31B": {
+   "family": "Google",
+   "group": "Local open-weight models (vLLM)",
+   "file": "rel:sa_causal_vllm_gemma-4-31b-it-awq.jsonl",
+   "N": 1800,
+   "pairs": 600,
+   "FR_D": 0.296875,
+   "FR_AS": 0.265,
+   "FR_AA": 0.37,
+   "order": "check",
+   "d": 0.3470749678885722,
+   "p": 1.4911765708273656e-16,
+   "sa_default": 0.016249970416722916,
+   "sa_ci": [
+    -0.021666632520892435,
+    0.0541665716876766
+   ],
+   "sa_questions": 200,
+   "p_holm": 8.947059424964194e-16,
+   "holm_sig": true,
+   "shared": {
+    "records": 564,
+    "questions": 188,
+    "alpha": 0.28812056737588654,
+    "S_sens": 0.0035460992907801418,
+    "A_sens": 0.07624113475177305,
+    "SA": 0.008421967641881653,
+    "InitAcc": 0.824468085106383
+   }
+  },
+  "Llama-3.1-8B": {
+   "family": "Meta",
+   "group": "Local open-weight models (vLLM)",
+   "file": "rerun:sa_causal_vllm_llama-3.1-8b_rerun.jsonl",
+   "N": 1800,
+   "pairs": 600,
+   "FR_D": 0.68875,
+   "FR_AS": 0.4014583333333333,
+   "FR_AA": 0.8122916666666666,
+   "order": "check",
+   "d": 1.5871316129348985,
+   "p": 5.995486703811289e-166,
+   "sa_default": 0.05124989458354708,
+   "sa_ci": [
+    0.005416661895836811,
+    0.09833315250034584
+   ],
+   "sa_questions": 200,
+   "p_holm": 1.2590522078003708e-164,
+   "holm_sig": true,
+   "shared": {
+    "records": 564,
+    "questions": 188,
+    "alpha": 0.6808510638297872,
+    "S_sens": 0.018617021276595747,
+    "A_sens": 0.29609929078014185,
+    "SA": 0.046099189716523055,
+    "InitAcc": 0.3404255319148936
+   }
+  },
+  "Phi-4-mini": {
+   "family": "Microsoft",
+   "group": "Local open-weight models (vLLM)",
+   "file": "rerun:sa_causal_vllm_phi-4-mini_rerun.jsonl",
+   "N": 1800,
+   "pairs": 600,
+   "FR_D": 0.45458333333333334,
+   "FR_AS": 0.29583333333333334,
+   "FR_AA": 0.49666666666666665,
+   "order": "check",
+   "d": 0.6596764763471628,
+   "p": 5.14773141087264e-49,
+   "sa_default": 0.05958326125009708,
+   "sa_ci": [
+    0.015416668708296374,
+    0.10458318885439095
+   ],
+   "sa_questions": 200,
+   "p_holm": 7.206823975221696e-48,
+   "holm_sig": true,
+   "shared": {
+    "records": 564,
+    "questions": 188,
+    "alpha": 0.45257092198581567,
+    "S_sens": 0.05585106382978723,
+    "A_sens": 0.24468085106382978,
+    "SA": 0.06294318528379345,
+    "InitAcc": 0.3882978723404255
+   }
+  },
+  "Qwen3-4B": {
+   "family": "Qwen",
+   "group": "Local open-weight models (vLLM)",
+   "file": "rerun:sa_causal_vllm_qwen3-4b_rerun.jsonl",
+   "N": 1800,
+   "pairs": 600,
+   "FR_D": 0.65125,
+   "FR_AS": 0.62625,
+   "FR_AA": 0.794375,
+   "order": "check",
+   "d": 0.7975424200505937,
+   "p": 3.967118458034035e-66,
+   "sa_default": 0.2441662858339875,
+   "sa_ci": [
+    0.2037496945630088,
+    0.28416620416748584
+   ],
+   "sa_questions": 200,
+   "p_holm": 5.950677687051052e-65,
+   "holm_sig": true,
+   "shared": {
+    "records": 564,
+    "questions": 188,
+    "alpha": 0.6376329787234043,
+    "S_sens": 0.18129432624113476,
+    "A_sens": 0.3896276595744681,
+    "SA": 0.2531024401602584,
+    "InitAcc": 0.5212765957446808
+   }
+  },
+  "Qwen3-8B": {
+   "family": "Qwen",
+   "group": "Local open-weight models (vLLM)",
+   "file": "rerun:sa_causal_vllm_qwen3-8b_rerun.jsonl",
+   "N": 1800,
+   "pairs": 600,
+   "FR_D": 0.34208333333333335,
+   "FR_AS": 0.18625,
+   "FR_AA": 0.4845833333333333,
+   "order": "check",
+   "d": 0.9131072702927213,
+   "p": 5.164393210373414e-81,
+   "sa_default": 0.10458317125027708,
+   "sa_ci": [
+    0.060416577833479,
+    0.14666643008374977
+   ],
+   "sa_questions": 200,
+   "p_holm": 8.263029136597463e-80,
+   "holm_sig": true,
+   "shared": {
+    "records": 564,
+    "questions": 188,
+    "alpha": 0.3249113475177305,
+    "S_sens": 0.07535460992907801,
+    "A_sens": 0.1897163120567376,
+    "SA": 0.10372324379460017,
+    "InitAcc": 0.597517730496454
+   }
+  },
+  "Qwen3-32B": {
+   "family": "Qwen",
+   "group": "Local open-weight models (vLLM)",
+   "file": "rel:sa_causal_vllm_qwen3_32b_a7_n200.jsonl",
+   "N": 1800,
+   "pairs": 600,
+   "FR_D": 0.6545833333333333,
+   "FR_AS": 0.6754166666666667,
+   "FR_AA": 0.7002083333333333,
+   "order": "sim",
+   "d": 0.08093099086681814,
+   "p": 0.04789138765468257,
+   "sa_default": 0.006666660000006665,
+   "sa_ci": [
+    -0.038749929604300355,
+    0.052916576333498506
+   ],
+   "sa_questions": 200,
+   "p_holm": 0.09578277530936515,
+   "holm_sig": false,
+   "shared": {
+    "records": 564,
+    "questions": 188,
+    "alpha": 0.6527039007092199,
+    "S_sens": 0.007535460992907801,
+    "A_sens": 0.22384751773049644,
+    "SA": 0.00930849778370789,
+    "InitAcc": 0.35992907801418433
+   }
+  },
+  "Qwen3.5-4B": {
+   "family": "Qwen",
+   "group": "Local open-weight models (vLLM)",
+   "file": "off:sa_causal_vllm_qwen3.5-4b_thinkoff.jsonl",
+   "N": 1800,
+   "pairs": 600,
+   "FR_D": 0.360625,
+   "FR_AS": 0.3304166666666667,
+   "FR_AA": 0.5010416666666667,
+   "order": "check",
+   "d": 0.6285384355615422,
+   "p": 2.617234244550622e-45,
+   "sa_default": 0.027916620416749582,
+   "sa_ci": [
+    -0.004166653354198271,
+    0.05999989252103576
+   ],
+   "sa_questions": 200,
+   "p_holm": 2.8789576690056844e-44,
+   "holm_sig": true,
+   "shared": {
+    "records": 564,
+    "questions": 188,
+    "alpha": 0.3426418439716312,
+    "S_sens": 0.01773049645390071,
+    "A_sens": 0.11524822695035461,
+    "SA": 0.023049611702182626,
+    "InitAcc": 0.7092198581560283
+   }
+  },
+  "Qwen3.5-9B": {
+   "family": "Qwen",
+   "group": "Local open-weight models (vLLM)",
+   "file": "off:sa_causal_vllm_qwen3.5-9b_thinkoff.jsonl",
+   "N": 1800,
+   "pairs": 600,
+   "FR_D": 0.29791666666666666,
+   "FR_AS": 0.18145833333333333,
+   "FR_AA": 0.336875,
+   "order": "check",
+   "d": 0.5588911263397918,
+   "p": 2.592486041976998e-37,
+   "sa_default": 0.04416659250013416,
+   "sa_ci": [
+    0.009999982479199228,
+    0.07874985708360457
+   ],
+   "sa_questions": 200,
+   "p_holm": 2.592486041976998e-36,
+   "holm_sig": true,
+   "shared": {
+    "records": 564,
+    "questions": 188,
+    "alpha": 0.27615248226950356,
+    "S_sens": 0.028368794326241138,
+    "A_sens": 0.10992907801418439,
+    "SA": 0.042996381649066925,
+    "InitAcc": 0.7517730496453902
+   }
+  },
+  "Qwen3.6-27B": {
+   "family": "Qwen",
+   "group": "Local open-weight models (vLLM)",
+   "file": "off:sa_causal_vllm_qwen3.6-27b-fp8_thinkoff.jsonl",
+   "N": 1800,
+   "pairs": 600,
+   "FR_D": 0.10291666666666667,
+   "FR_AS": 0.07895833333333334,
+   "FR_AA": 0.16625,
+   "order": "check",
+   "d": 0.4307436393733259,
+   "p": 5.4926247580465e-24,
+   "sa_default": 0.028749952083419586,
+   "sa_ci": [
+    0.009583323750009583,
+    0.047916583833486
+   ],
+   "sa_questions": 200,
+   "p_holm": 3.84483733063255e-23,
+   "holm_sig": true,
+   "shared": {
+    "records": 564,
+    "questions": 188,
+    "alpha": 0.08488475177304966,
+    "S_sens": 0.020833333333333336,
+    "A_sens": 0.05629432624113476,
+    "SA": 0.031028317375978717,
+    "InitAcc": 0.8351063829787234
+   }
+  },
+  "Qwen3.6-35B-A3B": {
+   "family": "Qwen",
+   "group": "Local open-weight models (vLLM)",
+   "file": "off:sa_causal_vllm_qwen3.6-35b-a3b-fp8_thinkoff.jsonl",
+   "N": 1800,
+   "pairs": 600,
+   "FR_D": 0.12479166666666666,
+   "FR_AS": 0.08875,
+   "FR_AA": 0.11458333333333333,
+   "order": "sim",
+   "d": 0.1265157904698635,
+   "p": 0.002032852363501612,
+   "sa_default": 0.06166656250018916,
+   "sa_ci": [
+    0.032083273708448046,
+    0.09291650793779035
+   ],
+   "sa_questions": 200,
+   "p_holm": 0.0060985570905048355,
+   "holm_sig": true,
+   "shared": {
+    "records": 564,
+    "questions": 188,
+    "alpha": 0.11148049645390071,
+    "S_sens": 0.03235815602836879,
+    "A_sens": 0.053634751773049646,
+    "SA": 0.0496453058512172,
+    "InitAcc": 0.8333333333333335
+   }
+  }
+ }
+}

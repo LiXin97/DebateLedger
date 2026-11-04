@@ -20,7 +20,8 @@
       "recover_hi": 28.057800818279823,
       "n_cond_coll": 2,
       "n_recover": 3,
-      "GB_ratio": 1.5
+      "GB_ratio": 1.5,
+      "source": "recorded_counts"
     },
     {
       "model": "Claude Haiku 4.5",
@@ -42,7 +43,8 @@
       "recover_hi": 28.4772682171176,
       "n_cond_coll": 46,
       "n_recover": 17,
-      "GB_ratio": 0.3695652173913043
+      "GB_ratio": 0.3695652173913043,
+      "source": "recorded_counts"
     },
     {
       "model": "GPT-4o-mini",
@@ -64,26 +66,28 @@
       "recover_hi": 15.912956144771895,
       "n_cond_coll": 8,
       "n_recover": 16,
-      "GB_ratio": 2.0
+      "GB_ratio": 2.0,
+      "source": "recorded_counts"
     },
     {
       "model": "Gemini 2.5 Flash",
       "family": "Google",
       "FR": 0.648,
       "SA": 0.14,
-      "n_deb": 200,
+      "source": "block1_abc_vs_baselines.jsonl",
+      "n_deb": 118,
       "n_init_correct": 73,
-      "n_init_wrong": 127,
-      "raw_collapse_pct": 0.5,
-      "raw_lo": 0.08831687156009763,
-      "raw_hi": 2.777370439789293,
+      "n_init_wrong": 45,
+      "raw_collapse_pct": 0.847457627118644,
+      "raw_lo": 0.14975405219652543,
+      "raw_hi": 4.6445572415402046,
       "cond_collapse_pct": 1.36986301369863,
       "cond_lo": 0.24222514664838657,
       "cond_hi": 7.359737270963818,
-      "init_acc": 0.365,
-      "recover_pct": 11.811023622047244,
-      "recover_lo": 7.289704388252161,
-      "recover_hi": 18.574772457019534,
+      "init_acc": 0.6186440677966102,
+      "recover_pct": 33.33333333333333,
+      "recover_lo": 21.358874934330032,
+      "recover_hi": 47.92951169009958,
       "n_cond_coll": 1,
       "n_recover": 15,
       "GB_ratio": 15.0
@@ -93,6 +97,7 @@
       "family": "OpenAI",
       "FR": 0.35,
       "SA": 0.05,
+      "source": "debate_traces_openai_gpt-5.4-mini.jsonl",
       "n_deb": 200,
       "n_init_correct": 143,
       "n_init_wrong": 57,
@@ -115,6 +120,7 @@
       "family": "Google",
       "FR": 0.249,
       "SA": -0.08,
+      "source": "debate_traces_gemini_3-flash.jsonl",
       "n_deb": 200,
       "n_init_correct": 170,
       "n_init_wrong": 30,
@@ -137,6 +143,7 @@
       "family": "Microsoft",
       "FR": 0.451,
       "SA": 0.23,
+      "source": "debate_traces_vllm_phi-4-mini.jsonl",
       "n_deb": 2161,
       "n_init_correct": 1094,
       "n_init_wrong": 1067,
@@ -159,6 +166,7 @@
       "family": "Qwen",
       "FR": 0.596,
       "SA": 0.08,
+      "source": "debate_traces_vllm_qwen3-4b.jsonl",
       "n_deb": 2161,
       "n_init_correct": 979,
       "n_init_wrong": 1182,
@@ -181,6 +189,7 @@
       "family": "Meta",
       "FR": 0.726,
       "SA": 0.06,
+      "source": "debate_traces_vllm_llama-3.1-8b.jsonl",
       "n_deb": 2003,
       "n_init_correct": 1016,
       "n_init_wrong": 987,
@@ -203,6 +212,7 @@
       "family": "Qwen",
       "FR": 0.596,
       "SA": -0.05,
+      "source": "debate_traces_vllm_qwen3-8b.jsonl",
       "n_deb": 200,
       "n_init_correct": 56,
       "n_init_wrong": 144,
@@ -240,29 +250,30 @@
       "recover_hi": 45.308339269675926,
       "n_cond_coll": 26,
       "n_recover": 97,
-      "GB_ratio": 3.730769230769231
+      "GB_ratio": 3.730769230769231,
+      "source": "recorded_counts"
     }
   ],
   "stats": {
     "N_models": 11,
     "spearman_FR_raw": {
-      "statistic": 0.08735839935247217,
-      "pvalue": 0.7984118639344213,
-      "correlation": 0.08735839935247217
+      "statistic": 0.15068493150684933,
+      "pvalue": 0.6583104144348021,
+      "correlation": 0.15068493150684933
     },
     "spearman_FR_cond": {
       "statistic": 0.19590028045862823,
-      "pvalue": 0.5637442329087623,
+      "pvalue": 0.5637442329087622,
       "correlation": 0.19590028045862823
     },
     "spearman_FR_recover": {
-      "statistic": -0.09111640951564104,
-      "pvalue": 0.7899039060352314,
-      "correlation": -0.09111640951564104
+      "statistic": 0.03644656380625642,
+      "pvalue": 0.9152761385497562,
+      "correlation": 0.03644656380625642
     },
     "spearman_SA_cond": {
       "statistic": 0.25057012616801283,
-      "pvalue": 0.4573852261533532,
+      "pvalue": 0.4573852261533529,
       "correlation": 0.25057012616801283
     },
     "kendall_FR_cond": {
@@ -271,14 +282,14 @@
       "correlation": 0.14679516868351475
     },
     "spearman_init_acc_cond": {
-      "statistic": -0.21818181818181823,
-      "pvalue": 0.519248247554982,
-      "correlation": -0.21818181818181823
+      "statistic": -0.4090909090909091,
+      "pvalue": 0.21154501034209602,
+      "correlation": -0.4090909090909091
     },
     "spearman_init_acc_raw": {
-      "statistic": 0.03669879217087869,
-      "pvalue": 0.9146916426486271,
-      "correlation": 0.03669879217087869
+      "statistic": -0.23234684426488467,
+      "pvalue": 0.4917654140586253,
+      "correlation": -0.23234684426488467
     }
   }
 }

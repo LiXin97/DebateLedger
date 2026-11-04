@@ -388,10 +388,24 @@ def markdown_report(payload: dict[str, Any]) -> str:
     return "\n".join(lines) + "\n"
 
 
+SOURCE_FILES = (
+    "debate_traces_openrouter_deepseek-v4-flash.jsonl",
+    "debate_traces_openrouter_deepseek-v4-pro.jsonl",
+    "debate_traces_openrouter_kimi-k2.6.jsonl",
+    "debate_traces_smoke_qwen3-8b.jsonl",
+    "debate_traces_vllm_gemma-4-31b-it.jsonl",
+    "debate_traces_vllm_qwen3.5-4b.jsonl",
+    "debate_traces_vllm_qwen3.5-9b.jsonl",
+    "debate_traces_vllm_qwen3.6-27b-fp8.jsonl",
+    "debate_traces_vllm_qwen3.6-35b-a3b-fp8.jsonl",
+)
+
+
 def build_payload(results_dir: Path) -> dict[str, Any]:
     records: list[DebateRecord] = []
     sources: list[dict[str, Any]] = []
-    for path in sorted(results_dir.glob("debate_traces_*.jsonl")):
+    # fixed input list: the released results directory holds more trace files than this cohort uses
+    for path in [results_dir / name for name in SOURCE_FILES]:
         rows = load_jsonl(path)
         file_records = [normalize_record(row, path, len(rows)) for row in rows]
         records.extend(file_records)

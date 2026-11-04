@@ -1,0 +1,87 @@
+{
+ "definition": "tab:construct on the public 200-question runs (zero API). The table is defined on public data; it does not reproduce\nan earlier version of the table, whose logs were not retained.\n\nUnit: one debate (model x question) whose initial majority is correct; outcome = collapse at Round 3 (parsed Round-3\nmajority wrong; a debate with no parsed Round-3 answer is not counted as a collapse).\nPer-question features from the same model's public probe file (same 200 questions), default condition:\n  mean probe FR = mean share of revised probes over the three agents; S/A = mean over agents of the paper's S/A formula\n  recomputed from probe_results (rec_scores);\n  difficulty = 1 - mean probe initial_correct over all rows of the question (all conditions and agents);\n  initial disagreement = 1 - (largest initial-answer count / number of parsed initial answers) in the debate.\nSingle predictors: AUC of the raw score (not re-oriented, as in the printed table). Combined: logistic regression,\nout-of-fold predictions with 5 question folds (pooled: same folds across models, plus model indicators).",
+ "per_model": {
+  "Gemini 3-flash": {
+   "n": 166,
+   "collapses": 1,
+   "fr": 0.7181818181818181,
+   "sa": 0.8212121212121212,
+   "dis": 0.9878787878787879
+  },
+  "Gemini 3.1-flash-lite": {
+   "n": 164,
+   "collapses": 0,
+   "fr": null,
+   "sa": null,
+   "dis": null
+  },
+  "Gemini 3.1-pro": {
+   "n": 145,
+   "collapses": 0,
+   "fr": null,
+   "sa": null,
+   "dis": null
+  },
+  "GLM-4.6 (no reasoning)": {
+   "n": 152,
+   "collapses": 6,
+   "fr": 0.533675799086758,
+   "sa": 0.3852739726027397,
+   "dis": 0.9178082191780822,
+   "base": 0.8698630136986302,
+   "full": 0.8242009132420092,
+   "delta": -0.045662100456621
+  },
+  "Grok 4.1 Fast": {
+   "n": 167,
+   "collapses": 0,
+   "fr": null,
+   "sa": null,
+   "dis": null
+  },
+  "Llama 3.3 70B": {
+   "n": 127,
+   "collapses": 2,
+   "fr": 0.672,
+   "sa": 0.38,
+   "dis": 0.88
+  },
+  "Llama 4 Maverick": {
+   "n": 158,
+   "collapses": 5,
+   "fr": 0.581045751633987,
+   "sa": 0.3836601307189543,
+   "dis": 0.7705882352941177,
+   "base": 0.550326797385621,
+   "full": 0.5908496732026144,
+   "delta": 0.04052287581699343
+  },
+  "Llama 4 Scout": {
+   "n": 146,
+   "collapses": 7,
+   "fr": 0.5801644398766701,
+   "sa": 0.6217882836587872,
+   "dis": 0.7944501541623844,
+   "base": 0.6659815005138746,
+   "full": 0.6135662898252826,
+   "delta": -0.05241521068859201
+  },
+  "Mistral Small 4": {
+   "n": 140,
+   "collapses": 4,
+   "fr": 0.7058823529411765,
+   "sa": 0.27849264705882354,
+   "dis": 0.9889705882352942
+  },
+  "Pooled": {
+   "n": 1365,
+   "collapses": 25,
+   "fr": 0.7069552238805971,
+   "sa": 0.446089552238806,
+   "dis": 0.8784776119402985,
+   "base": 0.8984776119402985,
+   "full": 0.8784776119402985,
+   "delta": -0.020000000000000018
+  }
+ }
+}

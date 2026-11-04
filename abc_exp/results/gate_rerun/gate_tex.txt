@@ -1,0 +1,25 @@
+% tab:pilot_gated: e5_rule per held-out model, then pooled rows of the main rule and the comparisons
+Llama-3.1-8B (86 col / 98 corr) & 0.10 & freeze_initial & 0.0\% & 0/86 & 0/98 & $+0$ & $+0.00$ [+0.00,+0.00] & $+0.15$ \\
+Phi-4-mini (112 col / 174 corr) & 0.10 & freeze_initial & 0.0\% & 0/112 & 0/174 & $+0$ & $+0.00$ [+0.00,+0.00] & $+0.09$ \\
+Qwen3-4B (50 col / 461 corr) & 0.10 & freeze_initial & 0.0\% & 0/50 & 0/461 & $+0$ & $+0.00$ [+0.00,+0.00] & $+0.00$ \\
+Qwen3-8B (3 col / 71 corr) & 0.10 & freeze_initial & 0.0\% & 0/3 & 0/71 & $+0$ & $+0.00$ [+0.00,+0.00] & $+0.00$ \\
+\midrule
+\textbf{Pooled (frozen LOMO policy)} & & & & 0/251 & 0/804 & $+0$ & $+0.00$ [+0.00,+0.00] & n/a \\
+\textbf{Nested LOMO selection} & & & & 6/251 & 26/804 & $-20$ & $-0.29$ [-0.46,-0.12] & n/a \\
+\textbf{Raw mean-FR threshold} & & & & 97/251 & 280/804 & $-183$ & $-2.80$ [-3.41,-2.24] & n/a \\
+\textbf{Always freeze} & & & & 251/251 & 804/804 & $-553$ & $-8.48$ [-9.48,-7.48] & n/a \\
+
+% tab:weight_sensitivity rows (r = 0.5, 1, 2, 4, 8, breakeven)
+Probe-gated freeze & $+0.00$ & $+0.00$ & $+0.00$ & $+0.00$ & $+0.00$ & n/a \\
+Always freeze & $-10.40$ & $-8.48$ & $-4.63$ & $+3.07$ & $+18.45$ & 3.20 \\
+Raw mean-FR threshold & $-3.55$ & $-2.80$ & $-1.32$ & $+1.66$ & $+7.60$ & 2.89 \\
+
+% tab:control_summary rows
+Always freeze & $6{,}525$ OSS & none & $-8.48$pp & $251$ & $804$ & $-553$ & $3.20$ \\
+Probe-gated freeze & $6{,}525$ OSS & LOMO & $+0.00$pp & $0$ & $0$ & $+0$ & $n/a$ \\
+
+% Unparsed-reply bounds: pooled prevented / lost / net per variant
+% e5_rule: paper 0/0/+0 (acc +0); flip 0/0/+0 (acc +0); drop 0/0/+0 (acc +0)
+% nested_lomo: paper 6/26/-20 (acc -19); flip 7/31/-24 (acc -23); drop 8/41/-33 (acc -32)
+% raw_fr_gate: paper 97/280/-183 (acc -183); flip 115/309/-194 (acc -194); drop 108/297/-189 (acc -189)
+% always_freeze: paper 251/804/-553 (acc -553); flip 251/804/-553 (acc -553); drop 251/804/-553 (acc -553)

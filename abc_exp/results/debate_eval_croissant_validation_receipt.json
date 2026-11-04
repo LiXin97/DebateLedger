@@ -9,7 +9,7 @@
   "files": [
     {
       "path": "README_REPRO.md",
-      "sha256": "c6e9a51e08dfd87c7b19f3ba63e40ceecabb3df06abacafc9907a523d5189c06"
+      "sha256": "5e0b142177ed0ca20479c161e0243d9f6560579c99404fef657951c21f74ca9a"
     },
     {
       "path": "requirements-artifact.txt",
@@ -17,7 +17,7 @@
     },
     {
       "path": "abc_exp/results/DEBATE_EVAL_ARTIFACT_DATASHEET.md",
-      "sha256": "a5aa8fc5f8355743d836e609420f4a47f4e8d67c66c6a65caf231fa340848e96"
+      "sha256": "e4ab47578fca06c1904f680d78da011f43e96dcc58d0cb874a5cc734bb8fcbd3"
     },
     {
       "path": "abc_exp/results/debate_eval_reuse_card.schema.json",
@@ -33,7 +33,7 @@
     },
     {
       "path": "abc_exp/results/conditional_collapse_table.json",
-      "sha256": "2df5c2ae2f8047c2d5706fe82339229774d4614c0583351042034f07ccaa5eba"
+      "sha256": "d6a11d548753d89b695d700e7f21755c414a5def11c2204acb7382192e9bbd21"
     },
     {
       "path": "abc_exp/results/reviewer_hardening_analyses.json",
@@ -90,6 +90,14 @@
     {
       "path": "abc_exp/results/block3_multi_benchmark.jsonl",
       "sha256": "72a7397af3a6469e64cc2412b58faca14c9dbd3366c8d3114b2d2093d82f9e5e"
+    },
+    {
+      "path": "abc_exp/results/gate_rerun/gate_lomo_paper.json",
+      "sha256": "1350c4e952a1e03995a9eb65f422b02fa4174af35a371d45e7d2fcef746c18f9"
+    },
+    {
+      "path": "abc_exp/results/channel_panel/channel_panel_22.json",
+      "sha256": "5320543ee013297441def772f7ac62545cf406f81c55d699a8908e86801d1027"
     }
   ],
   "rai_fields_populated": [

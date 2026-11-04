@@ -1,0 +1,725 @@
+{
+ "selftest": false,
+ "notes": "Probe-gated freeze with leave-one-model-out selection on the archived local-model debates (zero API).\nThe scripts and probe inputs of the original pilot were not retained. This re-implements the pilot rule on newly\ncollected probe scores (abc_exp/results/gate_rerun/); it is a post-hoc reconstruction, not a reproduction of the pilot.\n\nRules of the original pilot: tau in {0.05,0.1,0.15,0.2,0.3,0.4,0.5,0.6,0.7}; mode in {freeze_initial, freeze_if_stable}; for each held-out\nmodel, (tau*, mode*) maximizes net = prevented - lost on the other models; then frozen and applied to the held-out model.\nChoices the original pilot does not record (made here):\n  * classifier: logistic regression of `collapsed` on per-debate probe features (mean, max, min of the three agents'\n    default-condition 8-probe flip rate on that question), fitted on the training models; the gate fires when p >= tau.\n  * freeze_initial: when the gate fires, the debate returns its initial majority.\n  * freeze_if_stable: when the gate fires, an agent whose Round-1 answer equals its initial answer keeps its initial answer;\n    the other agents keep their final answers; the majority is recomputed (unparsed answers dropped, ties alphabetical).\nOutputs per held-out model: tau*, mode*, gate%, prevented, lost, net, delta-acc (pp) with a debate-bootstrap 95% CI, and the\noracle delta-acc (best tau/mode chosen on the held-out model itself); pooled totals; weight ladder (r * prevented - lost) / n.",
+ "variants": {
+  "e5_rule": {
+   "per_model": {
+    "llama-3.1-8b": {
+     "n": 2003,
+     "n_missing_probe": 0,
+     "tau": 0.1,
+     "mode": "freeze_initial",
+     "gate_pct": 0.0,
+     "baseline_acc": 0.5132,
+     "prevented": 0,
+     "lost": 0,
+     "other_net": 0,
+     "net": 0,
+     "dacc_pp": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "oracle": {
+      "tau": 0.05,
+      "mode": "freeze_if_stable",
+      "dacc_pp": 0.2
+     }
+    },
+    "phi-4-mini": {
+     "n": 2161,
+     "n_missing_probe": 0,
+     "tau": 0.1,
+     "mode": "freeze_initial",
+     "gate_pct": 0.0,
+     "baseline_acc": 0.5349,
+     "prevented": 0,
+     "lost": 0,
+     "other_net": 0,
+     "net": 0,
+     "dacc_pp": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "oracle": {
+      "tau": 0.1,
+      "mode": "freeze_initial",
+      "dacc_pp": 0.0
+     }
+    },
+    "qwen3-4b": {
+     "n": 2161,
+     "n_missing_probe": 0,
+     "tau": 0.1,
+     "mode": "freeze_initial",
+     "gate_pct": 0.0,
+     "baseline_acc": 0.6432,
+     "prevented": 0,
+     "lost": 0,
+     "other_net": 0,
+     "net": 0,
+     "dacc_pp": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "oracle": {
+      "tau": 0.1,
+      "mode": "freeze_initial",
+      "dacc_pp": 0.0
+     }
+    },
+    "qwen3-8b": {
+     "n": 200,
+     "n_missing_probe": 0,
+     "tau": 0.1,
+     "mode": "freeze_initial",
+     "gate_pct": 0.0,
+     "baseline_acc": 0.62,
+     "prevented": 0,
+     "lost": 0,
+     "other_net": 0,
+     "net": 0,
+     "dacc_pp": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "oracle": {
+      "tau": 0.1,
+      "mode": "freeze_initial",
+      "dacc_pp": 0.0
+     }
+    }
+   },
+   "pooled": {
+    "n": 6525,
+    "prevented": 0,
+    "lost": 0,
+    "net": 0,
+    "dacc_pp": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ],
+    "weight_ladder_pp": {
+     "0.5": 0.0,
+     "1": 0.0,
+     "2": 0.0,
+     "4": 0.0,
+     "8": 0.0
+    },
+    "break_even_r": null
+   }
+  },
+  "freeze_initial_only": {
+   "per_model": {
+    "llama-3.1-8b": {
+     "n": 2003,
+     "n_missing_probe": 0,
+     "tau": 0.1,
+     "mode": "freeze_initial",
+     "gate_pct": 0.0,
+     "baseline_acc": 0.5132,
+     "prevented": 0,
+     "lost": 0,
+     "other_net": 0,
+     "net": 0,
+     "dacc_pp": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "oracle": {
+      "tau": 0.1,
+      "mode": "freeze_initial",
+      "dacc_pp": 0.0
+     }
+    },
+    "phi-4-mini": {
+     "n": 2161,
+     "n_missing_probe": 0,
+     "tau": 0.1,
+     "mode": "freeze_initial",
+     "gate_pct": 0.0,
+     "baseline_acc": 0.5349,
+     "prevented": 0,
+     "lost": 0,
+     "other_net": 0,
+     "net": 0,
+     "dacc_pp": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "oracle": {
+      "tau": 0.1,
+      "mode": "freeze_initial",
+      "dacc_pp": 0.0
+     }
+    },
+    "qwen3-4b": {
+     "n": 2161,
+     "n_missing_probe": 0,
+     "tau": 0.1,
+     "mode": "freeze_initial",
+     "gate_pct": 0.0,
+     "baseline_acc": 0.6432,
+     "prevented": 0,
+     "lost": 0,
+     "other_net": 0,
+     "net": 0,
+     "dacc_pp": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "oracle": {
+      "tau": 0.1,
+      "mode": "freeze_initial",
+      "dacc_pp": 0.0
+     }
+    },
+    "qwen3-8b": {
+     "n": 200,
+     "n_missing_probe": 0,
+     "tau": 0.1,
+     "mode": "freeze_initial",
+     "gate_pct": 0.0,
+     "baseline_acc": 0.62,
+     "prevented": 0,
+     "lost": 0,
+     "other_net": 0,
+     "net": 0,
+     "dacc_pp": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "oracle": {
+      "tau": 0.1,
+      "mode": "freeze_initial",
+      "dacc_pp": 0.0
+     }
+    }
+   },
+   "pooled": {
+    "n": 6525,
+    "prevented": 0,
+    "lost": 0,
+    "net": 0,
+    "dacc_pp": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ],
+    "weight_ladder_pp": {
+     "0.5": 0.0,
+     "1": 0.0,
+     "2": 0.0,
+     "4": 0.0,
+     "8": 0.0
+    },
+    "break_even_r": null
+   }
+  },
+  "nested_lomo": {
+   "per_model": {
+    "llama-3.1-8b": {
+     "n": 2003,
+     "n_missing_probe": 0,
+     "tau": 0.1,
+     "mode": "freeze_initial",
+     "gate_pct": 0.0,
+     "baseline_acc": 0.5132,
+     "prevented": 0,
+     "lost": 0,
+     "other_net": 0,
+     "net": 0,
+     "dacc_pp": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "oracle": {
+      "tau": 0.05,
+      "mode": "freeze_if_stable",
+      "dacc_pp": 0.2
+     }
+    },
+    "phi-4-mini": {
+     "n": 2161,
+     "n_missing_probe": 0,
+     "tau": 0.1,
+     "mode": "freeze_initial",
+     "gate_pct": 0.0,
+     "baseline_acc": 0.5349,
+     "prevented": 0,
+     "lost": 0,
+     "other_net": 0,
+     "net": 0,
+     "dacc_pp": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "oracle": {
+      "tau": 0.1,
+      "mode": "freeze_initial",
+      "dacc_pp": 0.0
+     }
+    },
+    "qwen3-4b": {
+     "n": 2161,
+     "n_missing_probe": 0,
+     "tau": 0.05,
+     "mode": "freeze_if_stable",
+     "gate_pct": 24.43,
+     "baseline_acc": 0.6432,
+     "prevented": 7,
+     "lost": 31,
+     "other_net": 1,
+     "net": -23,
+     "dacc_pp": -1.064,
+     "ci95": [
+      -1.621,
+      -0.509
+     ],
+     "oracle": {
+      "tau": 0.1,
+      "mode": "freeze_initial",
+      "dacc_pp": 0.0
+     }
+    },
+    "qwen3-8b": {
+     "n": 200,
+     "n_missing_probe": 0,
+     "tau": 0.1,
+     "mode": "freeze_initial",
+     "gate_pct": 0.0,
+     "baseline_acc": 0.62,
+     "prevented": 0,
+     "lost": 0,
+     "other_net": 0,
+     "net": 0,
+     "dacc_pp": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "oracle": {
+      "tau": 0.1,
+      "mode": "freeze_initial",
+      "dacc_pp": 0.0
+     }
+    }
+   },
+   "pooled": {
+    "n": 6525,
+    "prevented": 7,
+    "lost": 31,
+    "net": -23,
+    "dacc_pp": -0.352,
+    "ci95": [
+     -0.536,
+     -0.168
+    ],
+    "weight_ladder_pp": {
+     "0.5": -0.421,
+     "1": -0.368,
+     "2": -0.261,
+     "4": -0.046,
+     "8": 0.383
+    },
+    "break_even_r": 4.429
+   }
+  },
+  "with_noop": {
+   "per_model": {
+    "llama-3.1-8b": {
+     "n": 2003,
+     "n_missing_probe": 0,
+     "tau": null,
+     "mode": "no_op",
+     "gate_pct": 0.0,
+     "baseline_acc": 0.5132,
+     "prevented": 0,
+     "lost": 0,
+     "other_net": 0,
+     "net": 0,
+     "dacc_pp": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "oracle": {
+      "tau": 0.05,
+      "mode": "freeze_if_stable",
+      "dacc_pp": 0.2
+     }
+    },
+    "phi-4-mini": {
+     "n": 2161,
+     "n_missing_probe": 0,
+     "tau": null,
+     "mode": "no_op",
+     "gate_pct": 0.0,
+     "baseline_acc": 0.5349,
+     "prevented": 0,
+     "lost": 0,
+     "other_net": 0,
+     "net": 0,
+     "dacc_pp": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "oracle": {
+      "tau": 0.1,
+      "mode": "freeze_initial",
+      "dacc_pp": 0.0
+     }
+    },
+    "qwen3-4b": {
+     "n": 2161,
+     "n_missing_probe": 0,
+     "tau": null,
+     "mode": "no_op",
+     "gate_pct": 0.0,
+     "baseline_acc": 0.6432,
+     "prevented": 0,
+     "lost": 0,
+     "other_net": 0,
+     "net": 0,
+     "dacc_pp": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "oracle": {
+      "tau": 0.1,
+      "mode": "freeze_initial",
+      "dacc_pp": 0.0
+     }
+    },
+    "qwen3-8b": {
+     "n": 200,
+     "n_missing_probe": 0,
+     "tau": null,
+     "mode": "no_op",
+     "gate_pct": 0.0,
+     "baseline_acc": 0.62,
+     "prevented": 0,
+     "lost": 0,
+     "other_net": 0,
+     "net": 0,
+     "dacc_pp": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "oracle": {
+      "tau": 0.1,
+      "mode": "freeze_initial",
+      "dacc_pp": 0.0
+     }
+    }
+   },
+   "pooled": {
+    "n": 6525,
+    "prevented": 0,
+    "lost": 0,
+    "net": 0,
+    "dacc_pp": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ],
+    "weight_ladder_pp": {
+     "0.5": 0.0,
+     "1": 0.0,
+     "2": 0.0,
+     "4": 0.0,
+     "8": 0.0
+    },
+    "break_even_r": null
+   }
+  },
+  "always_freeze": {
+   "per_model": {
+    "llama-3.1-8b": {
+     "n": 2003,
+     "n_missing_probe": 0,
+     "tau": null,
+     "mode": "freeze_initial",
+     "gate_pct": 100.0,
+     "baseline_acc": 0.5132,
+     "prevented": 86,
+     "lost": 98,
+     "other_net": 0,
+     "net": -12,
+     "dacc_pp": -0.599,
+     "ci95": [
+      -1.898,
+      0.75
+     ]
+    },
+    "phi-4-mini": {
+     "n": 2161,
+     "n_missing_probe": 0,
+     "tau": null,
+     "mode": "freeze_initial",
+     "gate_pct": 100.0,
+     "baseline_acc": 0.5349,
+     "prevented": 112,
+     "lost": 174,
+     "other_net": 0,
+     "net": -62,
+     "dacc_pp": -2.869,
+     "ci95": [
+      -4.396,
+      -1.296
+     ]
+    },
+    "qwen3-4b": {
+     "n": 2161,
+     "n_missing_probe": 0,
+     "tau": null,
+     "mode": "freeze_initial",
+     "gate_pct": 100.0,
+     "baseline_acc": 0.6432,
+     "prevented": 50,
+     "lost": 461,
+     "other_net": 0,
+     "net": -411,
+     "dacc_pp": -19.019,
+     "ci95": [
+      -20.916,
+      -17.075
+     ]
+    },
+    "qwen3-8b": {
+     "n": 200,
+     "n_missing_probe": 0,
+     "tau": null,
+     "mode": "freeze_initial",
+     "gate_pct": 100.0,
+     "baseline_acc": 0.62,
+     "prevented": 3,
+     "lost": 71,
+     "other_net": 0,
+     "net": -68,
+     "dacc_pp": -34.0,
+     "ci95": [
+      -41.0,
+      -27.0
+     ]
+    }
+   },
+   "pooled": {
+    "n": 6525,
+    "prevented": 251,
+    "lost": 804,
+    "net": -553,
+    "dacc_pp": -8.475,
+    "ci95": [
+     -9.484,
+     -7.484
+    ],
+    "weight_ladder_pp": {
+     "0.5": -10.398,
+     "1": -8.475,
+     "2": -4.628,
+     "4": 3.065,
+     "8": 18.452
+    },
+    "break_even_r": 3.203
+   }
+  },
+  "raw_fr_gate": {
+   "per_model": {
+    "llama-3.1-8b": {
+     "n": 2003,
+     "n_missing_probe": 0,
+     "tau": 0.7,
+     "mode": "freeze_initial",
+     "gate_pct": 54.37,
+     "baseline_acc": 0.5132,
+     "prevented": 60,
+     "lost": 71,
+     "other_net": 0,
+     "net": -11,
+     "dacc_pp": -0.549,
+     "ci95": [
+      -1.643,
+      0.598
+     ]
+    },
+    "phi-4-mini": {
+     "n": 2161,
+     "n_missing_probe": 0,
+     "tau": 0.7,
+     "mode": "freeze_initial",
+     "gate_pct": 19.76,
+     "baseline_acc": 0.5349,
+     "prevented": 24,
+     "lost": 49,
+     "other_net": 0,
+     "net": -25,
+     "dacc_pp": -1.157,
+     "ci95": [
+      -1.944,
+      -0.37
+     ]
+    },
+    "qwen3-4b": {
+     "n": 2161,
+     "n_missing_probe": 0,
+     "tau": 0.7,
+     "mode": "freeze_initial",
+     "gate_pct": 37.02,
+     "baseline_acc": 0.6432,
+     "prevented": 29,
+     "lost": 187,
+     "other_net": 0,
+     "net": -158,
+     "dacc_pp": -7.311,
+     "ci95": [
+      -8.562,
+      -6.015
+     ]
+    },
+    "qwen3-8b": {
+     "n": 200,
+     "n_missing_probe": 0,
+     "tau": 0.7,
+     "mode": "freeze_initial",
+     "gate_pct": 12.5,
+     "baseline_acc": 0.62,
+     "prevented": 2,
+     "lost": 2,
+     "other_net": 0,
+     "net": 0,
+     "dacc_pp": 0.0,
+     "ci95": [
+      -2.0,
+      2.0
+     ]
+    }
+   },
+   "pooled": {
+    "n": 6525,
+    "prevented": 115,
+    "lost": 309,
+    "net": -194,
+    "dacc_pp": -2.973,
+    "ci95": [
+     -3.587,
+     -2.37
+    ],
+    "weight_ladder_pp": {
+     "0.5": -3.854,
+     "1": -2.973,
+     "2": -1.211,
+     "4": 2.314,
+     "8": 9.364
+    },
+    "break_even_r": 2.687
+   }
+  },
+  "random_same_rate": {
+   "per_model": {
+    "llama-3.1-8b": {
+     "n": 2003,
+     "n_missing_probe": 0,
+     "tau": null,
+     "mode": "freeze_initial",
+     "gate_pct": 0.0,
+     "baseline_acc": 0.5132,
+     "prevented": 0,
+     "lost": 0,
+     "other_net": 0,
+     "net": 0,
+     "dacc_pp": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    },
+    "phi-4-mini": {
+     "n": 2161,
+     "n_missing_probe": 0,
+     "tau": null,
+     "mode": "freeze_initial",
+     "gate_pct": 0.0,
+     "baseline_acc": 0.5349,
+     "prevented": 0,
+     "lost": 0,
+     "other_net": 0,
+     "net": 0,
+     "dacc_pp": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    },
+    "qwen3-4b": {
+     "n": 2161,
+     "n_missing_probe": 0,
+     "tau": null,
+     "mode": "freeze_initial",
+     "gate_pct": 0.0,
+     "baseline_acc": 0.6432,
+     "prevented": 0,
+     "lost": 0,
+     "other_net": 0,
+     "net": 0,
+     "dacc_pp": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    },
+    "qwen3-8b": {
+     "n": 200,
+     "n_missing_probe": 0,
+     "tau": null,
+     "mode": "freeze_initial",
+     "gate_pct": 0.0,
+     "baseline_acc": 0.62,
+     "prevented": 0,
+     "lost": 0,
+     "other_net": 0,
+     "net": 0,
+     "dacc_pp": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    }
+   },
+   "pooled": {
+    "n": 6525,
+    "prevented": 0,
+    "lost": 0,
+    "net": 0,
+    "dacc_pp": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ],
+    "weight_ladder_pp": {
+     "0.5": 0.0,
+     "1": 0.0,
+     "2": 0.0,
+     "4": 0.0,
+     "8": 0.0
+    },
+    "break_even_r": null
+   }
+  }
+ },
+ "none_mode": "flip",
+ "probes_dir": "abc_exp/results/gate_rerun"
+}

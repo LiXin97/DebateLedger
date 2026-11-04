@@ -56,6 +56,9 @@ def adaptive_extractor(d):
 
 def block1_extractor(d):
     sd = d.get("standard_debate", {})
+    # rows whose standard debate returned only an API error carry no result
+    if not isinstance(sd, dict) or "error" in sd or sd.get("initial_correct") is None:
+        return None
     ic = bool(sd.get("initial_correct"))
     fc = bool(sd.get("final_correct"))
     return ic, fc, ic and not fc
@@ -97,12 +100,22 @@ SOURCES = [
 
 
 def main():
+    # Some debate sources are not public (README_REPRO.md). For those rows keep the per-model counts already
+    # recorded in conditional_collapse_table.json instead of dropping the row; any other missing file stops the script.
+    NOT_PUBLIC = ("adaptive_debate_sonnet.jsonl", "multimodel_debates_mmlu_pro.jsonl", "multimodel_alpha_mmlu_pro.jsonl")
+    out_path = RES / "conditional_collapse_table.json"
+    recorded = {}
+    if out_path.exists():
+        recorded = {r["model"]: r for r in json.load(open(out_path))["table"]}
     table = []
     for name, fam, fr, sa, fn, extractor in SOURCES:
         path = RES / fn
         if not path.exists():
-            print(f"MISSING: {path}")
-            continue
+            if fn in NOT_PUBLIC and name in recorded:
+                print(f"NOT PUBLIC: {fn}; keeping the recorded counts for {name}")
+                table.append(dict(recorded[name], source="recorded_counts"))
+                continue
+            raise SystemExit(f"MISSING: {path} (download the open tier into the repository root; see README_REPRO.md)")
         rows = load_jsonl(path)
         # Apply extractor; skip None for filtered files
         triples = []
@@ -125,7 +138,7 @@ def main():
         gb = n_recover / max(n_cond_coll, 1)
 
         table.append({
-            "model": name, "family": fam, "FR": fr, "SA": sa,
+            "model": name, "family": fam, "FR": fr, "SA": sa, "source": fn,
             "n_deb": n, "n_init_correct": n_init_c, "n_init_wrong": n_init_w,
             "raw_collapse_pct": raw_p * 100, "raw_lo": raw_lo * 100, "raw_hi": raw_hi * 100,
             "cond_collapse_pct": cond_p * 100, "cond_lo": cond_lo * 100, "cond_hi": cond_hi * 100,
@@ -163,7 +176,7 @@ def main():
 
     # Already done via _asdict()
     out = {"table": table, "stats": {k: {kk: float(vv) for kk, vv in v.items()} if isinstance(v, dict) else v for k, v in stats.items()}}
-    out_path = RES / "conditional_collapse_table.json"
+    assert [r["model"] for r in table] == [s[0] for s in SOURCES], "incomplete table"
     with open(out_path, "w") as f:
         json.dump(out, f, indent=2)
 

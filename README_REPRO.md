@@ -2,6 +2,26 @@
 
 This repository contains the code and data for *Measuring Collapse and Correction in Homogeneous-Panel LLM Debate* (NeurIPS 2026, Evaluations and Datasets Track). The analyses below are zero-API: they read existing traces and write derived tables only.
 
+## Probe-Gated Freeze and Channel Panel (alpha-tot-v1.0.4)
+
+The probe-gated freeze, the 22-model channel panel, the collapse-diagnostic AUC table and the probe-reliability check of Section 4, and the N=9 partial/Holm rows rebuild from the open tier without API calls. The probe scores of the four local models (Llama-3.1-8B, Phi-4-mini, Qwen3-4B, Qwen3-8B) were collected again for this analysis with `abc_exp/scripts/run_alpha_probe_vllm.py` (vLLM; initial answers sampled at 0.5/0.7/1.0 with an 8,192-token cap, probe replies greedy with a 2,048-token cap, `--stable-seeds`): `abc_exp/results/gate_rerun/gate_default_vllm_*_s{0,1}.jsonl` hold the default condition on the debate questions outside the 200-question high-FR pool (`--questions abc_exp/results/gate_rerun/qids_<model>_s<k>.json --conditions default`), and `abc_exp/results/gate_rerun/sa_causal_vllm_*_rerun.jsonl` hold all three conditions on the high-FR pool. Model text is null in the open tier. The gate is a post-hoc reconstruction on these new probe scores; the scripts and probe inputs of the original pilot were not retained.
+
+```bash
+python abc_exp/experiments/gate_rerun_acceptance.py abc_exp/results/gate_rerun          # completeness, truncation and unparsed-reply rates
+for m in paper flip drop; do
+  python abc_exp/experiments/probe_gated_lomo.py --debates abc_exp/results --probes abc_exp/results/gate_rerun \
+    --none-mode $m --out abc_exp/results/gate_rerun/gate_lomo_$m.json
+done
+python abc_exp/experiments/gate_tex.py abc_exp/results/gate_rerun/gate_lomo_{paper,flip,drop}.json > abc_exp/results/gate_rerun/gate_tex.txt
+python abc_exp/experiments/channel_panel.py --out abc_exp/results/channel_panel/channel_panel_22.json --tex abc_exp/results/channel_panel/channel_panel_22.tex
+python abc_exp/experiments/fig2_channel_panel.py abc_exp/results/channel_panel/channel_panel_22.json abc_exp/results/figures/fig2_channel_manipulation
+python abc_exp/experiments/construct_auc_public_n200.py abc_exp/results abc_exp/results/construct_auc_public_n200.json
+python abc_exp/experiments/reliability_recheck.py
+python abc_exp/experiments/n9_partial_holm.py
+```
+
+In this release `conditional_collapse_table.py` keeps the recorded counts of the rows whose debate files are not public instead of dropping them, and leaves out the 25 Gemini 2.5 Flash rows that hold only an API error (118 valid rows); `post_a6_r1_replication.py`, `cascade_r1_auc.py` and `build_per_debate_features.py` read fixed input lists. `cascade_r1_bootstrap.py` writes the question-clustered intervals into `cascade_r1_auc.json`. Scripts that still do not run on the open tier: the Bayesian MLM scripts need the arviz/xarray versions they were written for, the `block*` experiment drivers call APIs, `split_alpha.py` needs a local label file, and the very-strong-drop and log-ratio checks (`T2_1_drop_very_strong.py`, `T2_4_log_ratio.py`) need N=9 probe files that are not public; their checked-in outputs are kept.
+
 ## Zero-API Rebuild
 
 `abc_exp/experiments/n9_gee_sensitivity.py` and `abc_exp/experiments/n9_perm_lomo_check.py` rebuild the GEE and GLM tables, Fisher 90% intervals, permutation null and leave-one-model-out R^2 of the N=9 sensitivity check (`abc_exp/results/N9_GEE_SENSITIVITY.md`, `n9_gee_sensitivity.json`, `n9_perm_r2_check.json`). `abc_exp/scripts/B_pilot_monotonicity.py` is the harness of the B pilot; it needs a GPU with vLLM.
@@ -66,7 +86,7 @@ These scripts recompute the family-level exact permutation test, N14 errors-in-v
 - `abc_exp/results/debate_traces_*.jsonl`: round-by-round debate traces used for parser and provenance audits on the realized expansion rows and the response-period checks. In the open tier the `reasoning` fields are `null`.
 - `abc_exp/results/sa_causal_*.jsonl`: probe traces used for alpha/parser audits. In the open tier the `initial_response_prefix` field is `null`.
 - `abc_exp/results/conditional_collapse_table.json`: sealed-vintage debate diagnostics for older rows.
-- `abc_exp/results/per_debate_r1_features.jsonl`: row-level R1 feature matrix for the reported Bayesian MLM. It was rebuilt on 2026-09-28 from the six primary-cohort trace files with `abc_exp/experiments/build_per_debate_features.py` and reproduces the MLM input exactly (3,145 initially correct debates from Llama-3.1-8B, Phi-4-mini, Qwen3-4B and Qwen3-8B, 251 collapses, 1,509 questions). The fitted MLM summary is checked in as `abc_exp/results/bayesian_multilevel_logistic.json`. This matrix is not required for the headline transition tables, parser audits, family-rank analyses, or signed-replay ledgers; `abc_exp/experiments/bayesian_multilevel_logistic.py` reads it directly. To rebuild it, run `build_per_debate_features.py` with `ABC_RESULTS` pointing to a folder that holds only the six primary-cohort files, because the script reads every `debate_traces_*.jsonl` in that folder.
+- `abc_exp/results/per_debate_r1_features.jsonl`: row-level Round 1 feature matrix of the six primary-cohort trace files (6,925 debates, 253 collapses), built with `abc_exp/experiments/build_per_debate_features.py`. The reported Bayesian MLM uses its 3,145 initially correct debates from Llama-3.1-8B, Phi-4-mini, Qwen3-4B and Qwen3-8B (251 collapses, 1,509 questions). The fitted MLM summary is checked in as `abc_exp/results/bayesian_multilevel_logistic.json`. This matrix is not required for the headline transition tables, parser audits, family-rank analyses, or signed-replay ledgers; `abc_exp/experiments/bayesian_multilevel_logistic.py` reads it directly. To rebuild it, run `build_per_debate_features.py`; it reads the six primary-cohort files by name.
 
 ## Protocol Pointers
 
@@ -108,8 +128,8 @@ The script validates that the card contains identity, question-pool, selection-t
 
 Results in the paper fall into four tiers (paper Appendix G.6):
 
-1. **Zero-API rebuilds** from the released traces and scripts: the family association, transition tables, parser audits, and the response-period summaries.
-2. **Aggregate-only results**: the 6,525-debate probe-gated leave-one-model-out ledger is released as a frozen aggregate, and its row-level decision matrix is not part of the release. The Round 1 replay rows use a separate 1,255-trace cohort.
+1. **Zero-API rebuilds** from the released traces and scripts: the family association, transition tables, parser audits, the response-period summaries, and the 6,525-debate probe-gated leave-one-model-out ledger, whose gate script and per-question probe scores are released.
+2. **Aggregate-only results**: the Round 1 replay rows use a separate 1,255-trace cohort.
 3. **Provider-dependent reruns**: closed-API rows can drift as providers update models.
 4. **Gated fields**: convince-wrong probe text and full transcripts are in the gated dataset. The transcript-free per-debate Round 1 feature matrix (`abc_exp/results/per_debate_r1_features.jsonl`) is open.
 
@@ -173,4 +193,4 @@ The release has three parts:
 - Open data tier (https://huggingface.co/datasets/XINLI1997/DebateLedger), CC BY 4.0: the aggregate files plus every probe and debate trace with the model-generated text fields set to `null`. Parsed answers, correctness labels, round structure, token counts and costs are kept. The non-social weak, moderate and strong probe templates are open.
 - Gated data tier (https://huggingface.co/datasets/XINLI1997/DebateLedger-gated), research-use license with no redistribution and no fine-tuning of models that target real users without independent safety review: the full-text versions of the traces that contain model text, and the very-strong (convince-wrong) probe and social-pressure suffix. These can be reused as a misleading-answer corpus, so access is reviewed on request.
 
-The first public release is versioned `alpha-tot-v1.0`; the current one is `alpha-tot-v1.0.3`. Closed-API snapshot reruns and corrections are released as new minor versions rather than in-place replacements.
+The first public release is versioned `alpha-tot-v1.0`; the current one is `alpha-tot-v1.0.4`. Closed-API snapshot reruns and corrections are released as new minor versions rather than in-place replacements.

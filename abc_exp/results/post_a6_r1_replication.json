@@ -13,7 +13,7 @@
     },
     {
       "file": "debate_traces_openrouter_deepseek-v4-pro.jsonl",
-      "rows": 78,
+      "rows": 81,
       "cohort": "legacy_or_partial"
     },
     {
@@ -53,15 +53,15 @@
     }
   ],
   "pooled": {
-    "n_debates": 1282,
-    "init_majority_correct_count": 725,
-    "init_majority_accuracy_pct": 56.552262090483616,
+    "n_debates": 1285,
+    "init_majority_correct_count": 727,
+    "init_majority_accuracy_pct": 56.57587548638132,
     "collapses": 77,
-    "conditional_collapse_pct": 10.620689655172415,
+    "conditional_collapse_pct": 10.591471801925723,
     "corrections": 149,
-    "correction_pct_of_initial_wrong": 26.75044883303411,
-    "final_correct_count": 797,
-    "final_accuracy_pct": 62.16848673946958,
+    "correction_pct_of_initial_wrong": 26.70250896057348,
+    "final_correct_count": 799,
+    "final_accuracy_pct": 62.17898832684825,
     "collapse_onset_round_counts": {
       "1": 40,
       "2": 10,
@@ -78,15 +78,15 @@
   },
   "by_cohort": {
     "legacy_or_partial": {
-      "n_debates": 82,
-      "init_majority_correct_count": 63,
-      "init_majority_accuracy_pct": 76.82926829268293,
+      "n_debates": 85,
+      "init_majority_correct_count": 65,
+      "init_majority_accuracy_pct": 76.47058823529412,
       "collapses": 2,
-      "conditional_collapse_pct": 3.1746031746031744,
+      "conditional_collapse_pct": 3.076923076923077,
       "corrections": 5,
-      "correction_pct_of_initial_wrong": 26.31578947368421,
-      "final_correct_count": 66,
-      "final_accuracy_pct": 80.48780487804878,
+      "correction_pct_of_initial_wrong": 25.0,
+      "final_correct_count": 68,
+      "final_accuracy_pct": 80.0,
       "collapse_onset_round_counts": {
         "4": 1
       },
@@ -244,15 +244,15 @@
       "collapse_onset_unlocalized": 0
     },
     "deepseek-v4-pro": {
-      "n_debates": 78,
-      "init_majority_correct_count": 59,
-      "init_majority_accuracy_pct": 75.64102564102564,
+      "n_debates": 81,
+      "init_majority_correct_count": 61,
+      "init_majority_accuracy_pct": 75.30864197530865,
       "collapses": 1,
-      "conditional_collapse_pct": 1.694915254237288,
+      "conditional_collapse_pct": 1.639344262295082,
       "corrections": 5,
-      "correction_pct_of_initial_wrong": 26.31578947368421,
-      "final_correct_count": 63,
-      "final_accuracy_pct": 80.76923076923077,
+      "correction_pct_of_initial_wrong": 25.0,
+      "final_correct_count": 65,
+      "final_accuracy_pct": 80.24691358024691,
       "collapse_onset_round_counts": {
         "4": 1
       },

@@ -325,78 +325,84 @@
     }
   },
   "bootstrap_delta_auc_clustered": {
-    "status": "infeasible_missing_reported_cohort_row_level_data",
+    "status": "computed",
     "seed": 20260424,
     "B": 1000,
     "oof_seed": 42,
-    "observed_delta_source": "cascade_r1_auc.json:bootstrap_delta_auc",
-    "input_audit": [
-      "Missing reported-cohort raw trace files: results/debate_traces_gemini_3-flash.jsonl, results/debate_traces_openai_gpt-5.4-mini.jsonl, results/debate_traces_vllm_llama-3.1-8b.jsonl, results/debate_traces_vllm_phi-4-mini.jsonl, results/debate_traces_vllm_qwen3-4b.jsonl, results/debate_traces_vllm_qwen3-8b.jsonl",
-      "results/per_debate_r1_features.jsonl exists but is empty"
-    ],
+    "source": "reported_raw_trace_files",
+    "source_notes": [],
+    "n_debates": 6925,
+    "n_collapsed": 253,
+    "pooled_oof_auc": {
+      "baseline": 0.6690917029222472,
+      "r1_trajectory": 0.768466649605217,
+      "full_trajectory": 0.845866686097762
+    },
     "question_clustered": {
-      "status": "infeasible_missing_reported_cohort_row_level_data",
+      "status": "computed",
+      "cluster_key": "question_id",
+      "n_clusters": 2161,
       "B": 1000,
-      "B_used": 0,
+      "B_used": 1000,
+      "B_skipped_degenerate": 0,
       "delta_r1_minus_baseline": {
         "obs": 0.09937494668296987,
-        "median": null,
-        "ci_2.5": null,
-        "ci_97.5": null
+        "median": 0.09936596945247778,
+        "ci_2.5": 0.08087539133302094,
+        "ci_97.5": 0.11856359787105843
       },
       "delta_full_minus_r1": {
         "obs": 0.07740003649254501,
-        "median": null,
-        "ci_2.5": null,
-        "ci_97.5": null
-      },
-      "caveat": "The checked-out cascade_r1_auc.json has aggregate AUCs and the old debate-index bootstrap, but the exact reported-cohort row-level traces/cache with question_id and model identifiers are absent or empty. Clustered CIs cannot be recovered from aggregate AUC summaries without changing the estimand.",
-      "cluster_key": "question_id",
-      "n_clusters": null
+        "median": 0.07732057764107919,
+        "ci_2.5": 0.06376175232599098,
+        "ci_97.5": 0.09218039115988531
+      }
     },
     "model_clustered": {
-      "status": "infeasible_missing_reported_cohort_row_level_data",
+      "status": "computed",
+      "cluster_key": "model",
+      "n_clusters": 6,
       "B": 1000,
-      "B_used": 0,
+      "B_used": 1000,
+      "B_skipped_degenerate": 0,
       "delta_r1_minus_baseline": {
         "obs": 0.09937494668296987,
-        "median": null,
-        "ci_2.5": null,
-        "ci_97.5": null
+        "median": 0.09790560951867966,
+        "ci_2.5": 0.07388329834214147,
+        "ci_97.5": 0.12058461896873063
       },
       "delta_full_minus_r1": {
         "obs": 0.07740003649254501,
-        "median": null,
-        "ci_2.5": null,
-        "ci_97.5": null
-      },
-      "caveat": "The checked-out cascade_r1_auc.json has aggregate AUCs and the old debate-index bootstrap, but the exact reported-cohort row-level traces/cache with question_id and model identifiers are absent or empty. Clustered CIs cannot be recovered from aggregate AUC summaries without changing the estimand.",
-      "cluster_key": "model",
-      "n_clusters": null
+        "median": 0.08070226153778348,
+        "ci_2.5": 0.06859480199811763,
+        "ci_97.5": 0.09896733590391349
+      }
     },
     "two_way_like_clustered": {
-      "status": "infeasible_missing_reported_cohort_row_level_data",
-      "B": 1000,
-      "B_used": 0,
-      "delta_r1_minus_baseline": {
-        "obs": 0.09937494668296987,
-        "median": null,
-        "ci_2.5": null,
-        "ci_97.5": null
-      },
-      "delta_full_minus_r1": {
-        "obs": 0.07740003649254501,
-        "median": null,
-        "ci_2.5": null,
-        "ci_97.5": null
-      },
-      "caveat": "The checked-out cascade_r1_auc.json has aggregate AUCs and the old debate-index bootstrap, but the exact reported-cohort row-level traces/cache with question_id and model identifiers are absent or empty. Clustered CIs cannot be recovered from aggregate AUC summaries without changing the estimand.",
+      "status": "computed",
+      "method": "crossed_cluster_resample_with_question_model_multiplicity_product",
       "cluster_keys": [
         "question_id",
         "model"
       ],
-      "n_question_clusters": null,
-      "n_model_clusters": null
+      "n_question_clusters": 2161,
+      "n_model_clusters": 6,
+      "B": 1000,
+      "B_used": 998,
+      "B_skipped_degenerate": 2,
+      "delta_r1_minus_baseline": {
+        "obs": 0.09937494668296987,
+        "median": 0.09743493774327006,
+        "ci_2.5": 0.05463957569635729,
+        "ci_97.5": 0.13500663672350027
+      },
+      "delta_full_minus_r1": {
+        "obs": 0.07740003649254501,
+        "median": 0.08038112605969788,
+        "ci_2.5": 0.05703069600172932,
+        "ci_97.5": 0.11124668033979467
+      },
+      "caveat": "Two-way-like percentile bootstrap resamples question and model clusters independently using fixed out-of-fold predictions; it is a design-aware sensitivity, not a full refit exact two-way clustered bootstrap."
     }
   }
 }
